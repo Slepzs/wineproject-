@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel:400,700,900|Comfortaa:400,500,700&display=swap);.top-nav {
+  background-color: #484563;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.top-nav .left-side-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.top-nav .left-side-nav .profile-img {
+  display: grid;
+  grid-template-columns: 50px 150px 50px;
+  justify-items: center;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-left: 10px;
+}
+
+.top-nav .left-side-nav .profile-img img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.top-nav .left-side-nav .profile-img p {
+  color: white;
+  font-size: 1em;
+  font-family: "Comfortaa", cursive;
+}
+
+.top-nav .left-side-nav .profile-img span {
+  color: white;
+}
+
+.top-nav .right-side-nav .site-links {
+  display: grid;
+  height: 100%;
+  -webkit-box-pack: end;
+          justify-content: end;
+}
+
+.top-nav .right-side-nav .site-links ul {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-items: center;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-bottom: 0px;
+}
+
+.top-nav .right-side-nav .site-links ul li {
+  list-style-type: none;
+}
+
+.top-nav .right-side-nav .site-links ul li a {
+  color: white;
+}
+
+.admin-content-wrapper {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.admin-content-wrapper .uk-offcanvas-bar {
+  padding: 0px;
+}
+
+.admin-content-wrapper .sidenav {
+  background: #2b293a;
+  height: 100vh;
+  justify-items: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.admin-content-wrapper .sidenav * {
+  color: white;
+}
+
+.admin-content-wrapper .sidenav .sidenav-header {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  margin-top: 10px;
+}
+
+.admin-content-wrapper .sidenav .sidenav-header h2 {
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.admin-content-wrapper .sidenav .pages {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.admin-content-wrapper .sidenav .pages li {
+  padding: 20px 10px;
+}
+
+.admin-content-wrapper .sidenav .pages li:hover {
+  background: #93C0A4;
+}
+
