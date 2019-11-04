@@ -4,7 +4,12 @@
 
 
 
+@section('content')
 
+
+
+
+    @endsection
 
 
 

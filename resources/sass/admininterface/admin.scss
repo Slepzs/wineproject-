@@ -56,8 +56,8 @@ $comfortaa: 'Comfortaa', cursive;
 
 
 .admin-content-wrapper {
-    display: grid;
-    grid-template-columns: 15% 85%;
+  //  display: grid;
+  //  grid-template-columns: 15% 85%;
     .uk-offcanvas-bar {
         padding: 0px;
     }
@@ -89,5 +89,14 @@ $comfortaa: 'Comfortaa', cursive;
                 }
             }
         }
+
+
+    }
+
+    .content {
+        width: 100%;
+        height: calc(100vh - 64px);
+        background-image: url("/images/greek-vase.png");
+        background-repeat: repeat;
     }
 }

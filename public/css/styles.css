@@ -57,11 +57,6 @@
   color: white;
 }
 
-.admin-content-wrapper {
-  display: grid;
-  grid-template-columns: 15% 85%;
-}
-
 .admin-content-wrapper .uk-offcanvas-bar {
   padding: 0px;
 }
@@ -101,5 +96,12 @@
 
 .admin-content-wrapper .sidenav .pages li:hover {
   background: #93C0A4;
+}
+
+.admin-content-wrapper .content {
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-image: url("/images/greek-vase.png");
+  background-repeat: repeat;
 }
 

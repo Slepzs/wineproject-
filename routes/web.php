@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +20,28 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
+
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::group(['middleware'=>'IsAdmin'], function() {
+
+    Route::get('/admin', function(){
+
+        $user = Auth::user();
+
+        return view('admin.index', compact('user'));
+
+    });
+
+
+    Route::resource('admin/roles', 'AdminRolesController',['names'=> [
+
+        'index'=>'admin.roles.index',
+        'create'=>'admin.roles.create',
+        'edit'=>'admin.roles.edit'
+
+    ]]);
+
+});
+

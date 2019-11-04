@@ -47,7 +47,7 @@
 
 <div class="admin-content-wrapper">
 
-    <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
+    <div id="offcanvas-reveal" uk-offcanvas="mode: reveal">
         <div class="uk-offcanvas-bar sidenav">
         <div class="sidenav-header">
             <h2>Wine Club</h2>
@@ -55,12 +55,16 @@
         </div>
 
         <ul class="pages">
-            <a href="#"><li>Pages</li></a>
+            <a href="{{route('admin.roles.index')}}"><li>Roles</li></a>
             <a href="#"><li>Pages</li></a>
             <a href="#"><li>Pages</li></a>
             <a href="#"><li>Pages</li></a>
         </ul>
 
+
+        <div class="sidebar-footer">
+            <a href="{{route('logout')}}">Logout</a>
+        </div>
 
         </div>
     </div>
