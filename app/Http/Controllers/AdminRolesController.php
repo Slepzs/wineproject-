@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +18,9 @@ class AdminRolesController extends Controller
 
         $user = Auth::user();
 
-        return view('admin.roles.index', compact('user'));
+        $roles = Role::all();
+
+        return view('admin.roles.index', compact('user', 'roles'));
 
     }
 
@@ -28,6 +31,9 @@ class AdminRolesController extends Controller
      */
     public function create()
     {
+
+
+
         return view('admin.roles.create');
     }
 
@@ -39,7 +45,14 @@ class AdminRolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+    $role = new Role();
+    $input = $request->all();
+
+    $role->create($input);
+
+    return redirect('admin/roles/');
+    
     }
 
     /**

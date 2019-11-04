@@ -39,7 +39,9 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 
         'index'=>'admin.roles.index',
         'create'=>'admin.roles.create',
+        'store'=>'admin.roles.store',
         'edit'=>'admin.roles.edit'
+
 
     ]]);
 

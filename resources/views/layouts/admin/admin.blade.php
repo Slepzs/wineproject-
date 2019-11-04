@@ -27,7 +27,7 @@
     <div class="left-side-nav">
         <div class="profile-img">
             <img src="/images/jackblack.jpg" alt="">
-            <p>{{ $user->name }}</p>
+            <p>{{ Auth::user()->name }}</p>
             <span uk-icon="menu" uk-toggle="target: #offcanvas-reveal"></span>
         </div>
     </div>
