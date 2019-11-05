@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ddc7bdb3-1b16-48cb-af3e-0f19ada407ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminRolesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminRolesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/roles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/roles/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,6 +160,7 @@
       <workItem from="1572810596382" duration="5588000" />
       <workItem from="1572858528952" duration="4014000" />
       <workItem from="1572866323930" duration="1975000" />
+      <workItem from="1572866323930" duration="3947000" />
       <workItem from="1572870380124" duration="4125000" />
     </task>
     <servers />
