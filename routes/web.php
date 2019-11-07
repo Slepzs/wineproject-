@@ -13,13 +13,11 @@
 
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -37,11 +35,12 @@ Route::get('/kontakt', function() {
 
 Route::group(['middleware'=>'IsAdmin'], function() {
 
-    Route::get('/admin', function(){
 
-        return view('admin.index');
 
-    });
+    Route::get('admin/', [
+        'uses' => 'HomeController@admin',
+        'as' => 'admin'
+    ]);
 
 
     Route::resource('admin/roles', 'AdminRolesController',['names'=> [
@@ -49,7 +48,9 @@ Route::group(['middleware'=>'IsAdmin'], function() {
         'index'=>'admin.roles.index',
         'create'=>'admin.roles.create',
         'store'=>'admin.roles.store',
-        'edit'=>'admin.roles.edit'
+        'edit'=>'admin.roles.edit',
+        'update' => 'admin.roles.update',
+        'destroy' => 'admin.roles.destroy'
 
 
     ]]);

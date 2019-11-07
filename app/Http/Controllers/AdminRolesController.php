@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AdminRolesController extends Controller
 {
@@ -51,8 +52,12 @@ class AdminRolesController extends Controller
 
     $role->create($input);
 
+        Session::flash('flash_message', 'Well done!, You successfully created a role.');
+        Session::flash('flash_type', 'uk-alert-success');
+
     return redirect('admin/roles/');
-    
+
+
     }
 
     /**
@@ -72,11 +77,12 @@ class AdminRolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($role)
     {
-        //
 
-        return view('admin.roles.edit');
+        $roles = Role::findOrFail($role);
+
+        return view('admin.roles.edit', compact('roles'));
 
     }
 
@@ -87,9 +93,16 @@ class AdminRolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $role)
     {
-        //
+        $input = Role::findOrFail($role);
+
+        $input->update($request->all());
+
+        session_messages('You have successfully updated this role', 'uk-alert-success');
+
+        return redirect('admin/roles/');
+
     }
 
     /**
@@ -98,8 +111,14 @@ class AdminRolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($role)
     {
-        //
+
+        Role::findOrFail($role)->delete();
+
+        session_messages('Well Done, You have deleted successfully', 'uk-button-danger');
+
+        return redirect('/admin/roles/');
+
     }
 }

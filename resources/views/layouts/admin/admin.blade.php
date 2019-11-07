@@ -39,10 +39,11 @@
                     <span class="dropdown" uk-icon="icon: chevron-right"></span>
 
                 </li>
-
-                <ul id="roles"  class="hidden-menu">
-                    <li>Tadaa</li>
-                </ul>
+                @if(Request::is('admin/roles'))
+                    <ul>
+                        <li><a href="{{route('admin.roles.create')}}">Create Roles</a></li>
+                    </ul>
+                @endif
 
                 <a href="#"><li><span uk-icon="icon: users"></span> Users</li></a>
                 <a href="#"><li>Pages</li></a>
@@ -73,7 +74,20 @@
             </div>
         </div>
 
+
+
+
+
+
+
             <div class="content">
+                <!-- SESSION ALERTS -->
+                <div class="flash-message-container">
+                    <div class="flash-message alert {{ Session::get('flash_type') }}">
+                        <h3>{{ Session::get('flash_message') }}</h3>
+                    </div>
+                </div>
+
                 <div class="uk-container">
                     @yield('content')
                 </div>
@@ -95,17 +109,15 @@
 <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous">
-
-</script>
+    crossorigin="anonymous"></script>
 <script type="text/javascript">
 
 
-
-$(".pages li").hover(function() {
-    $element = $(this).attr('data');
-   console.log($element);
-});
+    $("document").ready(function(){
+        setTimeout(function(){
+            $('.flash-message').addClass('disappear');
+        }, 2000 ); // 5 secs
+    });
 
 </script>
 </body>
