@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/libs.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -40,6 +41,15 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        @if(Auth::check())
+
+                            @if($user->role->name == 'administrator')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin')}}">Admin</a>
+                            </li>
+                            @endif
+
+                        @endif
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -73,9 +83,9 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <div class="main-content uk-section uk-padding-remove-vertical">
             @yield('content')
-        </main>
+        </div>
     </div>
 </body>
 </html>

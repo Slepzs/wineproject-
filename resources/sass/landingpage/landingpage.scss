@@ -1,3 +1,193 @@
-h1 {
-    color: green;
+// FONTS & VARIABLE IMPORTS
+@import url('https://fonts.googleapis.com/css?family=Jomolhari|Montserrat:300,300i,400,400i,500,500i,700,700i&display=swap');
+@import "../variables";
+
+
+// BODY
+body {
+    font-family: $secondary-font;
+    font-weight: 300;
+    color: $dark;
+    //background-color: $secondary-color;
+}
+
+h1, h2 {
+    font-family: $primary-font;
+    color: $dark;
+}
+h3, h4, h5, h6 {
+    font-family: $secondary-font;
+    color: $dark;
+    margin: 0;
+}
+
+
+
+// SECTIONS
+// -- HERO --
+.hero-section {
+    background-color: $primary-color;
+    color: $white;
+
+    /*.hero-image {
+        background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 250px;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }*/
+    .hero-content {
+        padding: 20px 15px;
+
+        h1, h2 {
+            //color: $white;
+            //color: $primary-color;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        h2 {
+            font-size: 3.5rem;
+            margin: 0;
+        }
+    }
+
+}
+
+// -- INTRO --
+.intro-section {
+    p.hightlight {
+        color: $primary-color;
+    }
+
+    .wine-icon {
+        width: 50px;
+        height: 50px;
+        background-color: $dark;
+        border-radius: 50%;
+        margin: 20px 0;
+    }
+}
+
+// -- SEPERATOR --
+.seperator-section {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .image-bg {
+        background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;
+        height: 200px;
+    }
+}
+
+// -- SEPERATOR --
+.topwine-section {
+
+    p {
+        margin-top: 0;
+    }
+    span.wine-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $primary-color;
+    }
+
+    .wine-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .info-box {
+            .wine-type {
+
+                .type {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: $primary-color;
+                }
+            }
+        }
+        .rating-sum {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .rating {
+                text-align: center;
+                position: relative;
+                margin-bottom: 50px;
+            }
+            .rating:before {
+                content: "";
+                text-align: center;
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                border: 4px dotted $primary-color;
+                position: absolute;
+                top: -25px;
+                left: -23px;
+                right: 0;
+            }
+            .rating-btn {
+                text-align: center;
+                margin-top: 10px;
+
+                .rating-star {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: $primary-color;
+                }
+            }
+        }
+        .desc {
+            grid-column: span 2;
+            margin-top: 20px;
+        }
+        .wine-image {
+            grid-column: span 2;
+        }
+    }
+}
+
+// -- CTA --
+.cta-section {
+
+    .cta-bg {
+        /*background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;*/
+        background-color: $secondary-color;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .primary-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary-color;
+        border-radius: 50px;
+        margin-top: 20px;
+
+        a {
+            margin: 10px 50px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $white;
+        }
+    }
+
 }

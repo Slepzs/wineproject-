@@ -23,68 +23,101 @@
 
 
 <!-- Navigation -->
-<div class="top-nav">
-    <div class="left-side-nav">
-        <div class="profile-img">
-            <img src="/images/jackblack.jpg" alt="">
-            <p>{{ Auth::user()->name }}</p>
-            <span uk-icon="menu" uk-toggle="target: #offcanvas-reveal"></span>
-        </div>
-    </div>
-    <div class="right-side-nav">
-        <div class="site-links">
-            <ul>
-                <li><a href="/">LINK</a></li>
-                <li><a href="/">LINK</a></li>
-                <li><a href="/">LINK</a></li>
+<div class="admin-panel-wrapper">
+    <div class="admin-content-wrapper">
+
+        <div class="sidenav">
+            <div class="sidenav-header">
+                <h2>Wine Club</h2>
+                <button id="sidebarnav-toggle" uk-close></button>
+            </div>
+
+
+            <ul class="pages" >
+                <li data="roles"><a href="{{route('admin.roles.index')}}">
+                        <span uk-icon="icon: thumbnails"></span> Roles</a>
+                    <span class="dropdown" uk-icon="icon: chevron-right"></span>
+
+                </li>
+                @if(Request::is('admin/roles'))
+                    <ul>
+                        <li><a href="{{route('admin.roles.create')}}">Create Roles</a></li>
+                    </ul>
+                @endif
+
+                <a href="#"><li><span uk-icon="icon: users"></span> Users</li></a>
+                <a href="#"><li>Pages</li></a>
+                <a href="#"><li>Pages</li></a>
+                <a href="{{route('logout')}}"><li>Logout</li></a>
             </ul>
+
+
         </div>
+
+        <div class="nav-content-wrapper">
+
+        <div class="top-nav">
+            <div class="left-side-nav">
+                <div class="profile-img">
+                    <img src="/images/jackblack.jpg" alt="">
+                    <p><a href="/admin/">{{ Auth::user()->name }}</a></p>
+                </div>
+            </div>
+            <div class="right-side-nav">
+                <div class="site-links">
+                    <ul>
+                        <li><a href="/">LINK</a></li>
+                        <li><a href="/">LINK</a></li>
+                        <li><a href="/">LINK</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+            <div class="content">
+                <!-- SESSION ALERTS -->
+                <div class="flash-message-container">
+                    <div class="flash-message alert {{ Session::get('flash_type') }}">
+                        <h3>{{ Session::get('flash_message') }}</h3>
+                    </div>
+                </div>
+
+                <div class="uk-container">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
     </div>
+
 </div>
 
-
-</div>
-
-<div class="admin-content-wrapper">
-
-    <div id="offcanvas-reveal" uk-offcanvas="mode: reveal">
-        <div class="uk-offcanvas-bar sidenav">
-        <div class="sidenav-header">
-            <h2>Wine Club</h2>
-            <button id="sidebarnav-toggle" class="uk-offcanvas-close" uk-close></button>
-        </div>
-
-        <ul class="pages">
-            <a href="{{route('admin.roles.index')}}"><li>Roles</li></a>
-            <a href="#"><li>Pages</li></a>
-            <a href="#"><li>Pages</li></a>
-            <a href="#"><li>Pages</li></a>
-        </ul>
-
-
-        <div class="sidebar-footer">
-            <a href="{{route('logout')}}">Logout</a>
-        </div>
-
-        </div>
-    </div>
-
-    <div class="content">
-        @yield('content')
-    </div>
-</div>
 
 
 <script src="{{asset('js/libs.js')}}"></script>
 <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous">
-
-</script>
+    crossorigin="anonymous"></script>
 <script type="text/javascript">
 
 
+    $("document").ready(function(){
+        setTimeout(function(){
+            $('.flash-message').addClass('disappear');
+        }, 2000 ); // 5 secs
+    });
 
 </script>
 </body>
