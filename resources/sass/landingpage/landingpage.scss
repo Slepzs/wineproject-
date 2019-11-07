@@ -1,3 +1,87 @@
-h1 {
-    color: green;
+// FONTS & VARIABLE IMPORTS
+@import url('https://fonts.googleapis.com/css?family=Jomolhari|Montserrat:300,300i,400,400i,500,500i,700,700i&display=swap');
+@import "../variables";
+
+
+// BODY
+body {
+    font-family: $secondary-font;
+    font-weight: 300;
+    color: $dark;
+    //background-color: $secondary-color;
+}
+
+h1, h2 {
+    font-family: $primary-font;
+    color: $dark;
+    margin: 0;
+}
+h3, h4, h5, h6 {
+    font-family: $secondary-font;
+    color: $dark;
+    margin: 0;
+}
+
+
+
+// SECTIONS
+// -- HERO --
+.hero-section {
+    background-color: $primary-color;
+    color: $white;
+
+    /*.hero-image {
+        background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 250px;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }*/
+    .hero-content {
+        padding: 20px 15px;
+
+        h1, h2 {
+            //color: $white;
+            //color: $primary-color;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        h2 {
+            font-size: 3.5rem;
+        }
+    }
+
+}
+
+// -- INTRO --
+.intro-section {
+    p.hightlight {
+        color: $primary-color;
+    }
+
+    .wine-icon {
+        width: 50px;
+        height: 50px;
+        background-color: $dark;
+        border-radius: 50%;
+        margin: 20px 0;
+    }
+}
+
+// -- SEPERATOR --
+.seperator-section {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .image-bg {
+        background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;
+        height: 200px;
+    }
 }

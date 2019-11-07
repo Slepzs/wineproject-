@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/libs.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -73,9 +74,9 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <div class="main-content uk-section uk-padding-remove-vertical">
             @yield('content')
-        </main>
+        </div>
     </div>
 </body>
 </html>
