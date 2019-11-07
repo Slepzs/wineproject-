@@ -41,6 +41,15 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        @if(Auth::check())
+
+                            @if($user->role->name == 'administrator')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin')}}">Admin</a>
+                            </li>
+                            @endif
+
+                        @endif
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

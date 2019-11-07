@@ -4,7 +4,7 @@
 }
 
 .top-nav {
-  background-color: #484563;
+  background-color: #d0c5b1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 64px;
@@ -73,7 +73,7 @@
 }
 
 .admin-content-wrapper .sidenav {
-  background: #2b293a;
+  background: #d0c5b1;
   justify-items: center;
   -webkit-box-align: center;
           align-items: center;
@@ -146,6 +146,17 @@
 .admin-forms form {
   width: 800px;
   margin: 0 auto;
+}
+
+.flash-message-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.disappear {
+  opacity: 0;
+  -webkit-transition: 2s all ease-out;
+  transition: 2s all ease-out;
 }
 
 body {
