@@ -2,6 +2,7 @@
 
 
 
+
 @section('content')
 
 <table class="uk-table uk-table-responsive uk-table-divider">

@@ -24,13 +24,22 @@ Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
+
+// Opret ny routes her
+// Eksempel til kontakt os siden
+Route::get('/kontakt', function() {
+
+
+    return view('kontakt');
+
+});
+
+
 Route::group(['middleware'=>'IsAdmin'], function() {
 
     Route::get('/admin', function(){
 
-        $user = Auth::user();
-
-        return view('admin.index', compact('user'));
+        return view('admin.index');
 
     });
 
