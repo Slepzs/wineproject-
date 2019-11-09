@@ -18,10 +18,10 @@ $comfortaa: 'Comfortaa', cursive;
     height: 64px;
     .left-side-nav {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         .profile-img {
             display: grid;
-            grid-template-columns: 50px 150px 50px;
+            grid-template-columns: 50px 200px 50px;
             justify-items: center;
             align-items: center;
             margin-left: 10px;

@@ -19,13 +19,14 @@ mix.js('resources/js/app.js', 'public/js')
 
 
  mix.styles([
-    'resources/sass/framework/uikit.css'
-
+    'resources/sass/framework/uikit.css',
+     'resources/sass/framework/dropzone.css'
  ], 'public/css/libs.css');
 
 mix.scripts([
     'resources/js/framework/uikit.js',
-    'resources/js/framework/uikit-icons.js'
+    'resources/js/framework/uikit-icons.js',
+    'resources/js/framework/dropzone.js'
 
 ], 'public/js/libs.js');
 
