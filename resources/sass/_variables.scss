@@ -2,10 +2,12 @@
 $body-bg: #f8fafc;
 
 // Typography
-$primary-font: 'Jomolhari', serif;
-$secondary-font: 'Montserrat', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$primary-font: 'Montserrat', sans-serif;
+//$secondary-font: 'Jomolhari', serif;
+$font-size-base: 0.8rem;
+$line-height-base: 1.8;
+$font-weight-base: 400;
+$letter-spacing-base: 0.8px;
 
 
 
@@ -15,4 +17,5 @@ $primary-color: #d0c5b1;
 $secondary-color: #F6F4F0;
 $dark: #3B3B3D;
 $light-grey: #EEEEEE;
+$black: #000000;
 $white: #FFFFFF;

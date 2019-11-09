@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/libs.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -86,6 +87,8 @@
         <div class="main-content uk-section uk-padding-remove-vertical">
             @yield('content')
         </div>
+
+        @extends('layouts.assets.footer')
     </div>
 </body>
 </html>

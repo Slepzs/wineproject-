@@ -159,56 +159,101 @@
   transition: 2s all ease-out;
 }
 
+.uk-container--expand {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.uk-container--padding {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  letter-spacing: 0.8px;
   color: #3B3B3D;
+  background-color: #fcfaf9;
 }
 
-h1,
-h2 {
-  font-family: "Jomolhari", serif;
+h1 {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.8px;
   color: #3B3B3D;
+  font-weight: 500;
+  margin: 0;
 }
 
+h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
   color: #3B3B3D;
+  font-weight: 500;
+  text-transform: uppercase;
   margin: 0;
+}
+
+.primary-btn {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: #d0c5b1;
+  border-radius: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #EEEEEE;
+}
+
+.primary-btn a {
+  margin: 10px 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.primary-btn a:hover {
+  text-decoration: none;
 }
 
 .hero-section {
-  background-color: #d0c5b1;
-  color: #FFFFFF;
-  /*.hero-image {
-      background-image: url("/images/wineclub-hero.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 250px;
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-  }*/
+  position: relative;
+  height: 472px;
 }
 
 .hero-section .hero-content {
-  padding: 20px 15px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+}
+
+.hero-section .hero-content h1,
+.hero-section .hero-content h2 {
+  font-size: 2.8rem;
+  color: #9b3826;
 }
 
 .hero-section .hero-content h1 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.hero-section .hero-content h2 {
-  font-size: 3.5rem;
-  margin: 0;
+  font-weight: 700;
 }
 
 .intro-section p.hightlight {
@@ -220,7 +265,25 @@ h6 {
   height: 50px;
   background-color: #3B3B3D;
   border-radius: 50%;
-  margin: 20px 0;
+  margin: 10px 0;
+}
+
+.intro-section .main-intro-panel {
+  margin-bottom: 15px;
+}
+
+.intro-section .sub-intro-panel {
+  background-color: #FFFFFF;
+  padding-top: 15px;
+}
+
+.intro-section .intro-panel {
+  padding: 0px 15px;
+  margin-bottom: 30px;
+}
+
+.intro-section .intro-panel p {
+  margin-top: 10px;
 }
 
 .seperator-section {
@@ -244,19 +307,23 @@ h6 {
   color: #d0c5b1;
 }
 
-.topwine-section .wine-info {
+.topwine-section .wine-panel {
+  margin-top: 20px;
+}
+
+.topwine-section .wine-panel .wine-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.topwine-section .wine-info .info-box .wine-type .type {
+.topwine-section .wine-panel .wine-info .info-box .wine-type .type {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background-color: #d0c5b1;
 }
 
-.topwine-section .wine-info .rating-sum {
+.topwine-section .wine-panel .wine-info .rating-sum {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -268,13 +335,13 @@ h6 {
           align-items: center;
 }
 
-.topwine-section .wine-info .rating-sum .rating {
+.topwine-section .wine-panel .wine-info .rating-sum .rating {
   text-align: center;
   position: relative;
   margin-bottom: 50px;
 }
 
-.topwine-section .wine-info .rating-sum .rating:before {
+.topwine-section .wine-panel .wine-info .rating-sum .rating:before {
   content: "";
   text-align: center;
   width: 75px;
@@ -287,12 +354,12 @@ h6 {
   right: 0;
 }
 
-.topwine-section .wine-info .rating-sum .rating-btn {
+.topwine-section .wine-panel .wine-info .rating-sum .rating-btn {
   text-align: center;
   margin-top: 10px;
 }
 
-.topwine-section .wine-info .rating-sum .rating-btn .rating-star {
+.topwine-section .wine-panel .wine-info .rating-sum .rating-btn .rating-star {
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -300,13 +367,9 @@ h6 {
   background-color: #d0c5b1;
 }
 
-.topwine-section .wine-info .desc {
+.topwine-section .wine-panel .wine-info .desc {
   grid-column: span 2;
   margin-top: 20px;
-}
-
-.topwine-section .wine-info .wine-image {
-  grid-column: span 2;
 }
 
 .cta-section .cta-bg {
@@ -323,27 +386,77 @@ h6 {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
+  text-align: center;
 }
 
-.cta-section .primary-btn {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  background-color: #d0c5b1;
-  border-radius: 50px;
+.event-section .uk-slider {
   margin-top: 20px;
 }
 
-.cta-section .primary-btn a {
-  margin: 10px 50px;
-  text-transform: uppercase;
-  font-weight: 700;
+ul.uk-nav-default li.link-highlight {
+  font-weight: 500;
+}
+
+ul.uk-nav-default a {
+  padding: 0;
+  color: #d0c5b1;
+  cursor: pointer;
+}
+
+ul.uk-nav-default a:hover {
   color: #FFFFFF;
+}
+
+h4 {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  color: #FFFFFF;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+.footer {
+  color: #FFFFFF;
+}
+
+.footer .footer-panel {
+  background-color: #3B3B3D;
+}
+
+.footer .footer-panel .contact {
+  margin: 20px 0 0;
+}
+
+.footer .footer-panel .info {
+  margin: 0 0 20px;
+}
+
+.footer .footer-panel .assortment:before,
+.footer .footer-panel .assortment:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background: #d0c5b1;
+  margin: 30px 0;
+}
+
+.footer .footer-sub-panel {
+  background-color: #000000;
+  text-align: center;
+}
+
+.footer .footer-sub-panel .utility-panel {
+  margin: 20px 0 0;
 }
 
