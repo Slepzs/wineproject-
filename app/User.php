@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'last_name', 'email', 'password', 'role_id', 'is_active', 'photo_id'
+        'name', 'last_name', 'email', 'password', 'role_id', 'is_active', 'photo_id', 'bio', 'nickname', 'photo_id'
     ];
 
     /**
@@ -46,11 +46,13 @@ class User extends Authenticatable
 
     }
 
+
     public function photo() {
 
         return $this->belongsTo('App\Photo');
 
     }
+
 
     public function CheckAdmin(){
 
@@ -64,6 +66,8 @@ class User extends Authenticatable
     {
         return ! is_null($this->user());
     }
+
+
 
 
 }

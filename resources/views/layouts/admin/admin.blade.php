@@ -45,8 +45,13 @@
                     </ul>
                 @endif
 
-                <a href="#"><li><span uk-icon="icon: users"></span> Users</li></a>
-                <a href="#"><li>Pages</li></a>
+                <a href="{{route('admin.users.index')}}"><li><span uk-icon="icon: users"></span> Users</li></a>
+                @if(Request::is('admin/users'))
+                    <ul>
+                        <li><a href="{{route('admin.users.create')}}">Create Users</a></li>
+                    </ul>
+                @endif
+                <a href="{{route('profile.index') }}"><li>User Profile</li></a>
                 <a href="#"><li>Pages</li></a>
                 <a href="{{route('logout')}}"><li>Logout</li></a>
             </ul>
@@ -59,8 +64,8 @@
         <div class="top-nav">
             <div class="left-side-nav">
                 <div class="profile-img">
-                    <img src="/images/jackblack.jpg" alt="">
-                    <p><a href="/admin/">{{ Auth::user()->name }}</a></p>
+                    <img src="{{Auth::user()->photo->file ?? ''}}" alt="">
+                    <p><a href="/admin/">{{ nickname() }}</a></p>
                 </div>
             </div>
             <div class="right-side-nav">

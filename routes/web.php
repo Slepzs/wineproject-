@@ -23,6 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
+// If banned
+
+
+
 // Opret ny routes her
 // Eksempel til kontakt os siden
 Route::get('/kontakt', function() {
@@ -32,7 +36,7 @@ Route::get('/kontakt', function() {
 
 });
 
-
+/* Admin Routes */
 Route::group(['middleware'=>'IsAdmin'], function() {
 
 
@@ -41,7 +45,6 @@ Route::group(['middleware'=>'IsAdmin'], function() {
         'uses' => 'HomeController@admin',
         'as' => 'admin'
     ]);
-
 
     Route::resource('admin/roles', 'AdminRolesController',['names'=> [
 
@@ -52,8 +55,33 @@ Route::group(['middleware'=>'IsAdmin'], function() {
         'update' => 'admin.roles.update',
         'destroy' => 'admin.roles.destroy'
 
+    ]]);
+
+    Route::resource('admin/users', 'UsersController',['names'=> [
+
+        'index'=>'admin.users.index',
+        'create'=>'admin.users.create',
+        'store'=>'admin.users.store',
+        'edit'=>'admin.users.edit',
+        'update' => 'admin.users.update',
+        'destroy' => 'admin.users.destroy'
 
     ]]);
 
 });
+/* User Routes */
+Route::group(['middleware'=>'auth'], function() {
 
+    Route::resource('profile', 'UserProfileController', ['names' => [
+
+        'index'=>'profile.index',
+        'create'=>'profile.create',
+        'store'=>'profile.store',
+        'edit'=>'profile.edit',
+        'update' => 'profile.update',
+        'destroy' => 'profile.destroy'
+
+    ]]);
+
+
+});
