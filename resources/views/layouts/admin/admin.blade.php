@@ -51,8 +51,14 @@
                         <li><a href="{{route('admin.users.create')}}">Create Users</a></li>
                     </ul>
                 @endif
+                <a href="{{route('admin.media.index')}}"><li><span uk-icon="icon: image"></span> Media</li></a>
+                @if(Request::is('admin/media'))
+                    <ul>
+                        <li><a href="{{route('admin.media.create')}}">Upload Image</a></li>
+                    </ul>
+                @endif
                 <a href="{{route('profile.index') }}"><li>User Profile</li></a>
-                <a href="#"><li>Pages</li></a>
+
                 <a href="{{route('logout')}}"><li>Logout</li></a>
             </ul>
 

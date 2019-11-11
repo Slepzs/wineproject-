@@ -19,6 +19,7 @@
                 @endforeach
 
             @endif
+        <p><a href="profile/password_update">Password update</a></p>
 
         <form method="POST" action="{{route('profile.update', $user->id ) }}"  enctype="multipart/form-data">
             <fieldset class="uk-fieldset">
@@ -44,10 +45,6 @@
 
                 <div class="uk-margin">
                     <input class="uk-input" type="text" placeholder="email" name="email" value="{{$user->email}}">
-                </div>
-
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="password" name="password" >
                 </div>
 
                 <div class="uk-margin">

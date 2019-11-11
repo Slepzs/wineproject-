@@ -157,3 +157,22 @@ $comfortaa: 'Comfortaa', cursive;
     opacity: 0;
     transition: 2s all ease-out;
 }
+
+
+.media-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .media-card {
+        background: #e2d5d5;
+        padding: 10px;
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .media-card-image {
+            width: 100px;
+        }
+        .media-info {
+            text-align: center;
+        }
+    }
+}

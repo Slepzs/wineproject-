@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
                 'name' => 'Tobias Heide',
                 'last_name' => 'Jensen',
                 'email' => 'slepzs@gmail.com',
-                'password' => bcrypt('superpassword123')
+                'password' => bcrypt('Px4z2n5h6s1.')
             ], [
                 'role_id' => 1,
                 'is_active' => 1,
