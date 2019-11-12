@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\updatePassword;
 use App\Http\Requests\UpdateUserProfile;
 use App\Photo;
 use Illuminate\Http\Request;
@@ -24,18 +25,22 @@ class UserProfileController extends Controller
     }
 
 
-    public function update(UpdateUserProfile $request, $id)
+    public function update(Request $request, $id)
     {
 
         $user = Auth::user()->findOrFail($id);
 
         if(trim($request->password) == '') {
 
-            $input = $request->except('passsword');
+
+            $input = $request->except('password');
+
+
 
         } else {
 
-            $input = $request->validated();
+
+            $input = $request->all();
 
             $input['password'] = bcrypt($request->password);
 
@@ -55,12 +60,33 @@ class UserProfileController extends Controller
 
         $user->update($input);
 
-        $errors = $input->errors();
-
-
         session_messages('Profile updated', 'uk-alert-success');
 
-        return redirect('profile/', compact('errors'));
+        return redirect('profile/');
+    }
+
+
+    public function show() {
+
+        $user = Auth::user();
+
+        return view('profile.password_update', compact('user'));
+    }
+
+
+    public function password(UpdatePassword $request, $id) {
+
+        $user = Auth::user()->findOrFail($id);
+
+        $input = $request->all();
+
+        $input['password'] = bcrypt($request->password);
+
+        $user->update($input);
+
+        session_messages('Password updated', 'uk-alert-success');
+
+        return redirect('profile/');
     }
 
 }

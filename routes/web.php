@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('index');
 
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -68,20 +67,27 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 
     ]]);
 
-});
-/* User Routes */
-Route::group(['middleware'=>'auth'], function() {
+    Route::resource('admin/media', 'MediaController',['names'=> [
 
-    Route::resource('profile', 'UserProfileController', ['names' => [
-
-        'index'=>'profile.index',
-        'create'=>'profile.create',
-        'store'=>'profile.store',
-        'edit'=>'profile.edit',
-        'update' => 'profile.update',
-        'destroy' => 'profile.destroy'
+        'index'=>'admin.media.index',
+        'create'=>'admin.media.create',
+        'store'=>'admin.media.store',
+        'edit'=>'admin.media.edit',
+        'update' => 'admin.media.update',
+        'destroy' => 'admin.media.destroy'
 
     ]]);
 
-
 });
+/* User Routes */
+Route::group(['middleware'=>'auth'], function() {
+    Route::get('profile/password_update', 'UserProfileController@show');
+    Route::put('profile/password/{password}', 'UserProfileController@password')->name('profile.password');
+    Route::resource('profile', 'UserProfileController', ['names' => [
+        'index'=>'profile.index',
+        'update' => 'profile.update',
+        'show' => 'password_update'
+    ]]);
+});
+
+Route::get('/', 'HomeController@index')->name('index');

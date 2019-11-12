@@ -1,0 +1,18 @@
+@media only screen and (max-width: 415px) {
+
+    .media-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        .media-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .media-card-image {
+                width: 100px;
+            }
+            .media-info {
+                text-align: center;
+            }
+        }
+    }
+
+}
