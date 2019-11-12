@@ -26,8 +26,8 @@ class UserTableSeeder extends Seeder
                 'is_active' => 1,
                 'name' => 'Signe',
                 'last_name' => 'Frederiksen',
-                'email' => 'signe@etellerandetemail',
-                'password' => bcrypt('superpassword123')
+                'email' => 'signe_frederiksen@hotmail.dk',
+                'password' => bcrypt('biine123')
             ]
         ];
 

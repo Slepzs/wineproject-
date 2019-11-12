@@ -1,10 +1,22 @@
-// FONTS & VARIABLE IMPORTS
-@import url('https://fonts.googleapis.com/css?family=Jomolhari|Montserrat:300,300i,400,400i,500,500i,700,700i&display=swap');
-@import "../variables";
 
 
-
-// UIkit COMPONENS MODYFIED
+// BASE
+h4 {
+    font-family: $primary-font;
+    line-height: 1.4;
+    letter-spacing: $letter-spacing-base;
+    color: $white;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}
+p {
+    margin: 0;
+    font-size: $font-size-base;
+}
+a {
+    color: $white;
+}
 // -- uk-nav, uk-nav-default --
 ul.uk-nav-default {
 
@@ -25,38 +37,17 @@ ul.uk-nav-default {
 
 
 
-// BASE
-h4 {
-    font-family: $primary-font;
-    line-height: 1.4;
-    letter-spacing: $letter-spacing-base;
-    color: $white;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-}
-p {
-    margin: 0;
-}
-a {
-    color: $white;
-}
-
-
-
 // FOOTER
 .footer {
+    //margin-top: 30px;
+    border-top: 2px solid $primary-color;
     color: $white;
 
     .footer-panel {
         background-color: $dark;
+        //padding-top: 40px;
+        //padding-bottom: 40px;
 
-        .contact {
-            margin: 20px 0 0;
-        }
-        .info {
-            margin: 0 0 20px;
-        }
         .assortment:before, .assortment:after {
             content: "";
             display: inline-block;
@@ -65,13 +56,129 @@ a {
             background: $primary-color;
             margin: 30px 0;
         }
+        .info:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background: $primary-color;
+            margin: 30px 0;
+        }
     }
+    .footer-panel > .uk-container {
+        padding-bottom: 50px;
+    }
+
     .footer-sub-panel {
-        background-color: $black;
+        background-color: $primary-color;
+        height: 10px;
+        /*border-top: 2px solid $primary-color;
         text-align: center;
+        padding-top: 40px;
 
         .utility-panel {
-            margin: 20px 0 0;
+
+            img.logo {
+                width: 20%;
+                margin-bottom: 20px;
+            }
+            ul > li {
+                display: inline-block;
+            }
+            ul > li:first-child a:after {
+                content: "";
+                border-left: 2px solid $primary-color;
+                margin: 0 20px;
+            }
+
+        }*/
+    }
+}
+
+
+
+// MEDIA QUERIES
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+    .footer {
+
+        .footer-panel > .uk-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-column-gap: 10em;
+
+            .contact {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .assortment {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .assortment:before, .assortment:after {
+                display: none;
+            }
+            .info {
+                grid-column: 1;
+                grid-row: 2;
+            }
+            .info:after {
+                display: none;
+            }
+            .policy {
+                grid-column: 2;
+                grid-row: 2;
+            }
         }
+        /*.footer-sub-panel {
+            .utility-panel {
+
+                img.logo {
+                    width: 10%;
+                }
+
+            }
+        }*/
+    }
+}
+
+// LARGE - DESKTOP: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+    .footer {
+
+        .footer-panel > .uk-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 5em;
+
+            .contact {
+                grid-column: 1;
+            }
+            .assortment {
+                grid-column: 2;
+            }
+            .assortment:before, .assortment:after {
+                display: none;
+            }
+            .info {
+                grid-column: 3;
+                grid-row: 1;
+            }
+            .info:before {
+                display: none;
+            }
+        }
+        .footer-sub-panel {
+            .utility-panel {
+
+                img.logo {
+                    width: 10%;
+                }
+
+            }
+        }
+
     }
 }
