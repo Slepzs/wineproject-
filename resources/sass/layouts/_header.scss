@@ -1,0 +1,81 @@
+
+// HEADER
+.main-nav {
+    background-color: $white;
+
+    .uk-navbar-container {
+        background-color: $white;
+
+        .uk-navbar-left {
+
+            .uk-navbar-toggle {
+                svg {
+                    color: $dark;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            .uk-offcanvas-bar {
+                background-color: $primary-color;
+
+                .uk-offcanvas-close {
+                    svg {
+                        width: 20px;
+                        height: 20px;
+
+                        &:hover {
+                            color: $dark;
+                        }
+                    }
+                }
+
+                .uk-nav {
+                    margin-top: 30px;
+                    //font-family: $primary-font;
+                    font-size: 1.4rem;
+
+                    a:hover {
+                        color: $dark;
+                    }
+                    .uk-active {
+                        text-transform: uppercase;
+                        font-weight: 700;
+                    }
+                    .uk-active > .uk-nav-sub li {
+                        text-transform: capitalize;
+                        font-weight: 400;
+                    }
+                    .uk-nav-divider {
+                        border-top: 2px solid $white;
+                    }
+
+                }
+
+            }
+
+        }
+        .uk-navbar-right {
+
+            .uk-icon {
+                color: $dark;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                .user-profile {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50px;
+                }
+
+            }
+
+        }
+    }
+
+}
+

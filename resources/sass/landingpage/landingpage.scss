@@ -1,80 +1,72 @@
 // FONTS & VARIABLE IMPORTS
-@import url('https://fonts.googleapis.com/css?family=Jomolhari|Montserrat:300,300i,400,400i,500,500i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Source+Sans+Pro:700&display=swap');
 @import "../variables";
-
-
-
-// UIkit COMPONENS MODYFIED
-// -- uk-container --
-.uk-container {
-
-    &--expand{
-        padding-left: 0;
-        padding-right: 0;
-    }
-    &--padding {
-        padding-top: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-bottom: 20px;
-        //padding: 0 15px 20px 30px;
-    }
-}
 
 
 
 // BODY
 // -- BASE --
 body {
-    font-family: $primary-font;
+    font-family: $secondary-font;
     font-weight: $font-weight-base;
     font-size: $font-size-base;
     line-height: $line-height-base;
     letter-spacing: $letter-spacing-base;
     color: $dark;
-    background-color: #fcfaf9;
+    background-color: $secondary-color;
 }
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: $primary-font;
-    line-height: 1.2;
-    letter-spacing: $letter-spacing-base;
-    color: $dark;
-    font-weight: 500;
-    margin: 0;
-}
-h2, h3, h4, h5, h6 {
-    font-family: $primary-font;
-    line-height: 1.4;
-    letter-spacing: $letter-spacing-base;
-    color: $dark;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: normal;
     text-transform: uppercase;
-    margin: 0;
+    color: $dark;
+    margin-top: 0;
+}
+h3, h4, h5, h6 {
+    font-size: 1.4rem;
 }
 .primary-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: $primary-color;
-    border-radius: 50px;
+    align-items: start;
+    text-align: center;
     margin-top: 20px;
     cursor: pointer;
 
-    &:hover {
-        background-color: $light-grey;
-    }
-
     a {
-        margin: 10px 50px;
+        //margin: 10px 50px;
         text-transform: uppercase;
         font-weight: 700;
         color: $white;
+        background-color: $primary-color;
+        border-radius: 50px;
+        padding: 10px 50px;
 
         &:hover {
+            background-color: $light-grey;
             text-decoration: none;
         }
     }
+    &--center {
+        align-items: center;
+    }
+}
+// -- uk-container --
+.uk-container {
+    max-width: 1400px;
+
+    &--expand{
+        padding: 50px 30px 70px 30px;
+        //padding: 30px 30px 70px 30px; larger screen
+    }
+    &--padding {
+        padding: 50px 30px 50px 30px;
+        //padding: 20px 30px 20px 30px;
+    }
+
 }
 
 
@@ -83,28 +75,38 @@ h2, h3, h4, h5, h6 {
 // -- HERO --
 .hero-section {
     position: relative;
-    height: 472px;
+    height: 412px;
 
+    .hero-image {
+        background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;
+        height: 220px;
+
+    }
     .hero-content {
         position: absolute;
         bottom: 0;
-        margin-bottom: 50px;
+        //margin-bottom: 50px;
 
         h1, h2 {
-            font-size: 2.8rem;
-            color: #9b3826;
+            font-size: 3rem;
+            line-height: 1;
+            color: $primary-color;
+            margin: 0;
         }
-        h1 {
-            font-weight: 700;
+        h2 {
+            margin-bottom: 30px;
         }
     }
 
 }
 // -- INTRO --
 .intro-section {
+    background-color: $white;
 
     p.hightlight {
         color: $primary-color;
+        font-weight: 700;
     }
 
     .wine-icon {
@@ -116,14 +118,25 @@ h2, h3, h4, h5, h6 {
     }
 
     .main-intro-panel {
-        margin-bottom: 15px;
+        padding-bottom: 0px;
+
+        .intro-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            h2 {
+                grid-column: span 2;
+            }
+            p.hightlight {
+                grid-column: span 2;
+            }
+        }
     }
-    .sub-intro-panel {
+    /*.sub-intro-panel {
         background-color: $white;
-        padding-top: 15px;
-    }
+    }*/
     .intro-panel {
-        padding: 0px 15px;
+        //padding: 0 15px;
         margin-bottom: 30px;
 
         p {
@@ -133,17 +146,18 @@ h2, h3, h4, h5, h6 {
 }
 // -- SEPERATOR --
 .seperator-section {
-    display: grid;
-    grid-template-rows: 1fr;
+    //display: grid;
+    //grid-template-rows: 1fr;
 
     .image-bg {
         background-image: url("/images/wineclub-hero.jpg");
         background-size: cover;
-        height: 200px;
+        height: 198px; //220
     }
 }
-// -- SEPERATOR --
+// -- MONTHLY: TOP WINE --
 .topwine-section {
+    //margin: 30px 0;
 
     p {
         margin-top: 0;
@@ -155,15 +169,19 @@ h2, h3, h4, h5, h6 {
     }
 
     .wine-panel {
-        margin-top: 20px;
+        padding-bottom: 0;
+        //margin-top: 20px;
 
         .wine-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
 
             .info-box {
-                .wine-type {
+                grid-column: 1;
+                grid-row: 1;
 
+                .wine-type {
                     .type {
                         width: 15px;
                         height: 15px;
@@ -172,71 +190,335 @@ h2, h3, h4, h5, h6 {
                     }
                 }
             }
-            .rating-sum {
-                display: flex;
-                flex-direction: column;
+            .rating {
+                grid-column: 2;
+                grid-row: 1;
                 justify-content: center;
                 align-items: center;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
 
-                .rating {
+                .rating-sum {
+                    grid-row: 1;
                     text-align: center;
                     position: relative;
-                    margin-bottom: 50px;
-                }
-                .rating:before {
-                    content: "";
-                    text-align: center;
-                    width: 75px;
-                    height: 75px;
-                    border-radius: 50%;
-                    border: 4px dotted $primary-color;
-                    position: absolute;
-                    top: -25px;
-                    left: -23px;
-                    right: 0;
-                }
-                .rating-btn {
-                    text-align: center;
-                    margin-top: 10px;
+                    font-weight: 700;
 
-                    .rating-star {
-                        display: inline-block;
-                        width: 15px;
-                        height: 15px;
+                    &:after {
+                        content: "";
+                        width: 75px;
+                        height: 75px;
                         border-radius: 50%;
-                        background-color: $primary-color;
+                        border: 4px dotted $primary-color;
+                        position: absolute;
+                        top: -26px;
+                        left: 19px;
                     }
                 }
+                .rating-wine {
+                    grid-row: 2;
+                }
             }
+
+            .rating-btn {
+                text-align: center;
+                margin-top: 10px;
+
+                .rating-star {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: $primary-color;
+                }
+            }
+
             .desc {
                 grid-column: span 2;
-                margin-top: 20px;
+                grid-row: 2;
+                margin: 20px 0;
             }
         }
     }
-    .wine-image {
-
+    .wine-image-panel {
+        display: flex;
+        align-items: center;
     }
 }
 // -- CTA --
 .cta-section {
+    background-color: $white;
 
     .cta-bg {
-        /*background-image: url("/images/wineclub-hero.jpg");
-        background-size: cover;*/
-        background-color: $secondary-color;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-align: center;
+
+        .primary-btn {
+            margin-top: 0;
+        }
     }
 }
 // -- EVENTS --
 .event-section {
-
     .uk-slider {
         margin-top: 20px;
     }
 }
+
+
+
+// MEDIA QUERIES
+// XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
+@media (max-width: 320px) {
+
+    //BASE
+    .primary-btn {
+        a {
+            padding: 10px 30px;
+        }
+    }
+
+    // SECTIONS
+    // -- HERO --
+    .hero-section {
+        height: 431px;
+
+        .hero-content {
+            h1, h2 {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+}
+
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    // SECTIONS
+    // -- HERO --
+    .hero-section {
+        height: 558px;
+
+        .hero-image {
+            height: 350px;
+        }
+        .hero-content {
+            h1, h2 {
+                font-size: 5rem;
+            }
+            p {
+                width: 50%;
+            }
+        }
+
+    }
+    // -- SEPERATOR --
+    /*.seperator-section {
+        .image-bg {
+            height: 350px;
+        }
+    }*/
+    // -- MONTHLY: TOP WINE --
+    .topwine-section {
+        .wine-panel {
+            .wine-info {
+                .rating {
+                    grid-row: span 2;
+
+                    .rating-sum {
+                        &:after {
+                            content: "";
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 50%;
+                            border: 6px dotted $primary-color;
+                            position: absolute;
+                            top: -60px;
+                            left: -17px;
+                        }
+                    }
+                }
+                .desc {
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+            }
+        }
+    }
+
+}
+
+// LARGE - DESKTOP: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+
+    // BODY
+    // -- BASE --
+    body {
+        font-size: 1rem; //1.12
+    }
+    // -- uk-container --
+    .uk-container {
+        &--expand{
+            padding: 100px 50px 63px 50px;
+            //padding: 100px 0px 0px 132.5px;
+        }
+        &--padding {
+            padding: 100px 50px 100px 50px;
+        }
+    }
+
+    // SECTIONS
+    // -- HERO --
+    .hero-section {
+        height: 684px;
+
+        .hero-image {
+            height: 450px;
+        }
+        .hero-content {
+            h1, h2 {
+                font-size: 7rem;
+            }
+        }
+
+    }
+    // -- INTRO --
+    .intro-section {
+        .sub-intro-panel > .uk-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 2em;
+
+            .intro-panel {
+                &--one {
+                    grid-column: 1;
+                }
+                &--two {
+                    grid-column: 2;
+                }
+                &--three {
+                    grid-column: 3;
+                }
+            }
+        }
+    }
+    // -- MONTHLY: TOP WINE --
+    /*.topwine-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5em;
+
+        .wine-panel {
+            grid-column: 1;
+        }
+        .wine-image-panel {
+            grid-column: 2;
+        }
+    }*/
+    // -- MONTHLY: TOP WINE --
+    .topwine-section {
+        //display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .wine-panel {
+            grid-column: 1;
+
+            .wine-info {
+                .rating {
+                    grid-column: 2;
+                    grid-row: 1;
+                    grid-row-gap: 2em;
+
+                    .rating-sum {
+                        &:after {
+                            content: "";
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 50%;
+                            border: 6px dotted $primary-color;
+                            position: absolute;
+                            top: -60px;
+                            left: -5px;
+                        }
+                    }
+                }
+                .desc {
+                    grid-column: span 2;
+                    grid-row: 2;
+                }
+            }
+        }
+        .wine-image-panel {
+            grid-column: 2;
+        }
+    }
+
+}
+
+// XL-LARGE - DESKTOP: This applies from 1440px & onwards
+@media (min-width: 1440px) {
+
+    // BODY
+    // -- uk-container --
+    .uk-container {
+        &--expand{
+            padding: 100px 0px 63px 132.5px;
+            //padding: 100px 0px 0px 132.5px;
+        }
+    }
+    // SECTIONS
+    // -- HERO --
+    .hero-section {
+        height: auto;
+        display: grid;
+        grid-template-columns: 30% 70%;
+
+        .hero-image {
+            height: 740px;
+            grid-column: 2;
+        }
+        .hero-content {
+            bottom: 150px;
+            grid-column: 1;
+
+            p {
+                width: 30%;
+            }
+        }
+
+    }
+    // -- INTRO --
+    .intro-section {
+
+        .main-intro-panel {
+            padding: 100px 0 0;
+
+            .intro-panel {
+                h2 {
+                    grid-column: 1;
+                }
+                p.hightlight {
+                    grid-column: 1;
+                }
+            }
+        }
+        .sub-intro-panel {
+            padding: 0 0 100px;
+        }
+    }
+    // -- MONTHLY: TOP WINE --
+    .topwine-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5em;
+
+        .wine-panel {
+            grid-column: 1;
+        }
+        .wine-image-panel {
+            grid-column: 2;
+        }
+    }
+
+}
+
