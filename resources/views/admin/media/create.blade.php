@@ -1,8 +1,6 @@
 @extends('layouts.admin.admin')
 
 
-
-
 @section('content')
 
 
@@ -10,23 +8,68 @@
 
 
 
-<div class="admin-forms">
+    <div class="admin-forms">
 
-    <form method="post" action="{{route('admin.roles.store')}}">
-        <fieldset class="uk-fieldset">
+        @if($errors)
 
-            <legend class="uk-legend">Create a Role</legend>
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="uk-margin">
-                <input class="uk-input" type="text" placeholder="Input" name="name">
-            </div>
+            @foreach ($errors->all() as $message)
 
-            <button class="uk-button uk-button-default">Submit</button>
-        </fieldset>
-    </form>
+                {{$message}}
 
-</div>
+            @endforeach
 
+        @endif
+        <form method="POST" action="{{route('admin.media.store') }}"  enctype="multipart/form-data" class="dropzone" id="dropzone">
+            @csrf
+        </form>
 
+    </div>
 
 @endsection
+@section('scripts')
+
+    <script type="text/javascript">
+        Dropzone.options.dropzone =
+            {
+                maxFilesize: 12,
+                renameFile: function(file) {
+                    var dt = new Date();
+                    var time = dt.getTime();
+                    return time+file.name;
+                },
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
+                addRemoveLinks: true,
+                timeout: 50000,
+                removedfile: function(file)
+                {
+                    var name = file.upload.filename;
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                        },
+                        type: 'POST',
+                        url: '{{ url("media/delete")     }}',
+                        data: {filename: name},
+                        success: function (data){
+                            console.log("File has been successfully removed!!");
+                        },
+                        error: function(e) {
+                            console.log(e);
+                        }});
+                    var fileRef;
+                    return (fileRef = file.previewElement) != null ?
+                        fileRef.parentNode.removeChild(file.previewElement) : void 0;
+                },
+
+                success: function(file, response)
+                {
+                    console.log(response);
+                },
+                error: function(file, response)
+                {
+                    return false;
+                }
+            };
+    </script>
+
+    @endsection

@@ -27,7 +27,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        //
+       return view('admin.media.create');
     }
 
     /**
@@ -38,7 +38,14 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image = $request->file('file');
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('images'),$imageName);
+
+        $imageUpload = new Photo();
+        $imageUpload->file = $imageName;
+        $imageUpload->save();
+        return response()->json(['success'=>$imageName]);
     }
 
     /**
@@ -83,6 +90,16 @@ class MediaController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $photo = Photo::findOrFail($id);
+
+
+        unlink(public_path() . $photo->file);
+
+
+        $photo->delete();
+
+        return response()->json(['success'=>'Data is successfully added']);
+
     }
 }

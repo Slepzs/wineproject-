@@ -72,8 +72,6 @@ Route::group(['middleware'=>'IsAdmin'], function() {
         'index'=>'admin.media.index',
         'create'=>'admin.media.create',
         'store'=>'admin.media.store',
-        'edit'=>'admin.media.edit',
-        'update' => 'admin.media.update',
         'destroy' => 'admin.media.destroy'
 
     ]]);
