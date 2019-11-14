@@ -18,7 +18,10 @@ class ClubsController extends Controller
      */
     public function index()
     {
-        return view('club/index');
+
+        $clubs = club::all();
+
+        return view('club/index',compact('clubs'));
     }
 
     /**
@@ -43,11 +46,12 @@ class ClubsController extends Controller
 
         $input = $request->all();
 
-        $club = new club();
+        $club = club::create($input);
 
-        $id = $club->create($input)->id;
+        ClubInformation::create(['club_id'=>$club->id]);
 
-        return ClubInformation::create(['club_id'=>$id]);
+
+        return redirect('club/');
 
     }
 

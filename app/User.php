@@ -60,6 +60,8 @@ class User extends Authenticatable
     }
 
 
+
+
     public function CheckAdmin(){
 
         if($this->role->name == 'administrator' && $this->is_active == 1){

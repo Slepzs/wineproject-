@@ -10,10 +10,8 @@ class ClubInformation extends Model
         'location', 'bio', 'type', 'photo_id', 'club_id'
     ];
 
-
     public function club() {
-
-        $this->belongsTo(Club::class, 'club_id','id');
-
+        $this->belongsTo('App\Club', 'club_id','id');
     }
+
 }

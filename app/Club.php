@@ -17,6 +17,11 @@ class club extends Model
 
     }
 
+    public function clubinformation()
+    {
+        return $this->hasOne('App\ClubInformation', 'club_id', 'id');
+    }
+
 
 
 
