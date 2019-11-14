@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class club extends Model
 {
     protected $fillable = [
-        'name', 'information_id'
+        'name', 'information_id', 'owner_id'
     ];
 
 
@@ -16,5 +16,8 @@ class club extends Model
         $this->belongsToMany(User::class, 'club_users');
 
     }
+
+
+
 
 }

@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\club;
+use App\ClubInformation;
+use App\ClubUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ClubsController extends Controller
 {
@@ -34,7 +39,16 @@ class ClubsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $input = $request->all();
+
+        $club = new club();
+
+        $id = $club->create($input)->id;
+
+        return ClubInformation::create(['club_id'=>$id]);
+
     }
 
     /**

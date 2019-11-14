@@ -106,7 +106,7 @@
                         @else
                             <li>
                                 <a class="down-icon" uk-icon="icon: triangle-down">
-                                    <img class="user-profile" src="/images/wineclub-hero.jpg{{-- {{Auth::user()->photo->file ?? ''}} --}}" alt="">
+                                    <img class="user-profile" src="{{-- {{Auth::user()->photo->file ?? '/images/wineclub-hero.jpg'}} --}}" alt="">
                                 </a> {{-- {{ Auth::user()->name }} --}}
                                 <!--<li class="uk-nav-header">Header</li>-->
 

@@ -6,10 +6,11 @@
 
 
 
-    <form method="post" action="{{route('club.store', Auth::user()->id)}}">
-
+    <form method="post" action="{{route('club.store')}}">
+        @csrf
+        <input type="hidden" name="owner_id" value="{{Auth::user()->id}}">
         <input type="text" name="name">
-        button.submit
+        <button type="submit">Create Club</button>
 
     </form>
 
@@ -17,3 +18,27 @@
 
 
 @endsection
+
+
+
+
+
+@if(Auth::user())
+<ul>
+    <li></li>
+</ul>
+    @elseif
+
+<ul>
+    <li></li>
+</ul>
+    @endif
+
+
+
+
+
+
+
+
+
