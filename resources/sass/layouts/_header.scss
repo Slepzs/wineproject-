@@ -3,8 +3,50 @@
 .main-nav {
     background-color: $white;
 
+    .dt-nav {
+        display: none;
+    }
+
+    .uk-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+
+    .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:hover, .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:focus, .uk-navbar-dropdown-nav > li > a:hover, .uk-navbar-dropdown-nav > li > a:focus {
+        color: $dark;
+    }
+    .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover {
+        color: lighten($dark, 10%);
+    }
+    .uk-navbar-dropdown-nav > li.uk-active > a {
+        color: $white;
+
+        &:hover {
+            color: $dark;
+        }
+    }
+
+    .uk-active {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .uk-active > .uk-nav-sub li {
+        text-transform: capitalize;
+        font-weight: 400;
+    }
+
+    .uk-nav-header {
+        color: $dark;
+    }
+    .uk-nav-divider {
+        border-top: 2px solid $white;
+    }
+
     .uk-navbar-container {
         background-color: $white;
+        padding: 0 15px;
 
         .uk-navbar-left {
 
@@ -34,24 +76,7 @@
 
                 .uk-nav {
                     margin-top: 30px;
-                    //font-family: $primary-font;
                     font-size: 1.4rem;
-
-                    a:hover {
-                        color: $dark;
-                    }
-                    .uk-active {
-                        text-transform: uppercase;
-                        font-weight: 700;
-                    }
-                    .uk-active > .uk-nav-sub li {
-                        text-transform: capitalize;
-                        font-weight: 400;
-                    }
-                    .uk-nav-divider {
-                        border-top: 2px solid $white;
-                    }
-
                 }
 
             }
@@ -59,13 +84,22 @@
         }
         .uk-navbar-right {
 
-            .uk-icon {
-                color: $dark;
+            .down-icon {
+                color: $primary-color;
+                padding-right: 0;
 
-                &:hover {
-                    color: $primary-color;
+                .user-register {
+                    border: 2px solid $primary-color;
+                    border-radius: 50px;
+                    padding: 3px;
+
+                    circle {
+                        stroke-width: 1.5;
+                    }
+                    path {
+                        stroke-width: 1.5;
+                    }
                 }
-
                 .user-profile {
                     width: 30px;
                     height: 30px;
@@ -73,7 +107,121 @@
                 }
 
             }
+            .uk-search-icon {
+                padding-left: 0;
+            }
 
+            .uk-navbar-dropdown {
+                box-shadow: 0 10px 12px rgba(0, 0, 0, 0.15);
+                background-color: $primary-color;
+                width: 250px;
+            }
+            [class*="uk-navbar-dropdown-bottom"] {
+                margin-top: 0;
+            }
+
+            .uk-search-navbar .uk-search-input {
+                font-size: $font-size-base;
+                font-family: "Source Sans Pro", sans-serif;
+                text-transform: uppercase;
+            }
+
+        }
+    }
+
+}
+
+
+
+// MEDIA QUERIES
+// XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
+@media (max-width: 320px) {
+
+    .main-nav {
+        .uk-navbar-container {
+            .uk-navbar-right {
+                .down-icon {
+                    .user-register {
+                        svg {
+                            width: 10px;
+                            height: 10px;
+                        }
+
+                        circle {
+                            stroke-width: 2;
+                        }
+
+                        path {
+                            stroke-width: 2;
+                        }
+                    }
+                }
+
+                .uk-navbar-dropdown {
+                    width: 230px;
+                }
+            }
+        }
+    }
+
+}
+
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    .main-nav {
+        .uk-navbar-container {
+            .uk-navbar-right {
+                .down-icon {
+                    padding-right: 15px;
+                }
+                .uk-search-icon {
+                    padding-left: 15px;
+                }
+                .uk-navbar-dropdown {
+                    width: 280px;
+                }
+                .uk-search-navbar .uk-search-input {
+                    font-size: 1.5rem;
+                }
+
+            }
+        }
+    }
+
+}
+
+// XM-MEDIUM - TABLET: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+
+    .main-nav {
+        .uk-navbar-container {
+            padding: 0 35px;
+        }
+        .mb-nav {
+            display: none;
+        }
+        .dt-nav {
+            display: flex;
+        }
+    }
+}
+
+// LARGE - DESKTOP: This applies from 1440px & onwards
+@media (min-width: 1440px) {
+
+    .main-nav {
+        .uk-navbar-container {
+            padding: 0 35px;
+        }
+    }
+}
+// XL-LARGE - DESKTOP: This applies from 1600px & onwards
+@media (min-width: 1600px) {
+
+    .main-nav {
+        .uk-navbar-container {
+            padding: 0 120px;
         }
     }
 

@@ -43,11 +43,6 @@
        </div>
    </div>
 
-    <!-- Seperator -->
-    <!--<div class="seperator-section">
-        <div class="image-bg"></div>
-    </div>-->
-
    <!-- Monthly wine -->
    <div class="topwine-section">
        <div class="wine-panel uk-container uk-container--expand">

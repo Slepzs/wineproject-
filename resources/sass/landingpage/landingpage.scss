@@ -31,13 +31,12 @@ h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     text-align: center;
     margin-top: 20px;
     cursor: pointer;
 
     a {
-        //margin: 10px 50px;
         text-transform: uppercase;
         font-weight: 700;
         color: $white;
@@ -60,11 +59,9 @@ h3, h4, h5, h6 {
 
     &--expand{
         padding: 50px 30px 70px 30px;
-        //padding: 30px 30px 70px 30px; larger screen
     }
     &--padding {
         padding: 50px 30px 50px 30px;
-        //padding: 20px 30px 20px 30px;
     }
 
 }
@@ -86,7 +83,6 @@ h3, h4, h5, h6 {
     .hero-content {
         position: absolute;
         bottom: 0;
-        //margin-bottom: 50px;
 
         h1, h2 {
             font-size: 3rem;
@@ -118,7 +114,7 @@ h3, h4, h5, h6 {
     }
 
     .main-intro-panel {
-        padding-bottom: 0px;
+        padding-bottom: 0;
 
         .intro-panel {
             display: grid;
@@ -132,11 +128,7 @@ h3, h4, h5, h6 {
             }
         }
     }
-    /*.sub-intro-panel {
-        background-color: $white;
-    }*/
     .intro-panel {
-        //padding: 0 15px;
         margin-bottom: 30px;
 
         p {
@@ -144,20 +136,8 @@ h3, h4, h5, h6 {
         }
     }
 }
-// -- SEPERATOR --
-.seperator-section {
-    //display: grid;
-    //grid-template-rows: 1fr;
-
-    .image-bg {
-        background-image: url("/images/wineclub-hero.jpg");
-        background-size: cover;
-        height: 198px; //220
-    }
-}
 // -- MONTHLY: TOP WINE --
 .topwine-section {
-    //margin: 30px 0;
 
     p {
         margin-top: 0;
@@ -170,7 +150,6 @@ h3, h4, h5, h6 {
 
     .wine-panel {
         padding-bottom: 0;
-        //margin-top: 20px;
 
         .wine-info {
             display: grid;
@@ -294,6 +273,12 @@ h3, h4, h5, h6 {
 // MEDIUM - TABLET: This applies from 768px & onwards
 @media (min-width: 768px) {
 
+    // BODY
+    // -- BASE --
+    h2 {
+        font-size: 3rem;
+    }
+
     // SECTIONS
     // -- HERO --
     .hero-section {
@@ -312,12 +297,6 @@ h3, h4, h5, h6 {
         }
 
     }
-    // -- SEPERATOR --
-    /*.seperator-section {
-        .image-bg {
-            height: 350px;
-        }
-    }*/
     // -- MONTHLY: TOP WINE --
     .topwine-section {
         .wine-panel {
@@ -348,7 +327,7 @@ h3, h4, h5, h6 {
 
 }
 
-// LARGE - DESKTOP: This applies from 1024px & onwards
+// XM-MEDIUM - TABLET: This applies from 1024px & onwards
 @media (min-width: 1024px) {
 
     // BODY
@@ -360,7 +339,6 @@ h3, h4, h5, h6 {
     .uk-container {
         &--expand{
             padding: 100px 50px 63px 50px;
-            //padding: 100px 0px 0px 132.5px;
         }
         &--padding {
             padding: 100px 50px 100px 50px;
@@ -386,8 +364,8 @@ h3, h4, h5, h6 {
     .intro-section {
         .sub-intro-panel > .uk-container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-column-gap: 2em;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 5em;
 
             .intro-panel {
                 &--one {
@@ -397,27 +375,13 @@ h3, h4, h5, h6 {
                     grid-column: 2;
                 }
                 &--three {
-                    grid-column: 3;
+                    grid-column: span 2;
                 }
             }
         }
     }
     // -- MONTHLY: TOP WINE --
-    /*.topwine-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 5em;
-
-        .wine-panel {
-            grid-column: 1;
-        }
-        .wine-image-panel {
-            grid-column: 2;
-        }
-    }*/
-    // -- MONTHLY: TOP WINE --
     .topwine-section {
-        //display: grid;
         grid-template-columns: 1fr 1fr;
 
         .wine-panel {
@@ -455,17 +419,9 @@ h3, h4, h5, h6 {
 
 }
 
-// XL-LARGE - DESKTOP: This applies from 1440px & onwards
+// LARGE - DESKTOP: This applies from 1440px & onwards
 @media (min-width: 1440px) {
 
-    // BODY
-    // -- uk-container --
-    .uk-container {
-        &--expand{
-            padding: 100px 0px 63px 132.5px;
-            //padding: 100px 0px 0px 132.5px;
-        }
-    }
     // SECTIONS
     // -- HERO --
     .hero-section {
@@ -482,7 +438,7 @@ h3, h4, h5, h6 {
             grid-column: 1;
 
             p {
-                width: 30%;
+                width: 35%;
             }
         }
 
@@ -491,7 +447,6 @@ h3, h4, h5, h6 {
     .intro-section {
 
         .main-intro-panel {
-            padding: 100px 0 0;
 
             .intro-panel {
                 h2 {
@@ -499,6 +454,16 @@ h3, h4, h5, h6 {
                 }
                 p.hightlight {
                     grid-column: 1;
+                }
+            }
+        }
+        .sub-intro-panel > .uk-container {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 5em;
+
+            .intro-panel {
+                &--three {
+                    grid-column: 3;
                 }
             }
         }
@@ -521,4 +486,19 @@ h3, h4, h5, h6 {
     }
 
 }
+
+// XL-LARGE - DESKTOP: This applies from 1600px & onwards
+@media (min-width: 1600px) {
+
+    // BODY
+    // -- uk-container --
+    .uk-container {
+        &--expand{
+            padding: 100px 0 63px 132.5px;
+        }
+    }
+
+}
+
+
 
