@@ -53,6 +53,12 @@ class User extends Authenticatable
 
     }
 
+    public function club() {
+
+        return $this->belongsToMany(Club::class, 'club_users');
+
+    }
+
 
     public function CheckAdmin(){
 

@@ -86,6 +86,16 @@ Route::group(['middleware'=>'auth'], function() {
         'update' => 'profile.update',
         'show' => 'password_update'
     ]]);
+
+    Route::resource('club', 'ClubsController', ['names' => [
+        'index'=>'club.index',
+        'create'=>'club.create',
+        'store'=>'club.store',
+        'edit'=>'club.edit',
+        'update' => 'club.update',
+        'destroy' => 'club.destroy'
+    ]]);
+
 });
 
 Route::get('/', 'HomeController@index')->name('index');
