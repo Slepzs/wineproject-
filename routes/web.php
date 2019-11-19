@@ -130,6 +130,7 @@ Route::group(['middleware'=>'auth'], function() {
         'index'=>'clubs.index',
         'create'=>'clubs.create',
         'store'=>'clubs.store',
+        'show'=>'clubs.show',
         'edit'=>'clubs.edit',
         'update' => 'clubs.update',
         'destroy' => 'clubs.destroy',

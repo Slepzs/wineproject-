@@ -17,7 +17,6 @@
                 <button type="submit" class="uk-button uk-button-secondary">Withdraw</button>
             </form>
             @else
-
             <form method="POST" action="{{route('clubs.apply', Auth::user()->id)}}">
                 @method('put')
                 @csrf

@@ -64,8 +64,9 @@ class ClubsController extends Controller
     {
         $club = Club::findOrFail($id);
         $user = Auth::user()->id;
-        $userapplied = ClubUser::findOrFail($club)->where('user_id', $user);
-        return view('clubs/show', compact('club', 'userapplied'));
+        $userapplied = ClubUser::where('user_id', $user)->get();
+        //return $userapplied:
+        return view('clubs/show', compact('club', 'userapplied') );
 
     }
 
