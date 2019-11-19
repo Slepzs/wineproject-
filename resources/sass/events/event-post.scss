@@ -1,0 +1,14 @@
+// SECTIONS
+// -- Event post --
+.event-post-section {
+
+    .event-post-badge {
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        z-index: 1;
+        background-color: lighten($primary-color, 5%);
+        font-family: $secondary-font;
+        font-weight: 700;
+    }
+}

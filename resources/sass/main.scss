@@ -1,5 +1,24 @@
+// Admin panel
 @import 'admininterface/admin';
 @import 'admininterface/admin-mobile';
+
+
+// Frontend panel
 @import 'landingpage/landingpage';
+@import 'about-us/about-us';
+@import 'wine/wine';
+@import 'events/events';
+@import 'events/event-post';
+@import 'contact/contactpage';
+
+
+
+// Layout Assets
 @import "layouts/header";
 @import 'layouts/footer';
+
+
+// Basic structure
+@import "layouts/base";
+
+

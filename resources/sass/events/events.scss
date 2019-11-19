@@ -1,0 +1,228 @@
+// SECTIONS
+// -- Event list --
+.event-list-section {
+    background-color: $white;
+
+    .event-card {
+        font-size: 0.6rem;
+        margin-bottom: 30px;
+
+        p {
+            margin: 0;
+            display: inline-block;
+        }
+        a {
+            color: $dark;
+            text-decoration: none;
+        }
+
+        .event-card-info {
+            background-color: $primary-color;
+            border: none;
+            padding: 15px 15px;
+
+            .uk-card-badge {
+                background-color: lighten($primary-color, 5%);
+                font-size: 0.6rem;
+                font-weight: 700;
+                padding: 5px 10px;
+                top: 15px;
+                right: 15px;
+            }
+            p.uk-text-meta {
+                font-size: 0.6rem;
+                text-transform: uppercase;
+                color: $light-grey;
+                margin: 0;
+
+            }
+            h2.uk-card-title {
+                color: $white;
+                font-size: 1.2rem;
+            }
+        }
+        .event-card-utility {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            padding: 0;
+
+            .time-place {
+                grid-column: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                padding: 15px 15px;
+            }
+            .pricetag {
+                grid-column: 2;
+                border-left: 1px dashed $light-grey;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding: 15px 15px;
+
+                .price {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
+        }
+        .event-card-btn {
+            border-color: $light-grey;
+            padding: 15px 15px;
+
+            .uk-button-text {
+                color: $dark;
+
+                &:hover, &:focus {
+                    color: $dark;
+                }
+            }
+        }
+    }
+}
+
+
+
+// MEDIA QUERIES
+// XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
+@media (max-width: 320px) {
+
+    // -- Event list --
+    .event-list-section {
+        .event-card {
+            .event-card-info {
+                padding: 10px 10px;
+
+                .uk-card-badge {
+                    top: 10px;
+                    right: 10px;
+                }
+            }
+
+            .event-card-utility {
+                .time-place {
+                    padding: 10px 10px;
+                }
+
+                .pricetag {
+                    padding: 10px 10px;
+                }
+
+                .event-card-btn {
+                    padding: 15px 15px;
+                }
+            }
+        }
+    }
+}
+
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    // -- Event list --
+    .event-list-section {
+
+        .event-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 2em;
+        }
+        .event-card {
+            grid-column: 1;
+
+            .event-card-info {
+                padding: 20px 20px;
+
+                .uk-card-badge {
+                    top: 20px;
+                    right: 20px;
+                }
+            }
+            .event-card-utility {
+                .time-place {
+                    padding: 20px 20px;
+                }
+                .pricetag {
+                    padding: 20px 20px;
+                }
+            }
+            .event-card-btn {
+                padding: 20px 20px;
+            }
+        }
+        .event-card:nth-child(2n) {
+            grid-column: 2;
+        }
+    }
+}
+
+// XM-MEDIUM - TABLET: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+
+    // -- Event list --
+    .event-list-section {
+
+        .event-card {
+            .event-card-info {
+                padding: 30px 30px;
+
+                .uk-card-badge {
+                    top: 30px;
+                    right: 30px;
+                }
+            }
+
+            .event-card-utility {
+                .time-place {
+                    padding: 30px 30px;
+                }
+
+                .pricetag {
+                    padding: 30px 30px;
+                }
+            }
+
+            .event-card-btn {
+                padding: 30px 30px;
+            }
+        }
+    }
+}
+
+// LARGE - DESKTOP: This applies from 1440px & onwards
+@media (min-width: 1440px) {
+
+    // -- Event info --
+    .event-info-section {
+
+        & > .uk-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+
+            .info-panel {
+                grid-column: 1;
+            }
+        }
+    }
+
+    // -- Event list --
+    .event-list-section {
+
+        .event-panel {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 2em;
+        }
+
+        .event-card:nth-child(2n) {
+            grid-column: unset;
+        }
+        .event-card:nth-child(3n-1) {
+            grid-column: 2;
+        }
+        .event-card:nth-child(3n) {
+            grid-column: 3;
+        }
+    }
+}

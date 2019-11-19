@@ -4,7 +4,7 @@
 
     <div class="uk-container">
         <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-            <nav class="uk-navbar-container" uk-navbar="mode: click">
+            <nav class="uk-navbar-container" uk-navbar="mode: click, hover">
 
                 <!-- MOBILER BURGER MENU (LEFT) -->
                 <div class="uk-navbar-left nav-overlay">
@@ -14,16 +14,14 @@
                         <div class="uk-offcanvas-bar uk-flex uk-flex-column">
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                            <a href="{{ url('/') }}" class="uk-logo">
-                                {{ config('app.name', 'Laravel') }}
-                            </a>
+                            <a href="{{ url('/') }}" class="uk-logo">Logo{{-- {{ config('app.name', 'Laravel') }} --}}</a>
 
                             <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
 
-                                <li class="uk-active"><a href="#omos">Om os</a></li>
+                                <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">Om os</a></li>
                                 <li class="uk-nav-divider"></li>
-                                <li class="uk-parent uk-active">
-                                    <a href="#sortiment">Sortiment</a>
+                                <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }} uk-parent">
+                                    <a href="{{ url('/vin-spiritus') }}">Vin &amp; Spiritus</a>
                                     <ul class="uk-nav-sub">
                                         <li><a href="#">Rødvin</a></li>
                                         <li><a href="#">Hvidvin</a></li>
@@ -31,23 +29,21 @@
                                     </ul>
                                 </li>
                                 <li class="uk-nav-divider"></li>
-                                <li class="uk-active"><a href="#events">Events</a></li>
-                                <li class="uk-active"><a href="#kontakt">Kontakt</a></li>
+                                <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
+                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Kontakt</a></li>
 
                             </ul>
                         </div>
                     </div>
 
                     <!-- DESKTOP NAV ASSETS (LOGO FOR DESKTOP) -->
-                    <a class="uk-navbar-item uk-logo dt-nav" href="#">Logo</a>
+                    <a class="uk-navbar-item uk-logo dt-nav" href="{{ url('/') }}">Logo</a>
 
                 </div>
 
                 <!-- MOBILE LOGO -->
                 <div class="uk-navbar-center nav-overlay">
-                    <a href="{{ url('/') }}" class="uk-navbar-item uk-logo mb-nav">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+                    <a href="{{ url('/') }}" class="uk-navbar-item uk-logo mb-nav">Logo</a>
                 </div>
 
                 <!-- UTILITY NAV FOR BOTH MOBILE AND DESKTOP -->
@@ -55,9 +51,9 @@
 
                     <!-- DESKTOP NAV ASSETS (DESKTOP NAVIGATION) -->
                     <ul class="uk-navbar-nav dt-nav">
-                        <li><a href="#">Om os</a></li>
+                        <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">Om os</a></li>
                         <li>
-                            <a href="#">Sortiment</a>
+                            <a class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}" href="{{ url('/vin-spiritus') }}">Vin &amp; Spiritus</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="#">Rødvin</a></li>
@@ -66,8 +62,8 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
+                        <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Kontakt</a></li>
                     </ul>
 
                     <!-- UTILITY NAV -->
@@ -92,12 +88,12 @@
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <li class="uk-nav-header">Join us now!</li>
                                         <p>Tilmeld dig gratis & start din egen Vin Klub, mød andre vinelskere og meget mere! <span uk-icon="icon: heart; ratio: 0.5"></span></p>
-                                        <li class="uk-active">
-                                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <li>
+                                            <a href="{{ route('login') }}"><span class="uk-icon" uk-icon="icon: lock"></span> {{ __('Log ind') }}</a>
                                         </li>
                                         @if (Route::has('register'))
-                                            <li class="uk-active">
-                                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            <li>
+                                                <a href="{{ route('register') }}"><span class="uk-icon" uk-icon="icon: users"></span> {{ __('Tilmeld') }}</a>
                                             </li>
                                         @endif
                                     </ul>
@@ -106,7 +102,7 @@
                         @else
                             <li>
                                 <a class="down-icon" uk-icon="icon: triangle-down">
-                                    <img class="user-profile" src="/images/wineclub-hero.jpg{{-- {{Auth::user()->photo->file ?? ''}} --}}" alt="">
+                                    <img class="user-profile" src="{{Auth::user()->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="">
                                 </a> {{-- {{ Auth::user()->name }} --}}
                                 <!--<li class="uk-nav-header">Header</li>-->
 

@@ -1,0 +1,279 @@
+// SECTIONS
+// -- Wine category selection --
+.wine-category-section {
+    background-color: $white;
+
+    .category-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+
+        .uk-dropdown {
+            border-radius: 10px;
+        }
+
+        .dt-nav {
+            display: none;
+        }
+    }
+}
+
+// -- Wine list --
+.wine-list-section {
+    background-color: $white;
+
+    .wine-card {
+        font-size: 0.6rem;
+        margin-bottom: 30px;
+
+        p {
+            margin: 0;
+            display: inline-block;
+        }
+        a {
+            color: $dark;
+            text-decoration: none;
+        }
+
+        .wine-card-info {
+            background-color: $primary-color;
+            border: none;
+            padding: 15px 15px;
+
+            .uk-card-badge {
+                background-color: lighten($primary-color, 5%);
+                font-size: 0.6rem;
+                font-weight: 700;
+                padding: 5px 10px;
+                top: 15px;
+                right: 15px;
+            }
+            p.uk-text-meta {
+                font-size: 0.6rem;
+                text-transform: uppercase;
+                color: $light-grey;
+                margin: 0;
+
+            }
+            h2.uk-card-title {
+                color: $white;
+                font-size: 1.2rem;
+            }
+        }
+        .wine-card-utility {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            padding: 0;
+
+            .region-grape {
+                grid-column: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                padding: 15px 15px;
+            }
+            .rating {
+                grid-column: 2;
+                border-left: 1px dashed $light-grey;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding: 15px 15px;
+
+                .rate {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    font-weight: 700;
+
+                }
+                .uk-icon svg polygon {
+                    stroke: $primary-color;
+                }
+                .rated {
+                    svg polygon {
+                        fill: $primary-color;
+                    }
+                }
+            }
+        }
+        .wine-card-btn {
+            border-color: $light-grey;
+            padding: 15px 15px;
+
+            .uk-button-text {
+                color: $dark;
+
+                &:hover, &:focus {
+                    color: $dark;
+                }
+            }
+        }
+    }
+}
+
+
+// MEDIA QUERIES
+// XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
+@media (max-width: 320px) {
+
+    // -- Wine list --
+    .wine-list-section {
+        .wine-card {
+            .wine-card-info {
+                padding: 10px 10px;
+
+                .uk-card-badge {
+                    top: 10px;
+                    right: 10px;
+                }
+            }
+
+            .wine-card-utility {
+                .region-grape {
+                    padding: 10px 10px;
+                }
+
+                .rating {
+                    padding: 10px 10px;
+                }
+
+                .wine-card-btn {
+                    padding: 15px 15px;
+                }
+            }
+        }
+    }
+}
+
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    // -- Wine list --
+    .wine-list-section {
+
+        .wine-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 2em;
+        }
+        .wine-card {
+            grid-column: 1;
+
+            .wine-card-info {
+                padding: 20px 20px;
+
+                .uk-card-badge {
+                    top: 20px;
+                    right: 20px;
+                }
+            }
+            .wine-card-utility {
+                .region-grape {
+                    padding: 20px 20px;
+                }
+                .rating {
+                    padding: 20px 20px;
+                }
+            }
+            .wine-card-btn {
+                padding: 20px 20px;
+            }
+        }
+        .wine-card:nth-child(2n) {
+            grid-column: 2;
+        }
+    }
+}
+
+// XM-MEDIUM - TABLET: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+
+    // -- Wine category selection --
+    .wine-category-section {
+        & > .uk-container {
+            padding-bottom: 0;
+        }
+
+        .category-panel {
+            .uk-subnav {
+                justify-content: center;
+
+                & > li {
+                    padding-bottom: 20px;
+                }
+            }
+            .dt-nav {
+                display: flex;
+            }
+            .mb-nav {
+                display: none;
+            }
+        }
+    }
+
+    // -- Wine list --
+    .wine-list-section {
+
+        .wine-card {
+            .wine-card-info {
+                padding: 30px 30px;
+
+                .uk-card-badge {
+                    top: 30px;
+                    right: 30px;
+                }
+            }
+
+            .wine-card-utility {
+                .region-grape {
+                    padding: 30px 30px;
+                }
+
+                .rating {
+                    padding: 30px 30px;
+                }
+            }
+
+            .wine-card-btn {
+                padding: 30px 30px;
+            }
+        }
+    }
+}
+
+// LARGE - DESKTOP: This applies from 1440px & onwards
+@media (min-width: 1440px) {
+
+    // -- Wine info --
+    .wine-info-section {
+
+        & > .uk-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+
+            .info-panel {
+                grid-column: 1;
+            }
+        }
+    }
+
+    // -- Wine list --
+    .wine-list-section {
+
+        .wine-panel {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 2em;
+        }
+
+        .wine-card:nth-child(2n) {
+            grid-column: unset;
+        }
+        .wine-card:nth-child(3n-1) {
+            grid-column: 2;
+        }
+        .wine-card:nth-child(3n) {
+            grid-column: 3;
+        }
+    }
+}

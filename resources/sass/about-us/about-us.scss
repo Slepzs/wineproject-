@@ -1,0 +1,145 @@
+// SECTIONS
+// -- About us --
+.about-us-section {
+    & > .uk-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    .image-panel {
+        grid-row: 1;
+        background-image: url("/images/wineclub-hero.jpg");
+        background-size: cover;
+        background-position: right;
+    }
+    .info-panel {
+        grid-row: 2;
+        margin-top: 50px;
+    }
+}
+
+// -- FAQ --
+.faq-section {
+    background-color: $white;
+
+    .info-panel {
+        text-align: center;
+    }
+    .questions-panel {
+        margin-top: 50px;
+
+        .faq-card {
+            display: grid;
+            grid-template-columns: 15% 85%;
+            margin-top: 20px;
+
+            .icon-box {
+                grid-column: 1;
+                display: flex;
+                justify-content: space-around;
+
+                .uk-icon {
+                    margin-top: 6px;
+                }
+            }
+            .faq-info {
+                grid-column: 2;
+            }
+        }
+    }
+}
+
+
+
+// MEDIA QUERIES
+// XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
+@media (max-width: 320px) {
+
+    // -- About us --
+    .about-us-section {
+        & > .uk-container {
+            grid-template-rows: 0.6fr 1fr;
+        }
+    }
+}
+
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    // -- FAQ --
+    .faq-section {
+        .questions-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 2em;
+
+            .faq-card {
+                grid-column: 1;
+            }
+            .faq-card:nth-child(2n) {
+                grid-column: 2;
+            }
+        }
+    }
+}
+
+// XM-MEDIUM - TABLET: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+
+    // -- About us --
+    .about-us-section {
+        & > .uk-container {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 5em;
+        }
+        .image-panel {
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .info-panel {
+            grid-row: 1;
+            grid-column: 2;
+            margin: 100px 0;
+        }
+    }
+
+    // -- FAQ --
+    .faq-section {
+        .questions-panel {
+            grid-column-gap: 5em;
+        }
+    }
+
+    // -- Wright us --
+    .wright-us-section {
+        & > .uk-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .info-panel {
+            grid-column: 1;
+        }
+    }
+}
+
+// LARGE - DESKTOP: This applies from 1440px & onwards
+@media (min-width: 1440px) {
+
+    // -- About us --
+    .about-us-section {
+        .info-panel {
+            margin: 150px 0;
+        }
+    }
+
+    // -- FAQ --
+    .faq-section {
+        & > .uk-container {
+            padding-left: 220px;
+            padding-right: 220px;
+        }
+        .questions-panel {
+            grid-column-gap: 10em;
+        }
+    }
+}

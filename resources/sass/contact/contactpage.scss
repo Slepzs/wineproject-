@@ -1,0 +1,133 @@
+// SECTIONS
+// -- Contact info --
+.contact-info-section {
+
+    .info-panel {
+        p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: $dark;
+
+        }
+    }
+}
+
+// -- Contact us --
+.contact-us-section {
+    background-color: $white;
+
+    .contact-panel {
+        form.contact-form {
+            margin-top: 30px;
+        }
+    }
+
+    .right-contact-panel {
+        border-top: 1px dashed $primary-color;
+        padding-top: 10px;
+
+        .uk-form-icon {
+            top: -90px
+        }
+        .uk-textarea {
+            padding-left: 40px;
+        }
+    }
+}
+
+
+
+// MEDIA QUERIES
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    // -- Contact us --
+    .contact-us-section {
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+
+            .info {
+                grid-column: 1;
+            }
+            form.contact-form {
+                grid-column: 1;
+            }
+        }
+    }
+}
+
+// XM-MEDIUM - TABLET: This applies from 1024px & onwards
+@media (min-width: 1024px) {
+
+    // -- Contact us --
+    .contact-us-section {
+
+        .contact-panel {
+            grid-template-columns: 1fr 1fr;
+
+            .info {
+                margin-right: 40px;
+            }
+            form.contact-form {
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 5em;
+
+                .left-contact-panel {
+                    grid-column: 1;
+                }
+
+                .right-contact-panel {
+                    grid-column: 2;
+                }
+
+                .uk-input {
+                    height: 60px;
+                }
+                .uk-textarea {
+                    height: 292px;
+                }
+            }
+        }
+
+        .right-contact-panel {
+            border-top: none;
+            padding-top: 0;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: -220px;
+                left: -40px;
+                height: 163%;
+                border: 1px dashed $primary-color;
+            }
+
+            .uk-form-icon {
+                top: -245px
+            }
+        }
+    }
+}
+
+// LARGE - DESKTOP: This applies from 1440px & onwards
+@media (min-width: 1440px) {
+
+    // -- Contact us --
+    .contact-us-section {
+
+        .right-contact-panel {
+            &:before {
+                top: -175px;
+                height: 150%;
+            }
+        }
+    }
+}
+

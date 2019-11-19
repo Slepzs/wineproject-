@@ -26,14 +26,49 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 
-// Opret ny routes her
-// Eksempel til kontakt os siden
-Route::get('/kontakt', function() {
+/* Frontend Routes */
 
+// Om os page
+Route::get('/om-os', function() {
+
+    return view('om-os');
+
+});
+
+// Vin page
+Route::get('/vin-spiritus', function() {
+
+
+    return view('vin-spiritus');
+
+});
+
+// Events page
+Route::get('/events', function() {
+
+
+    return view('events');
+
+});
+
+// Single event-post page
+Route::get('/event-post', function() {
+
+
+    return view('event-post');
+
+});
+
+// Kontakt page
+Route::get('/kontakt', function() {
 
     return view('kontakt');
 
 });
+
+
+
+
 
 /* Admin Routes */
 Route::group(['middleware'=>'IsAdmin'], function() {

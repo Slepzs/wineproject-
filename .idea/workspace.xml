@@ -127,12 +127,13 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/sass/layouts" />
+      <recent name="D:\Xampp\htdocs\wineclub\resources\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Xampp\htdocs\wineclub\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -174,7 +175,9 @@
       <workItem from="1572979042367" duration="4660000" />
       <workItem from="1573309889697" duration="18940000" />
       <workItem from="1573484567771" duration="39561000" />
-      <workItem from="1573724485184" duration="2687000" />
+      <workItem from="1573724485184" duration="16154000" />
+      <workItem from="1573829847823" duration="16985000" />
+      <workItem from="1574086706235" duration="23623000" />
     </task>
     <servers />
   </component>
