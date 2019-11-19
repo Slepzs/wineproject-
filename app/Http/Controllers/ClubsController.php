@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Photo;
-use App\User;
+use App\club;
+use App\ClubInformation;
+use App\ClubUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class UsersController extends Controller
+class ClubsController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $users = Auth::user()->all();
 
-        return view('admin.users.index', compact('users'));
+        $clubs = club::all();
+        return view('clubs/index', compact('clubs'));
     }
 
     /**
@@ -24,7 +30,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('clubs/create');
     }
 
     /**
@@ -35,7 +41,17 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $input = $request->all();
+
+        $club = club::create($input);
+
+        ClubInformation::create(['club_id'=>$club->id]);
+
+
+        return redirect('clubs/');
+
     }
 
     /**
@@ -46,7 +62,11 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $club = Club::findOrFail($id);
+        $user = Auth::user()->id;
+        $userapplied = ClubUser::findOrFail($club)->where('user_id', $user);
+        return view('clubs/show', compact('club', 'userapplied'));
+
     }
 
     /**
@@ -57,10 +77,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-
-        return view('admin.users.edit', compact('user'));
-
+        //
     }
 
     /**
@@ -72,40 +89,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $user = Auth::user()->findOrFail($id);
-
-
-        if(trim($request->password) == '') {
-
-            $input = $request->except('passsword');
-
-        } else {
-
-            $input = $request->all();
-
-            $input['password'] = bcrypt($request->password);
-
-        }
-
-
-        if($file = $request->file('photo_id')) {
-
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images', $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-
-        }
-
-        $user->update($input);
-
-        session_messages('User updated', 'uk-alert-success');
-
-        return redirect('admin/users');
+        //
     }
 
     /**
@@ -118,4 +102,31 @@ class UsersController extends Controller
     {
         //
     }
+
+
+    public function apply(Request $request)
+    {
+        $input = $request->all();
+
+        $data = [
+            'user_id' => Auth::user()->id,
+            'club_id' => $input['club_id'],
+            'is_active' => 0
+        ];
+
+        ClubUser::create($data);
+
+        return back();
+    }
+
+    public function withdraw($id)
+    {
+        $user = Auth::user();
+        $input = Club::findOrFail($id);
+        $input->user()->where('user_id', $user)->wherePivot('club_id', $id)->detach($user);
+        return back();
+    }
+
+
+
 }

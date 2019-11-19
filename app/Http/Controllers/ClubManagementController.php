@@ -2,19 +2,63 @@
 
 namespace App\Http\Controllers;
 
-use App\Photo;
+use App\club;
+use App\ClubUser;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UsersController extends Controller
+class ClubManagementController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $users = Auth::user()->all();
+        $userid = Auth::user()->id;
 
-        return view('admin.users.index', compact('users'));
+        $clubs = club::with('user')->where('owner_id', $userid)->get();
+
+        return view('clubManagement/index', compact('clubs'));
+
+    }
+
+    public function users($users) {
+
+        $clubs = Club::with('user')->where('id', $users)->get();
+
+        return view('clubManagement/users', compact('clubs'));
+    }
+
+    public function active($active) {
+
+        $clubusers = ClubUser::findOrFail($active);
+
+        $clubusers->update(['is_active' => 1]);
+
+        return back();
+
+    }
+
+    public function remove($active) {
+
+        $clubusers = ClubUser::findOrFail($active);
+
+        $clubusers->update(['is_active' => 0]);
+
+        return back();
+    }
+
+
+    public function deleteclub($id) {
+
+        Club::find($id)->delete();
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 
     /**
@@ -57,10 +101,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-
-        return view('admin.users.edit', compact('user'));
-
+        //
     }
 
     /**
@@ -72,40 +113,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $user = Auth::user()->findOrFail($id);
-
-
-        if(trim($request->password) == '') {
-
-            $input = $request->except('passsword');
-
-        } else {
-
-            $input = $request->all();
-
-            $input['password'] = bcrypt($request->password);
-
-        }
-
-
-        if($file = $request->file('photo_id')) {
-
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images', $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-
-        }
-
-        $user->update($input);
-
-        session_messages('User updated', 'uk-alert-success');
-
-        return redirect('admin/users');
+        //
     }
 
     /**
