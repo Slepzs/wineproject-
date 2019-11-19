@@ -7,11 +7,10 @@
 @section('content')
 
     <h1>My clubs</h1>
-
-    <table style="width:100%">
-
-
-    </table>
+    <p>This is an overview, all the clubs that you have created.</br> Accept people, who want to join your wine club or edit club details<br />It's up to you.</p>
+    <div class="create-club">
+       No Club? -> <a style="color: black" href="{{route('clubs.create')}}">Create a club</a>
+    </div>
 
     <table class="uk-table">
         <caption></caption>

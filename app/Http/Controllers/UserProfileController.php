@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\updatePassword;
 use App\Http\Requests\UpdateUserProfile;
 use App\Photo;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,7 +67,15 @@ class UserProfileController extends Controller
     }
 
 
-    public function show() {
+    public function show($id) {
+
+        $user = User::findOrFail($id);
+
+        return view('profile/show', compact('user'));
+
+    }
+
+    public function passwordupdate() {
 
         $user = Auth::user();
 

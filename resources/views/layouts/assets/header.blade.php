@@ -108,6 +108,7 @@
 
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li><a href="{{route('clubs.index')}}">Clubs</a></li>
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
@@ -115,6 +116,7 @@
                                                 {{ __('Logout') }}
                                             </a>
                                         </li>
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf

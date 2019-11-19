@@ -114,12 +114,12 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 });
 /* User Routes */
 Route::group(['middleware'=>'auth'], function() {
-    Route::get('profile/password_update', 'UserProfileController@show');
+    Route::get('profile/password_update', 'UserProfileController@passwordupdate')->name('profile.passwordupdate');
     Route::put('profile/password/{password}', 'UserProfileController@password')->name('profile.password');
     Route::resource('profile', 'UserProfileController', ['names' => [
         'index'=>'profile.index',
         'update' => 'profile.update',
-        'show' => 'password_update'
+        'show' => 'profile.show'
     ]]);
 
 
