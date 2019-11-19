@@ -18,7 +18,7 @@
             </div>
             <div class="create-form">
                 <h2>Get started</h2>
-                <form method="post" action="{{route('club.store')}}">
+                <form method="post" action="{{route('clubs.store')}}">
                     @csrf
 
                     <input type="hidden" name="owner_id" value="{{Auth::user()->id}}">

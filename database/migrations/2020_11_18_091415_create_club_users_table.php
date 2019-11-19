@@ -14,6 +14,7 @@ class CreateClubUsersTable extends Migration
     public function up()
     {
         Schema::create('club_users', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('club_id');
             $table->integer('is_active');

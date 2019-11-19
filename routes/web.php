@@ -87,13 +87,32 @@ Route::group(['middleware'=>'auth'], function() {
         'show' => 'password_update'
     ]]);
 
-    Route::resource('club', 'ClubsController', ['names' => [
-        'index'=>'club.index',
-        'create'=>'club.create',
-        'store'=>'club.store',
-        'edit'=>'club.edit',
-        'update' => 'club.update',
-        'destroy' => 'club.destroy'
+
+    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.withdraw');
+
+    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.apply');
+    Route::resource('clubs', 'ClubsController', ['names' => [
+        'index'=>'clubs.index',
+        'create'=>'clubs.create',
+        'store'=>'clubs.store',
+        'edit'=>'clubs.edit',
+        'update' => 'clubs.update',
+        'destroy' => 'clubs.destroy',
+    ]]);
+
+    Route::patch('clubManagement/active/{active}', 'ClubManagementController@active')->name('clubManagement.active');
+    Route::patch('clubManagement/remove/{remove}', 'ClubManagementController@remove')->name('clubManagement.remove');
+
+    Route::delete('clubManagement/deleteclub/{id}', 'ClubManagementController@deleteclub')->name('clubManagement.deleteclub');;
+
+    Route::get('clubManagement/users/{users}', 'ClubManagementController@users')->name('clubManagement.users');
+    Route::resource('clubManagement', 'ClubManagementController', ['names' => [
+        'index'=>'clubManagement.index',
+        'create'=>'clubManagement.create',
+        'store'=>'clubManagement.store',
+        'edit'=>'clubManagement.edit',
+        'update' => 'clubManagement.update',
+        'destroy' => 'clubManagement.destroy',
     ]]);
 
 });

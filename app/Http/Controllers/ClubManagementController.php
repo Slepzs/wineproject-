@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\club;
-use App\ClubInformation;
 use App\ClubUser;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
-class ClubsController extends Controller
+class ClubManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +17,48 @@ class ClubsController extends Controller
      */
     public function index()
     {
+        $userid = Auth::user()->id;
 
-        $clubs = club::all();
-        return view('clubs/index', compact('clubs'));
+        $clubs = club::with('user')->where('owner_id', $userid)->get();
+
+        return view('clubManagement/index', compact('clubs'));
+
+    }
+
+    public function users($users) {
+
+        $clubs = Club::with('user')->where('id', $users)->get();
+
+        return view('clubManagement/users', compact('clubs'));
+    }
+
+    public function active($active) {
+
+        $clubusers = ClubUser::findOrFail($active);
+
+        $clubusers->update(['is_active' => 1]);
+
+        return back();
+
+    }
+
+    public function remove($active) {
+
+        $clubusers = ClubUser::findOrFail($active);
+
+        $clubusers->update(['is_active' => 0]);
+
+        return back();
+    }
+
+
+    public function deleteclub($id) {
+
+        Club::find($id)->delete();
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 
     /**
@@ -30,7 +68,7 @@ class ClubsController extends Controller
      */
     public function create()
     {
-        return view('clubs/create');
+        //
     }
 
     /**
@@ -41,17 +79,7 @@ class ClubsController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $input = $request->all();
-
-        $club = club::create($input);
-
-        ClubInformation::create(['club_id'=>$club->id]);
-
-
-        return redirect('clubs/');
-
+        //
     }
 
     /**
@@ -62,11 +90,7 @@ class ClubsController extends Controller
      */
     public function show($id)
     {
-        $club = Club::findOrFail($id);
-        $user = Auth::user()->id;
-        $userapplied = ClubUser::findOrFail($club)->where('user_id', $user);
-        return view('clubs/show', compact('club', 'userapplied'));
-
+        //
     }
 
     /**
@@ -102,31 +126,4 @@ class ClubsController extends Controller
     {
         //
     }
-
-
-    public function apply(Request $request)
-    {
-        $input = $request->all();
-
-        $data = [
-            'user_id' => Auth::user()->id,
-            'club_id' => $input['club_id'],
-            'is_active' => 0
-        ];
-
-        ClubUser::create($data);
-
-        return back();
-    }
-
-    public function withdraw($id)
-    {
-        $user = Auth::user();
-        $input = Club::findOrFail($id);
-        $input->user()->where('user_id', $user)->wherePivot('club_id', $id)->detach($user);
-        return back();
-    }
-
-
-
 }
