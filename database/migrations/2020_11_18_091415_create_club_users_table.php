@@ -17,7 +17,9 @@ class CreateClubUsersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('club_id');
+            $table->integer('role_id')->index()->unsigned()->nullable()->default(4);
             $table->integer('is_active');
+
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

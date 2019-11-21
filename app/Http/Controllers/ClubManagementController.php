@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\club;
+use App\ClubInformation;
 use App\ClubUser;
+use App\Photo;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +38,7 @@ class ClubManagementController extends Controller
 
         $clubusers = ClubUser::findOrFail($active);
 
-        $clubusers->update(['is_active' => 1]);
+        $clubusers->update(['is_active' => 1, 'role_id' => 3]);
 
         return back();
 
@@ -46,7 +48,7 @@ class ClubManagementController extends Controller
 
         $clubusers = ClubUser::findOrFail($active);
 
-        $clubusers->update(['is_active' => 0]);
+        $clubusers->update(['is_active' => 0, 'role_id' => 4]);
 
         return back();
     }
@@ -101,7 +103,10 @@ class ClubManagementController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $club = Club::findOrFail($id);
+
+        return view('clubManagement/edit', compact('club'));
     }
 
     /**
@@ -113,7 +118,30 @@ class ClubManagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $club = club::findOrFail($id);
+
+        $data = [
+            'location' => $input['location'],
+            'type' => $input['type'],
+            'bio' => $input['bio'],
+        ];
+        if($file = $request->file('photo_id')) {
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $data['photo_id'] = $photo->id;
+        }
+
+        $club->update($input);
+        $club->clubInformation()->update($data);
+
+        return back();
     }
 
     /**

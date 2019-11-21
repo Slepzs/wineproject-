@@ -14,4 +14,10 @@ class ClubInformation extends Model
         $this->belongsTo('App\Club', 'club_id','id');
     }
 
+    public function photo() {
+
+        return $this->belongsTo('App\Photo');
+
+    }
+
 }

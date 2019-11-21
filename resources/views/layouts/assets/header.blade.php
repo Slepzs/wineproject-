@@ -30,7 +30,7 @@
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
-                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Kontakt</a></li>
+                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ route('kontakt') }}">Kontakt</a></li>
 
                             </ul>
                         </div>

@@ -13,7 +13,7 @@ class club extends Model
 
     public function user() {
 
-       return $this->belongsToMany(User::class, 'club_users')->withPivot('id', 'is_active');
+       return $this->belongsToMany(User::class, 'club_users')->withPivot('id', 'is_active', 'role_id');
 
     }
 

@@ -64,7 +64,7 @@ Route::get('/kontakt', function() {
 
     return view('kontakt');
 
-});
+})->name('kontakt');
 
 
 
@@ -123,9 +123,10 @@ Route::group(['middleware'=>'auth'], function() {
     ]]);
 
 
-    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.withdraw');
+    Route::get('clubs/overview', 'ClubsController@myclubs')->name('clubs.myclubs');
+    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.myclubs');
+    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.myclubs');
 
-    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.apply');
     Route::resource('clubs', 'ClubsController', ['names' => [
         'index'=>'clubs.index',
         'create'=>'clubs.create',
