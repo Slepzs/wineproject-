@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ddc7bdb3-1b16-48cb-af3e-0f19ada407ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/kontakt.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/admininterface/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admininterface/admin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/roles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/roles/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/admininterface/admin-mobile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admininterface/admin-mobile.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/club/clubindex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/club/clubindex.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clubManagement/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clubManagement/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clubManagement/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clubManagement/users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/club/club.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/club/club.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,19 +120,27 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Skxy9qJxosLCbpD8YnmNLFlUQy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts/club" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< Updated upstream
       <recent name="$PROJECT_DIR$/resources/sass/layouts" />
+=======
+      <recent name="C:\xampp\htdocs\wineproject\resources\views\clubs" />
+>>>>>>> Stashed changes
       <recent name="D:\Xampp\htdocs\wineclub\resources\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\wineproject\resources\views\layouts\club" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/views" />
     </key>
@@ -175,9 +184,18 @@
       <workItem from="1572979042367" duration="4660000" />
       <workItem from="1573309889697" duration="18940000" />
       <workItem from="1573484567771" duration="39561000" />
+<<<<<<< Updated upstream
       <workItem from="1573724485184" duration="16154000" />
       <workItem from="1573829847823" duration="16985000" />
       <workItem from="1574086706235" duration="23623000" />
+=======
+      <workItem from="1573724485184" duration="2687000" />
+      <workItem from="1573756262202" duration="730000" />
+      <workItem from="1573757529173" duration="5652000" />
+      <workItem from="1573902624086" duration="15264000" />
+      <workItem from="1574003934276" duration="7633000" />
+      <workItem from="1574149341381" duration="28378000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -196,5 +214,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

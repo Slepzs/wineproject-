@@ -49,7 +49,7 @@
             <div class="left-side-nav">
                 <div class="profile-img">
                     <img src="{{Auth::user()->photo->file ?? ''}}" alt="">
-                    <p><a href="/admin/">{{ nickname() }}</a></p>
+                    <p><a href="{{route('profile.show', auth::user()->id)}}">{{ nickname() }}</a></p>
                 </div>
             </div>
             <div class="right-side-nav">

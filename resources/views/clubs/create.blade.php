@@ -23,12 +23,13 @@
 
                     <input type="hidden" name="owner_id" value="{{Auth::user()->id}}">
                     <input type="text" name="name" placeholder="Club Name">
-                    <select name="type" id="">
-                        <option value="redwine">Red Wine</option>
-                        <option value="whitewine">White Wine</option>
+                    <select name="type">
+                        <option value="Redwine">Red Wine</option>
+                        <option value="Whitewine">White Wine</option>
                         <option value="Rose">Rosé</option>
-                        <option value="all">All</option>
+                        <option value="All">All</option>
                     </select>
+                    <input type="text" name="location">
                     <button type="submit">Create Club</button>
 
                 </form>

@@ -68,7 +68,7 @@ Route::get('/kontakt', function() {
 
     return view('kontakt');
 
-});
+})->name('kontakt');
 
 
 
@@ -118,22 +118,24 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 });
 /* User Routes */
 Route::group(['middleware'=>'auth'], function() {
-    Route::get('profile/password_update', 'UserProfileController@show');
+    Route::get('profile/password_update', 'UserProfileController@passwordupdate')->name('profile.passwordupdate');
     Route::put('profile/password/{password}', 'UserProfileController@password')->name('profile.password');
     Route::resource('profile', 'UserProfileController', ['names' => [
         'index'=>'profile.index',
         'update' => 'profile.update',
-        'show' => 'password_update'
+        'show' => 'profile.show'
     ]]);
 
 
-    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.withdraw');
+    Route::get('clubs/overview', 'ClubsController@myclubs')->name('clubs.myclubs');
+    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.myclubs');
+    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.myclubs');
 
-    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.apply');
     Route::resource('clubs', 'ClubsController', ['names' => [
         'index'=>'clubs.index',
         'create'=>'clubs.create',
         'store'=>'clubs.store',
+        'show'=>'clubs.show',
         'edit'=>'clubs.edit',
         'update' => 'clubs.update',
         'destroy' => 'clubs.destroy',

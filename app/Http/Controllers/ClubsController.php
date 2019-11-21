@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\club;
 use App\ClubInformation;
 use App\ClubUser;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -20,6 +21,8 @@ class ClubsController extends Controller
     {
 
         $clubs = club::all();
+
+        //return $clubs;
         return view('clubs/index', compact('clubs'));
     }
 
@@ -45,9 +48,16 @@ class ClubsController extends Controller
 
         $input = $request->all();
 
-        $club = club::create($input);
+        $club = club::create($input)->id;
 
-        ClubInformation::create(['club_id'=>$club->id]);
+        $data = [
+            'user_id' => $input['owner_id'],
+            'club_id' => $club,
+            'is_active' => 1,
+            'role_id' => 1
+         ];
+        ClubUser::create($data);
+        ClubInformation::create(['club_id'=>$club, 'type'=>$input['type'], 'location'=>$input['location']]);
 
 
         return redirect('clubs/');
@@ -64,8 +74,19 @@ class ClubsController extends Controller
     {
         $club = Club::findOrFail($id);
         $user = Auth::user()->id;
-        $userapplied = ClubUser::findOrFail($club)->where('user_id', $user);
-        return view('clubs/show', compact('club', 'userapplied'));
+        $userapplied = ClubUser::where('user_id', $user)->where('club_id', $id)->get();
+        //return $userapplied;
+        return view('clubs/show', compact('club', 'userapplied') );
+
+    }
+
+    public function myclubs() {
+
+        $user = Auth::user()->id;
+        $clubs = User::with('Club.clubInformation.Photo')->where('id', $user)->get();
+
+        // return $clubs;
+        return view('clubs.myclubs', compact('clubs'));
 
     }
 

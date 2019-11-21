@@ -26,7 +26,7 @@
 
             .club-apply {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 a {
                     margin: 10px 10px;
                 }
@@ -61,4 +61,21 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 415px) {
+    .custom-container {
+        width: 100%;
+        .create-wrapper {
+            grid-template-columns: 1fr;
+            padding: 20px;
+        }
+    }
+    .club-wrapper {
+        width: 100%;
+        .clubs {
+            grid-template-columns: 1fr;
+        }
+    }
+
 }

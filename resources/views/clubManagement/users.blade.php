@@ -25,7 +25,7 @@
 
                 <tr>
                     <td><img width="50px" src="{{$user->photo->file ?? '' }}"></td>
-                   <td>{{$user->name }}</td>
+                   <td><a href="{{route('profile.show', $user->id)}}">{{$user->name }}</a></td>
 
                     <td>@if($user->pivot->is_active == 0)
                             <form method="post" action="{{route('clubManagement.active', $user->pivot->id)}}">

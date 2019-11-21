@@ -30,7 +30,7 @@
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
-                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Kontakt</a></li>
+                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ route('kontakt') }}">Kontakt</a></li>
 
                             </ul>
                         </div>
@@ -108,6 +108,7 @@
 
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li><a href="{{route('clubs.index')}}">Clubs</a></li>
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
@@ -115,6 +116,7 @@
                                                 {{ __('Logout') }}
                                             </a>
                                         </li>
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
