@@ -27,6 +27,10 @@
         font-size: 0.6rem;
         margin-bottom: 30px;
 
+        &:hover .wine-card-btn {
+            background-color: lighten($primary-color, 5%);
+        }
+
         p {
             margin: 0;
             display: inline-block;
@@ -37,8 +41,7 @@
         }
 
         .wine-card-info {
-            background-color: $primary-color;
-            border: none;
+            border-bottom: 1px solid $dark;
             padding: 15px 15px;
 
             .uk-card-badge {
@@ -52,12 +55,12 @@
             p.uk-text-meta {
                 font-size: 0.6rem;
                 text-transform: uppercase;
-                color: $light-grey;
+                color: $dark;
                 margin: 0;
 
             }
             h2.uk-card-title {
-                color: $white;
+                color: $dark;
                 font-size: 1.2rem;
             }
         }
@@ -75,7 +78,7 @@
             }
             .rating {
                 grid-column: 2;
-                border-left: 1px dashed $light-grey;
+                border-left: 1px dashed $dark;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
@@ -98,15 +101,15 @@
             }
         }
         .wine-card-btn {
-            border-color: $light-grey;
-            padding: 15px 15px;
+            background-color: $primary-color;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
 
-            .uk-button-text {
-                color: $dark;
-
-                &:hover, &:focus {
-                    color: $dark;
-                }
+            a {
+                padding: 0;
+                color: $white;
+                font-size: $font-size-base;
             }
         }
     }
@@ -177,7 +180,7 @@
                 }
             }
             .wine-card-btn {
-                padding: 20px 20px;
+                padding: 15px 20px;
             }
         }
         .wine-card:nth-child(2n) {
@@ -236,7 +239,7 @@
             }
 
             .wine-card-btn {
-                padding: 30px 30px;
+                padding: 20px 30px;
             }
         }
     }

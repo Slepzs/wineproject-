@@ -18,7 +18,7 @@
     <div class="event-list-section">
         <div class="uk-container uk-container--padding">
 
-            <div class="event-panel">
+            <div class="wine-panel">
 
                 <div class="event-card uk-card uk-card-default uk-card-hover">
                     <a href="{{ url('/event-post') }}">
@@ -31,19 +31,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="{{ url('/event-post') }}" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="{{ url('/event-post') }}" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -59,19 +59,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -87,19 +87,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -115,19 +115,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -143,19 +143,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -171,19 +171,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -191,7 +191,7 @@
             </div>
 
 
-            <div class="event-panel" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 200; repeat: false">
+            <div class="wine-panel" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 200; repeat: false">
 
                 <div class="event-card uk-card uk-card-default uk-card-hover">
                     <a href="#event-post">
@@ -204,19 +204,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -232,19 +232,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016></li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -260,19 +260,19 @@
                             <h2 class="uk-card-title">Titel på event</h2>
                         </div>
                         <div class="event-card-utility uk-card-body">
-                            <div class="time-place">
+                            <div class="region-grape">
                                 <ul class="uk-iconnav uk-iconnav-vertical">
                                     <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
                                     <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
                                 </ul>
                             </div>
-                            <div class="pricetag">
-                                <p class="price">199 DKK</p>
+                            <div class="rating">
+                                <p class="rate">199 DKK</p>
                                 <p>pr. person</p>
                             </div>
                         </div>
                         <div class="event-card-btn uk-card-footer">
-                            <a href="#event-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#event-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>

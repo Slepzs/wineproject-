@@ -7,6 +7,10 @@
         font-size: 0.6rem;
         margin-bottom: 30px;
 
+        &:hover .event-card-btn {
+            background-color: lighten($primary-color, 5%);
+        }
+
         p {
             margin: 0;
             display: inline-block;
@@ -17,8 +21,8 @@
         }
 
         .event-card-info {
-            background-color: $primary-color;
-            border: none;
+            //background-color: $primary-color;
+            border-bottom: 1px solid $dark;
             padding: 15px 15px;
 
             .uk-card-badge {
@@ -32,12 +36,12 @@
             p.uk-text-meta {
                 font-size: 0.6rem;
                 text-transform: uppercase;
-                color: $light-grey;
+                color: $dark;
                 margin: 0;
 
             }
             h2.uk-card-title {
-                color: $white;
+                color: $dark;
                 font-size: 1.2rem;
             }
         }
@@ -46,22 +50,22 @@
             grid-template-columns: 1.5fr 1fr;
             padding: 0;
 
-            .time-place {
+            .region-grape {
                 grid-column: 1;
                 display: flex;
                 flex-direction: column;
                 align-items: baseline;
                 padding: 15px 15px;
             }
-            .pricetag {
+            .rating {
                 grid-column: 2;
-                border-left: 1px dashed $light-grey;
+                border-left: 1px dashed $dark;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
                 padding: 15px 15px;
 
-                .price {
+                .rate {
                     font-size: 1rem;
                     text-transform: uppercase;
                     font-weight: 700;
@@ -69,15 +73,15 @@
             }
         }
         .event-card-btn {
-            border-color: $light-grey;
-            padding: 15px 15px;
+            background-color: $primary-color;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
 
-            .uk-button-text {
-                color: $dark;
-
-                &:hover, &:focus {
-                    color: $dark;
-                }
+            a {
+                padding: 0;
+                color: $white;
+                font-size: $font-size-base;
             }
         }
     }
@@ -102,11 +106,11 @@
             }
 
             .event-card-utility {
-                .time-place {
+                .region-grape {
                     padding: 10px 10px;
                 }
 
-                .pricetag {
+                .rating {
                     padding: 10px 10px;
                 }
 
@@ -124,7 +128,7 @@
     // -- Event list --
     .event-list-section {
 
-        .event-panel {
+        .wine-panel {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 2em;
@@ -141,15 +145,15 @@
                 }
             }
             .event-card-utility {
-                .time-place {
+                .region-grape {
                     padding: 20px 20px;
                 }
-                .pricetag {
+                .rating {
                     padding: 20px 20px;
                 }
             }
             .event-card-btn {
-                padding: 20px 20px;
+                padding: 15px 20px;
             }
         }
         .event-card:nth-child(2n) {
@@ -175,17 +179,17 @@
             }
 
             .event-card-utility {
-                .time-place {
+                .region-grape {
                     padding: 30px 30px;
                 }
 
-                .pricetag {
+                .rating {
                     padding: 30px 30px;
                 }
             }
 
             .event-card-btn {
-                padding: 30px 30px;
+                padding: 20px 30px;
             }
         }
     }
@@ -210,7 +214,7 @@
     // -- Event list --
     .event-list-section {
 
-        .event-panel {
+        .wine-panel {
             grid-template-columns: 1fr 1fr 1fr;
             grid-column-gap: 2em;
         }

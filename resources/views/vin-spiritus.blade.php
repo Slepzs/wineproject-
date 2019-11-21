@@ -52,7 +52,7 @@
             <div class="wine-panel">
 
                 <div class="wine-card uk-card uk-card-default uk-card-hover">
-                    <a href="#wine-post">
+                    <a href="{{ url('/vin-spiritus-post') }}">
                         <div class="uk-card-media-top">
                             <img src="/images/wineclub-hero.jpg" alt="Event image">
                         </div>
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="{{ url('/vin-spiritus-post') }}" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -216,7 +216,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -250,7 +250,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -288,7 +288,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -322,7 +322,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>
@@ -356,7 +356,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="#wine-post" class="uk-button uk-button-text">Læs mere</a>
+                            <a href="#wine-post" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>

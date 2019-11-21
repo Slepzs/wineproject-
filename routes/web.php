@@ -38,14 +38,19 @@ Route::get('/om-os', function() {
 // Vin page
 Route::get('/vin-spiritus', function() {
 
-
     return view('vin-spiritus');
+
+});
+
+// Single vin-post page
+Route::get('/vin-spiritus-post', function() {
+
+    return view('vin-spiritus-post');
 
 });
 
 // Events page
 Route::get('/events', function() {
-
 
     return view('events');
 
@@ -53,7 +58,6 @@ Route::get('/events', function() {
 
 // Single event-post page
 Route::get('/event-post', function() {
-
 
     return view('event-post');
 

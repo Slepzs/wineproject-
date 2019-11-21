@@ -1,21 +1,21 @@
 // SECTIONS
-// -- Event post --
-.event-post-section {
+// -- Wine post --
+.wine-post-section {
     background-color: $white;
     display: grid;
-    grid-template-rows: 0.2fr 1fr;
+    grid-template-rows: 0.4fr 1fr;
 
     .dt-hide {
         display: none;
     }
 
-    .event-post-image {
+    .wine-post-image {
         grid-row: 1;
         background-image: url('/images/wineclub-hero.jpg');
         background-size: cover;
         background-position: center;
     }
-    .event-post-badge {
+    .wine-post-badge {
         position: absolute;
         top: 100px;
         right: 30px;
@@ -25,10 +25,10 @@
         font-weight: 700;
     }
 
-    .event-panel {
+    .wine-panel {
         grid-row: 2;
 
-        .event-body {
+        .wine-body {
             font-size: $font-size-base;
             margin-bottom: 30px;
 
@@ -37,17 +37,32 @@
                 display: inline-block;
             }
 
-            .event-body-info {
+            .wine-body-info {
                 border: none;
                 padding: 15px 15px;
 
-                .event-meta {
+                .wine-meta {
                     font-size: $font-size-base;
                     text-transform: uppercase;
                     margin: 0;
                 }
+                .description {
+                    margin-top: 20px;
+                }
+
+                .wine-body-desc {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    grid-row-gap: 1em;
+
+                    h4 {
+                        font-size: $font-size-base;
+                        margin: 0;
+                        color: $primary-color;
+                    }
+                }
             }
-            .event-body-utility {
+            .wine-body-utility {
                 display: grid;
                 grid-template-columns: 1.5fr 1fr;
                 padding: 0;
@@ -55,14 +70,20 @@
                 font-size: 0.6rem;
                 margin-top: 30px;
 
-                .date {
+                span {
+                    font-weight: 700;
+                    color: $primary-color;
+                    text-transform: uppercase;
+                }
+
+                .volume-size {
                     grid-column: 1;
                     display: flex;
                     flex-direction: column;
                     align-items: baseline;
                     padding: 15px 15px;
                 }
-                .pricetag {
+                .rating {
                     grid-column: 2;
                     border-left: 1px dashed $dark;
                     display: flex;
@@ -71,30 +92,44 @@
                     justify-content: center;
                     padding: 15px 15px;
 
-                    .price {
-                        font-size: 1rem;
-                        text-transform: uppercase;
+                    .rate {
+                        font-size: $font-size-base;
                         font-weight: 700;
-                        color: $primary-color;
+                    }
+                    .rating-star {
+                        margin-bottom: 10px;
+
+                        svg polygon {
+                            fill: $primary-color;
+                        }
                     }
                 }
-            }
-        }
-        .event-joinevent {
-            border-top: 1px dashed $dark;
-            margin-top: 50px;
-            padding-top: 50px;
+                .pricetag {
+                    grid-column: span 2;
+                    padding: 15px 15px;
+                    border-top: 1px solid $dark;
 
-            .event-form {
-                border: 1px solid $primary-color;
-                padding: 20px;
+                    & > ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        li {
+                            padding: 0;
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-// -- Event thumb --
-.event-thumb-section {
+// -- Wine thumb --
+.wine-thumb-section {
 
     h2 {
         font-size: 1.2rem;
@@ -104,7 +139,7 @@
         text-decoration: none;
     }
 
-    .event-thumb {
+    .wine-thumb {
         & > a {
             display: grid;
             grid-template-columns: 0.5fr 1fr;
@@ -112,10 +147,10 @@
             margin-bottom: 30px;
         }
 
-        .event-thumb-image {
+        .wine-thumb-image {
             grid-column: 1;
         }
-        .event-thumb-body {
+        .wine-thumb-body {
             grid-column: 2;
             display: flex;
             flex-direction: column;
@@ -127,7 +162,7 @@
                 font-size: $font-size-base;
                 margin: 0;
             }
-            .event-meta {
+            .wine-meta {
                 font-size: 0.6rem;
                 text-transform: uppercase;
                 color: $dark;
@@ -144,31 +179,12 @@
 // XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
 @media (max-width: 320px) {
 
-    // -- Event list --
+    // -- Wine list --
     .event-post-section {
-        .event-panel {
-            .event-body {
-                .event-body-info {
+        .wine-panel {
+            .wine-body {
+                .wine-body-info {
                     padding: 10px 10px;
-                }
-
-                .event-body-utility {
-                    .date {
-                        padding: 10px 10px;
-                    }
-
-                    .pricetag {
-                        padding: 10px 10px;
-
-                        .price {
-                            font-size: $font-size-base;
-                        }
-                    }
-                }
-            }
-            .event-joinevent {
-                .event-form {
-                    padding: 10px;
                 }
             }
         }
@@ -178,23 +194,39 @@
 // MEDIUM - TABLET: This applies from 768px & onwards
 @media (min-width: 768px) {
 
-    // -- Event post --
-    .event-post-section {
-        grid-template-rows: 0.5fr 1fr;
+    // -- Wine post --
+    .wine-post-section {
+        grid-template-rows: 1fr 1fr;
 
-        .event-panel {
-            .event-body {
-                .event-body-utility {
+        .wine-panel {
+            .wine-body {
+                .wine-body-info {
+                    .wine-body-desc {
+                        grid-template-rows: none;
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                    .description {
+                        margin-top: 50px;
+                    }
+                }
+                .wine-body-utility {
                     font-size: $font-size-base;
                     margin-top: 50px;
+
+                    .rating {
+                        .rate {
+                            font-size: 1rem;
+                            font-weight: 700;
+                        }
+                    }
                 }
             }
         }
     }
 
-    // -- Event thumb --
-    .event-thumb-section {
-        .event-thumb-panel {
+    // -- Wine thumb --
+    .wine-thumb-section {
+        .wine-thumb-panel {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-column-gap: 1em;
@@ -205,8 +237,8 @@
 // LARGE - DESKTOP: This applies from 1440px & onwards
 @media (min-width: 1440px) {
 
-    // -- Event post --
-    .event-post-section {
+    // -- Wine post --
+    .wine-post-section {
         min-height: 800px;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -216,13 +248,13 @@
             display: flex;
         }
 
-        .event-post-image {
+        .wine-post-image {
             grid-column: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
         }
-        .event-panel {
+        .wine-panel {
             grid-column: 2;
             grid-row: 1;
 
@@ -230,28 +262,27 @@
                 padding: 100px 100px 100px 100px;
             }
 
-            .event-joinevent {
-                border-top: 1px dashed $dark;
-                margin-top: 50px;
-                padding-top: 50px;
-
-                .event-form {
-                    border: 1px solid $primary-color;
-                    padding: 50px;
+            .wine-body {
+                .wine-body-info {
+                    .wine-body-desc {
+                        grid-template-rows: none;
+                        grid-template-columns: 1fr 1fr 0.5fr;
+                        grid-column-gap: 1em;
+                    }
                 }
             }
         }
     }
 
-    // -- Event thumb --
+    // -- Wine thumb --
     .mb-hide {
         display: none;
     }
-    .event-thumb-section {
+    .wine-thumb-section {
         background-color: $secondary-color;
 
         & > .uk-container {
-            padding: 50px 50px 50px 50px;
+            padding: 30px 30px 10px 30px;
         }
     }
 
