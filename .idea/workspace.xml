@@ -131,6 +131,10 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
 <<<<<<< Updated upstream
       <recent name="$PROJECT_DIR$/resources/sass/layouts" />
@@ -138,11 +142,6 @@
       <recent name="C:\xampp\htdocs\wineproject\resources\views\clubs" />
 >>>>>>> Stashed changes
       <recent name="D:\Xampp\htdocs\wineclub\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\wineproject\resources\views\layouts\club" />
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -187,15 +186,8 @@
 <<<<<<< Updated upstream
       <workItem from="1573724485184" duration="16154000" />
       <workItem from="1573829847823" duration="16985000" />
-      <workItem from="1574086706235" duration="23623000" />
-=======
-      <workItem from="1573724485184" duration="2687000" />
-      <workItem from="1573756262202" duration="730000" />
-      <workItem from="1573757529173" duration="5652000" />
-      <workItem from="1573902624086" duration="15264000" />
-      <workItem from="1574003934276" duration="7633000" />
-      <workItem from="1574149341381" duration="28378000" />
->>>>>>> Stashed changes
+      <workItem from="1574086706235" duration="39370000" />
+      <workItem from="1574329059132" duration="9068000" />
     </task>
     <servers />
   </component>
