@@ -115,6 +115,17 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 
     ]]);
 
+
+    Route::resource('admin/wines', 'AdminWinesController',['names'=> [
+        'index'=>'admin.wines.index',
+        'create'=>'admin.wines.create',
+        'store'=>'admin.wines.store',
+        'edit'=>'admin.wines.edit',
+        'update' => 'admin.wines.update',
+        'destroy' => 'admin.wines.destroy',
+        'show' => 'admin.wines.show'
+    ]]);
+
 });
 /* User Routes */
 Route::group(['middleware'=>'auth'], function() {

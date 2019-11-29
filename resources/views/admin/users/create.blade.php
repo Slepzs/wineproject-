@@ -12,7 +12,7 @@
 
 <div class="admin-forms">
 
-    <form method="post" action="{{route('admin.roles.store')}}">
+    <form method="post" action="{{route('admin.roles.store')}}" >
         <fieldset class="uk-fieldset">
 
             <legend class="uk-legend">Create a Role</legend>

@@ -34,6 +34,16 @@
 
 
             <ul class="pages" >
+
+
+                <a href="{{route('admin.wines.index')}}"><li><span uk-icon="icon: image"></span> Wines</li></a>
+                @if(Request::is('admin/wines'))
+                    <ul>
+                        <li><a href="{{route('admin.wines.create')}}">Upload new wine</a></li>
+                    </ul>
+                @endif
+
+
                 <li data="roles"><a href="{{route('admin.roles.index')}}">
                         <span uk-icon="icon: thumbnails"></span> Roles</a>
                     <span class="dropdown" uk-icon="icon: chevron-right"></span>
