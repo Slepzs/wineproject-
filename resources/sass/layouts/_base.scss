@@ -1,4 +1,44 @@
 // BASE
+// -- Auto complete styles --
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border-color: #e5e5e5;
+    background-color: rgb(232, 240, 254);
+}
+input,
+.uk-input,
+input:hover,
+.uk-input:hover,
+input:focus,
+.uk-input:focus,
+textarea,
+.uk-textarea,
+textarea:hover,
+.uk-textarea:hover,
+textarea:focus,
+.uk-textarea:focus,
+select,
+.uk-select,
+select:hover,
+.uk-select:hover,
+select:focus,
+.uk-select:focus {
+    filter: none;
+    border-color: #e5e5e5;
+    background-color: $white;
+}
+::selection {
+    background: $primary-color;
+}
+
 // -- Body --
 body {
     font-family: $secondary-font;
@@ -105,7 +145,7 @@ button.primary-btn {
 
     // -- Primary btn: using button tag --
     button.primary-btn {
-        width: 50%;
+        width: 70%;
     }
 }
 
@@ -138,3 +178,71 @@ button.primary-btn {
         }
     }
 }
+
+
+
+// LOGIN AND REGISTRATION PANEL
+.login-register-section {
+
+    & > .uk-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .club-info {
+        text-align: center;
+        display: block;
+        border-bottom: 1px dashed $primary-color;
+        margin-bottom: 30px !important;
+    }
+
+    .signin-form {
+
+        .signin-btn {
+            text-align: center;
+        }
+        .bottom-form-group {
+            text-align: center;
+            border-top: 1px dashed $primary-color;
+            padding-top: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .link-text {
+            text-transform: none;
+            color: $dark;
+            font-size: 0.6rem;
+            line-height: $line-height-base;
+            letter-spacing: $letter-spacing-base;
+            background-color: transparent;
+
+            &:hover {
+                text-decoration: underline;
+            }
+            &--bold {
+                font-weight: 700;
+            }
+        }
+    }
+
+}
+
+
+
+// MEDIA QUERIES
+// MEDIUM - TABLET: This applies from 768px & onwards
+@media (min-width: 768px) {
+
+    // LOGIN AND REGISTRATION PANEL
+    .login-register-section {
+        .club-login-register {
+            min-width: 480px;
+        }
+    }
+
+}
+
+
+

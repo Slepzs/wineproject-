@@ -1,11 +1,63 @@
-@extends('layouts.app')
-
+@extends('layouts.admin.admin')
 
 
 @section('content')
 
 
-    <div class="club-wrapper">
+    <!-- CREATE CLUB -->
+    <div class="club-crud-section">
+        <div class="uk-container uk-container--padding">
+
+            <!-- CLUB INTRO TEXT -->
+            <div class="club-info">
+                <div class="info-body">
+                    <h1>Create your new club</h1>
+                    <p>When you create a new club, you need to know what type of club you wan to create. Is the club for people who enjoys Red wine, White wine, Whisky or all of the above?</p>
+                </div>
+            </div>
+
+            <!-- CLUB CRUD -->
+            <div class="club-crud-panel">
+
+                <form class="crud-form" method="POST" action="{{route('clubs.store')}}">
+                    <h3 class="">Club information</h3>
+                    @csrf
+                    <input type="hidden" name="owner_id" value="{{Auth::user()->id}}">
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Club Name</label>
+                        <div class="uk-inline uk-width-expand">
+                            <input class="uk-input" type="text" name="name">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Location</label>
+                        <div class="uk-inline uk-width-expand">
+                            <input class="uk-input" type="text" name="location">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">What type?</label>
+                        <select class="uk-select uk-inline uk-width-expand" name="type">
+                            <option value="All">All</option>
+                            <option value="Redwine">Red wine</option>
+                            <option value="Whitewine">White wine</option>
+                            <option value="Rose">Rosé</option>
+                        </select>
+                    </div>
+
+                    <div class="uk-margin" uk-margin>
+                        <button class="uk-button uk-button-default primary-btn" type="submit">Create club</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    {{--<div class="club-wrapper">
 
         <div class="custom-container">
 
@@ -42,7 +94,7 @@
         </div>
 
 
-    </div>
+    </div>--}}
 
 
 

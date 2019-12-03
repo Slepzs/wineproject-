@@ -1,43 +1,38 @@
-
 <!-- Header content -->
-<div class="main-nav">
+<div class="main-admin-nav">
 
     <div class="uk-container">
+
+
         <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
             <nav class="uk-navbar-container" uk-navbar="mode: click, hover">
 
-                <!-- MOBILER BURGER MENU (LEFT) -->
                 <div class="uk-navbar-left nav-overlay">
+
+                    <!-- MOBILER BURGER MENU (LEFT) -->
                     <a href="#offcanvas-push" class="uk-navbar-toggle mb-nav" uk-navbar-toggle-icon uk-toggle></a>
 
                     <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true" class="mb-nav">
                         <div class="uk-offcanvas-bar uk-flex uk-flex-column">
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                            <a href="{{ url('/') }}" class="uk-logo">Logo{{-- {{ config('app.name', 'Laravel') }} --}}</a>
+                            <a href="{{ url('/') }}" class="uk-logo">Logo</a>
 
                             <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
 
-                                <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">Om os</a></li>
-                                <!--<li class="uk-nav-divider"></li>-->
-                                <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }} uk-parent">
-                                    <a href="{{ url('/vin-spiritus') }}">Vin &amp; Spiritus</a>
-                                    <ul class="uk-nav-sub">
-                                        <li><a href="#">Rødvin</a></li>
-                                        <li><a href="#">Hvidvin</a></li>
-                                        <li><a href="#">Rosévin</a></li>
-                                    </ul>
-                                </li>
+                                <li class="uk-nav-header">Main panel</li>
                                 <li class="uk-nav-divider"></li>
-                                <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
-                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ route('kontakt') }}">Kontakt</a></li>
+                                <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>
+                                <li class="uk-nav-header">My Dashboard</li>
+                                <li class="uk-nav-divider"></li>
+                                <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">Membership(s)</a></li>
+                                <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ url('/profile') }}">Profile</a></li>
+                                <li class="uk-nav-header">Admin panel</li>
+                                <li class="uk-nav-divider"></li>
 
                             </ul>
                         </div>
                     </div>
-
-                    <!-- DESKTOP NAV ASSETS (LOGO FOR DESKTOP) -->
-                    <a class="uk-navbar-item uk-logo dt-nav" href="{{ url('/') }}">Logo</a>
 
                 </div>
 
@@ -49,35 +44,9 @@
                 <!-- UTILITY NAV FOR BOTH MOBILE AND DESKTOP -->
                 <div class="uk-navbar-right nav-overlay utility-nav">
 
-                    <!-- DESKTOP NAV ASSETS (DESKTOP NAVIGATION) -->
-                    <ul class="uk-navbar-nav dt-nav">
-                        <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">Om os</a></li>
-                        <li>
-                            <a class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}" href="{{ url('/vin-spiritus') }}">Vin &amp; Spiritus</a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Rødvin</a></li>
-                                    <li><a href="#">Hvidvin</a></li>
-                                    <li><a href="#">Rosévin</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
-                        <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Kontakt</a></li>
-                    </ul>
-
                     <!-- UTILITY NAV -->
                     <ul class="uk-navbar-nav">
                         <!-- Authentication Links -->
-                        {{--@if(Auth::check())
-
-                            @if($user->role->name == 'administrator')
-                                <li>
-                                    <a href="{{route('admin')}}">Admin</a>
-                                </li>
-                            @endif
-
-                        @endif--}}
                         @guest
                             <li>
                                 <a class="down-icon" uk-icon="icon: triangle-down">
@@ -104,7 +73,7 @@
                                 <a class="down-icon" uk-icon="icon: triangle-down">
                                     <img class="user-profile" src="{{Auth::user()->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="">
                                 </a> {{-- {{ Auth::user()->name }} --}}
-                                <!--<li class="uk-nav-header">Header</li>-->
+                            <!--<li class="uk-nav-header">Header</li>-->
 
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -131,25 +100,8 @@
                                         </form>
                                     </ul>
                                 </div>
-{{--                                <div class="uk-navbar-dropdown">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                                        <li><a href="{{route('clubs.index')}}">Clubs</a></li>
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                        </li>
-
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </ul>
-                                </div>--}}
                             </li>
-                    @endguest
+                        @endguest
                     </ul>
 
                     <!-- SEARCH TOGGLE -->

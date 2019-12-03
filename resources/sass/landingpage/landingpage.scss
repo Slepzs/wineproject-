@@ -69,90 +69,123 @@
 
 // -- Monthly: Top wine --
 .topwine-section {
-
-    p {
-        margin-top: 0;
-    }
-    span.wine-title {
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $primary-color;
-    }
+    display: grid;
+    grid-template-rows: 0.4fr 1fr;
 
     .wine-panel {
-        padding-bottom: 0;
+        grid-row: 2;
 
-        .wine-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+        .wine-body {
+            font-size: $font-size-base;
+            margin-bottom: 30px;
 
-            .info-box {
-                grid-column: 1;
-                grid-row: 1;
+            p {
+                margin: 0;
+                display: inline-block;
+            }
 
-                .wine-type {
-                    .type {
-                        width: 15px;
-                        height: 15px;
-                        border-radius: 50%;
-                        background-color: $primary-color;
+            .wine-body-info {
+                border: none;
+                padding: 15px 15px;
+
+                .wine-meta {
+                    font-size: $font-size-base;
+                    text-transform: uppercase;
+                    margin: 0;
+                }
+                .description {
+                    margin-top: 20px;
+                }
+
+                .wine-body-desc {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    grid-row-gap: 1em;
+
+                    h4 {
+                        font-size: $font-size-base;
+                        margin: 0;
+                        color: $primary-color;
                     }
                 }
             }
-            .rating {
-                grid-column: 2;
-                grid-row: 1;
-                justify-content: center;
-                align-items: center;
+            .wine-body-utility {
                 display: grid;
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1.5fr 1fr;
+                padding: 0;
+                border: 1px solid $dark;
+                font-size: 0.6rem;
+                margin-top: 30px;
 
-                .rating-sum {
-                    grid-row: 1;
-                    text-align: center;
-                    position: relative;
+                span {
                     font-weight: 700;
+                    color: $primary-color;
+                    text-transform: uppercase;
+                }
 
-                    &:after {
-                        content: "";
-                        width: 75px;
-                        height: 75px;
-                        border-radius: 50%;
-                        border: 4px dotted $primary-color;
-                        position: absolute;
-                        top: -26px;
-                        left: 19px;
+                .volume-size {
+                    grid-column: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: baseline;
+                    padding: 15px 15px;
+                }
+                .rating {
+                    grid-column: 2;
+                    border-left: 1px dashed $dark;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: center;
+                    padding: 15px 15px;
+
+                    .rate {
+                        font-size: $font-size-base;
+                        font-weight: 700;
+                    }
+                    .rating-star {
+                        margin-bottom: 10px;
+
+                        .uk-icon svg polygon {
+                            stroke: $primary-color;
+                        }
+                        .rated {
+                            svg polygon {
+                                fill: $primary-color;
+                            }
+                        }
                     }
                 }
-                .rating-wine {
-                    grid-row: 2;
+                .pricetag {
+                    grid-column: span 2;
+                    padding: 15px 15px;
+                    border-top: 1px solid $dark;
+
+                    & > ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        li {
+                            padding: 0;
+                        }
+                        li:last-child {
+                            text-align: right;
+                        }
+                    }
                 }
-            }
-
-            .rating-btn {
-                text-align: center;
-                margin-top: 10px;
-
-                .rating-star {
-                    display: inline-block;
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 50%;
-                    background-color: $primary-color;
-                }
-            }
-
-            .desc {
-                grid-column: span 2;
-                grid-row: 2;
-                margin: 20px 0;
             }
         }
     }
     .wine-image-panel {
-        display: flex;
-        align-items: center;
+        grid-row: 1;
+        background-image: url('/images/wineclub-hero.jpg');
+        background-size: cover;
+        background-position: right;
     }
 }
 
@@ -192,6 +225,17 @@
             }
         }
     }
+
+    // -- Monthly: Top wine
+    .topwine-section {
+        .wine-panel {
+            .wine-body {
+                .wine-body-info {
+                    padding: 10px 10px;
+                }
+            }
+        }
+    }
 }
 
 // MEDIUM - TABLET: This applies from 768px & onwards
@@ -216,27 +260,29 @@
 
     // -- Monthly: Top wine --
     .topwine-section {
-        .wine-panel {
-            .wine-info {
-                .rating {
-                    grid-row: span 2;
+        grid-template-rows: 0.5fr 1fr;
 
-                    .rating-sum {
-                        &:after {
-                            content: "";
-                            width: 150px;
-                            height: 150px;
-                            border-radius: 50%;
-                            border: 6px dotted $primary-color;
-                            position: absolute;
-                            top: -60px;
-                            left: -17px;
-                        }
+        .wine-panel {
+            .wine-body {
+                .wine-body-info {
+                    .wine-body-desc {
+                        grid-template-rows: none;
+                        grid-template-columns: 1fr 1fr 1fr;
+                    }
+                    .description {
+                        margin-top: 50px;
                     }
                 }
-                .desc {
-                    grid-column: 1;
-                    grid-row: 2;
+                .wine-body-utility {
+                    font-size: $font-size-base;
+                    margin-top: 50px;
+
+                    .rating {
+                        .rate {
+                            font-size: 1rem;
+                            font-weight: 700;
+                        }
+                    }
                 }
             }
         }
@@ -283,39 +329,7 @@
 
     // -- Monthly: Top wine --
     .topwine-section {
-        grid-template-columns: 1fr 1fr;
-
-        .wine-panel {
-            grid-column: 1;
-
-            .wine-info {
-                .rating {
-                    grid-column: 2;
-                    grid-row: 1;
-                    grid-row-gap: 2em;
-
-                    .rating-sum {
-                        &:after {
-                            content: "";
-                            width: 150px;
-                            height: 150px;
-                            border-radius: 50%;
-                            border: 6px dotted $primary-color;
-                            position: absolute;
-                            top: -60px;
-                            left: -5px;
-                        }
-                    }
-                }
-                .desc {
-                    grid-column: span 2;
-                    grid-row: 2;
-                }
-            }
-        }
-        .wine-image-panel {
-            grid-column: 2;
-        }
+        grid-template-rows: 0.6fr 1fr;
     }
 }
 
@@ -372,12 +386,13 @@
 
     // -- Monthly: Top wine --
     .topwine-section {
-        display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-column-gap: 5em;
 
         .wine-panel {
             grid-column: 1;
+            grid-row: 1;
         }
         .wine-image-panel {
             grid-column: 2;

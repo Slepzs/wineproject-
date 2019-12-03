@@ -89,10 +89,10 @@
                             <span>Rating</span>
                             <p class="rate">4.42</p>
                             <div class="rating-star">
-                                <span uk-icon="icon: star; ratio: 0.5"></span>
-                                <span uk-icon="icon: star; ratio: 0.5"></span>
-                                <span uk-icon="icon: star; ratio: 0.5"></span>
-                                <span uk-icon="icon: star; ratio: 0.5"></span>
+                                <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
+                                <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
+                                <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
+                                <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
                                 <span uk-icon="icon: star; ratio: 0.5"></span>
                             </div>
                             <span>Value</span>

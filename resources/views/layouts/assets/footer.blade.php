@@ -39,7 +39,6 @@
                         <li><a href="#">Om os</a></li>
                         <li><a href="#">Events</a></li>
                         <li><a href="#">Kontakt</a></li>
-                        <li class="link-highlight"><a href="#">Log ind</a></li>
                     </ul>
                 </div>
                 <div class="policy">
@@ -53,19 +52,6 @@
         </div>
     </div>
 
-    <div class="footer-sub-panel">
-        <!--<div class="uk-container uk-container--padding">
-            <div class="utility-panel">
-                <a href="#">
-                    <img class="logo" src="/images/wineclub-hero.jpg">
-                </a>
-
-                <ul class="uk-nav-default uk-nav-center uk-nav-parent-icon" uk-nav>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Cookie politik</a></li>
-                </ul>
-            </div>
-        </div>-->
-    </div>
+    <div class="footer-sub-panel"></div>
 
 </div>
