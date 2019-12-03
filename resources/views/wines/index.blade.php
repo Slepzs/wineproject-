@@ -1,37 +1,25 @@
-@extends('layouts.admin.admin')
+@extends('layouts.club.club')
 
 
 @section('content')
 
 
-    <!-- WINE CATEGORY SELECTION -->
-    <div class="wine-category-section">
-        <div class="uk-container uk-container--padding">
-            <div class="category-panel">
-
-                <button class="uk-button uk-button-default primary-btn mb-nav" type="button" uk-icon="icon: triangle-down; ratio: 1">Vin & Spiritus</button>
-                <div uk-dropdown="pos: bottom-justify; mode: click">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Rødvin</a></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: happy"></span> Hvidvin</a></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Rosévin</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- WINE LIST -->
     <div class="wine-list-section">
         <div class="uk-container uk-container--padding">
+            <a href="{{route('wines.create')}}">Upload Wine</a>
+            <h2>All wines</h2>
+            Implementer search her <input type="search">
             <div class="wine-panel">
-
                 @foreach($wines as $wine)
                 <div class="wine-card uk-card uk-card-default uk-card-hover">
                     <a href="{{ url('/vin-spiritus-post') }}">
                         <div class="wine-card-info uk-card-header">
+                            @if(Auth::user()->name === $wine->user->name)
                             <a href="{{route('admin.wines.edit', $wine->id)}}"><div class="uk-card-badge uk-label"><span style="color: black" uk-icon="icon: paint-bucket; ratio: 0.5"></span></div></a>
+                            @endif
                             <p class="uk-text-meta">{{ $wine->winecategory->name }}</p>
                             <h2 class="uk-card-title">{{ $wine->wine_name }}</h2>
                         </div>
@@ -54,7 +42,7 @@
                             </div>
                         </div>
                         <div class="wine-card-btn uk-card-footer">
-                            <a href="{{ route('admin.wines.show', $wine->id) }}" class="uk-button">Læs mere</a>
+                            <a href="{{ route('wines.show', $wine->slug) }}" class="uk-button">Læs mere</a>
                         </div>
                     </a>
                 </div>

@@ -1,8 +1,11 @@
 <?php
 
 namespace App;
+
+
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -13,6 +16,7 @@ class User extends Authenticatable
 {
     use Sluggable;
     use SluggableScopeHelpers;
+
     use Notifiable;
 
     /**
@@ -29,11 +33,6 @@ class User extends Authenticatable
                 'source' => 'name'
             ]
         ];
-    }
-
-    public function getRouteKeyName()
-    {
-        return 'slug';
     }
 
     /**
@@ -81,6 +80,15 @@ class User extends Authenticatable
 
         return $this->belongsToMany(Club::class, 'club_users')->withPivot('id', 'is_active', 'role_id');
 
+    }
+
+    public function wine() {
+        return $this->hasMany(Wine::class, 'user_id', 'id');
+    }
+
+
+    public function winerating() {
+        return $this->hasMany(WineRating::class, 'user_id', 'id');
     }
 
 

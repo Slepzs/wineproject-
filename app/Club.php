@@ -23,6 +23,11 @@ class club extends Model
     }
 
 
+    public function winerating() {
+        return $this->hasMany(WineRating::class, 'club_id', 'id');
+    }
+
+
 
 
 }

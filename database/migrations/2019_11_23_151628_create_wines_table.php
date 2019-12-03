@@ -17,6 +17,7 @@ class CreateWinesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('photo_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('wine_location')->nullable();
             $table->string('producer');
             $table->string('wine_name');
@@ -25,9 +26,11 @@ class CreateWinesTable extends Migration
             $table->float('alcohol_content');
             $table->decimal('wine_price');
             $table->string('bottle_size');
-            $table->integer('is_active');
+            $table->integer('is_active')->default(0);
+            $table->string('slug')->nullable();
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('photo_id')->references('id')->on('photos');
         });
     }

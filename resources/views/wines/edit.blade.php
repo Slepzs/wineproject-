@@ -12,7 +12,7 @@
 
     <div class="admin-forms" style="display: grid; grid-template-columns: 1fr 1fr">
 
-        <form method="post" action="{{ route('admin.wines.update', $wine->id) }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('wines.update', $wine->id) }}" enctype="multipart/form-data">
             <fieldset class="uk-fieldset">
                 @csrf
                 @method('put')

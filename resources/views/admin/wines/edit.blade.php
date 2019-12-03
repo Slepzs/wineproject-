@@ -1,4 +1,5 @@
-@extends('layouts.admin.admin')
+@extends('layouts.club.club')
+
 
 
 

@@ -7,7 +7,7 @@ use App\Wine;
 use App\WineLocations;
 use Illuminate\Http\Request;
 
-class AdminWinesController extends Controller
+class WinesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -65,7 +65,7 @@ class AdminWinesController extends Controller
         $input['wine_location'] = WineLocations::create($data)->id;
 
         $wine->create($input);
-        return back();
+        return redirect('wines/');
     }
 
     /**
@@ -74,10 +74,10 @@ class AdminWinesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $wine = Wine::with('winecategory', 'winelocations')->findOrFail($id);
-        //return $wine;
+        $wine = Wine::with('winecategory', 'winelocations')->whereSlug($slug)->first();
+        // return $wine;
         return view('wines/show', compact('wine'));
 
     }

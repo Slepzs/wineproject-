@@ -12,9 +12,9 @@
 
     <div class="admin-forms" style="display: grid; grid-template-columns: 1fr 1fr">
 
-        <form method="post" action="{{route('admin.wines.store')}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('wines.store')}}" enctype="multipart/form-data">
             <fieldset class="uk-fieldset">
-
+                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                 <legend class="uk-legend">Create a Wine</legend>
                 @csrf
                 <div class="uk-margin">

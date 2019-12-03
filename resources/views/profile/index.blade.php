@@ -1,4 +1,4 @@
-@extends('layouts.club.club')
+    @extends('layouts.club.club')
 
 
 @section('content')
