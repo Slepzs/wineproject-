@@ -1,7 +1,79 @@
 @extends('layouts.app')
 
+
 @section('content')
-<div class="container">
+
+    <!-- LOGIN -->
+    <div class="login-register-section">
+        <div class="uk-container uk-container--padding">
+
+            <!-- CLUB INTRO TEXT -->
+            <div class="club-info">
+                <div class="info-body">
+                    <h1>Sign in</h1>
+                    <p>Sign in to continue to My Wine Club dashboard</p>
+                </div>
+            </div>
+
+            <!-- LOGIN / REGISTER -->
+            <div class="club-login-register">
+                <form class="signin-form" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="email">Email</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" type="email" id="email" required autocomplete="email" autofocus>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="password">Password</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" type="password" id="password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-form-controls">
+                            <input class="uk-checkbox" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> Remember me!
+                        </div><!-- form-check-input-->
+                    </div>
+
+                    <div class="uk-margin signin-btn">
+                        <button class="uk-button uk-button-default primary-btn" type="submit">Sign in</button>
+                    </div>
+
+                    <div class="bottom-form-group">
+                        <div class="">
+                            @if (Route::has('password.request'))
+                                <a class="uk-button link-text" href="{{ route('password.request') }}">
+                                    Forgot your password? - No worries we got your back! <span uk-icon="icon: happy; ratio: 0.6"></span>
+                                </a>
+                            @endif
+                        </div>
+                        <div class="">
+                            <a class="uk-button link-text link-text--bold" href="{{ route('register') }}">
+                                Not a member yet? Join now -- it's free!
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+{{--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +141,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
+
+
 @endsection

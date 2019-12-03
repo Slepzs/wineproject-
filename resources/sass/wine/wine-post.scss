@@ -99,8 +99,13 @@
                     .rating-star {
                         margin-bottom: 10px;
 
-                        svg polygon {
-                            fill: $primary-color;
+                        .uk-icon svg polygon {
+                            stroke: $primary-color;
+                        }
+                        .rated {
+                            svg polygon {
+                                fill: $primary-color;
+                            }
                         }
                     }
                 }
@@ -120,6 +125,9 @@
 
                         li {
                             padding: 0;
+                        }
+                        li:last-child {
+                            text-align: right;
                         }
                     }
                 }
@@ -179,8 +187,8 @@
 // XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
 @media (max-width: 320px) {
 
-    // -- Wine list --
-    .event-post-section {
+    // -- Wine post --
+    .wine-post-section {
         .wine-panel {
             .wine-body {
                 .wine-body-info {

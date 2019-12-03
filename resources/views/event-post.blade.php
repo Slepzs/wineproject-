@@ -102,7 +102,7 @@
                                 <label class="uk-form-label" for="form-stacked-text">Guests</label>
                                 <div class="uk-inline uk-width-expand">
                                     <span class="uk-form-icon" uk-icon="icon: users"></span>
-                                    <input class="uk-input" type="text" placeholder="">
+                                    <input class="uk-input" type="number" min="1" max="10" placeholder="">
                                 </div>
                             </div>
                         </div>

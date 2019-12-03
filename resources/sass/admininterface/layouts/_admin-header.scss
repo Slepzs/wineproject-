@@ -1,11 +1,17 @@
+// ADMIN SIDEBAR NAV
+.admin-panel-wrapper {
+    display: block;
+}
+
 
 // HEADER
-.main-nav {
-    background-color: $white;
-
+.admin-panel-wrapper {
     .dt-nav {
         display: none;
     }
+}
+.main-admin-nav {
+    background-color: $white;
 
     .uk-container {
         width: 100%;
@@ -40,12 +46,6 @@
     }
 
     /* Sidebar nav subnav items link/hover */
-    .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a {
-        text-transform: uppercase;
-        font-weight: $font-weight-base;
-        font-size: $font-size-base;
-        padding: 5px 0;
-    }
     .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover,
     .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:focus {
         color: $white;
@@ -56,44 +56,10 @@
         width: max-content;
     }
 
-
     .uk-offcanvas-bar .uk-nav-default .uk-nav-header {
         font-weight: $font-weight-base;
         margin-top: 40px;
     }
-
-    /*.uk-offcanvas-bar .uk-nav-default > li.uk-active > a:hover,
-    .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:focus,
-    .uk-navbar-dropdown-nav > li > a:hover,
-    .uk-navbar-dropdown-nav > li > a:focus {
-        color: $dark;
-    }
-    .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover {
-        color: lighten($dark, 10%);
-    }
-    .uk-navbar-dropdown-nav > li.uk-active > a {
-        color: $white;
-
-        &:hover {
-            color: $dark;
-        }
-    }
-
-    .uk-active {
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-    .uk-active > .uk-nav-sub li {
-        text-transform: capitalize;
-        font-weight: 400;
-    }
-
-    .uk-nav-header {
-        color: $dark;
-    }
-    .uk-nav-divider {
-        border-top: 2px solid $white;
-    }*/
 
     .uk-navbar-container {
         background-color: $white;
@@ -182,6 +148,7 @@
                     color: rgba(255, 255, 255, 0.7);
                 }
 
+                /* NEW */
                 .user-panel {
                     display: grid;
                     grid-template-columns: 0.5fr 1fr;
@@ -234,41 +201,13 @@
 
 // MEDIA QUERIES
 // XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
-/*@media (max-width: 320px) {
-
-    .main-nav {
-        .uk-navbar-container {
-            .uk-navbar-right {
-                .down-icon {
-                    .user-register {
-                        svg {
-                            width: 10px;
-                            height: 10px;
-                        }
-
-                        circle {
-                            stroke-width: 2;
-                        }
-
-                        path {
-                            stroke-width: 2;
-                        }
-                    }
-                }
-
-                .uk-navbar-dropdown {
-                    width: 230px;
-                }
-            }
-        }
-    }
-
-}*/
+@media (max-width: 320px) {
+}
 
 // MEDIUM - TABLET: This applies from 768px & onwards
 @media (min-width: 768px) {
 
-    .main-nav {
+    .main-admin-nav {
         .uk-navbar-container {
             .uk-navbar-right {
                 .down-icon {
@@ -293,15 +232,9 @@
 // XM-MEDIUM - TABLET: This applies from 1024px & onwards
 @media (min-width: 1024px) {
 
-    .main-nav {
+    .main-admin-nav {
         .uk-navbar-container {
             padding: 0 35px;
-        }
-        .mb-nav {
-            display: none;
-        }
-        .dt-nav {
-            display: flex;
         }
     }
 }
@@ -309,16 +242,86 @@
 // LARGE - DESKTOP: This applies from 1440px & onwards
 @media (min-width: 1440px) {
 
-    .main-nav {
+    /* NEW */
+    .admin-panel-wrapper {
+        display: grid;
+        grid-template-columns: 350px auto;
+
+        .footer {
+            grid-column: span 2;
+        }
+
+        .mb-nav {
+            display: none;
+        }
+        .dt-nav {
+            display: flex;
+        }
+    }
+
+    .main-content {
+        grid-column: 2;
+    }
+
+    .admin-sidebar-nav {
+        grid-column: 1;
+        background-color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        padding: 19px 40px 40px 40px;
+        min-height: 800px;
+
+        .uk-logo {
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: capitalize;
+            font-weight: $font-weight-base;
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .uk-nav-default .uk-nav-header {
+            color: $white;
+            margin-top: 40px;
+        }
+
+        /* Sidebar nav items link/hover */
+        .uk-nav-default > li > a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .uk-nav-default > li > a:hover,
+        .uk-nav-default > li > a:focus {
+            color: $white;
+        }
+
+        /* Sidebar nav active items link/hover */
+        .uk-nav-default > li.uk-active > a {
+            color: $white;
+            border-bottom: 4px solid $white;
+            width: max-content;
+        }
+        .uk-nav-default > li.uk-active > a:hover,
+        .uk-nav-default > li.uk-active > a:focus {
+            color: $white;
+        }
+    }
+
+    /***/
+
+    .main-admin-nav {
         .uk-navbar-container {
             padding: 0 35px;
         }
     }
 }
+
 // XL-LARGE - DESKTOP: This applies from 1600px & onwards
 @media (min-width: 1600px) {
 
-    .main-nav {
+    .main-admin-nav {
         .uk-navbar-container {
             padding: 0 120px;
         }
