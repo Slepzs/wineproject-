@@ -2,32 +2,21 @@
 
 
 @section('content')
-
-
-    <!-- WINE CATEGORY SELECTION -->
-    <div class="wine-category-section">
-        <div class="uk-container uk-container--padding">
-            <div class="category-panel">
-
-                <button class="uk-button uk-button-default primary-btn mb-nav" type="button" uk-icon="icon: triangle-down; ratio: 1">Vin & Spiritus</button>
-                <div uk-dropdown="pos: bottom-justify; mode: click">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Rødvin</a></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: happy"></span> Hvidvin</a></li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Rosévin</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 
     <!-- WINE LIST -->
     <div class="wine-list-section">
-        <div class="uk-container uk-container--padding">
+        <div class="uk-container--padding">
             <div class="wine-panel">
-
-                @foreach($wines as $wine)
                     <div class="wine-card uk-card uk-card-default uk-card-hover">
                         <a href="{{ url('/vin-spiritus-post') }}">
                             <div class="uk-card-media-top">
@@ -56,16 +45,37 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="wine-card-btn uk-card-footer">
-                                <a href="{{ route('admin.wines.show', $wine->id) }}" class="uk-button">Læs mere</a>
-                            </div>
                         </a>
                     </div>
-                @endforeach
+
+                <div id="map"></div>
 
             </div>
         </div>
     </div>
 
     <!-- End of content -->
+@endsection
+@section('scripts')
+
+    <script>
+        var map;
+        function initMap() {
+            let lat = {{ $wine->winelocations->address_latitude }};
+            let lng = {{ $wine->winelocations->address_longitude }};
+            console.log(lat + "xxx" + lng);
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: lat, lng: lng},
+                zoom: 4
+            });
+
+            var Marker = new google.maps.Marker({
+                position: {lat: lat, lng: lng},
+                map: map
+            });
+        }
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap"></script>
 @endsection

@@ -25,6 +25,7 @@ class CreateWinesTable extends Migration
             $table->float('alcohol_content');
             $table->decimal('wine_price');
             $table->string('bottle_size');
+            $table->integer('is_active');
             $table->timestamps();
 
             $table->foreign('photo_id')->references('id')->on('photos');

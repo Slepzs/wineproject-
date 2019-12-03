@@ -12,13 +12,13 @@
 
     <div class="admin-forms" style="display: grid; grid-template-columns: 1fr 1fr">
 
-        <form method="post" action="{{route('admin.wines.store')}}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('admin.wines.update', $wine->id) }}" enctype="multipart/form-data">
             <fieldset class="uk-fieldset">
-
-                <legend class="uk-legend">Create a Wine</legend>
                 @csrf
+                @method('put')
                 <div class="uk-margin">
                     <select name="category_id" class="uk-select">
+                        <option value="{{$wine->winecategory->id}}">Red Wine</option>
                         <option value="1">Red Wine</option>
                         <option value="2">White Wine</option>
                         <option value="3">Rosé Wine</option>
@@ -26,41 +26,42 @@
                     </select>
                 </div>
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Wine Name eg. Cabernet Sauvignon" name="wine_name" >
+                    <input class="uk-input" type="text" placeholder="Wine Name eg. Cabernet Sauvignon" name="wine_name" value="{{$wine->wine_name }}" >
                 </div>
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Producer eg. Spier" name="producer">
+                    <input class="uk-input" type="text" placeholder="Producer eg. Spier" name="producer" value="{{$wine->producer }}">
                 </div>
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Vintage eg. 2016" name="vintage">
+                    <input class="uk-input" type="text" placeholder="Vintage eg. 2016" name="vintage" value="{{$wine->vintage}}">
                 </div>
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Grape/Blend" name="grape">
+                    <input class="uk-input" type="text" placeholder="Grape/Blend" name="grape" value="{{$wine->grape}}">
                 </div>
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Alcohol Content 13.5%" name="alcohol_content">
+                    <input class="uk-input" type="text" placeholder="Alcohol Content 13.5%" name="alcohol_content" value="{{$wine->alcohol_content}}">
                 </div>
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Wine Price" name="wine_price">
+                    <input class="uk-input" type="text" placeholder="Wine Price" name="wine_price" value="{{$wine->wine_price}}">
                 </div>
 
                 <div class="uk-margin">
-                <select name="bottle_size" class="uk-select">
-                    <option value="All Sizes">All Sizes</option>
-                    <option value="Bottles">Bottles</option>
-                    <option value="Cases">Cases</option>
-                    <option value="Half bottles">Half bottles</option>
-                    <option value="Magnums">Magnums</option>
-                    <option value="Double Magnums">Double Magnums</option>
-                    <option value="Other sizes">Other sizes</option>
-                    <option value="Half bottles">Half bottles</option>
-                </select>
+                    <select name="bottle_size" class="uk-select">
+                        <option value="{{$wine->bottle_size }}">{{$wine->bottle_size }}</option>
+                        <option value="All Sizes">All Sizes</option>
+                        <option value="Bottles">Bottles</option>
+                        <option value="Cases">Cases</option>
+                        <option value="Half bottles">Half bottles</option>
+                        <option value="Magnums">Magnums</option>
+                        <option value="Double Magnums">Double Magnums</option>
+                        <option value="Other sizes">Other sizes</option>
+                        <option value="Half bottles">Half bottles</option>
+                    </select>
                 </div>
 
                 <label for="address_address">Address</label>
-                <input type="text" id="address-input" name="address_address" class="form-control map-input">
-                <input type="hidden" name="address_latitude" id="address-latitude" value="0" />
-                <input type="hidden" name="address_longitude" id="address-longitude" value="0" />
+                <input type="text" id="address-input" name="address_address" class="form-control map-input" value="{{$wine->winelocations->address_address}}">
+                <input type="hidden" name="address_latitude" id="address-latitude" value="{{$wine->winelocations->address_latitude}}" />
+                <input type="hidden" name="address_longitude" id="address-longitude" value="{{$wine->winelocations->address_longitude}}" />
 
                 <div class="uk-margin" uk-margin>
                     <div uk-form-custom="target: true">
@@ -110,7 +111,7 @@
 
                 const map = new google.maps.Map(document.getElementById(fieldKey + '-map'), {
                     center: {lat: latitude, lng: longitude},
-                    zoom: 13
+                    zoom: 4
                 });
                 const marker = new google.maps.Marker({
                     map: map,
@@ -171,4 +172,4 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
 
-    @endsection
+@endsection

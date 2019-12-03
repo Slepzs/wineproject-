@@ -131,15 +131,13 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+
 <script type="text/javascript">
-
-
     $("document").ready(function(){
         setTimeout(function(){
             $('.flash-message').addClass('disappear');
         }, 2000 ); // 5 secs
     });
-
 </script>
 @yield('scripts');
 </body>

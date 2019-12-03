@@ -76,8 +76,8 @@ class AdminWinesController extends Controller
      */
     public function show($id)
     {
-        $wine = Wine::findOrFail($id)->with('winecategory', 'winelocations')->first();
-
+        $wine = Wine::with('winecategory', 'winelocations')->findOrFail($id);
+        //return $wine;
         return view('admin/wines/show', compact('wine'));
 
     }
@@ -90,19 +90,43 @@ class AdminWinesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $wine = Wine::with('winecategory', 'winelocations')->findOrFail($id);
+        // return $wine;
+        return view('admin/wines/edit', compact('wine'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+        $wine = Wine::findOrFail($id);
+
+        $input = $request->all();
+
+        $geodata = [
+            'address_address' => $input['address_address'],
+            'address_latitude' => $input['address_latitude'],
+            'address_longitude' => $input['address_longitude'],
+        ];
+
+        $category = [
+            'category_id' => $input['category_id']
+        ];
+
+        if($file = $request->file('photo_id')) {
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $data['photo_id'] = $photo->id;
+        }
+        $wine->winelocations()->update($geodata);
+        $wine->update($input);
+
+        return back();
+
     }
 
     /**

@@ -167,6 +167,16 @@ Route::group(['middleware'=>'auth'], function() {
         'destroy' => 'clubManagement.destroy',
     ]]);
 
+
+    Route::resource('wines', 'AdminWinesController',['names'=> [
+        'index'=>'wines.index',
+        'create'=>'wines.create',
+        'store'=>'wines.store',
+        'edit'=>'wines.edit',
+        'update' => 'wines.update',
+        'show' => 'wines.show'
+    ]]);
+
 });
 
 Route::get('/', 'HomeController@index')->name('index');

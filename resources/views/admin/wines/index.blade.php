@@ -30,11 +30,8 @@
                 @foreach($wines as $wine)
                 <div class="wine-card uk-card uk-card-default uk-card-hover">
                     <a href="{{ url('/vin-spiritus-post') }}">
-                        <div class="uk-card-media-top">
-                            <img src="{{ $wine->photo->file ?? '/images/wineclub-hero.jpg' }}" alt="Event image">
-                        </div>
                         <div class="wine-card-info uk-card-header">
-                            <div class="uk-card-badge uk-label"><span uk-icon="icon: paint-bucket; ratio: 0.5"></span></div>
+                            <a href="{{route('admin.wines.edit', $wine->id)}}"><div class="uk-card-badge uk-label"><span style="color: black" uk-icon="icon: paint-bucket; ratio: 0.5"></span></div></a>
                             <p class="uk-text-meta">{{ $wine->winecategory->name }}</p>
                             <h2 class="uk-card-title">{{ $wine->wine_name }}</h2>
                         </div>
