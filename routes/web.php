@@ -168,7 +168,7 @@ Route::group(['middleware'=>'auth'], function() {
     ]]);
 
 
-    Route::resource('wines', 'AdminWinesController',['names'=> [
+    Route::resource('wines', 'WinesController',['names'=> [
         'index'=>'wines.index',
         'create'=>'wines.create',
         'store'=>'wines.store',
