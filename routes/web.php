@@ -115,6 +115,17 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 
     ]]);
 
+
+    Route::resource('admin/wines', 'AdminWinesController',['names'=> [
+        'index'=>'admin.wines.index',
+        'create'=>'admin.wines.create',
+        'store'=>'admin.wines.store',
+        'edit'=>'admin.wines.edit',
+        'update' => 'admin.wines.update',
+        'destroy' => 'admin.wines.destroy',
+        'show' => 'admin.wines.show'
+    ]]);
+
 });
 /* User Routes */
 Route::group(['middleware'=>'auth'], function() {
@@ -154,6 +165,16 @@ Route::group(['middleware'=>'auth'], function() {
         'edit'=>'clubManagement.edit',
         'update' => 'clubManagement.update',
         'destroy' => 'clubManagement.destroy',
+    ]]);
+
+
+    Route::resource('wines', 'WinesController',['names'=> [
+        'index'=>'wines.index',
+        'create'=>'wines.create',
+        'store'=>'wines.store',
+        'edit'=>'wines.edit',
+        'update' => 'wines.update',
+        'show' => 'wines.show'
     ]]);
 
 });

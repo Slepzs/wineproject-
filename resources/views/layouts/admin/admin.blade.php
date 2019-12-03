@@ -24,11 +24,11 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
-    <div class="admin-panel-wrapper">
+<div class="admin-panel-wrapper">
 
-        <!-- Admin sidebar nav (DESKTOP ONLY) -->
-        <div class="admin-sidebar-nav dt-nav">
-            <a href="{{ url('/') }}" class="uk-logo">Logo</a>
+    <!-- Admin sidebar nav (DESKTOP ONLY) -->
+    <div class="admin-sidebar-nav dt-nav">
+        <a href="{{ url('/') }}" class="uk-logo">Logo</a>
 
             <div uk-sticky="sel-target: .uk-nav; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
                 <ul class="uk-nav uk-nav-default uk-margin-xlarge-top">
@@ -43,69 +43,68 @@
                     <li class="uk-nav-header">Admin panel</li>
                     <li class="uk-nav-divider"></li>
 
-                </ul>
+            </ul>
+        </div>
+
+    <!-- Main Content here + top nav -->
+    <div class="main-content uk-section uk-padding-remove-vertical">
+    @include('layouts.assets.admin-header')
+
+    <!-- SESSION ALERTS -->
+        <div class="flash-message-container">
+            <div class="flash-message alert {{ Session::get('flash_type') }}">
+                <h3>{{ Session::get('flash_message') }}</h3>
             </div>
         </div>
 
-        <!-- Main Content here + top nav -->
-        <div class="main-content uk-section uk-padding-remove-vertical">
-            @include('layouts.assets.admin-header')
-
-            <!-- SESSION ALERTS -->
-            <div class="flash-message-container">
-                <div class="flash-message alert {{ Session::get('flash_type') }}">
-                    <h3>{{ Session::get('flash_message') }}</h3>
-                </div>
-            </div>
-
-            @yield('content')
-        </div>
-
-
-
-        {{--<div class="admin-content-wrapper">
-
-            <div class="sidenav">
-                <div class="sidenav-header">
-                    <h2>Wine Club</h2>
-                    <button id="sidebarnav-toggle" uk-close></button>
-                </div>
-
-
-                <ul class="pages" >
-                    <li data="roles"><a href="{{route('admin.roles.index')}}">
-                            <span uk-icon="icon: thumbnails"></span> Roles</a>
-                        <span class="dropdown" uk-icon="icon: chevron-right"></span>
-
-                    </li>
-                    @if(Request::is('admin/roles'))
-                        <ul>
-                            <li><a href="{{route('admin.roles.create')}}">Create Roles</a></li>
-                        </ul>
-                    @endif
-
-                    <a href="{{route('admin.users.index')}}"><li><span uk-icon="icon: users"></span> Users</li></a>
-                    @if(Request::is('admin/users'))
-                        <ul>
-                            <li><a href="{{route('admin.users.create')}}">Create Users</a></li>
-                        </ul>
-                    @endif
-                    <a href="{{route('admin.media.index')}}"><li><span uk-icon="icon: image"></span> Media</li></a>
-                    @if(Request::is('admin/media'))
-                        <ul>
-                            <li><a href="{{route('admin.media.create')}}">Upload Image</a></li>
-                        </ul>
-                    @endif
-                    <a href="{{route('profile.index') }}"><li>User Profile</li></a>
-
-                    <a href="{{route('logout')}}"><li>Logout</li></a>
-                </ul>
-
-            </div>
-
-        </div>--}}
-        @include('layouts.assets.footer')
+        @yield('content')
     </div>
+
+
+
+    {{--<div class="admin-content-wrapper">
+
+        <div class="sidenav">
+            <div class="sidenav-header">
+                <h2>Wine Club</h2>
+                <button id="sidebarnav-toggle" uk-close></button>
+            </div>
+
+
+            <ul class="pages" >
+                <li data="roles"><a href="{{route('admin.roles.index')}}">
+                        <span uk-icon="icon: thumbnails"></span> Roles</a>
+                    <span class="dropdown" uk-icon="icon: chevron-right"></span>
+
+                </li>
+                @if(Request::is('admin/roles'))
+                    <ul>
+                        <li><a href="{{route('admin.roles.create')}}">Create Roles</a></li>
+                    </ul>
+                @endif
+
+                <a href="{{route('admin.users.index')}}"><li><span uk-icon="icon: users"></span> Users</li></a>
+                @if(Request::is('admin/users'))
+                    <ul>
+                        <li><a href="{{route('admin.users.create')}}">Create Users</a></li>
+                    </ul>
+                @endif
+                <a href="{{route('admin.media.index')}}"><li><span uk-icon="icon: image"></span> Media</li></a>
+                @if(Request::is('admin/media'))
+                    <ul>
+                        <li><a href="{{route('admin.media.create')}}">Upload Image</a></li>
+                    </ul>
+                @endif
+                <a href="{{route('profile.index') }}"><li>User Profile</li></a>
+
+                <a href="{{route('logout')}}"><li>Logout</li></a>
+            </ul>
+
+        </div>
+
+    </div>--}}
+    @include('layouts.assets.footer')
+</div>
 
 
 <!-- Scripts -->

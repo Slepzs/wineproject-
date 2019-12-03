@@ -149,6 +149,9 @@ $comfortaa: 'Comfortaa', cursive;
 .flash-message-container {
     text-align: center;
     padding: 20px;
+    position: absolute;
+    right: 0px;
+    left: 0;
     .flash-message {
     }
 }

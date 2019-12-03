@@ -67,9 +67,9 @@ class UserProfileController extends Controller
     }
 
 
-    public function show($id) {
+    public function show($slug) {
 
-        $user = User::findOrFail($id);
+        $user = User::findBySlugOrFail($slug);
 
         return view('profile/show', compact('user'));
 

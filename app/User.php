@@ -1,7 +1,8 @@
 <?php
 
 namespace App;
-
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +11,30 @@ use App\Role;
 
 class User extends Authenticatable
 {
+    use Sluggable;
+    use SluggableScopeHelpers;
     use Notifiable;
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+
+    // https://github.com/cviebrock/eloquent-sluggable
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * The attributes that are mass assignable.

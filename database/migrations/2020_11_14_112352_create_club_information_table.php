@@ -22,7 +22,7 @@ class CreateClubInformationTable extends Migration
             $table->string('type')->nullable();;
             $table->timestamps();
             $table->foreign('photo_id')->references('id')->on('photos');
-            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('cascade');;
+            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('cascade');
         });
     }
 
