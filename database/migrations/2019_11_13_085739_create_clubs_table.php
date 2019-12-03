@@ -17,6 +17,7 @@ class CreateClubsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('owner_id');
             $table->string('name');
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

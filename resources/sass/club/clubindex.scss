@@ -10,6 +10,7 @@
 }
 
 
+
 // CRUD FORM
 .crud-form {
     .left-form-panel {
@@ -86,6 +87,8 @@
 
 }
 
+
+
 // LIST CARD
 .list-card {
     display: flex;
@@ -161,6 +164,31 @@
     }
 
 }
+
+
+
+// PROFILE CARD + USER
+.club-profile {
+
+    .list-card {
+        position: relative;
+
+        .icon-media {
+            position: absolute;
+            top: -30px;
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        .body-info {
+            padding: 80px 0 0 0;
+        }
+    }
+
+}
+
 
 
 

@@ -70,12 +70,13 @@ class ClubsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $club = Club::findOrFail($id);
+        $club = Club::findBySlugOrFail($slug);
+        $cludid = $club->id;
         $user = Auth::user()->id;
-        $userapplied = ClubUser::where('user_id', $user)->where('club_id', $id)->get();
-        //return $userapplied;
+        $userapplied = ClubUser::where('user_id', $user)->where('club_id', $cludid)->get();
+        //return $club;
         return view('clubs/show', compact('club', 'userapplied') );
 
     }
