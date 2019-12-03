@@ -62,7 +62,7 @@
                             <h3 class="uk-card-title">{{ $club->name }}</h3>
                             <p>Located at: {{$club->clubinformation->location }}</p>
                             <p>Type: {{ $club->clubinformation->type }}</p>
-                            <div class="primary-btn"><a href="{{route('clubs.show', $club->id)}}">View Club</a></div>
+                            <div class="primary-btn"><a href="{{route('clubs.show', $club->slug)}}">View Club</a></div>
                         </div>
                     </div>
                 @endforeach

@@ -8,18 +8,32 @@
     <div class="club-overview-section">
         <div class="uk-container uk-container--padding">
 
-            <!-- CLUB INTRO TEXT -->
-            <div class="club-info">
-                <div class="info-body">
-                    <h1>{{$club->name}} </h1>
-                    <p>Bla bla bla... <span uk-icon="icon: happy; ratio: 0.8"></span></p>
-                </div>
-            </div>
+            <!-- CLUB PROFILE -->
+            <div class="club-profile">
 
+                <div class="list-card uk-card uk-card-default">
+                    <div class="icon-media">
+                        <img src="{{$club->clubinformation->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="Club image">
+                    </div>
+                    <div class="body-info">
+                        <h3 class="uk-card-title">{{ $club->name }}</h3>
+                        <p>Located at: {{$club->clubinformation->location }}</p>
+                        <p>Type: {{ $club->clubinformation->type }}</p>
+                        <div class="bio">
+                            {{ $club->clubinformation->bio }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
         </div>
     </div>
+
+
+
+
 {{--    <div class="club">
 
      <h1>Club Name: {{$club->name}} </h1>
