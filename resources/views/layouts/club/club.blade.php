@@ -38,9 +38,7 @@
             <li class="uk-nav-header">My Dashboard</li>
             <li class="uk-nav-divider"></li>
             <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">Membership(s)</a></li>
-            <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ url('/profile') }}">Profile</a></li>
-            <li class="uk-nav-header">Admin panel</li>
-            <li class="uk-nav-divider"></li>
+            <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ route('profile.show', Auth::user()->id) }}">Profile</a></li>
 
         </ul>
     </div>

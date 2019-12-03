@@ -32,15 +32,15 @@
 
         <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
 
-            <li class="uk-nav-header">Main panel</li>
-            <li class="uk-nav-divider"></li>
-            <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>
-            <li class="uk-nav-header">My Dashboard</li>
-            <li class="uk-nav-divider"></li>
-            <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">Membership(s)</a></li>
-            <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ url('/profile') }}">Profile</a></li>
-            <li class="uk-nav-header">Admin panel</li>
-            <li class="uk-nav-divider"></li>
+{{--                <li class="uk-nav-header">Main panel</li>
+                <li class="uk-nav-divider"></li>
+                <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>
+                <li class="uk-nav-header">My Dashboard</li>
+                <li class="uk-nav-divider"></li>
+                <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">Membership(s)</a></li>
+                <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ route('profile.show', Auth::user()->id) }}">Profile</a></li>--}}
+                <li class="uk-nav-header">Admin panel</li>
+                <li class="uk-nav-divider"></li>
 
         </ul>
     </div>
