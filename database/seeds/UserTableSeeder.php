@@ -20,14 +20,16 @@ class UserTableSeeder extends Seeder
                 'name' => 'Tobias Heide',
                 'last_name' => 'Jensen',
                 'email' => 'slepzs@gmail.com',
-                'password' => bcrypt('Px4z2n5h6s1.')
+                'password' => bcrypt('Px4z2n5h6s1.'),
+                'slug' => 'tobias-heide'
             ], [
                 'role_id' => 1,
                 'is_active' => 1,
                 'name' => 'Signe',
                 'last_name' => 'Frederiksen',
                 'email' => 'signe_frederiksen@hotmail.dk',
-                'password' => bcrypt('biine123')
+                'password' => bcrypt('biine123'),
+                'slug' => 'signe'
             ]
         ];
 

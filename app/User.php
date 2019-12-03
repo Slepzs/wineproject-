@@ -2,6 +2,7 @@
 
 namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +12,7 @@ use App\Role;
 class User extends Authenticatable
 {
     use Sluggable;
+    use SluggableScopeHelpers;
     use Notifiable;
 
     /**
@@ -18,6 +20,8 @@ class User extends Authenticatable
      *
      * @return array
      */
+
+    // https://github.com/cviebrock/eloquent-sluggable
     public function sluggable()
     {
         return [
@@ -25,6 +29,11 @@ class User extends Authenticatable
                 'source' => 'name'
             ]
         ];
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     /**
