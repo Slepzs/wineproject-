@@ -20,15 +20,14 @@
 
                             <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
 
-                                <li class="uk-nav-header">Main panel</li>
+                                <li class="uk-nav-header"><span uk-icon="grid"></span> Main panel</li>
                                 <li class="uk-nav-divider"></li>
                                 <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>
-                                <li class="uk-nav-header">My Dashboard</li>
+                                <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('wines.index') }}">Wine selection</a></li>
+                                <li class="uk-nav-header"><span uk-icon="user"></span> User Dashboard</li>
                                 <li class="uk-nav-divider"></li>
-                                <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">Membership(s)</a></li>
-                                <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ url('/profile') }}">Profile</a></li>
-                                <li class="uk-nav-header">Admin panel</li>
-                                <li class="uk-nav-divider"></li>
+                                <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ route('profile.show', Auth::user()->slug) }}">Profile</a></li>
+                                <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">My Clubs</a></li>
 
                             </ul>
                         </div>
@@ -86,7 +85,8 @@
                                             </div>
                                         </div>
                                         <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
-                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Club list</a></li>
+                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Main panel</a></li>
+                                        <li><a href="{{route('admin')}}"><span class="uk-icon" uk-icon="icon: cog"></span> Admin panel</a></li>
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();

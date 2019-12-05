@@ -1,17 +1,129 @@
 @extends('layouts.club.club')
 
 
-
-
-
 @section('content')
 
 
+    <!-- WINE CRUD -->
+    <div class="wine-crud-section">
+        <div class="uk-container uk-container--padding">
+
+            <!-- CLUB INTRO TEXT -->
+            <div class="club-info">
+                <div class="info-body">
+                    <h1>Edit wine information</h1>
+                    <p>Edit the details about the wine. Perhaps you wan to add a more detailed description about the wine, so others know what kind of wine you have uploaded.</p>
+                </div>
+            </div>
+
+            <!-- WINE CRUD -->
+            <div class="club-crud-panel">
+
+                <form class="crud-form crud-form--two-columns" method="POST" action="{{ route('admin.wines.update', $wine->id) }}"  enctype="multipart/form-data">
+                    <h3 class="">Edit wine details</h3>
+                    @csrf
+                    @method('put')
+                    <div class="left-form-panel">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">What type?</label>
+                            <select class="uk-select uk-inline uk-width-expand" name="category_id">
+                                <option value="{{$wine->winecategory->id}}">Red Wine</option>
+                                <option value="1">Red Wine</option>
+                                <option value="2">White Wine</option>
+                                <option value="3">Rosé Wine</option>
+                                <option value="4">Port Wine</option>
+                            </select>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Wine name</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" value="{{$wine->wine_name }}" name="wine_name">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Producer</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" value="{{$wine->producer }}" name="producer">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Vintage</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" placeholder="Nickname" value="{{$wine->vintage}}" name="vintage">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Grape / Blend</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" value="{{$wine->grape}}" name="grape">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Alcohol content (%)</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" value="{{$wine->alcohol_content}}" name="alcohol_content">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Wine price</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" value="{{$wine->wine_price}}" name="wine_price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-form-panel">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Size of the bottle</label>
+                            <select class="uk-select uk-inline uk-width-expand" name="bottle_size">
+                                <option value="{{$wine->bottle_size }}">{{$wine->bottle_size }}</option>
+                                <option value="All Sizes">All Sizes</option>
+                                <option value="Bottles">Bottles</option>
+                                <option value="Half bottles">Half bottles</option>
+                                <option value="Cases">Cases</option>
+                                <option value="Magnums">Magnums</option>
+                                <option value="Double Magnums">Double Magnums</option>
+                                <option value="Other sizes">Other sizes</option>
+                            </select>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Country / Region</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" id="address-input" type="text" value="{{$wine->winelocations->address_address}}" name="address_address">
+                                <input class="uk-input" id="address-latitude" type="hidden" value="{{$wine->winelocations->address_latitude}}" name="address_latitude">
+                                <input class="uk-input" id="address-longitude" type="hidden" value="{{$wine->winelocations->address_longitude}}" name="address_longitude">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Wine image</label>
+                            <div class="uk-inline uk-width-expand js-upload" uk-form-custom="target: true">
+                                <input type="file" name="photo_id" multiple type="button" tabindex="-1">
+                                <input class="uk-input" type="text" placeholder="Select file" disabled>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Description</label>
+                            <div class="uk-inline uk-width-expand">
+                                <textarea class="uk-textarea" rows="5" placeholder="{{$wine->wine_additionals->notes ?? ''}}" value="{{$wine->wine_additionals->notes ?? ''}}" name="notes"></textarea>
+                            </div>
+                        </div>
+                        <div class="uk-margin" uk-margin>
+                            <button class="uk-button uk-button-default primary-btn" type="submit">Update wine</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="maps">
+                    <div id="address-map-container" style="width:100%;height:400px; ">
+                        <div style="width: 100%; height: 100%" id="address-map"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
-
-
-    <div class="admin-forms" style="display: grid; grid-template-columns: 1fr 1fr">
+{{--    <div class="admin-forms" style="display: grid; grid-template-columns: 1fr 1fr">
 
         <form method="post" action="{{ route('admin.wines.update', $wine->id) }}" enctype="multipart/form-data">
             <fieldset class="uk-fieldset">
@@ -80,7 +192,7 @@
             </div>
 
         </div>
-    </div>
+    </div>--}}
 
 
 

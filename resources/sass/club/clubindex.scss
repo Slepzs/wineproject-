@@ -11,6 +11,7 @@
 
 
 
+
 // CRUD FORM
 .crud-form {
     .left-form-panel {
@@ -89,8 +90,8 @@
 
 
 
-// LIST CARD
-.list-card {
+// LIST CARD + PROFILE CARD
+.list-card, .profile-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,12 +108,16 @@
         img {
             width: 70px;
             height: 70px;
-            border-radius: 50px;
+            border-radius: 50%;
             border: 3px solid $primary-color;
         }
     }
     .body-info {
         padding: 15px 0 0 0;
+
+        &--expand {
+            width: 100%;
+        }
 
         ul.uk-navbar-nav {
             a {
@@ -120,12 +125,21 @@
                 padding: 0;
                 cursor: pointer;
             }
+            .uk-icon-button {
+                background-color: transparent;
+
+                &:hover {
+                    background-color: #f8f8f8;
+                }
+            }
         }
         .uk-navbar-dropdown {
-            padding: 10px 10px;
+            padding: 20px 30px 10px 30px;
+            text-align: left;
+            width: 225px;
 
             li {
-                margin-bottom: 5px;
+                margin-bottom: 10px;
             }
             a {
                 color: $dark;
@@ -146,6 +160,7 @@
                 color: $dark;
                 font-size: 0.6rem;
                 letter-spacing: 0.1em;
+                padding: 0;
 
                 &:hover {
                     text-decoration: underline;
@@ -161,29 +176,70 @@
         .primary-btn {
             margin-top: 20px;
         }
+
+        /* ONLY applies for wine list: extra feature */
+        .body-info-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1em;
+            font-size: $font-size-base;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed $dark;
+
+            .left-body-panel, .right-body-panel {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .left-body-panel {
+                grid-column: 1;
+                text-align: left;
+            }
+            .right-body-panel {
+                grid-column: 2;
+                text-align: right;
+            }
+            span.bold {
+                font-weight: 700;
+                font-size: $font-size-base;
+            }
+        }
     }
 
 }
-
-
-
-// PROFILE CARD + USER
+// USER PROFILE + CLUB PROFILE
 .club-profile {
 
-    .list-card {
+    .profile-card {
         position: relative;
+        margin-bottom: 20px;
+        align-items: start;
+        text-align: left;
 
-        .icon-media {
-            position: absolute;
-            top: -30px;
+        .body-info {
+            padding: 0;
 
-            img {
-                width: 100px;
-                height: 100px;
+            h4 {
+                font-size: 1rem;
             }
         }
-        .body-info {
-            padding: 80px 0 0 0;
+        &--main {
+            align-items: center;
+            text-align: center;
+
+            .icon-media {
+                position: absolute;
+                top: -30px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .body-info {
+                padding: 80px 0 0 0;
+            }
         }
     }
 
@@ -193,11 +249,21 @@
 
 
 // MEDIA QUERIES
+// XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
+@media (max-width: 320px) {
+
+    // LIST CARD + PROFILE CARD
+    .list-card, .profile-card {
+        padding: 30px 20px;
+    }
+
+}
+
 // MEDIUM - TABLET: This applies from 768px & onwards
 @media (min-width: 768px) {
 
     //BASE
-    .club-info {
+    .club-info, .club-crud-panel  {
         display: grid;
         grid-template-columns: 2fr 1fr;
     }
@@ -206,24 +272,22 @@
         grid-row-gap: 2em;
         grid-column-gap: 2em;
     }
-    .club-crud-panel {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
-
-
-    // PROFILE CRUD FORM
-    .profile-overview-section {
-        .profile-info {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-        }
-    }
 
 
     // LIST CARD
     .list-card {
         &:nth-child(2n) {
+            grid-column: 2;
+        }
+    }
+
+
+    // PROFILE + CLUB PROFILE
+    .club-profile {
+        display: grid;
+        grid-template-columns: auto 80% auto;
+
+        .profile-card {
             grid-column: 2;
         }
     }
@@ -239,9 +303,9 @@
     }
 
 
-    // PROFILE CRUD FORM
-    .profile-overview-section {
-        .crud-form {
+    // CRUD FORM
+    .crud-form {
+        &--two-columns {
             grid-column: span 2;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -284,8 +348,23 @@
         &:nth-child(3n) {
             grid-column: 3;
         }
-
     }
+    // USER PROFILE + CLUB PROFILE
+    .club-profile {
+        .profile-card {
+            &--main {
+                .icon-media {
+                    top: -70px;
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 // LARGE - DESKTOP: This applies from 1440px & onwards

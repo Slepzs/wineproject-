@@ -44,13 +44,13 @@
                 @foreach($clubs as $club)
                     <div class="list-card uk-card uk-card-default">
                         <div class="icon-media">
-                            <img src="../images/wineclub-hero.jpg" alt="Club image">
+                            <img src="{{$club->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="Club image">
                         </div>
                         <div class="body-info">
                             <div class="uk-card-badge">
                                 <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
                                     <li>
-                                        <a href="#" uk-icon="icon: more-vertical"></a>
+                                        <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
                                         <div class="uk-navbar-dropdown">
                                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                                 <li><a href="#"><span uk-icon="icon: plus-circle"></span>Apply for membership</a></li>
@@ -62,7 +62,7 @@
                             <h3 class="uk-card-title">{{ $club->name }}</h3>
                             <p>Located at: {{$club->clubinformation->location }}</p>
                             <p>Type: {{ $club->clubinformation->type }}</p>
-                            <div class="primary-btn"><a href="{{route('clubs.show', $club->slug)}}">View Club</a></div>
+                            <div class="primary-btn primary-btn--center"><a href="{{route('clubs.show', $club->slug)}}">View Club</a></div>
                         </div>
                     </div>
                 @endforeach

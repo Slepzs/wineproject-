@@ -1,4 +1,4 @@
-    @extends('layouts.club.club')
+@extends('layouts.club.club')
 
 
 @section('content')
@@ -18,7 +18,7 @@
             </div>
 
             <!-- PROFILE CRUD -->
-            <div class="profile-info">
+            <div class="club-crud-panel">
                 @if($errors)
 
                     @foreach ($errors->all() as $message)
@@ -29,7 +29,7 @@
 
                 @endif
 
-                <form class="crud-form" method="POST" action="{{route('profile.update', $user->id ) }}"  enctype="multipart/form-data">
+                <form class="crud-form crud-form--two-columns" method="POST" action="{{route('profile.update', $user->id ) }}"  enctype="multipart/form-data">
                     <h3 class="">Edit your profile information</h3>
                     @csrf
                     @method('put')
