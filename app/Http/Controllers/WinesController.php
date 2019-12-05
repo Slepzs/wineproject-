@@ -6,14 +6,24 @@ use App\Photo;
 use App\Wine;
 use App\WineLocations;
 use Illuminate\Http\Request;
+use Spatie\Searchable\Search;
 
 class WinesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+    public function search(Request $request)
+    {
+        if($request->has('search')){
+            $wines = Wine::search($request->get('search'))->get();
+            $wines->load('winecategory');
+        }else{
+            $wines = Wine::get();
+        }
+         // return $wines;
+         return view('ratings.choose', compact('wines'));
+    }
+
     public function index()
     {
 
@@ -76,7 +86,7 @@ class WinesController extends Controller
      */
     public function show($slug)
     {
-        $wine = Wine::with('winecategory', 'winelocations')->whereSlug($slug)->first();
+        $wine = Wine::with('x', 'winelocations')->whereSlug($slug)->first();
         // return $wine;
         return view('wines/show', compact('wine'));
 
@@ -139,4 +149,8 @@ class WinesController extends Controller
     {
         //
     }
+
+
+
+
 }

@@ -15457,7 +15457,7 @@ Dropzone.getElements = function (els, name) {
 
 // Asks the user the question and calls accepted or rejected accordingly
 //
-// The default implementation just uses `window.confirm` and then calls the
+// The default implementation just uses `window.nadnad` and then calls the
 // appropriate callback.
 Dropzone.confirm = function (question, accepted, rejected) {
   if (window.confirm(question)) {

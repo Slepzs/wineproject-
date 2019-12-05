@@ -39,7 +39,7 @@
             <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('wines.index') }}">Wines</a></li>
             <li class="uk-nav-header">My Dashboard</li>
             <li class="uk-nav-divider"></li>
-            <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">Membership(s)</a></li>
+            <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">My Club(s)</a></li>
             <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ route('profile.show', Auth::user()->slug) }}">Profile</a></li>
 
             </ul>

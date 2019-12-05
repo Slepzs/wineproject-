@@ -167,7 +167,7 @@ Route::group(['middleware'=>'auth'], function() {
         'destroy' => 'clubManagement.destroy',
     ]]);
 
-
+    Route::get('ratings/search', 'WinesController@search')->name('ratings.search');
     Route::resource('wines', 'WinesController',['names'=> [
         'index'=>'wines.index',
         'create'=>'wines.create',
@@ -176,6 +176,13 @@ Route::group(['middleware'=>'auth'], function() {
         'update' => 'wines.update',
         'show' => 'wines.show'
     ]]);
+
+    Route::group(array('prefix' => 'ratings'), function() {
+
+        Route::get('choose', 'WinesRatingController@index')->name('ratings.choose');
+        Route::get('confirm-rating', 'WinesRatingController@confirmrating')->name('ratings.confirm-rating');
+
+    });
 
 });
 

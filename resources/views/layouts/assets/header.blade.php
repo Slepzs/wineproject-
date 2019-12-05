@@ -159,8 +159,8 @@
                 <!-- SEARCH FORM -->
                 <div class="nav-overlay uk-navbar-right uk-flex-1" hidden>
                     <div class="uk-navbar-item uk-width-expand">
-                        <form class="uk-search uk-search-navbar uk-width-1-1">
-                            <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                        <form class="uk-search uk-search-navbar uk-width-1-1"  action="{{ route('ratings.search') }}">
+                            <input class="uk-search-input" name="search" type="search" placeholder="Search..." autofocus>
                         </form>
                     </div>
 

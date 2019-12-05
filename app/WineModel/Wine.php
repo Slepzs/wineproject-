@@ -5,12 +5,17 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
+
+use Laravel\Scout\Searchable;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Wine extends Model
 {
     use Sluggable;
     use SluggableScopeHelpers;
+
+    use Searchable;
 
     public function sluggable()
     {
@@ -20,6 +25,21 @@ class Wine extends Model
             ]
         ];
     }
+
+    public function toSearchableArray()
+    {
+        $data = $this->toArray();
+        $data['winecategory'] = $this->winecategory;
+        // ... any other data
+        return $data;
+    }
+
+
+    public function searchableAs()
+    {
+        return 'wine_index';
+    }
+
 
     protected $fillable = [
         'photo_id',

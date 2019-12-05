@@ -3,21 +3,17 @@
 
 @section('content')
 
-
-
-
     <!-- WINE LIST -->
     <div class="wine-list-section">
-        <div class="uk-container uk-container--padding">
-            <h2>All wines</h2>
-            <a href="{{route('wines.create')}}">Upload Wine</a>
-            <a href="{{route('ratings.choose')}}">Rate Wine</a>
-
+        <div class="uk-container--padding">
             <div class="wine-panel">
-                @foreach($wines as $wine)
                 <div class="wine-card uk-card uk-card-default uk-card-hover">
-                    <a href="">
+                    <a href="{{ url('/vin-spiritus-post') }}">
+                        <div class="uk-card-media-top">
+                            <img src="{{ $wine->photo->file ?? '/images/wineclub-hero.jpg' }}" alt="Event image">
+                        </div>
                         <div class="wine-card-info uk-card-header">
+                            <div class="uk-card-badge uk-label"><span uk-icon="icon: paint-bucket; ratio: 0.5"></span></div>
                             <p class="uk-text-meta">{{ $wine->winecategory->name }}</p>
                             <h2 class="uk-card-title">{{ $wine->wine_name }}</h2>
                         </div>
@@ -39,12 +35,10 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="wine-card-btn uk-card-footer">
-                            <a href="{{ route('wines.show', $wine->slug) }}" class="uk-button">View Wine</a>
-                        </div>
                     </a>
                 </div>
-                @endforeach
+
+                <div id="map"></div>
 
             </div>
         </div>
