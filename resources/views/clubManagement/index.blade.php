@@ -51,7 +51,7 @@
                             <div class="uk-card-badge">
                                 <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
                                     <li>
-                                        <a href="#" uk-icon="icon: more-vertical"></a>
+                                        <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
                                         <div class="uk-navbar-dropdown">
                                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                                 <li>
@@ -70,7 +70,7 @@
                             <h3 class="uk-card-title">{{ $club->name }}</h3>
                             <p>Located at: {{$club->clubinformation->location }}</p>
                             <p>Type: {{ $club->clubinformation->type }}</p>
-                            <div class="primary-btn"><a href="{{route('clubs.show', $club->id)}}">View Club</a></div>
+                            <div class="primary-btn primary-btn--center"><a href="{{route('clubs.show', $club->slug)}}">View Club</a></div>
                         </div>
                     </div>
                 @endforeach

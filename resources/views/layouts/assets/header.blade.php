@@ -117,7 +117,8 @@
                                             </div>
                                         </div>
                                         <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
-                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Club list</a></li>
+                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Main panel</a></li>
+                                        <li><a href="{{route('admin')}}"><span class="uk-icon" uk-icon="icon: cog"></span> Admin panel</a></li>
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
