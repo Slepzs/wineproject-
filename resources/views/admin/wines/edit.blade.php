@@ -12,7 +12,8 @@
             <div class="club-info">
                 <div class="info-body">
                     <h1>Edit wine information</h1>
-                    <p>Edit the details about the wine. Perhaps you wan to add a more detailed description about the wine, so others know what kind of wine you have uploaded.</p>
+                    <p>Edit the details about the wine.
+                        Perhaps you wan to add a more detailed description about the wine, so others know what kind of wine you have uploaded.</p>
                 </div>
             </div>
 
@@ -27,7 +28,7 @@
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-stacked-text">What type?</label>
                             <select class="uk-select uk-inline uk-width-expand" name="category_id">
-                                <option value="{{$wine->winecategory->id}}">Red Wine</option>
+                                <option value="{{$wine->winecategory->id}}">{{$wine->winecategory->name}}</option>
                                 <option value="1">Red Wine</option>
                                 <option value="2">White Wine</option>
                                 <option value="3">Rosé Wine</option>
@@ -47,7 +48,7 @@
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Vintage</label>
+                            <label class="uk-form-label" for="form-stacked-text">Vintage (Year)</label>
                             <div class="uk-inline uk-width-expand">
                                 <input class="uk-input" type="text" placeholder="Nickname" value="{{$wine->vintage}}" name="vintage">
                             </div>
@@ -86,14 +87,6 @@
                             </select>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Country / Region</label>
-                            <div class="uk-inline uk-width-expand">
-                                <input class="uk-input" id="address-input" type="text" value="{{$wine->winelocations->address_address}}" name="address_address">
-                                <input class="uk-input" id="address-latitude" type="hidden" value="{{$wine->winelocations->address_latitude}}" name="address_latitude">
-                                <input class="uk-input" id="address-longitude" type="hidden" value="{{$wine->winelocations->address_longitude}}" name="address_longitude">
-                            </div>
-                        </div>
-                        <div class="uk-margin">
                             <label class="uk-form-label" for="form-stacked-text">Wine image</label>
                             <div class="uk-inline uk-width-expand js-upload" uk-form-custom="target: true">
                                 <input type="file" name="photo_id" multiple type="button" tabindex="-1">
@@ -101,9 +94,16 @@
                             </div>
                         </div>
                         <div class="uk-margin">
-                            <label class="uk-form-label" for="form-stacked-text">Description</label>
+                            <label class="uk-form-label" for="form-stacked-text">Country / Region</label>
                             <div class="uk-inline uk-width-expand">
-                                <textarea class="uk-textarea" rows="5" placeholder="{{$wine->wine_additionals->notes ?? ''}}" value="{{$wine->wine_additionals->notes ?? ''}}" name="notes"></textarea>
+                                <input class="uk-input map-input" id="address-input" type="text" value="{{$wine->winelocations->address_address}}" name="address_address">
+                                <input class="uk-input" id="address-latitude" type="hidden" value="{{$wine->winelocations->address_latitude}}" name="address_latitude">
+                                <input class="uk-input" id="address-longitude" type="hidden" value="{{$wine->winelocations->address_longitude}}" name="address_longitude">
+                            </div>
+                        </div>
+                        <div class="uk-margin maps">
+                            <div id="address-map-container" style="height: 290px">
+                                <div style="width: 100%; height: 100%" id="address-map"></div>
                             </div>
                         </div>
                         <div class="uk-margin" uk-margin>
@@ -111,12 +111,6 @@
                         </div>
                     </div>
                 </form>
-
-                <div class="maps">
-                    <div id="address-map-container" style="width:100%;height:400px; ">
-                        <div style="width: 100%; height: 100%" id="address-map"></div>
-                    </div>
-                </div>
             </div>
 
         </div>
