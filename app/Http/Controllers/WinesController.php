@@ -86,7 +86,7 @@ class WinesController extends Controller
      */
     public function show($slug)
     {
-        $wine = Wine::with('x', 'winelocations')->whereSlug($slug)->first();
+        $wine = Wine::with('winecategory', 'winelocations')->whereSlug($slug)->first();
         // return $wine;
         return view('wines/show', compact('wine'));
 

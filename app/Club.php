@@ -44,6 +44,10 @@ class club extends Model
         return $this->hasMany(WineRating::class, 'club_id', 'id');
     }
 
+    public function wine() {
+        return $this->belongsToMany(Wine::class, 'club_wines')->withPivot('id');
+    }
+
 
 
 

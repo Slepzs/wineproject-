@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\club;
 use App\ClubInformation;
 use App\ClubUser;
+use App\ClubWine;
 use App\User;
+use App\Wine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -73,11 +75,15 @@ class ClubsController extends Controller
     public function show($slug)
     {
         $club = Club::findBySlugOrFail($slug);
-        $cludid = $club->id;
+        $clubid = $club->id;
         $user = Auth::user()->id;
-        $userapplied = ClubUser::where('user_id', $user)->where('club_id', $cludid)->get();
-        //return $club;
-        return view('clubs/show', compact('club', 'userapplied') );
+        $userapplied = ClubUser::where('user_id', $user)->where('club_id', $clubid)->get();
+
+        $wines = Club::with('wine.winelocations')->where('id', $clubid)->get();
+
+
+        //return $wines;
+        return view('clubs/show', compact('club', 'userapplied', 'wines') );
 
     }
 
@@ -148,6 +154,8 @@ class ClubsController extends Controller
         $input->user()->where('user_id', $user)->wherePivot('club_id', $id)->detach($user);
         return back();
     }
+
+
 
 
 

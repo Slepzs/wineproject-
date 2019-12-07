@@ -48,6 +48,7 @@
                                 </div>
                             </div>
                             <div class="wine-card-btn uk-card-footer">
+
                                 <a href="{{ route('ratings.confirm-rating', $wine->slug) }}" class="uk-button">Rate wine</a>
                             </div>
                         </a>
