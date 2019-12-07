@@ -19,6 +19,10 @@
     .right-form-panel {
         border-top: 1px dashed $primary-color;
         padding-top: 10px;
+
+        .address-map-container {
+            height: 250px;
+        }
     }
 }
 
@@ -309,25 +313,29 @@
             grid-column: span 2;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-column-gap: 5em;
+            //grid-column-gap: 5em;
 
             .left-form-panel {
                 grid-column: 1;
+                margin-right: 30px;
             }
             .right-form-panel {
                 grid-column: 2;
                 border-top: 0;
                 padding-top: 0;
                 position: relative;
+                padding-left: 30px;
+                border-left: 1px dashed $primary-color;
+                //margin-top: 52px;
 
-                &:before {
+                /*&:before {
                     content: "";
                     position: absolute;
                     top: -50px;
                     left: -40px;
                     height: 120%;
                     border: 1px dashed $primary-color;
-                }
+                }*/
 
                 .uk-textarea {
                     height: 350px;
