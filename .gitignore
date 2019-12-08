@@ -13,8 +13,4 @@ yarn-error.log
 /.idea
 .idea
 .idea/workspace.xml
-/public/css/styles.css
-/public/css/app.css
-/public/css/libs.css
-/public/images
-/public/js/app.js
+public/images
