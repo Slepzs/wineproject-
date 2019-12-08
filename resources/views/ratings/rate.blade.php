@@ -2,7 +2,7 @@
 
 
 @section('content')
-   
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 
     <!-- WINE PROFILE OVERVIEW -->
     <div class="club-profile-section">
@@ -33,7 +33,7 @@
                         <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
                         <p>{{ $wine->winecategory->name }}</p>
                         <p><span uk-icon="icon: user; ratio: 0.5"></span> {{ $wine->producer }}</p>
-
+                        <input id="input-21f" value="0" type="text" data-min=0 data-max=10 data-step=0.5 data-size="md" title="">
                     </div>
                 </div>
 
@@ -91,10 +91,31 @@
 
 @section('scripts')
 
-    <script type="text/javascript">
-        $(".rating").click(function() {
-            console.log($(this).attr("value"));
+    <script>
+        jQuery(document).ready(function () {
+            $("#input-21f").rating({
+                starCaptions: function (val) {
+                    if (val < 10) {
+                        return val;
+                    }
+                },
+                starCaptionClasses: function (val) {
+                    if (val < 3) {
+                        return 'label label-danger';
+                    } else {
+                        return 'label label-success';
+                    }
+                },
+                hoverOnClear: false,
+                showClear: false
+            });
+            console.log($(this).val());
+
+
+            $('#input-21f').on('rating:change', function(event, value, caption) {
+                console.log(value);
+            });
+
         });
     </script>
-
 @endsection
