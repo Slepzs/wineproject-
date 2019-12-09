@@ -183,6 +183,7 @@ Route::group(['middleware'=>'auth'], function() {
         Route::get('confirm-rating/{slug}', 'WinesRatingController@confirmrating')->name('ratings.confirm-rating');
         Route::post('confirmclub', 'WinesRatingController@confirmclub')->name('ratings.confirmclub');
         Route::get('rate/{slug}/club/{club}', 'WinesRatingController@rate')->name('ratings.rate');
+        Route::post('rated/{wine}', 'WinesRatingController@rated')->name('ratings.rated');
 
     });
 

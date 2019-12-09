@@ -114,7 +114,7 @@
                                 {{-- $wine->wine_ratings ?: 'Not rated yet' --}}
                             </div>
                         </div>
-                        <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.rate', [$wine->slug, $club->slug]) }}">Rate</a></div>
+                        <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.rate', [$wine->slug, $club->id]) }}">Rate</a></div>
                     </div>
                 </div>
 
