@@ -56,8 +56,8 @@
                             </ul>
                         </div>
                         <h1 class="uk-card-title">{{ $club->name }}</h1>
-                        <p>Located at: {{$club->clubinformation->location }}</p>
-                        <p>Type: {{ $club->clubinformation->type }}</p>
+                        <p>{{$club->clubinformation->location }}</p>
+                        <p>{{ $club->clubinformation->type }}</p>
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@
                                         <p><span uk-icon="icon: star; ratio: 1.5"></span></p>
                                     </div>
                                     <p>Start a collective wine rating <br/>with your club members!</p>
-                                    <div class="primary-btn primary-btn--center"><a href="{{-- route('clubs.show', $club->slug) --}}">Rate wine</a></div>
+                                    <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.choose') }}">Rate wine</a></div>
                                 </div>
                             </div>
                         </div>
@@ -158,24 +158,49 @@
                 <div class="club-profile-collection">
                     <h2 class="uk-card-title">Wine collection</h2>
 
+
                     <div class="club-wine">
+                        @foreach($wines as $winex)
+
+                            @foreach($winex->wine as $wine)
                         <div class="list-card uk-card uk-card-default">
                             <div class="icon-media">
-                                <img src="/images/wineclub-hero.jpg{{--$club->photo->file ?? '/images/wineclub-hero.jpg'--}}" alt="Club wine image">
+                                <img src="{{$wine->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="Club wine image">
                             </div>
                             <div class="body-info">
-                                <h3 class="uk-card-title">Wine name</h3>
-                                <p>Red wine{{-- $wine->winecategory->name --}}</p>
-                                <p>SS, {{-- $wine->producer --}} 2012 {{-- $wine->vintage --}}</p>
+                                <div class="uk-card-badge">
+                                    <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
+                                        <li>
+                                            <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
+                                            <div class="uk-navbar-dropdown">
+                                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                    @if(Auth::user()->name === $wine->user->name)
+                                                        <li><a href="{{route('admin.wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
+                                <p>Red wine{{ $wine->winecategory->name }}</p>
+                                <p>{{ $wine->producer }},  {{ $wine->vintage }}</p>
                                 <div class="wine-rating">
-                                    <p>{{-- $wine->wine_ratings --}}
+                                    <p>{{ $wine->wine_ratings }}
                                         <span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span> <span class="bold">3.4</span>
                                     </p>
                                 </div>
-                                <div class="primary-btn primary-btn--center"><a href="{{--route('clubs.show', $club->slug)--}}">View Wine</a></div>
+                                <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.rate', [$wine->slug, $club->id]) }}">Rate Wine</a></div>
                             </div>
                         </div>
+
+                            @endforeach
+
+                        @endforeach
+
                     </div>
+
+
 
                     <div class="primary-btn primary-btn--center">
                         <a href="#">View more</a>
@@ -186,89 +211,5 @@
 
         </div>
     </div>
-    <div>
-        @foreach($wines as $winex)
-
-           @foreach($winex->wine as $wine)
-
-                <div class="list-card uk-card uk-card-default">
-                    <div class="icon-media">
-                        <img src="{{$wine->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="Wine image">
-                    </div>
-                    <div class="body-info">
-                        <div class="uk-card-badge">
-                            <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
-                                <li>
-                                    <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            @if(Auth::user()->name === $wine->user->name)
-                                                <li><a href="{{route('admin.wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
-                                            @endif
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
-                        <span>{{ $wine->winecategory->name }}</span>
-                        <p><span uk-icon="icon: user; ratio: 0.5"></span> {{ $wine->producer }}</p>
-                        <div class="body-info-columns">
-                            <div class="left-body-panel">
-                                <p><span uk-icon="icon: world; ratio: 0.5"></span> {{ $wine->wine_location }}</p>
-                                <p><span uk-icon="icon: tag; ratio: 0.5"></span> {{ $wine->grape }}</p>
-                                <p><span uk-icon="icon: clock; ratio: 0.5"></span> {{ $wine->vintage }}</p>
-                            </div>
-                            <div class="right-body-panel">
-                                <span class="bold">3.4</span>
-                                <p>{{ $wine->wine_ratings }}
-                                    <span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span>
-                                </p>
-                                {{-- $wine->wine_ratings ?: 'Not rated yet' --}}
-                            </div>
-                        </div>
-                        <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.rate', [$wine->slug, $club->id]) }}">Rate</a></div>
-                    </div>
-                </div>
-
-            @endforeach
-
-
-        @endforeach
-    </div>
-
-
-
-
-{{--    <div class="club">
-
-     <h1>Club Name: {{$club->name}} </h1>
-
-
-            @if($club->owner_id != Auth::user()->id)
-                @if(count($userapplied))
-                    <form method="POST" action="{{route('clubs.withdraw', $club->id )}}">
-                        @method('delete')
-                        @csrf
-                        <input type="hidden" name="club_id" value="{{$club->id}}">
-                        <button type="submit" class="uk-button uk-button-secondary">Withdraw</button>
-                    </form>
-                    @else
-                    <form method="POST" action="{{route('clubs.apply', Auth::user()->id)}}">
-                        @method('put')
-                        @csrf
-                        <input type="hidden" name="club_id" value="{{$club->id}}">
-                        <button type="submit" class="uk-button uk-button-primary">Apply</button>
-                    </form>
-
-                @endif
-            @endif
-
-
-
-
-
-    </div>--}}
-
 
 @endsection
