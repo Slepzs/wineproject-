@@ -30,56 +30,93 @@
                                 </li>
                             </ul>
                         </div>
-                        <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
+                        <h1 class="uk-card-title">{{ $wine->wine_name }}</h1>
                         <p>{{ $wine->winecategory->name }}</p>
                         <p><span uk-icon="icon: user; ratio: 0.5"></span> {{ $wine->producer }}</p>
                     </div>
                 </div>
 
-                <div class="profile-card uk-card uk-card-default">
-                    <div class="body-info">
-                        <h4 class="uk-card-title">Description</h4>
-                        <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. </p>
-                        <p>{{-- $wine->bio ?: 'Write a description about yourself...' --}}</p>
+                <div class="profile-card profile-card--columns">
+                    <div class="profile-card uk-card uk-card-default">
+                        <div class="body-info">
+                            <h2 class="uk-card-title">Details</h2>
+                            <p>Country / Region: {{ $wine->winelocations->adresse_adresse }}</p>
+                            <p>Grape: {{ $wine->grape }}</p>
+                            <p>Year: {{ $wine->vintage }}</p>
+                            <p>Volume (%): {{ $wine->alcohol_content }}</p>
+                            <p>Size (cl): {{ $wine->bottle_size }}</p>
+                            <p>Price: {{ $wine->wine_price }}</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-card profile-card--highlight uk-card uk-card-default">
+                        <div class="body-info">
+                            <div class="uk-card-badge">
+                                <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
+                                    <li>
+                                        <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
+                                        <div class="uk-navbar-dropdown">
+                                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                @if(Auth::user()->name === $wine->user->name)
+                                                    <li><a href="{{--route('admin.wines.edit', $wine->id)--}}"><span uk-icon="icon: plus-circle"></span>Edit wine rating</a></li>
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h2 class="uk-card-title">Wine rating</h2>
+                            <div class="wine-rating">
+                                <div class="rating-circle">
+                                    <div class="rating-value">
+                                        <p>3.4{{ $wine->wine_ratings }}</p>
+                                    </div>
+                                    <div class="rating-star">
+                                        <span class="rated" uk-icon="icon: star"></span>
+                                        <span class="rated" uk-icon="icon: star"></span>
+                                        <span class="rated" uk-icon="icon: star"></span>
+                                        <span uk-icon="icon: star"></span>
+                                        <span uk-icon="icon: star"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wine-awards">
+                                <h3 class="uk-card-title">Awards</h3>
+                                <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="profile-card uk-card uk-card-default">
-                    <div class="body-info body-info--expand">
-                        <h4 class="uk-card-title">Details</h4>
-                        <div class="body-info-columns">
-                            <div class="left-body-panel">
-                                <p>Country / Region: {{ $wine->wine_location }}</p>
-                                <p>Grape: {{ $wine->grape }}</p>
-                                <p>Year: {{ $wine->vintage }}</p>
-                                <p>Volume (%): {{ $wine->alcohol_content }}</p>
-                                <p>Size (cl): {{ $wine->bottle_size }}</p>
-                            </div>
-                            <div class="right-body-panel">
-                                <p>Rating</p>
-                                <span class="bold">3.4</span>
-                                <p>{{ $wine->wine_ratings }}
-                                    <span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span>
-                                </p>
-                                <p>Value</p>
-                                <p>59.2{{-- $wine->grape --}}</p>
-                            </div>
+                    <div class="body-info">
+                        <div class="uk-card-badge">
+                            <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
+                                <li>
+                                    <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
+                                    <div class="uk-navbar-dropdown">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                                            @if(Auth::user()->name === $wine->user->name)
+                                                <li><a href="{{--route('admin.wines.edit', $wine->id)--}}"><span uk-icon="icon: plus-circle"></span>Edit wine notes</a></li>
+                                            @endif
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="body-info-columns">
-                            <div class="left-body-panel">
-                                <p>Price</p>
-                                <p>{{ $wine->wine_price }}</p>
-                            </div>
-                            <div class="right-body-panel">
-                                <p>Real price</p>
-                                <p>{{ $wine->wine_price }}</p>
-                            </div>
-                        </div>
+                        <h2 class="uk-card-title">Notes</h2>
+                        <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. </p>
+                        <p>{{-- $wine->wineadditionals->notes ?: 'Write a description about yourself...' --}}</p>
+
+                        <h3 class="uk-card-title">Food suggestions</h3>
+                        <p>Style:</p>
+                        <p>Lorem Ipsum typografiindustrien.</p>
+                        <p>Food pairing:</p>
+                        <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien.</p>
                     </div>
                 </div>
 
             </div>
-
 
         </div>
     </div>

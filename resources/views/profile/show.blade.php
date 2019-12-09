@@ -30,7 +30,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <h3 class="uk-card-title">{{ $user->name }} {{ $user->last_name }}</h3>
+                        <h1 class="uk-card-title">{{ $user->name }} {{ $user->last_name }}</h1>
                         <p>Nickname: #{{ $user->nickname ?: 'your-nickname' }}</p>
                         <p>{{ $user->role->name }}</p>
                     </div>
@@ -38,7 +38,7 @@
 
                 <div class="profile-card uk-card uk-card-default">
                     <div class="body-info">
-                        <h4 class="uk-card-title">Biography</h4>
+                        <h2 class="uk-card-title">Biography</h2>
                          <p>{{ $user->bio ?: 'Write a description about yourself...' }}</p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <h4 class="uk-card-title">Personal information</h4>
+                        <h2 class="uk-card-title">Personal information</h2>
                         <p>Email: {{$user->email }}</p>
                         <p>Password: <span uk-icon="more"></span> <span uk-icon="more"></span> <span uk-icon="more"></span></p>
                     </div>
