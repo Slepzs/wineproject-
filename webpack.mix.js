@@ -26,7 +26,8 @@ mix.js('resources/js/app.js', 'public/js')
 mix.scripts([
     'resources/js/framework/uikit.js',
     'resources/js/framework/uikit-icons.js',
-    'resources/js/framework/dropzone.js'
+    'resources/js/framework/dropzone.js',
+    'resources/js/stars/star-rating.js'
 
 ], 'public/js/libs.js');
 

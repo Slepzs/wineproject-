@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 
     <!-- WINE PROFILE OVERVIEW -->
     <div class="club-profile-section">
@@ -33,9 +33,7 @@
                         <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
                         <p>{{ $wine->winecategory->name }}</p>
                         <p><span uk-icon="icon: user; ratio: 0.5"></span> {{ $wine->producer }}</p>
-                        <button class="primary-btn" onclick="club()" href="#modal-example" uk-toggle>
-                            Pick Club
-                        </button>
+                        <input id="input-21f" value="0" type="text" data-min=0 data-max=10 data-step=0.5 data-size="md" title="">
                     </div>
                 </div>
 
@@ -80,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
@@ -88,92 +87,35 @@
 
 
 
-    <div id="modal-example" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title">Pick Club</h2>
-
-            <div id="clubs">
-                @if(count($clubs) > 0)
-                    @foreach($clubs as $club)
-
-                        <div class="choosewine">
-                            <img class="" src="{{$club->clubinformation->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="">
-                            <form action="{{route('ratings.confirmclub')}}" method="post">
-                                @csrf
-                                @method('post')
-                                <input type="hidden" name="club_id" value="{{$club->id}}">
-                                <input type="hidden" name="wine_id" value="{{$wine->id}}">
-                                <button class="primary-btn-choose" type="submit">{{$club->name}}</button>
-                            </form>
-                        </div>
-
-                        @endforeach
-
-                    @endif
-            </div>
-
-
-            <p class="uk-text-right">
-                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            </p>
-        </div>
-    </div>
-
-    {{--<style>
-        #map {
-            height: 100%;
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-
-    <!-- WINE LIST -->
-    <div class="wine-list-section">
-        <div class="uk-container--padding">
-            <div class="wine-panel">
-                    <div class="wine-card uk-card uk-card-default uk-card-hover">
-                        <a href="{{ url('/vin-spiritus-post') }}">
-                            <div class="uk-card-media-top">
-                                <img src="{{ $wine->photo->file ?? '/images/wineclub-hero.jpg' }}" alt="Event image">
-                            </div>
-                            <div class="wine-card-info uk-card-header">
-                                <div class="uk-card-badge uk-label"><span uk-icon="icon: paint-bucket; ratio: 0.5"></span></div>
-                                <p class="uk-text-meta">{{ $wine->winecategory->name }}</p>
-                                <h2 class="uk-card-title">{{ $wine->wine_name }}</h2>
-                            </div>
-                            <div class="wine-card-utility uk-card-body">
-                                <div class="region-grape">
-                                    <ul class="uk-iconnav uk-iconnav-vertical">
-                                        <li><span uk-icon="icon: world; ratio: 0.5"></span> {{ $wine->location }}</li>
-                                        <li><span uk-icon="icon: paint-bucket; ratio: 0.5"></span> {{ $wine->grape }}</li>
-                                    </ul>
-                                </div>
-                                <div class="rating">
-                                    <p class="rate">3.24</p>
-                                    <p>
-                                        <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                                        <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                                        <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                                        <span uk-icon="icon: star; ratio: 0.5"></span>
-                                        <span uk-icon="icon: star; ratio: 0.5"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                <div id="map"></div>
-
-            </div>
-        </div>
-    </div>--}}
-
-    <!-- End of content -->
 @endsection
 
 @section('scripts')
 
+    <script>
+        jQuery(document).ready(function () {
+            $("#input-21f").rating({
+                starCaptions: function (val) {
+                    if (val < 10) {
+                        return val;
+                    }
+                },
+                starCaptionClasses: function (val) {
+                    if (val < 3) {
+                        return 'label label-danger';
+                    } else {
+                        return 'label label-success';
+                    }
+                },
+                hoverOnClear: false,
+                showClear: false
+            });
+            console.log($(this).val());
+
+
+            $('#input-21f').on('rating:change', function(event, value, caption) {
+                console.log(value);
+            });
+
+        });
+    </script>
 @endsection

@@ -1,0 +1,28 @@
+.choosewine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    align-items: center;
+    img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 3px solid #d0c5b1;
+    }
+    .primary-btn-choose {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #FFFFFF;
+        background-color: #d0c5b1;
+        border-radius: 50px;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+        border: none;
+        text-decoration: none;
+    }
+}
+.uk-modal-body {
+    border-radius: 10px;
+}

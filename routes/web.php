@@ -139,8 +139,8 @@ Route::group(['middleware'=>'auth'], function() {
 
 
     Route::get('clubs/overview', 'ClubsController@myclubs')->name('clubs.myclubs');
-    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.myclubs');
-    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.myclubs');
+    Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.withdraw');
+    Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.apply');
 
     Route::resource('clubs', 'ClubsController', ['names' => [
         'index'=>'clubs.index',
@@ -180,7 +180,9 @@ Route::group(['middleware'=>'auth'], function() {
     Route::group(array('prefix' => 'ratings'), function() {
 
         Route::get('choose', 'WinesRatingController@index')->name('ratings.choose');
-        Route::get('confirm-rating', 'WinesRatingController@confirmrating')->name('ratings.confirm-rating');
+        Route::get('confirm-rating/{slug}', 'WinesRatingController@confirmrating')->name('ratings.confirm-rating');
+        Route::post('confirmclub', 'WinesRatingController@confirmclub')->name('ratings.confirmclub');
+        Route::get('rate/{slug}/club/{club}', 'WinesRatingController@rate')->name('ratings.rate');
 
     });
 

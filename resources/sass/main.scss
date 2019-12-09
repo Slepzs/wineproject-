@@ -19,12 +19,15 @@
 
 
 // Layout Assets
-@import "layouts/header";
+@import 'layouts/header';
 @import 'layouts/footer';
-@import "club/clubindex";
+@import 'club/clubindex';
 
 
 // Basic structure
 @import "layouts/base";
 
 
+// Ratings
+@import 'ratings/ratings';
+@import 'stars/star-rating.css';

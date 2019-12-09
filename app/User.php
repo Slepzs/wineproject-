@@ -77,9 +77,7 @@ class User extends Authenticatable
     }
 
     public function club() {
-
         return $this->belongsToMany(Club::class, 'club_users')->withPivot('id', 'is_active', 'role_id');
-
     }
 
     public function wine() {
