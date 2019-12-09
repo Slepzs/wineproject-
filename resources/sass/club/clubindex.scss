@@ -93,7 +93,7 @@
 
 
 
-// LIST CARD + PROFILE CARD
+// LIST CARD(,) AND USER PROFILE + CLUB PROFILE + WINE PROFILE
 .list-card, .profile-card {
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@
     border-radius: 30px;
     text-align: center;
 
-    h3, p {
+    .uk-card-title, p {
         margin: 0;
     }
 
@@ -118,9 +118,9 @@
     .body-info {
         padding: 15px 0 0 0;
 
-        &--expand {
+        /*&--expand {
             width: 100%;
-        }
+        }*/
 
         ul.uk-navbar-nav {
             a {
@@ -211,7 +211,7 @@
     }
 
 }
-// USER PROFILE + CLUB PROFILE
+// USER PROFILE + CLUB PROFILE + WINE PROFILE
 .club-profile {
 
     .profile-card {
@@ -223,14 +223,26 @@
         .body-info {
             padding: 0;
 
-            h4 {
+            h2.uk-card-title {
+                margin: 0 0 20px 0;
+            }
+            h3.uk-card-title {
                 font-size: 1rem;
+
+                &:not(:first-child) {
+                    margin: revert;
+                }
             }
         }
+        // Main top column with profile image
         &--main {
             align-items: center;
             text-align: center;
 
+            h1.uk-card-title {
+                font-size: 2.5rem;
+                margin: 0;
+            }
             .icon-media {
                 position: absolute;
                 top: -30px;
@@ -244,8 +256,170 @@
                 padding: 80px 0 0 0;
             }
         }
+        // Two columns card
+        &--columns {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: stretch;
+
+            & > .profile-card {
+                justify-content: flex-start;
+
+                .body-info {
+                    width: 100%;
+                }
+            }
+
+            .wine-rating {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                .rating-circle {
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: relative;
+                        display: inline-block;
+                        width: 100px;
+                        height: 100px;
+                        border: 7px solid $white;
+                        border-radius: 50%;
+                    }
+                    .rating-value {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        p {
+                            position: absolute;
+                            top: -75px;
+                            font-size: 1.2rem;
+                            font-weight: 700;
+
+                            .uk-icon {
+                                vertical-align: text-bottom;
+
+                                & svg > polygon {
+                                    fill: $white;
+                                    vertical-align: top;
+                                }
+                            }
+                        }
+                    }
+                    .rating-star {
+                        color: $white;
+                        margin-top: 20px;
+
+                        .rated svg polygon {
+                            fill: $white;
+                        }
+                    }
+                }
+                .primary-btn a {
+                    background-color: $secondary-color;
+                    color: $dark;
+
+                    &:hover {
+                        background-color: $dark;
+                        color: $white;
+                    }
+                }
+            }
+            .wine-awards {
+                margin-top: 20px;
+            }
+        }
+        // Bg highlight card
+        &--highlight {
+            background-color: $primary-color;
+
+            .uk-card-title, p {
+                color: $white;
+            }
+        }
     }
 
+}
+// CLUB PROFILE; MEMBER SECTION
+.club-profile-members {
+    margin-bottom: 20px;
+
+    h2 {
+        display: inline-block;
+    }
+    span a {
+        font-size: $font-size-base;
+        font-weight: 700;
+        color: $primary-color;
+        float: right;
+    }
+
+    .profile-card {
+        margin-bottom: 20px;
+        align-items: flex-start;
+
+        .body-info {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            grid-column-gap: 2em;
+            text-align: left;
+            padding: 0;
+
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: $font-size-base;
+            }
+
+            .member-image {
+                width: 50px;
+                height: 50px;
+                border: 3px solid $primary-color;
+                border-radius: 50%;
+            }
+            .member-email {
+                display: none;
+            }
+            .member-role {
+                display: none;
+            }
+        }
+    }
+    /*.body-info {
+        display: grid;
+        grid-template-columns: 50px repeat(3, 1fr);
+        grid-column-gap: 2em;
+    }*/
+}
+// CLUB PROFILE; WINE COLLECTION SECTION
+.club-profile-collection {
+    margin-bottom: 20px;
+
+    .club-wine {
+
+        .list-card {
+            margin-bottom: 20px;
+
+            .body-info {
+                h3 {
+                    font-size: 1rem;
+                }
+                p, span {
+                    font-size: $font-size-base;
+                }
+                .primary-btn {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
 }
 
 
@@ -285,13 +459,51 @@
     }
 
 
-    // PROFILE + CLUB PROFILE
+    // USER PROFILE + CLUB PROFILE + WINE PROFILE
     .club-profile {
         display: grid;
         grid-template-columns: auto 80% auto;
 
         .profile-card {
             grid-column: 2;
+
+            &--columns {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 1em;
+
+                & > .profile-card:first-child {
+                    grid-column: 1;
+                }
+            }
+        }
+        .club-profile-members, .club-profile-collection {
+            grid-column: 2;
+        }
+    }
+    // CLUB PROFILE; MEMBER SECTION
+    .club-profile-members {
+        .profile-card {
+            .body-info {
+                display: grid;
+                grid-template-columns: 50px repeat(2, 1fr);
+
+                .member-email {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    // CLUB PROFILE; WINE COLLECTION SECTION
+    .club-profile-collection {
+        .club-wine {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 2em;
+
+            .list-card:nth-child(2n) {
+                grid-column: 2;
+            }
         }
     }
 
@@ -356,7 +568,7 @@
             grid-column: 3;
         }
     }
-    // USER PROFILE + CLUB PROFILE
+    // USER PROFILE + CLUB PROFILE + WINE PROFILE
     .club-profile {
         .profile-card {
             &--main {
@@ -368,6 +580,33 @@
                         height: 150px;
                     }
                 }
+            }
+        }
+    }
+    // CLUB PROFILE; MEMBER SECTION
+    .club-profile-members {
+        .profile-card {
+            .body-info {
+                grid-template-columns: 50px repeat(3, 1fr);
+                .member-role {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    // CLUB PROFILE; WINE COLLECTION SECTION
+    .club-profile-collection {
+        .club-wine {
+            grid-template-columns: repeat(3, 1fr);
+
+            .list-card:nth-child(2n) {
+                grid-column: unset;
+            }
+            .list-card:nth-child(3n-1) {
+                grid-column: 2;
+            }
+            .list-card:nth-child(3n) {
+                grid-column: 3;
             }
         }
     }
