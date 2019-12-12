@@ -7,9 +7,9 @@
                 <h3 class="uk-card-title">Fullname</h3>
                 <p>{{ $users->name }}</p>
             </div>
-            <div class="member-email">
+            <div class="member-nickname">
                 <h3 class="uk-card-title">Nickname</h3>
-                <p>{{ $users->nickname ?? 'Nothing set' }}</p>
+                <p>#{{ $users->nickname ?: 'Nothing set' }}</p>
             </div>
             <div class="member-role">
                 <h3 class="uk-card-title">Role</h3>
@@ -20,7 +20,3 @@
 
 
 @endforeach
-<div class="primary-btn primary-btn--center">
-    <a href="#">View more</a>
-</div>
-</div>

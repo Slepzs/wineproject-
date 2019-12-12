@@ -28,7 +28,9 @@
 
     <!-- Admin sidebar nav (DESKTOP ONLY) -->
     <div class="admin-sidebar-nav dt-nav">
-        <a href="{{ url('/') }}" class="uk-logo">Logo</a>
+        <a href="{{ url('/') }}" class="uk-logo">
+            <img class="wine-club-logo" src="../images/wine-club-logo.svg" alt="Wine Club">
+        </a>
 
         <div uk-sticky="sel-target: .uk-nav; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
             <ul class="uk-nav uk-nav-default uk-margin-xlarge-top">

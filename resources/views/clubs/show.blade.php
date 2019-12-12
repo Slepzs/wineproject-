@@ -89,7 +89,10 @@
 
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
+                    <h2 class="uk-card-title">Club members</h2>
+                    <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club members list)</a></span>
 
+                    @include('clubs.ekstra.members')
 
 
                     @if($club->GetMember($club->id))
@@ -97,34 +100,32 @@
                     @if($club->EditUsers($club->id))
                     <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club list)</a></span>
                     @endif
-
-
-                    @include('clubs.ekstra.members')
-
-
-
+                    <div class="primary-btn primary-btn--center">
+                        <a href="#">View more</a>
                     </div>
+                </div>
 
+
+                @include('clubs.ekstra.members')
                 <div class="primary-btn primary-btn--center">
                     <a href="#">View more</a>
                 </div>
-                @endif
 
-
-
-
-             @if($club->GetMember($club->id))
                 <!-- CLUB WINE COLLECTION -->
                 <div class="club-profile-collection">
                     <h2 class="uk-card-title">Wine collection</h2>
-
 
                     <div class="club-wine">
 
 
                         @include('clubs.ekstra.wines')
 
+                        @endforeach
+
                     </div>
+
+
+
                     <div class="primary-btn primary-btn--center">
                         <a href="#">View more</a>
                     </div>
@@ -139,5 +140,6 @@
 
         </div>
     </div>
+
 
 @endsection
