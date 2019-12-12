@@ -13,21 +13,19 @@
                 <div class="info-body">
                     <h1>Club list</h1>
                     <p>Bla bla bla... <span uk-icon="icon: happy; ratio: 0.8"></span></p>
+
                 </div>
             </div>
 
+            <form method="GET"  class="uk-search uk-search-large" action="{{ route('clubs.search') }}">
+
+                <input type="text" name="search"  class="uk-search-input" placeholder="Search">
+            </form>
+            <hr>
+
             <div class="club-list-panel">
 
-                <!-- CREATE CLUB CARD -->
-                <a href="{{route('clubs.create')}}" class="create-card uk-card uk-card-default uk-link-toggle">
-                    <div class="icon-media">
-                        <span uk-icon="icon: plus-circle; ratio: 2.5"></span>
-                    </div>
-                    <div class="body-info">
-                        <h3 class="uk-card-title">Create a Club</h3>
-                        <p>(3 slots available)</p>
-                    </div>
-                </a>
+            @include('clubs.ekstra.club_amount')
 
                 <!-- CREATE CLUB CARD: NO AVAILABLE SLOTS -->
 {{--                <a href="{{route('clubs.create')}}" class="create-card create-card--disabled uk-card uk-card-default uk-link-toggle">

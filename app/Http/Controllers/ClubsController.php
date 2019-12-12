@@ -24,26 +24,33 @@ class ClubsController extends Controller
 
         $clubs = club::all();
 
+        $club_amount = club::where('owner_id', Auth::user()->id)->count();
+
+
         //return $clubs;
-        return view('clubs/index', compact('clubs'));
+        return view('clubs/index', compact('clubs', 'club_amount'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function search(Request $request)
     {
+        if($request->has('search')){
+            $clubs = club::search($request->get('search'))->get();
+        }else{
+            $clubs = club::get();
+        }
+
+        $club_amount = club::where('owner_id', Auth::user()->id)->count();
+        return view('clubs/index', compact('clubs', 'club_amount'));
+    }
+
+
+    public function create() {
+
         return view('clubs/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function store(Request $request)
     {
 
@@ -81,9 +88,13 @@ class ClubsController extends Controller
 
         $wines = Club::with('wine.winelocations')->where('id', $clubid)->get();
 
+        $allusers = $club->user()
+            ->wherePivot('role_id', '<=', '3')
+            ->get();
 
-        //return $wines;
-        return view('clubs/show', compact('club', 'userapplied', 'wines') );
+
+        // return $allusers;
+        return view('clubs/show', compact('club', 'userapplied', 'wines', 'allusers') );
 
     }
 

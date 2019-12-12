@@ -14,5 +14,5 @@ function nickname() {
     } else {
         return Auth::user()->name;
     }
-
 }
+

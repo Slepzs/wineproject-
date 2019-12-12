@@ -31,7 +31,7 @@
                             </ul>
                         </div>
                         <h1 class="uk-card-title">{{ $user->name }} {{ $user->last_name }}</h1>
-                        <p>Nickname: #{{ $user->nickname ?: 'your-nickname' }}</p>
+                        <p>#{{ $user->nickname ?: 'your-nickname' }}</p>
                         <p>{{ $user->role->name }}</p>
                     </div>
                 </div>

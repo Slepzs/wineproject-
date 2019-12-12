@@ -88,7 +88,7 @@
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
                     <h2 class="uk-card-title">Club members</h2>
-                    <span><a href="#">(Edit club list)</a></span>
+                    <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club list)</a></span>
                     <!--<div class="club-nav">-->
                         {{--<div class="uk-card-badge">
                             <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
@@ -113,46 +113,8 @@
                         </div>--}}
                     <!--</div>-->
 
-                    <div class="profile-card uk-card uk-card-default">
-                        <div class="body-info">
-                            <img class="member-image" src="/images/wineclub-hero.jpg" alt="Club member image">
-                            <div class="member-name">
-                                <h3 class="uk-card-title">Fullname</h3>
-                                <p>Signe Frederiksen</p>
-                            </div>
-                            <div class="member-email">
-                                <h3 class="uk-card-title">Email</h3>
-                                <p>signe_frederiksen@hotmail.dk</p>
-                            </div>
-                            <div class="member-role">
-                                <h3 class="uk-card-title">Role</h3>
-                                <p>Administrator</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="profile-card uk-card uk-card-default">
-                        <div class="body-info">
-                            <img class="member-image" src="/images/wineclub-hero.jpg" alt="Club member image">
-                            <div class="member-name">
-                                <h3 class="uk-card-title">Fullname</h3>
-                                <p>Signe Frederiksen</p>
-                            </div>
-                            <div class="member-email">
-                                <h3 class="uk-card-title">Email</h3>
-                                <p>signe_frederiksen@hotmail.dk</p>
-                            </div>
-                            <div class="member-role">
-                                <h3 class="uk-card-title">Role</h3>
-                                <p>Administrator</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="primary-btn primary-btn--center">
-                        <a href="#">View more</a>
-                    </div>
-                </div>
+                @include('clubs.ekstra.members')
 
                 <!-- CLUB WINE COLLECTION -->
                 <div class="club-profile-collection">

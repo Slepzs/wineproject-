@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Laravel\Scout\Searchable;
 
 class club extends Model
 {
+    use Searchable;
     use Sluggable;
     use SluggableScopeHelpers;
 

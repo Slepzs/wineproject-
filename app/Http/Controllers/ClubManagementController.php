@@ -109,13 +109,7 @@ class ClubManagementController extends Controller
         return view('clubManagement/edit', compact('club'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $input = $request->all();
@@ -142,6 +136,15 @@ class ClubManagementController extends Controller
         $club->clubInformation()->update($data);
 
         return back();
+    }
+
+    public function role(Request $request, $id) {
+
+        $input = $request->all();
+        $clubusers = ClubUser::where('user_id', $id);
+        $promoted = $clubusers->update(['role_id' => $input['role_id']]);
+        return $promoted;
+
     }
 
     /**

@@ -2908,9 +2908,9 @@
   text-align: center;
 }
 
-.list-card h3,
+.list-card .uk-card-title,
 .list-card p,
-.profile-card h3,
+.profile-card .uk-card-title,
 .profile-card p {
   margin: 0;
 }
@@ -2926,12 +2926,10 @@
 .list-card .body-info,
 .profile-card .body-info {
   padding: 15px 0 0 0;
+  /*&--expand {
+      width: 100%;
+  }*/
   /* ONLY applies for wine list: extra feature */
-}
-
-.list-card .body-info--expand,
-.profile-card .body-info--expand {
-  width: 100%;
 }
 
 .list-card .body-info ul.uk-navbar-nav a,
@@ -3062,14 +3060,27 @@
   padding: 0;
 }
 
-.club-profile .profile-card .body-info h4 {
+.club-profile .profile-card .body-info h2.uk-card-title {
+  margin: 0 0 20px 0;
+}
+
+.club-profile .profile-card .body-info h3.uk-card-title {
   font-size: 1rem;
+}
+
+.club-profile .profile-card .body-info h3.uk-card-title:not(:first-child) {
+  margin: revert;
 }
 
 .club-profile .profile-card--main {
   -webkit-box-align: center;
           align-items: center;
   text-align: center;
+}
+
+.club-profile .profile-card--main h1.uk-card-title {
+  font-size: 2.5rem;
+  margin: 0;
 }
 
 .club-profile .profile-card--main .icon-media {
@@ -3084,6 +3095,185 @@
 
 .club-profile .profile-card--main .body-info {
   padding: 80px 0 0 0;
+}
+
+.club-profile .profile-card--columns {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-box-align: stretch;
+          align-items: stretch;
+}
+
+.club-profile .profile-card--columns > .profile-card {
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+
+.club-profile .profile-card--columns > .profile-card .body-info {
+  width: 100%;
+}
+
+.club-profile .profile-card--columns .wine-rating {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle {
+  position: relative;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 7px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value p {
+  position: absolute;
+  top: -75px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value p .uk-icon {
+  vertical-align: text-bottom;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value p .uk-icon svg > polygon {
+  fill: #FFFFFF;
+  vertical-align: top;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-star {
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-star .rated svg polygon {
+  fill: #FFFFFF;
+}
+
+.club-profile .profile-card--columns .wine-rating .primary-btn a {
+  background-color: #fcfaf9;
+  color: #3B3B3D;
+}
+
+.club-profile .profile-card--columns .wine-rating .primary-btn a:hover {
+  background-color: #3B3B3D;
+  color: #FFFFFF;
+}
+
+.club-profile .profile-card--columns .wine-awards {
+  margin-top: 20px;
+}
+
+.club-profile .profile-card--highlight {
+  background-color: #d0c5b1;
+}
+
+.club-profile .profile-card--highlight .uk-card-title,
+.club-profile .profile-card--highlight p {
+  color: #FFFFFF;
+}
+
+.club-profile-members {
+  margin-bottom: 20px;
+  /*.body-info {
+      display: grid;
+      grid-template-columns: 50px repeat(3, 1fr);
+      grid-column-gap: 2em;
+  }*/
+}
+
+.club-profile-members h2 {
+  display: inline-block;
+}
+
+.club-profile-members span a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d0c5b1;
+  float: right;
+}
+
+.club-profile-members .profile-card {
+  margin-bottom: 20px;
+  -webkit-box-align: start;
+          align-items: flex-start;
+}
+
+.club-profile-members .profile-card .body-info {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-column-gap: 2em;
+  text-align: left;
+  padding: 0;
+}
+
+.club-profile-members .profile-card .body-info h3 {
+  font-size: 1rem;
+}
+
+.club-profile-members .profile-card .body-info p {
+  font-size: 0.8rem;
+}
+
+.club-profile-members .profile-card .body-info .member-image {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #d0c5b1;
+  border-radius: 50%;
+}
+
+.club-profile-members .profile-card .body-info .member-email {
+  display: none;
+}
+
+.club-profile-members .profile-card .body-info .member-role {
+  display: none;
+}
+
+.club-profile-collection {
+  margin-bottom: 20px;
+}
+
+.club-profile-collection .club-wine .list-card {
+  margin-bottom: 20px;
+}
+
+.club-profile-collection .club-wine .list-card .body-info h3 {
+  font-size: 1rem;
+}
+
+.club-profile-collection .club-wine .list-card .body-info p,
+.club-profile-collection .club-wine .list-card .body-info span {
+  font-size: 0.8rem;
+}
+
+.club-profile-collection .club-wine .list-card .body-info .primary-btn {
+  font-size: 0.6rem;
 }
 
 @media (max-width: 320px) {
@@ -3116,6 +3306,40 @@
   }
 
   .club-profile .profile-card {
+    grid-column: 2;
+  }
+
+  .club-profile .profile-card--columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+
+  .club-profile .profile-card--columns > .profile-card:first-child {
+    grid-column: 1;
+  }
+
+  .club-profile .club-profile-members,
+  .club-profile .club-profile-collection {
+    grid-column: 2;
+  }
+
+  .club-profile-members .profile-card .body-info {
+    display: grid;
+    grid-template-columns: 50px repeat(2, 1fr);
+  }
+
+  .club-profile-members .profile-card .body-info .member-email {
+    display: inline-block;
+  }
+
+  .club-profile-collection .club-wine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2em;
+  }
+
+  .club-profile-collection .club-wine .list-card:nth-child(2n) {
     grid-column: 2;
   }
 }
@@ -3176,6 +3400,30 @@
   .club-profile .profile-card--main .icon-media img {
     width: 150px;
     height: 150px;
+  }
+
+  .club-profile-members .profile-card .body-info {
+    grid-template-columns: 50px repeat(3, 1fr);
+  }
+
+  .club-profile-members .profile-card .body-info .member-role {
+    display: inline-block;
+  }
+
+  .club-profile-collection .club-wine {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .club-profile-collection .club-wine .list-card:nth-child(2n) {
+    grid-column: unset;
+  }
+
+  .club-profile-collection .club-wine .list-card:nth-child(3n-1) {
+    grid-column: 2;
+  }
+
+  .club-profile-collection .club-wine .list-card:nth-child(3n) {
+    grid-column: 3;
   }
 }
 

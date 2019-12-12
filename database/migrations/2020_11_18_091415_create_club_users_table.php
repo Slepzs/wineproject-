@@ -17,7 +17,7 @@ class CreateClubUsersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('club_id');
-            $table->integer('role_id')->index()->unsigned()->nullable()->default(4);
+            $table->unsignedBigInteger('role_id')->default(4);
             $table->integer('is_active');
 
             $table->foreign('user_id')
@@ -29,6 +29,10 @@ class CreateClubUsersTable extends Migration
                 ->references('id')
                 ->on('clubs')
                 ->onDelete('cascade');
+
+            $table->foreign('role_id')
+                ->references('id')
+                ->on('club_roles');
         });
     }
 

@@ -142,6 +142,8 @@ Route::group(['middleware'=>'auth'], function() {
     Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.withdraw');
     Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.apply');
 
+
+    Route::get('clubs/search', 'ClubsController@search')->name('clubs.search');
     Route::resource('clubs', 'ClubsController', ['names' => [
         'index'=>'clubs.index',
         'create'=>'clubs.create',
@@ -151,7 +153,7 @@ Route::group(['middleware'=>'auth'], function() {
         'update' => 'clubs.update',
         'destroy' => 'clubs.destroy',
     ]]);
-
+    Route::patch('clubManagement/role/{id}', 'ClubManagementController@role')->name('clubManagement.role');
     Route::patch('clubManagement/active/{active}', 'ClubManagementController@active')->name('clubManagement.active');
     Route::patch('clubManagement/remove/{remove}', 'ClubManagementController@remove')->name('clubManagement.remove');
 
