@@ -68,16 +68,6 @@
 
                     <!-- UTILITY NAV -->
                     <ul class="uk-navbar-nav">
-                        <!-- Authentication Links -->
-                        {{--@if(Auth::check())
-
-                            @if($user->role->name == 'administrator')
-                                <li>
-                                    <a href="{{route('admin')}}">Admin</a>
-                                </li>
-                            @endif
-
-                        @endif--}}
                         @guest
                             <li>
                                 <a class="down-icon" uk-icon="icon: triangle-down">
@@ -118,7 +108,14 @@
                                         </div>
                                         <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
                                         <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Main panel</a></li>
-                                        <li><a href="{{route('admin')}}"><span class="uk-icon" uk-icon="icon: cog"></span> Admin panel</a></li>
+                                        <!-- Authentication Links -->
+                                        @if(Auth::check())
+
+                                            @if(Auth::user()->role->name == 'administrator')
+                                                <li><a href="{{route('admin')}}"><span class="uk-icon" uk-icon="icon: cog"></span> Admin panel</a></li>
+                                            @endif
+
+                                        @endif
                                         <li>
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();

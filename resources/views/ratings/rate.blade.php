@@ -33,7 +33,7 @@
                         <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
                         <p>{{ $wine->winecategory->name }}</p>
                         <p><span uk-icon="icon: user; ratio: 0.5"></span> {{ $wine->producer }}</p>
-                        <input id="input-21f" value="0" type="text" data-min=0 data-max=10 data-step=0.5 data-size="md" title="">
+                        <input id="input-21f" value="{{ $rating ?? 0 }}" type="text" data-min=0 data-max=10 data-step=0.5 data-size="md" data-club="{{ $club }}" data-wine="{{ $wine->id }}" data-user="{{ Auth::user()->id }}" title="">
                     </div>
                 </div>
 
@@ -111,9 +111,32 @@
             });
             console.log($(this).val());
 
+            let club_id = $("#input-21f").attr("data-club");
+            let user_id = $("#input-21f").attr("data-user");
+            let wine_id = $("#input-21f").attr("data-wine");
 
+            console.log(club_id + " " + user_id);
             $('#input-21f').on('rating:change', function(event, value, caption) {
                 console.log(value);
+                let rating = value;
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: "/ratings/rated/"+wine_id,
+                    type: 'post',
+                    data: {
+                        "club_id": club_id,
+                        "user_id": user_id,
+                        "rating": rating
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
             });
 
         });

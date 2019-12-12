@@ -27,6 +27,10 @@
                     <td><img width="50px" src="{{$user->photo->file ?? '' }}"></td>
                    <td><a href="{{route('profile.show', $user->id)}}">{{$user->name }}</a></td>
 
+                    <td>
+                        @include('clubManagement.exstra.rolesform')
+                    </td>
+
                     <td>@if($user->pivot->is_active == 0)
                             <form method="post" action="{{route('clubManagement.active', $user->pivot->id)}}">
                                 @method('patch')
@@ -42,6 +46,8 @@
                         @endif
                     </td>
                 </tr>
+
+
 
 
             @endforeach
