@@ -87,6 +87,15 @@
 
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
+                    <div class="uk-navbar-container" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+                        </div>
+                    </div>
+
+
+
+
                     <h2 class="uk-card-title">Club members</h2>
                     <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club list)</a></span>
                     <!--<div class="club-nav">-->
@@ -110,8 +119,8 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>--}}
-                    <!--</div>-->
+                        </nav>--}}
+                    </div>
 
 
                 @include('clubs.ekstra.members')

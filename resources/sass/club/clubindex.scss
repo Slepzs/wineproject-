@@ -356,8 +356,9 @@
     span a {
         font-size: $font-size-base;
         font-weight: 700;
-        color: $primary-color;
+        color: $create-green;
         float: right;
+        margin-top: 5px;
     }
 
     .profile-card {
