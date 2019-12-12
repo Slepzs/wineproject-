@@ -42,6 +42,7 @@
 
 
                                             <li class="uk-nav-divider"></li>
+                                                @if($club->Owner($club->id))
                                             <li>
                                                 <a href="{{route('clubManagement.edit', $club->id)}}"><span uk-icon="icon: pencil"></span>Edit club</a>
                                             </li>
@@ -50,6 +51,7 @@
                                                     <span uk-icon="icon: minus-circle"></span>Delete club
                                                 </button>
                                             </li>
+                                                    @endif
                                         </ul>
                                     </div>
                                 </li>
@@ -89,27 +91,20 @@
 
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
-                    <h2 class="uk-card-title">Club members</h2>
-                    <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club members list)</a></span>
-
-                    @include('clubs.ekstra.members')
-
-
                     @if($club->GetMember($club->id))
-                    <h2 class="uk-card-title">Club members</h2>
+                        <h2 class="uk-card-title">Club members</h2>
                     @if($club->EditUsers($club->id))
-                    <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club list)</a></span>
+                        <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club members list)</a></span>
                     @endif
-                    <div class="primary-btn primary-btn--center">
-                        <a href="#">View more</a>
-                    </div>
+                        @include('clubs.ekstra.members')
+                        <div class="primary-btn primary-btn--center">
+                            <a href="#">View more</a>
+                        </div>
                 </div>
 
 
-                @include('clubs.ekstra.members')
-                <div class="primary-btn primary-btn--center">
-                    <a href="#">View more</a>
-                </div>
+
+
 
                 <!-- CLUB WINE COLLECTION -->
                 <div class="club-profile-collection">
@@ -120,7 +115,7 @@
 
                         @include('clubs.ekstra.wines')
 
-                        @endforeach
+
 
                     </div>
 

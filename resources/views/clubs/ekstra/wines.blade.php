@@ -23,9 +23,9 @@
                 <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
                 <p>Red wine{{ $wine->winecategory->name }}</p>
                 <p>{{ $wine->producer }},  {{ $wine->vintage }}</p>
-                {{ $club->getAverageClubRating($wine->id) }}
+
                 <div class="wine-rating">
-                    <p>3.5
+                    <p>{{ $club->getAverageClubRating($wine->id) }}
                         <span uk-icon="icon: star; ratio: 0.5"></span>
                         <span uk-icon="icon: star; ratio: 0.5"></span>
                         <span uk-icon="icon: star; ratio: 0.5"></span>

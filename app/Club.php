@@ -62,7 +62,7 @@ class club extends Model
 
         $userid = Auth::user()->id;
 
-        $member = ClubUser::where('club_id', $club_id)->where('user_id', $userid)->first();
+        $member = ClubUser::where('club_id', $club_id)->where('user_id', $userid)->where('is_active', '1')->first();
 
         return $member;
 
