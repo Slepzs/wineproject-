@@ -34,7 +34,7 @@
                     </div>
                     <div class="rating">
                         <span>Rating</span>
-                        <p class="rate">{{ $average }}</p>
+                        <p class="rate">{{ $wine->AverageRating }}</p>
                         <div class="rating-star">
                             <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
                             <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>

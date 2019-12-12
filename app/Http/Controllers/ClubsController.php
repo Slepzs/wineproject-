@@ -86,14 +86,12 @@ class ClubsController extends Controller
         $user = Auth::user()->id;
         $userapplied = ClubUser::where('user_id', $user)->where('club_id', $clubid)->get();
 
-        $wines = Club::with('wine.winelocations')->where('id', $clubid)->get();
+        $wines = Club::with('wine.winelocations', 'wine.winerating')->where('id', $clubid)->get();
 
         $allusers = $club->user()
             ->wherePivot('role_id', '<=', '3')
             ->get();
 
-
-        // return $allusers;
         return view('clubs/show', compact('club', 'userapplied', 'wines', 'allusers') );
 
     }

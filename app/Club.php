@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Scout\Searchable;
 
 class club extends Model
@@ -49,6 +50,53 @@ class club extends Model
     public function wine() {
         return $this->belongsToMany(Wine::class, 'club_wines')->withPivot('id');
     }
+
+
+
+    public function getAverageClubRating($wine_id) {
+        $average = $this->winerating->where('wine_id', $wine_id)->avg('rating');
+        return $average;
+    }
+
+    public function GetMember($club_id) {
+
+        $userid = Auth::user()->id;
+
+        $member = ClubUser::where('club_id', $club_id)->where('user_id', $userid)->first();
+
+        return $member;
+
+    }
+
+    public function StartWineRating($club_id) {
+
+        $userid = Auth::user()->id;
+
+        $member = ClubUser::where('club_id', $club_id)->where('user_id', $userid)->where('role_id', '<', '2')->first();
+
+        return $member;
+
+    }
+
+    public function EditUsers($club_id) {
+
+        $userid = Auth::user()->id;
+
+        $member = ClubUser::where('club_id', $club_id)->where('user_id', $userid)->where('role_id', '=', '1')->first();
+
+        return $member;
+
+    }
+
+    public function Owner($club_id) {
+
+        $userid = Auth::user()->id;
+
+        $admin = Club::where('id', $club_id)->where('owner_id', $userid)->first();
+
+        return $admin;
+    }
+
 
 
 

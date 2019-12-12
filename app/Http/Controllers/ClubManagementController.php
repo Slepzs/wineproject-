@@ -143,7 +143,7 @@ class ClubManagementController extends Controller
         $input = $request->all();
         $clubusers = ClubUser::where('user_id', $id);
         $promoted = $clubusers->update(['role_id' => $input['role_id']]);
-        return $promoted;
+        return back();
 
     }
 

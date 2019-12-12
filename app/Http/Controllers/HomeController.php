@@ -47,19 +47,12 @@ class HomeController extends Controller
 
 
 
-        $emptyRating = array();
-        $ratings = WineRating::findOrFail($id)->all();
-        foreach($ratings as $rating) {
-            array_push($emptyRating, $rating->rating);
-        }
 
-        $a = array_filter($emptyRating);
-        $average = array_sum($a)/count($a);
 
         $wines = Wine::with('winecategory', 'winelocations')->where('id', $id)->get();
 
         //return $wines;
-        return view('/index', compact('user', 'wines', 'average'));
+        return view('/index', compact('user', 'wines'));
     }
 
     public function admin() {

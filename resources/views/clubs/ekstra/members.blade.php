@@ -20,5 +20,7 @@
 
 
 @endforeach
-
+<div class="primary-btn primary-btn--center">
+    <a href="#">View more</a>
+</div>
 </div>

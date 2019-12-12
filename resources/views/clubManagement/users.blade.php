@@ -28,8 +28,11 @@
                    <td><a href="{{route('profile.show', $user->id)}}">{{$user->name }}</a></td>
 
                     <td>
+                        @if(!$club->Owner($club->id))
                         @include('clubManagement.exstra.rolesform')
+                        @endif
                     </td>
+
 
                     <td>@if($user->pivot->is_active == 0)
                             <form method="post" action="{{route('clubManagement.active', $user->pivot->id)}}">

@@ -92,4 +92,13 @@ class Wine extends Model
         return $this->belongsToMany(Club::class, 'club_wines')->withPivot('id', 'club_id');
     }
 
+
+    public function getAverageRatingAttribute()
+    {
+        $average = $this->winerating->avg('rating');
+        return round($average, 1);
+    }
+
+
+
 }
