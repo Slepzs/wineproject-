@@ -15,7 +15,7 @@
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
 
                             <a href="{{ url('/') }}" class="uk-logo">
-                                <img class="wine-club-logo" src="/images/wine-club-logo.svg" alt="Wine Club">
+                                <img class="wine-logo-lg" src="/images/wine-club-logo-white.svg" alt="Wine Club">
                             </a>
 
                             <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
@@ -40,7 +40,7 @@
 
                     <!-- DESKTOP NAV ASSETS (LOGO FOR DESKTOP) -->
                     <a href="{{ url('/') }}" class="uk-navbar-item uk-logo dt-nav">
-                        <img class="wine-club-logo" src="/images/wine-club-logo.svg" alt="Wine Club">
+                        <img class="wine-logo-sm" src="/images/wine-club-logo-brown.svg" alt="Wine Club">
                     </a>
 
                 </div>
@@ -48,7 +48,7 @@
                 <!-- MOBILE LOGO -->
                 <div class="uk-navbar-center nav-overlay">
                     <a href="{{ url('/') }}" class="uk-navbar-item uk-logo mb-nav">
-                        <img class="wine-club-logo-mb" src="/images/wine-club-logo.svg" alt="Wine Club">
+                        <img class="wine-logo-sm" src="/images/wine-club-logo-brown.svg" alt="Wine Club">
                     </a>
                 </div>
 
