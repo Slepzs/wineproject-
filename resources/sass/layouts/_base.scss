@@ -39,6 +39,16 @@ select:focus,
     background: $primary-color;
 }
 
+// -- Logo --
+.wine-club-logo {
+    width: 60px;
+    //height: 100px;
+}
+.wine-club-logo-mb {
+    width: 60px;
+    height: 60px;
+}
+
 // -- Body --
 body {
     font-family: $secondary-font;

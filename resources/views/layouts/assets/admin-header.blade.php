@@ -16,7 +16,9 @@
                         <div class="uk-offcanvas-bar uk-flex uk-flex-column">
                             <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-                            <a href="{{ url('/') }}" class="uk-logo">Logo</a>
+                            <a href="{{ url('/') }}" class="uk-logo">
+                                <img class="wine-club-logo" src="/images/wine-club-logo.svg" alt="Wine Club">
+                            </a>
 
                             <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
 
@@ -37,7 +39,10 @@
 
                 <!-- MOBILE LOGO -->
                 <div class="uk-navbar-center nav-overlay">
-                    <a href="{{ url('/') }}" class="uk-navbar-item uk-logo mb-nav">Logo</a>
+                    <a href="{{ url('/') }}" class="uk-navbar-item uk-logo mb-nav">
+                        <img class="wine-club-logo-mb" src="../images/wine-club-logo.svg" alt="Wine Club">
+                    </a>
+                    {{--<a href="{{ url('/') }}" class="uk-navbar-item uk-logo mb-nav">Logo</a>--}}
                 </div>
 
                 <!-- UTILITY NAV FOR BOTH MOBILE AND DESKTOP -->
@@ -80,7 +85,7 @@
                                             <img class="user-profile" src="{{Auth::user()->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="">
                                             <div class="user-info">
                                                 <p>{{ Auth::user()->name }} {{ Auth::user()->last_name }}</p>
-                                                <p>#{{ Auth::user()->nickname }}</p>
+                                                <p>#{{ Auth::user()->nickname ?: 'Nothing set' }}</p>
                                                 <p>{{ Auth::user()->role->name }}</p>
                                             </div>
                                         </div>

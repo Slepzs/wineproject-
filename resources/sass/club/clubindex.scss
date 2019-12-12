@@ -346,19 +346,23 @@
     }
 
 }
-// CLUB PROFILE; MEMBER SECTION
-.club-profile-members {
+// CLUB PROFILE; MEMBER SECTION + CRUD MEMBERS
+.club-profile-members, .club-crud-members {
     margin-bottom: 20px;
 
     h2 {
-        display: inline-block;
+        margin-bottom: 0;
     }
-    span a {
-        font-size: $font-size-base;
-        font-weight: 700;
-        color: $create-green;
-        float: right;
-        margin-top: 5px;
+    span {
+        display: inline-block;
+        margin-bottom: 10px;
+
+        a {
+            font-size: $font-size-base;
+            font-weight: 700;
+            color: $create-green;
+            float: right;
+        }
     }
 
     .profile-card {
@@ -368,7 +372,7 @@
         .body-info {
             display: grid;
             grid-template-columns: 50px 1fr;
-            grid-column-gap: 2em;
+            grid-column-gap: 3em;
             text-align: left;
             padding: 0;
 
@@ -385,7 +389,7 @@
                 border: 3px solid $primary-color;
                 border-radius: 50%;
             }
-            .member-email {
+            .member-nickname {
                 display: none;
             }
             .member-role {
@@ -393,12 +397,59 @@
             }
         }
     }
-    /*.body-info {
-        display: grid;
-        grid-template-columns: 50px repeat(3, 1fr);
-        grid-column-gap: 2em;
-    }*/
+
 }
+// CLUB PROFILE; CRUD MEMBERS
+.club-crud-members {
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .profile-card {
+
+        .body-info {
+            grid-template-rows: 3fr;
+            grid-row-gap: 1em;
+
+            .member-image {
+                grid-row: span 3;
+            }
+            .member-name {
+                a {
+                    color: $dark;
+
+                    &:hover {
+                        color: $dark;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .member-nickname {
+
+            }
+            .member-role {
+                display: inline-block;
+            }
+            button.crud-btn {
+                background-color: transparent;
+                border: none;
+                color: $dark;
+                padding: 0;
+                text-transform: uppercase;
+                font-weight: 700;
+
+                &--green {
+                    color: $create-green;
+                }
+                &--red {
+                    color: $delete-red;
+                }
+            }
+        }
+    }
+
+}
+
 // CLUB PROFILE; WINE COLLECTION SECTION
 .club-profile-collection {
     margin-bottom: 20px;
@@ -487,14 +538,49 @@
         .profile-card {
             .body-info {
                 display: grid;
-                grid-template-columns: 50px repeat(2, 1fr);
+                grid-template-columns: 50px repeat(3, 1fr);
 
-                .member-email {
+                .member-nickname {
+                    display: inline-block;
+                }
+                .member-role {
                     display: inline-block;
                 }
             }
         }
     }
+    // CLUB PROFILE; CRUD MEMBERS
+    .club-crud-members {
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .profile-card {
+
+            .body-info {
+                grid-template-rows: 1fr;
+                grid-row-gap: 0em;
+                grid-template-columns: 50px repeat(3, 1fr);
+                grid-column-gap: 4em;
+
+                .member-image {
+                    //grid-row: span 3;
+
+                }
+                .member-name {
+
+                }
+                .member-nickname {
+
+                }
+                .member-role {
+                    display: inline-block;
+                }
+            }
+        }
+
+    }
+
     // CLUB PROFILE; WINE COLLECTION SECTION
     .club-profile-collection {
         .club-wine {
@@ -588,7 +674,7 @@
     .club-profile-members {
         .profile-card {
             .body-info {
-                grid-template-columns: 50px repeat(3, 1fr);
+                grid-column-gap: 5em;
                 .member-role {
                     display: inline-block;
                 }
@@ -620,6 +706,15 @@
     // BASE
     .club-info {
         margin-bottom: 80px;
+    }
+
+    // CLUB PROFILE; MEMBER SECTION
+    .club-profile-members {
+        .profile-card {
+            .body-info {
+                grid-column-gap: 8em;
+            }
+        }
     }
 
 }
