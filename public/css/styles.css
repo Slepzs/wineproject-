@@ -13,7 +13,7 @@
     height: 25px;
     font-size: 0;
     color: #fff;
-    background: transparent url(/images/loading.gif?13630905267b809161e71d0f8a0c017b) top left no-repeat;
+    background: transparent url('../../../public/images/loading.gif') top left no-repeat;
     border: none;
 }
 
@@ -209,12 +209,10 @@
   grid-template-columns: 1fr 1fr;
   height: 64px;
 }
-
 .top-nav .left-side-nav {
   display: grid;
   grid-template-columns: 1fr;
 }
-
 .top-nav .left-side-nav .profile-img {
   display: grid;
   grid-template-columns: 50px 200px 50px;
@@ -223,33 +221,27 @@
           align-items: center;
   margin-left: 10px;
 }
-
 .top-nav .left-side-nav .profile-img a {
   color: white;
 }
-
 .top-nav .left-side-nav .profile-img img {
   width: 40px;
   border-radius: 50%;
 }
-
 .top-nav .left-side-nav .profile-img p {
   color: white;
   font-size: 1em;
   font-family: "Comfortaa", cursive;
 }
-
 .top-nav .left-side-nav .profile-img span {
   color: white;
 }
-
 .top-nav .right-side-nav .site-links {
   display: grid;
   height: 100%;
   -webkit-box-pack: end;
           justify-content: end;
 }
-
 .top-nav .right-side-nav .site-links ul {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -258,11 +250,9 @@
           align-items: center;
   margin-bottom: 0px;
 }
-
 .top-nav .right-side-nav .site-links ul li {
   list-style-type: none;
 }
-
 .top-nav .right-side-nav .site-links ul li a {
   color: white;
 }
@@ -271,7 +261,6 @@
   display: grid;
   grid-template-columns: 15% 85%;
 }
-
 .admin-content-wrapper .sidenav {
   background: #d0c5b1;
   justify-items: center;
@@ -279,55 +268,44 @@
           align-items: center;
   height: 100vh;
 }
-
 .admin-content-wrapper .sidenav * {
   color: white;
 }
-
 .admin-content-wrapper .sidenav .sidenav-header {
   display: grid;
   grid-template-columns: 80% 20%;
   margin-top: 10px;
 }
-
 .admin-content-wrapper .sidenav .sidenav-header h2 {
   font-family: "Comfortaa", cursive;
   text-align: center;
   margin-bottom: 0px;
 }
-
 .admin-content-wrapper .sidenav .pages {
   list-style-type: none;
   padding-left: 0px;
 }
-
 .admin-content-wrapper .sidenav .pages li {
   padding: 20px 10px;
 }
-
 .admin-content-wrapper .sidenav .pages li:hover {
   background: #93C0A4;
 }
-
 .admin-content-wrapper .sidenav .pages li a {
   text-decoration: none;
 }
-
 .admin-content-wrapper .sidenav .pages li .dropdown {
   float: right;
 }
-
 .admin-content-wrapper .sidenav .pages .hidden-menu {
   display: none;
 }
-
 .admin-content-wrapper .sidenav .pages .dropdown {
   list-style-type: none;
   margin-top: 0px;
   margin-bottom: 5px;
   padding-left: 0px;
 }
-
 .admin-content-wrapper .content {
   width: 100%;
   height: calc(100vh - 64px);
@@ -336,13 +314,11 @@
 }
 
 /* Admin Forms*/
-
 .admin-forms {
   background: white;
   padding: 20px;
   margin: 40px;
 }
-
 .admin-forms form {
   width: 800px;
   margin: 0 auto;
@@ -355,7 +331,6 @@
   right: 0px;
   left: 0;
 }
-
 .disappear {
   opacity: 0;
   -webkit-transition: 2s all ease-out;
@@ -366,7 +341,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
 .media-container .media-card {
   background: #e2d5d5;
   padding: 10px;
@@ -374,11 +348,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 .media-container .media-card .media-card-image {
   width: 100px;
 }
-
 .media-container .media-card .media-info {
   text-align: center;
 }
@@ -388,21 +360,17 @@
     display: grid;
     grid-template-columns: 1fr;
   }
-
   .media-container .media-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
   .media-container .media-card .media-card-image {
     width: 100px;
   }
-
   .media-container .media-card .media-info {
     text-align: center;
   }
 }
-
 .admin-panel-wrapper {
   display: block;
 }
@@ -417,27 +385,22 @@
   /* Sidebar nav active items link/hover */
   /* Sidebar nav subnav items link/hover */
 }
-
 .main-admin-nav .uk-container {
   width: 100%;
   max-width: 100%;
   padding: 0;
   margin: auto;
 }
-
 .main-admin-nav .uk-sticky {
   border-bottom: 2px solid #d0c5b1;
 }
-
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default > li > a {
   color: rgba(255, 255, 255, 0.7);
 }
-
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default > li > a:hover,
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default > li > a:focus {
   color: #FFFFFF;
 }
-
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default > li.uk-active > a {
   color: #FFFFFF;
   border-bottom: 4px solid #FFFFFF;
@@ -445,19 +408,16 @@
   width: -moz-max-content;
   width: max-content;
 }
-
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:hover,
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:focus,
 .main-admin-nav .uk-navbar-dropdown-nav > li > a:hover,
 .main-admin-nav .uk-navbar-dropdown-nav > li > a:focus {
   color: #FFFFFF;
 }
-
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover,
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:focus {
   color: #FFFFFF;
 }
-
 .main-admin-nav .uk-navbar-dropdown-nav > li.uk-active > a {
   color: #FFFFFF;
   border-bottom: 4px solid #FFFFFF;
@@ -465,96 +425,76 @@
   width: -moz-max-content;
   width: max-content;
 }
-
 .main-admin-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-header {
   font-weight: 400;
   margin-top: 40px;
 }
-
 .main-admin-nav .uk-navbar-container {
   background-color: #FFFFFF;
   padding: 0 15px;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-navbar-toggle svg {
   color: #3B3B3D;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-navbar-toggle svg:hover {
   color: #d0c5b1;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar {
   background-color: #d0c5b1;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-offcanvas-close svg {
   width: 20px;
   height: 20px;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-offcanvas-close svg:hover {
   color: #FFFFFF;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-nav {
   margin-top: 30px;
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-nav .uk-nav-sub {
   text-transform: none;
   font-weight: 400;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .down-icon {
   color: #d0c5b1;
   padding-right: 0;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .down-icon .user-register {
   border: 2px solid #d0c5b1;
   border-radius: 50px;
   padding: 3px;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .down-icon .user-register circle {
   stroke-width: 1.5;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .down-icon .user-register path {
   stroke-width: 1.5;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .down-icon .user-profile {
   width: 30px;
   height: 30px;
   border-radius: 50px;
   border: 2px solid #d0c5b1;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-search-icon {
   padding-left: 0;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown {
   box-shadow: 0 10px 12px rgba(0, 0, 0, 0.15);
   background-color: #d0c5b1;
   width: 250px;
   /* NEW */
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a {
   color: rgba(255, 255, 255, 0.5);
 }
-
-.main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:hover,
-.main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:focus {
+.main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:hover, .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:focus {
   color: rgba(255, 255, 255, 0.7);
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -563,11 +503,9 @@
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel p {
   margin: 0;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel p:first-child {
   color: #3B3B3D;
   font-size: 0.8rem;
@@ -575,7 +513,6 @@
   text-transform: uppercase;
   line-height: normal;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel .user-profile {
   grid-column: 1;
   width: 60px;
@@ -584,16 +521,13 @@
   margin: auto 0;
   border: 2px solid #bdad91;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel .user-info {
   grid-column: 2;
   font-size: 0.6rem;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right [class*=uk-navbar-dropdown-bottom] {
   margin-top: 0;
 }
-
 .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-search-navbar .uk-search-input {
   font-size: 0.8rem;
   font-family: "Source Sans Pro", sans-serif;
@@ -604,42 +538,33 @@
   .main-admin-nav .uk-navbar-container .uk-navbar-right .down-icon {
     padding-right: 15px;
   }
-
   .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-search-icon {
     padding-left: 15px;
   }
-
   .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown {
     width: 280px;
   }
-
   .main-admin-nav .uk-navbar-container .uk-navbar-right .uk-search-navbar .uk-search-input {
     font-size: 1.5rem;
   }
 }
-
 @media (min-width: 1024px) {
   .main-admin-nav .uk-navbar-container {
     padding: 0 35px;
   }
 }
-
 @media (min-width: 1440px) {
   /* NEW */
-
   .admin-panel-wrapper {
     display: grid;
     grid-template-columns: 350px auto;
   }
-
   .admin-panel-wrapper .footer {
     grid-column: span 2;
   }
-
   .admin-panel-wrapper .mb-nav {
     display: none;
   }
-
   .admin-panel-wrapper .dt-nav {
     display: -webkit-box;
     display: flex;
@@ -662,34 +587,28 @@
     /* Sidebar nav items link/hover */
     /* Sidebar nav active items link/hover */
   }
-
   .admin-sidebar-nav .uk-logo {
     color: rgba(255, 255, 255, 0.7);
     text-transform: capitalize;
     font-weight: 400;
   }
-
   .admin-sidebar-nav a {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 700;
   }
-
   .admin-sidebar-nav .uk-nav-default .uk-nav-header {
     color: #FFFFFF;
     margin-top: 40px;
   }
-
   .admin-sidebar-nav .uk-nav-default > li > a {
     color: rgba(255, 255, 255, 0.7);
   }
-
   .admin-sidebar-nav .uk-nav-default > li > a:hover,
-  .admin-sidebar-nav .uk-nav-default > li > a:focus {
+.admin-sidebar-nav .uk-nav-default > li > a:focus {
     color: #FFFFFF;
   }
-
   .admin-sidebar-nav .uk-nav-default > li.uk-active > a {
     color: #FFFFFF;
     border-bottom: 4px solid #FFFFFF;
@@ -697,49 +616,40 @@
     width: -moz-max-content;
     width: max-content;
   }
-
   .admin-sidebar-nav .uk-nav-default > li.uk-active > a:hover,
-  .admin-sidebar-nav .uk-nav-default > li.uk-active > a:focus {
+.admin-sidebar-nav .uk-nav-default > li.uk-active > a:focus {
     color: #FFFFFF;
   }
 
   /***/
-
   .main-admin-nav .uk-navbar-container {
     padding: 0 35px;
   }
 }
-
 @media (min-width: 1600px) {
   .main-admin-nav .uk-navbar-container {
     padding: 0 120px;
   }
 }
-
 .hero-section {
   position: relative;
   height: 412px;
 }
-
 .hero-section .hero-image {
   background-image: url("/images/wineclub-hero.jpg");
   background-size: cover;
   height: 220px;
 }
-
 .hero-section .hero-content {
   position: absolute;
   bottom: 0;
 }
-
-.hero-section .hero-content h1,
-.hero-section .hero-content h2 {
+.hero-section .hero-content h1, .hero-section .hero-content h2 {
   font-size: 3rem;
   line-height: 1;
   color: #d0c5b1;
   margin: 0;
 }
-
 .hero-section .hero-content h2 {
   margin-bottom: 30px;
 }
@@ -747,12 +657,10 @@
 .intro-section {
   background-color: #FFFFFF;
 }
-
 .intro-section p.hightlight {
   color: #d0c5b1;
   font-weight: 700;
 }
-
 .intro-section .wine-icon {
   width: 50px;
   height: 50px;
@@ -760,28 +668,22 @@
   border-radius: 50%;
   margin: 10px 0;
 }
-
 .intro-section .main-intro-panel {
   padding-bottom: 0;
 }
-
 .intro-section .main-intro-panel .intro-panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 .intro-section .main-intro-panel .intro-panel h2 {
   grid-column: span 2;
 }
-
 .intro-section .main-intro-panel .intro-panel p.hightlight {
   grid-column: span 2;
 }
-
 .intro-section .intro-panel {
   margin-bottom: 30px;
 }
-
 .intro-section .intro-panel p {
   margin-top: 10px;
 }
@@ -790,48 +692,39 @@
   display: grid;
   grid-template-rows: 0.4fr 1fr;
 }
-
 .topwine-section .wine-panel {
   grid-row: 2;
 }
-
 .topwine-section .wine-panel .wine-body {
   font-size: 0.8rem;
   margin-bottom: 30px;
 }
-
 .topwine-section .wine-panel .wine-body p {
   margin: 0;
   display: inline-block;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-info {
   border: none;
   padding: 15px 15px;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-info .wine-meta {
   font-size: 0.8rem;
   text-transform: uppercase;
   margin: 0;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-info .description {
   margin-top: 20px;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-info .wine-body-desc {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-row-gap: 1em;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-info .wine-body-desc h4 {
   font-size: 0.8rem;
   margin: 0;
   color: #d0c5b1;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -840,13 +733,11 @@
   font-size: 0.6rem;
   margin-top: 30px;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility span {
   font-weight: 700;
   color: #d0c5b1;
   text-transform: uppercase;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .volume-size {
   grid-column: 1;
   display: -webkit-box;
@@ -858,7 +749,6 @@
           align-items: baseline;
   padding: 15px 15px;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .rating {
   grid-column: 2;
   border-left: 1px dashed #3B3B3D;
@@ -873,30 +763,24 @@
           justify-content: center;
   padding: 15px 15px;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .rating .rate {
   font-size: 0.8rem;
   font-weight: 700;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .rating .rating-star {
   margin-bottom: 10px;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .rating .rating-star .uk-icon svg polygon {
   stroke: #d0c5b1;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .rating .rating-star .rated svg polygon {
   fill: #d0c5b1;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .pricetag {
   grid-column: span 2;
   padding: 15px 15px;
   border-top: 1px solid #3B3B3D;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .pricetag > ul {
   list-style: none;
   margin: 0;
@@ -910,15 +794,12 @@
   -webkit-box-pack: justify;
           justify-content: space-between;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .pricetag > ul li {
   padding: 0;
 }
-
 .topwine-section .wine-panel .wine-body .wine-body-utility .pricetag > ul li:last-child {
   text-align: right;
 }
-
 .topwine-section .wine-image-panel {
   grid-row: 1;
   background-image: url("/images/wineclub-hero.jpg");
@@ -929,11 +810,9 @@
 .cta-section {
   background-color: #FFFFFF;
 }
-
 .cta-section .cta-bg {
   text-align: center;
 }
-
 .cta-section .cta-bg .primary-btn {
   margin-top: 0;
 }
@@ -946,9 +825,7 @@
   .hero-section {
     height: 431px;
   }
-
-  .hero-section .hero-content h1,
-  .hero-section .hero-content h2 {
+  .hero-section .hero-content h1, .hero-section .hero-content h2 {
     font-size: 2.4rem;
   }
 
@@ -956,21 +833,16 @@
     padding: 10px 10px;
   }
 }
-
 @media (min-width: 768px) {
   .hero-section {
     height: 558px;
   }
-
   .hero-section .hero-image {
     height: 350px;
   }
-
-  .hero-section .hero-content h1,
-  .hero-section .hero-content h2 {
+  .hero-section .hero-content h1, .hero-section .hero-content h2 {
     font-size: 5rem;
   }
-
   .hero-section .hero-content p {
     width: 50%;
   }
@@ -978,38 +850,30 @@
   .topwine-section {
     grid-template-rows: 0.5fr 1fr;
   }
-
   .topwine-section .wine-panel .wine-body .wine-body-info .wine-body-desc {
     grid-template-rows: none;
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   .topwine-section .wine-panel .wine-body .wine-body-info .description {
     margin-top: 50px;
   }
-
   .topwine-section .wine-panel .wine-body .wine-body-utility {
     font-size: 0.8rem;
     margin-top: 50px;
   }
-
   .topwine-section .wine-panel .wine-body .wine-body-utility .rating .rate {
     font-size: 1rem;
     font-weight: 700;
   }
 }
-
 @media (min-width: 1024px) {
   .hero-section {
     height: 684px;
   }
-
   .hero-section .hero-image {
     height: 450px;
   }
-
-  .hero-section .hero-content h1,
-  .hero-section .hero-content h2 {
+  .hero-section .hero-content h1, .hero-section .hero-content h2 {
     font-size: 7rem;
   }
 
@@ -1018,15 +882,12 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5em;
   }
-
   .intro-section .sub-intro-panel > .uk-container .intro-panel--one {
     grid-column: 1;
   }
-
   .intro-section .sub-intro-panel > .uk-container .intro-panel--two {
     grid-column: 2;
   }
-
   .intro-section .sub-intro-panel > .uk-container .intro-panel--three {
     grid-column: span 2;
   }
@@ -1035,24 +896,20 @@
     grid-template-rows: 0.6fr 1fr;
   }
 }
-
 @media (min-width: 1440px) {
   .hero-section {
     height: auto;
     display: grid;
     grid-template-columns: 30% 70%;
   }
-
   .hero-section .hero-image {
     height: 740px;
     grid-column: 2;
   }
-
   .hero-section .hero-content {
     bottom: 150px;
     grid-column: 1;
   }
-
   .hero-section .hero-content p {
     width: 35%;
   }
@@ -1060,20 +917,16 @@
   .intro-section .main-intro-panel .intro-panel h2 {
     grid-column: 1;
   }
-
   .intro-section .main-intro-panel .intro-panel p.hightlight {
     grid-column: 1;
   }
-
   .intro-section .sub-intro-panel > .uk-container {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 5em;
   }
-
   .intro-section .sub-intro-panel > .uk-container .intro-panel--three {
     grid-column: 3;
   }
-
   .intro-section .sub-intro-panel {
     padding: 0 0 100px;
   }
@@ -1083,29 +936,24 @@
     grid-template-rows: 1fr;
     grid-column-gap: 5em;
   }
-
   .topwine-section .wine-panel {
     grid-column: 1;
     grid-row: 1;
   }
-
   .topwine-section .wine-image-panel {
     grid-column: 2;
   }
 }
-
 .about-us-section > .uk-container {
   display: grid;
   grid-template-rows: 1fr 1fr;
 }
-
 .about-us-section .image-panel {
   grid-row: 1;
   background-image: url("/images/wineclub-hero.jpg");
   background-size: cover;
   background-position: right;
 }
-
 .about-us-section .info-panel {
   grid-row: 2;
   margin-top: 50px;
@@ -1114,32 +962,26 @@
 .faq-section {
   background-color: #FFFFFF;
 }
-
 .faq-section .info-panel {
   text-align: center;
 }
-
 .faq-section .questions-panel {
   margin-top: 50px;
 }
-
 .faq-section .questions-panel .faq-card {
   display: grid;
   grid-template-columns: 15% 85%;
   margin-top: 20px;
 }
-
 .faq-section .questions-panel .faq-card .icon-box {
   grid-column: 1;
   display: -webkit-box;
   display: flex;
   justify-content: space-around;
 }
-
 .faq-section .questions-panel .faq-card .icon-box .uk-icon {
   margin-top: 6px;
 }
-
 .faq-section .questions-panel .faq-card .faq-info {
   grid-column: 2;
 }
@@ -1149,35 +991,29 @@
     grid-template-rows: 0.6fr 1fr;
   }
 }
-
 @media (min-width: 768px) {
   .faq-section .questions-panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2em;
   }
-
   .faq-section .questions-panel .faq-card {
     grid-column: 1;
   }
-
   .faq-section .questions-panel .faq-card:nth-child(2n) {
     grid-column: 2;
   }
 }
-
 @media (min-width: 1024px) {
   .about-us-section > .uk-container {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5em;
   }
-
   .about-us-section .image-panel {
     grid-row: 1;
     grid-column: 1;
   }
-
   .about-us-section .info-panel {
     grid-row: 1;
     grid-column: 2;
@@ -1192,12 +1028,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
   .wright-us-section .info-panel {
     grid-column: 1;
   }
 }
-
 @media (min-width: 1440px) {
   .about-us-section .info-panel {
     margin: 150px 0;
@@ -1207,16 +1041,13 @@
     padding-left: 220px;
     padding-right: 220px;
   }
-
   .faq-section .questions-panel {
     grid-column-gap: 10em;
   }
 }
-
 .wine-category-section {
   background-color: #FFFFFF;
 }
-
 .wine-category-section .category-panel {
   display: -webkit-box;
   display: flex;
@@ -1227,11 +1058,9 @@
           align-items: center;
   align-content: center;
 }
-
 .wine-category-section .category-panel .uk-dropdown {
   border-radius: 10px;
 }
-
 .wine-category-section .category-panel .dt-nav {
   display: none;
 }
@@ -1239,31 +1068,25 @@
 .wine-list-section {
   background-color: #FFFFFF;
 }
-
 .wine-list-section .wine-card {
   font-size: 0.6rem;
   margin-bottom: 30px;
 }
-
 .wine-list-section .wine-card:hover .wine-card-btn {
   background-color: #dad1c1;
 }
-
 .wine-list-section .wine-card p {
   margin: 0;
   display: inline-block;
 }
-
 .wine-list-section .wine-card a {
   color: #3B3B3D;
   text-decoration: none;
 }
-
 .wine-list-section .wine-card .wine-card-info {
   border-bottom: 1px solid #3B3B3D;
   padding: 15px 15px;
 }
-
 .wine-list-section .wine-card .wine-card-info .uk-card-badge {
   background-color: #dad1c1;
   font-size: 0.6rem;
@@ -1272,25 +1095,21 @@
   top: 15px;
   right: 15px;
 }
-
 .wine-list-section .wine-card .wine-card-info p.uk-text-meta {
   font-size: 0.6rem;
   text-transform: uppercase;
   color: #3B3B3D;
   margin: 0;
 }
-
 .wine-list-section .wine-card .wine-card-info h2.uk-card-title {
   color: #3B3B3D;
   font-size: 1.2rem;
 }
-
 .wine-list-section .wine-card .wine-card-utility {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   padding: 0;
 }
-
 .wine-list-section .wine-card .wine-card-utility .region-grape {
   grid-column: 1;
   display: -webkit-box;
@@ -1302,7 +1121,6 @@
           align-items: baseline;
   padding: 15px 15px;
 }
-
 .wine-list-section .wine-card .wine-card-utility .rating {
   grid-column: 2;
   border-left: 1px dashed #3B3B3D;
@@ -1315,28 +1133,23 @@
           align-items: flex-end;
   padding: 15px 15px;
 }
-
 .wine-list-section .wine-card .wine-card-utility .rating .rate {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
 }
-
 .wine-list-section .wine-card .wine-card-utility .rating .uk-icon svg polygon {
   stroke: #d0c5b1;
 }
-
 .wine-list-section .wine-card .wine-card-utility .rating .rated svg polygon {
   fill: #d0c5b1;
 }
-
 .wine-list-section .wine-card .wine-card-btn {
   background-color: #d0c5b1;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
 }
-
 .wine-list-section .wine-card .wine-card-btn a {
   padding: 0;
   color: #FFFFFF;
@@ -1347,81 +1160,64 @@
   .wine-list-section .wine-card .wine-card-info {
     padding: 10px 10px;
   }
-
   .wine-list-section .wine-card .wine-card-info .uk-card-badge {
     top: 10px;
     right: 10px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .region-grape {
     padding: 10px 10px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .rating {
     padding: 10px 10px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .wine-card-btn {
     padding: 15px 15px;
   }
 }
-
 @media (min-width: 768px) {
   .wine-list-section .wine-panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2em;
   }
-
   .wine-list-section .wine-card {
     grid-column: 1;
   }
-
   .wine-list-section .wine-card .wine-card-info {
     padding: 20px 20px;
   }
-
   .wine-list-section .wine-card .wine-card-info .uk-card-badge {
     top: 20px;
     right: 20px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .region-grape {
     padding: 20px 20px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .rating {
     padding: 20px 20px;
   }
-
   .wine-list-section .wine-card .wine-card-btn {
     padding: 15px 20px;
   }
-
   .wine-list-section .wine-card:nth-child(2n) {
     grid-column: 2;
   }
 }
-
 @media (min-width: 1024px) {
   .wine-category-section > .uk-container {
     padding-bottom: 0;
   }
-
   .wine-category-section .category-panel .uk-subnav {
     -webkit-box-pack: center;
             justify-content: center;
   }
-
   .wine-category-section .category-panel .uk-subnav > li {
     padding-bottom: 20px;
   }
-
   .wine-category-section .category-panel .dt-nav {
     display: -webkit-box;
     display: flex;
   }
-
   .wine-category-section .category-panel .mb-nav {
     display: none;
   }
@@ -1429,31 +1225,25 @@
   .wine-list-section .wine-card .wine-card-info {
     padding: 30px 30px;
   }
-
   .wine-list-section .wine-card .wine-card-info .uk-card-badge {
     top: 30px;
     right: 30px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .region-grape {
     padding: 30px 30px;
   }
-
   .wine-list-section .wine-card .wine-card-utility .rating {
     padding: 30px 30px;
   }
-
   .wine-list-section .wine-card .wine-card-btn {
     padding: 20px 30px;
   }
 }
-
 @media (min-width: 1440px) {
   .wine-info-section > .uk-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-
   .wine-info-section > .uk-container .info-panel {
     grid-column: 1;
   }
@@ -1462,37 +1252,30 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2em;
   }
-
   .wine-list-section .wine-card:nth-child(2n) {
     grid-column: unset;
   }
-
   .wine-list-section .wine-card:nth-child(3n-1) {
     grid-column: 2;
   }
-
   .wine-list-section .wine-card:nth-child(3n) {
     grid-column: 3;
   }
 }
-
 .wine-post-section {
   background-color: #FFFFFF;
   display: grid;
   grid-template-rows: 0.4fr 1fr;
 }
-
 .wine-post-section .dt-hide {
   display: none;
 }
-
 .wine-post-section .wine-post-image {
   grid-row: 1;
   background-image: url("/images/wineclub-hero.jpg");
   background-size: cover;
   background-position: center;
 }
-
 .wine-post-section .wine-post-badge {
   position: absolute;
   top: 100px;
@@ -1502,48 +1285,39 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
-
 .wine-post-section .wine-panel {
   grid-row: 2;
 }
-
 .wine-post-section .wine-panel .wine-body {
   font-size: 0.8rem;
   margin-bottom: 30px;
 }
-
 .wine-post-section .wine-panel .wine-body p {
   margin: 0;
   display: inline-block;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-info {
   border: none;
   padding: 15px 15px;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-info .wine-meta {
   font-size: 0.8rem;
   text-transform: uppercase;
   margin: 0;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-info .description {
   margin-top: 20px;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-info .wine-body-desc {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-row-gap: 1em;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-info .wine-body-desc h4 {
   font-size: 0.8rem;
   margin: 0;
   color: #d0c5b1;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -1552,13 +1326,11 @@
   font-size: 0.6rem;
   margin-top: 30px;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility span {
   font-weight: 700;
   color: #d0c5b1;
   text-transform: uppercase;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .volume-size {
   grid-column: 1;
   display: -webkit-box;
@@ -1570,7 +1342,6 @@
           align-items: baseline;
   padding: 15px 15px;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .rating {
   grid-column: 2;
   border-left: 1px dashed #3B3B3D;
@@ -1585,30 +1356,24 @@
           justify-content: center;
   padding: 15px 15px;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .rating .rate {
   font-size: 0.8rem;
   font-weight: 700;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .rating .rating-star {
   margin-bottom: 10px;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .rating .rating-star .uk-icon svg polygon {
   stroke: #d0c5b1;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .rating .rating-star .rated svg polygon {
   fill: #d0c5b1;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .pricetag {
   grid-column: span 2;
   padding: 15px 15px;
   border-top: 1px solid #3B3B3D;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .pricetag > ul {
   list-style: none;
   margin: 0;
@@ -1622,11 +1387,9 @@
   -webkit-box-pack: justify;
           justify-content: space-between;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .pricetag > ul li {
   padding: 0;
 }
-
 .wine-post-section .wine-panel .wine-body .wine-body-utility .pricetag > ul li:last-child {
   text-align: right;
 }
@@ -1634,23 +1397,19 @@
 .wine-thumb-section h2 {
   font-size: 1.2rem;
 }
-
 .wine-thumb-section a {
   color: #3B3B3D;
   text-decoration: none;
 }
-
 .wine-thumb-section .wine-thumb > a {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   border: 1px solid #3B3B3D;
   margin-bottom: 30px;
 }
-
 .wine-thumb-section .wine-thumb .wine-thumb-image {
   grid-column: 1;
 }
-
 .wine-thumb-section .wine-thumb .wine-thumb-body {
   grid-column: 2;
   display: -webkit-box;
@@ -1663,13 +1422,10 @@
   border-left: 1px dashed #3B3B3D;
   padding: 0 20px;
 }
-
-.wine-thumb-section .wine-thumb .wine-thumb-body p,
-.wine-thumb-section .wine-thumb .wine-thumb-body h3 {
+.wine-thumb-section .wine-thumb .wine-thumb-body p, .wine-thumb-section .wine-thumb .wine-thumb-body h3 {
   font-size: 0.8rem;
   margin: 0;
 }
-
 .wine-thumb-section .wine-thumb .wine-thumb-body .wine-meta {
   font-size: 0.6rem;
   text-transform: uppercase;
@@ -1683,26 +1439,21 @@
     padding: 10px 10px;
   }
 }
-
 @media (min-width: 768px) {
   .wine-post-section {
     grid-template-rows: 1fr 1fr;
   }
-
   .wine-post-section .wine-panel .wine-body .wine-body-info .wine-body-desc {
     grid-template-rows: none;
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   .wine-post-section .wine-panel .wine-body .wine-body-info .description {
     margin-top: 50px;
   }
-
   .wine-post-section .wine-panel .wine-body .wine-body-utility {
     font-size: 0.8rem;
     margin-top: 50px;
   }
-
   .wine-post-section .wine-panel .wine-body .wine-body-utility .rating .rate {
     font-size: 1rem;
     font-weight: 700;
@@ -1714,7 +1465,6 @@
     grid-column-gap: 1em;
   }
 }
-
 @media (min-width: 1440px) {
   .wine-post-section {
     min-height: 800px;
@@ -1722,12 +1472,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
-
   .wine-post-section .dt-hide {
     display: -webkit-box;
     display: flex;
   }
-
   .wine-post-section .wine-post-image {
     grid-column: 1;
     display: -webkit-box;
@@ -1738,16 +1486,13 @@
     -webkit-box-pack: end;
             justify-content: flex-end;
   }
-
   .wine-post-section .wine-panel {
     grid-column: 2;
     grid-row: 1;
   }
-
   .wine-post-section .wine-panel > .uk-container {
     padding: 100px 100px 100px 100px;
   }
-
   .wine-post-section .wine-panel .wine-body .wine-body-info .wine-body-desc {
     grid-template-rows: none;
     grid-template-columns: 1fr 1fr 0.5fr;
@@ -1761,40 +1506,32 @@
   .wine-thumb-section {
     background-color: #fcfaf9;
   }
-
   .wine-thumb-section > .uk-container {
     padding: 30px 30px 10px 30px;
   }
 }
-
 .event-list-section {
   background-color: #FFFFFF;
 }
-
 .event-list-section .event-card {
   font-size: 0.6rem;
   margin-bottom: 30px;
 }
-
 .event-list-section .event-card:hover .event-card-btn {
   background-color: #dad1c1;
 }
-
 .event-list-section .event-card p {
   margin: 0;
   display: inline-block;
 }
-
 .event-list-section .event-card a {
   color: #3B3B3D;
   text-decoration: none;
 }
-
 .event-list-section .event-card .event-card-info {
   border-bottom: 1px solid #3B3B3D;
   padding: 15px 15px;
 }
-
 .event-list-section .event-card .event-card-info .uk-card-badge {
   background-color: #dad1c1;
   font-size: 0.6rem;
@@ -1803,25 +1540,21 @@
   top: 15px;
   right: 15px;
 }
-
 .event-list-section .event-card .event-card-info p.uk-text-meta {
   font-size: 0.6rem;
   text-transform: uppercase;
   color: #3B3B3D;
   margin: 0;
 }
-
 .event-list-section .event-card .event-card-info h2.uk-card-title {
   color: #3B3B3D;
   font-size: 1.2rem;
 }
-
 .event-list-section .event-card .event-card-utility {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   padding: 0;
 }
-
 .event-list-section .event-card .event-card-utility .region-grape {
   grid-column: 1;
   display: -webkit-box;
@@ -1833,7 +1566,6 @@
           align-items: baseline;
   padding: 15px 15px;
 }
-
 .event-list-section .event-card .event-card-utility .rating {
   grid-column: 2;
   border-left: 1px dashed #3B3B3D;
@@ -1846,20 +1578,17 @@
           align-items: flex-end;
   padding: 15px 15px;
 }
-
 .event-list-section .event-card .event-card-utility .rating .rate {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
 }
-
 .event-list-section .event-card .event-card-btn {
   background-color: #d0c5b1;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
 }
-
 .event-list-section .event-card .event-card-btn a {
   padding: 0;
   color: #FFFFFF;
@@ -1870,91 +1599,72 @@
   .event-list-section .event-card .event-card-info {
     padding: 10px 10px;
   }
-
   .event-list-section .event-card .event-card-info .uk-card-badge {
     top: 10px;
     right: 10px;
   }
-
   .event-list-section .event-card .event-card-utility .region-grape {
     padding: 10px 10px;
   }
-
   .event-list-section .event-card .event-card-utility .rating {
     padding: 10px 10px;
   }
-
   .event-list-section .event-card .event-card-utility .event-card-btn {
     padding: 15px 15px;
   }
 }
-
 @media (min-width: 768px) {
   .event-list-section .wine-panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2em;
   }
-
   .event-list-section .event-card {
     grid-column: 1;
   }
-
   .event-list-section .event-card .event-card-info {
     padding: 20px 20px;
   }
-
   .event-list-section .event-card .event-card-info .uk-card-badge {
     top: 20px;
     right: 20px;
   }
-
   .event-list-section .event-card .event-card-utility .region-grape {
     padding: 20px 20px;
   }
-
   .event-list-section .event-card .event-card-utility .rating {
     padding: 20px 20px;
   }
-
   .event-list-section .event-card .event-card-btn {
     padding: 15px 20px;
   }
-
   .event-list-section .event-card:nth-child(2n) {
     grid-column: 2;
   }
 }
-
 @media (min-width: 1024px) {
   .event-list-section .event-card .event-card-info {
     padding: 30px 30px;
   }
-
   .event-list-section .event-card .event-card-info .uk-card-badge {
     top: 30px;
     right: 30px;
   }
-
   .event-list-section .event-card .event-card-utility .region-grape {
     padding: 30px 30px;
   }
-
   .event-list-section .event-card .event-card-utility .rating {
     padding: 30px 30px;
   }
-
   .event-list-section .event-card .event-card-btn {
     padding: 20px 30px;
   }
 }
-
 @media (min-width: 1440px) {
   .event-info-section > .uk-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-
   .event-info-section > .uk-container .info-panel {
     grid-column: 1;
   }
@@ -1963,37 +1673,30 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2em;
   }
-
   .event-list-section .event-card:nth-child(2n) {
     grid-column: unset;
   }
-
   .event-list-section .event-card:nth-child(3n-1) {
     grid-column: 2;
   }
-
   .event-list-section .event-card:nth-child(3n) {
     grid-column: 3;
   }
 }
-
 .event-post-section {
   background-color: #FFFFFF;
   display: grid;
   grid-template-rows: 0.2fr 1fr;
 }
-
 .event-post-section .dt-hide {
   display: none;
 }
-
 .event-post-section .event-post-image {
   grid-row: 1;
   background-image: url("/images/wineclub-hero.jpg");
   background-size: cover;
   background-position: center;
 }
-
 .event-post-section .event-post-badge {
   position: absolute;
   top: 100px;
@@ -2003,32 +1706,26 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
-
 .event-post-section .event-panel {
   grid-row: 2;
 }
-
 .event-post-section .event-panel .event-body {
   font-size: 0.8rem;
   margin-bottom: 30px;
 }
-
 .event-post-section .event-panel .event-body p {
   margin: 0;
   display: inline-block;
 }
-
 .event-post-section .event-panel .event-body .event-body-info {
   border: none;
   padding: 15px 15px;
 }
-
 .event-post-section .event-panel .event-body .event-body-info .event-meta {
   font-size: 0.8rem;
   text-transform: uppercase;
   margin: 0;
 }
-
 .event-post-section .event-panel .event-body .event-body-utility {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -2037,7 +1734,6 @@
   font-size: 0.6rem;
   margin-top: 30px;
 }
-
 .event-post-section .event-panel .event-body .event-body-utility .date {
   grid-column: 1;
   display: -webkit-box;
@@ -2049,7 +1745,6 @@
           align-items: baseline;
   padding: 15px 15px;
 }
-
 .event-post-section .event-panel .event-body .event-body-utility .pricetag {
   grid-column: 2;
   border-left: 1px dashed #3B3B3D;
@@ -2064,20 +1759,17 @@
           justify-content: center;
   padding: 15px 15px;
 }
-
 .event-post-section .event-panel .event-body .event-body-utility .pricetag .price {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   color: #d0c5b1;
 }
-
 .event-post-section .event-panel .event-joinevent {
   border-top: 1px dashed #3B3B3D;
   margin-top: 50px;
   padding-top: 50px;
 }
-
 .event-post-section .event-panel .event-joinevent .event-form {
   border: 1px solid #d0c5b1;
   padding: 20px;
@@ -2086,23 +1778,19 @@
 .event-thumb-section h2 {
   font-size: 1.2rem;
 }
-
 .event-thumb-section a {
   color: #3B3B3D;
   text-decoration: none;
 }
-
 .event-thumb-section .event-thumb > a {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   border: 1px solid #3B3B3D;
   margin-bottom: 30px;
 }
-
 .event-thumb-section .event-thumb .event-thumb-image {
   grid-column: 1;
 }
-
 .event-thumb-section .event-thumb .event-thumb-body {
   grid-column: 2;
   display: -webkit-box;
@@ -2115,13 +1803,10 @@
   border-left: 1px dashed #3B3B3D;
   padding: 0 20px;
 }
-
-.event-thumb-section .event-thumb .event-thumb-body p,
-.event-thumb-section .event-thumb .event-thumb-body h3 {
+.event-thumb-section .event-thumb .event-thumb-body p, .event-thumb-section .event-thumb .event-thumb-body h3 {
   font-size: 0.8rem;
   margin: 0;
 }
-
 .event-thumb-section .event-thumb .event-thumb-body .event-meta {
   font-size: 0.6rem;
   text-transform: uppercase;
@@ -2134,29 +1819,23 @@
   .event-post-section .event-panel .event-body .event-body-info {
     padding: 10px 10px;
   }
-
   .event-post-section .event-panel .event-body .event-body-utility .date {
     padding: 10px 10px;
   }
-
   .event-post-section .event-panel .event-body .event-body-utility .pricetag {
     padding: 10px 10px;
   }
-
   .event-post-section .event-panel .event-body .event-body-utility .pricetag .price {
     font-size: 0.8rem;
   }
-
   .event-post-section .event-panel .event-joinevent .event-form {
     padding: 10px;
   }
 }
-
 @media (min-width: 768px) {
   .event-post-section {
     grid-template-rows: 0.5fr 1fr;
   }
-
   .event-post-section .event-panel .event-body .event-body-utility {
     font-size: 0.8rem;
     margin-top: 50px;
@@ -2168,7 +1847,6 @@
     grid-column-gap: 1em;
   }
 }
-
 @media (min-width: 1440px) {
   .event-post-section {
     min-height: 800px;
@@ -2176,12 +1854,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
-
   .event-post-section .dt-hide {
     display: -webkit-box;
     display: flex;
   }
-
   .event-post-section .event-post-image {
     grid-column: 1;
     display: -webkit-box;
@@ -2192,22 +1868,18 @@
     -webkit-box-pack: end;
             justify-content: flex-end;
   }
-
   .event-post-section .event-panel {
     grid-column: 2;
     grid-row: 1;
   }
-
   .event-post-section .event-panel > .uk-container {
     padding: 100px 100px 100px 100px;
   }
-
   .event-post-section .event-panel .event-joinevent {
     border-top: 1px dashed #3B3B3D;
     margin-top: 50px;
     padding-top: 50px;
   }
-
   .event-post-section .event-panel .event-joinevent .event-form {
     border: 1px solid #d0c5b1;
     padding: 50px;
@@ -2220,17 +1892,14 @@
   .event-thumb-section {
     background-color: #fcfaf9;
   }
-
   .event-thumb-section > .uk-container {
     padding: 50px 50px 50px 50px;
   }
 }
-
 .contact-info-section .info-panel p {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
-
 .contact-info-section .info-panel a {
   color: #3B3B3D;
 }
@@ -2238,20 +1907,16 @@
 .contact-us-section {
   background-color: #FFFFFF;
 }
-
 .contact-us-section .contact-panel form.contact-form {
   margin-top: 30px;
 }
-
 .contact-us-section .right-contact-panel {
   border-top: 1px dashed #d0c5b1;
   padding-top: 10px;
 }
-
 .contact-us-section .right-contact-panel .uk-form-icon {
   top: -90px;
 }
-
 .contact-us-section .right-contact-panel .uk-textarea {
   padding-left: 40px;
 }
@@ -2261,54 +1926,43 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
-
   .contact-us-section .contact-panel .info {
     grid-column: 1;
   }
-
   .contact-us-section .contact-panel form.contact-form {
     grid-column: 1;
   }
 }
-
 @media (min-width: 1024px) {
   .contact-us-section .contact-panel {
     grid-template-columns: 1fr 1fr;
   }
-
   .contact-us-section .contact-panel .info {
     margin-right: 40px;
   }
-
   .contact-us-section .contact-panel form.contact-form {
     grid-column: span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5em;
   }
-
   .contact-us-section .contact-panel form.contact-form .left-contact-panel {
     grid-column: 1;
   }
-
   .contact-us-section .contact-panel form.contact-form .right-contact-panel {
     grid-column: 2;
   }
-
   .contact-us-section .contact-panel form.contact-form .uk-input {
     height: 60px;
   }
-
   .contact-us-section .contact-panel form.contact-form .uk-textarea {
     height: 292px;
   }
-
   .contact-us-section .right-contact-panel {
     border-top: none;
     padding-top: 0;
     position: relative;
   }
-
   .contact-us-section .right-contact-panel:before {
     content: "";
     position: absolute;
@@ -2317,19 +1971,16 @@
     height: 163%;
     border: 1px dashed #d0c5b1;
   }
-
   .contact-us-section .right-contact-panel .uk-form-icon {
     top: -245px;
   }
 }
-
 @media (min-width: 1440px) {
   .contact-us-section .right-contact-panel:before {
     top: -175px;
     height: 150%;
   }
 }
-
 .main-nav {
   background-color: #FFFFFF;
   /* Sidebar nav items link/hover */
@@ -2368,31 +2019,25 @@
       border-top: 2px solid $white;
   }*/
 }
-
 .main-nav .dt-nav {
   display: none;
 }
-
 .main-nav .uk-container {
   width: 100%;
   max-width: 100%;
   padding: 0;
   margin: auto;
 }
-
 .main-nav .uk-sticky {
   border-bottom: 2px solid #d0c5b1;
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default > li > a {
   color: rgba(255, 255, 255, 0.7);
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default > li > a:hover,
 .main-nav .uk-offcanvas-bar .uk-nav-default > li > a:focus {
   color: #FFFFFF;
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default > li.uk-active > a {
   color: #FFFFFF;
   border-bottom: 4px solid #FFFFFF;
@@ -2400,26 +2045,22 @@
   width: -moz-max-content;
   width: max-content;
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:hover,
 .main-nav .uk-offcanvas-bar .uk-nav-default > li.uk-active > a:focus,
 .main-nav .uk-navbar-dropdown-nav > li > a:hover,
 .main-nav .uk-navbar-dropdown-nav > li > a:focus {
   color: #FFFFFF;
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 0.8rem;
   padding: 5px 0;
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:hover,
 .main-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-sub a:focus {
   color: #FFFFFF;
 }
-
 .main-nav .uk-navbar-dropdown-nav > li.uk-active > a {
   color: #FFFFFF;
   border-bottom: 4px solid #FFFFFF;
@@ -2427,95 +2068,75 @@
   width: -moz-max-content;
   width: max-content;
 }
-
 .main-nav .uk-offcanvas-bar .uk-nav-default .uk-nav-header {
   font-weight: 400;
   margin-top: 40px;
 }
-
 .main-nav .uk-navbar-container {
   background-color: #FFFFFF;
   padding: 0 15px;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-navbar-toggle svg {
   color: #3B3B3D;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-navbar-toggle svg:hover {
   color: #d0c5b1;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar {
   background-color: #d0c5b1;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-offcanvas-close svg {
   width: 20px;
   height: 20px;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-offcanvas-close svg:hover {
   color: #FFFFFF;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-nav {
   margin-top: 30px;
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-left .uk-offcanvas-bar .uk-nav .uk-nav-sub {
   text-transform: none;
   font-weight: 400;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .down-icon {
   color: #d0c5b1;
   padding-right: 0;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .down-icon .user-register {
   border: 2px solid #d0c5b1;
   border-radius: 50px;
   padding: 3px;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .down-icon .user-register circle {
   stroke-width: 1.5;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .down-icon .user-register path {
   stroke-width: 1.5;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .down-icon .user-profile {
   width: 30px;
   height: 30px;
   border-radius: 50px;
   border: 2px solid #d0c5b1;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-search-icon {
   padding-left: 0;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown {
   box-shadow: 0 10px 12px rgba(0, 0, 0, 0.15);
   background-color: #d0c5b1;
   width: 250px;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a {
   color: rgba(255, 255, 255, 0.5);
 }
-
-.main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:hover,
-.main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:focus {
+.main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:hover, .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .uk-navbar-dropdown-nav > li > a:focus {
   color: rgba(255, 255, 255, 0.7);
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -2524,11 +2145,9 @@
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel p {
   margin: 0;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel p:first-child {
   color: #3B3B3D;
   font-size: 0.8rem;
@@ -2536,7 +2155,6 @@
   text-transform: uppercase;
   line-height: normal;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel .user-profile {
   grid-column: 1;
   width: 60px;
@@ -2545,16 +2163,13 @@
   margin: auto 0;
   border: 2px solid #bdad91;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown .user-panel .user-info {
   grid-column: 2;
   font-size: 0.6rem;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right [class*=uk-navbar-dropdown-bottom] {
   margin-top: 0;
 }
-
 .main-nav .uk-navbar-container .uk-navbar-right .uk-search-navbar .uk-search-input {
   font-size: 0.8rem;
   font-family: "Source Sans Pro", sans-serif;
@@ -2591,52 +2206,42 @@
     }
 
 }*/
-
 @media (min-width: 768px) {
   .main-nav .uk-navbar-container .uk-navbar-right .down-icon {
     padding-right: 15px;
   }
-
   .main-nav .uk-navbar-container .uk-navbar-right .uk-search-icon {
     padding-left: 15px;
   }
-
   .main-nav .uk-navbar-container .uk-navbar-right .uk-navbar-dropdown {
     width: 280px;
   }
-
   .main-nav .uk-navbar-container .uk-navbar-right .uk-search-navbar .uk-search-input {
     font-size: 1.5rem;
   }
 }
-
 @media (min-width: 1024px) {
   .main-nav .uk-navbar-container {
     padding: 0 35px;
   }
-
   .main-nav .mb-nav {
     display: none;
   }
-
   .main-nav .dt-nav {
     display: -webkit-box;
     display: flex;
   }
 }
-
 @media (min-width: 1440px) {
   .main-nav .uk-navbar-container {
     padding: 0 35px;
   }
 }
-
 @media (min-width: 1600px) {
   .main-nav .uk-navbar-container {
     padding: 0 120px;
   }
 }
-
 .footer h4 {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.4;
@@ -2646,26 +2251,21 @@
   text-transform: uppercase;
   margin: 0 0 20px 0;
 }
-
 .footer p {
   margin: 0;
   font-size: 0.8rem;
 }
-
 .footer a {
   color: #FFFFFF;
 }
-
 .footer ul.uk-nav-default li.link-highlight {
   font-weight: 500;
 }
-
 .footer ul.uk-nav-default a {
   padding: 0;
   color: #d0c5b1;
   cursor: pointer;
 }
-
 .footer ul.uk-nav-default a:hover {
   color: #FFFFFF;
 }
@@ -2674,32 +2274,26 @@
   border-top: 2px solid #d0c5b1;
   color: #FFFFFF;
 }
-
 .footer .footer-panel {
   background-color: #3B3B3D;
 }
-
 .footer .footer-panel .panel-one .contact .primary-btn a {
   font-size: 0.8rem;
 }
-
 .footer .footer-panel .panel-one .assortment {
   border-top: 1px solid #d0c5b1;
   border-bottom: 1px solid #d0c5b1;
   margin: 30px 0;
   padding: 30px 0;
 }
-
 .footer .footer-panel .panel-two .policy {
   border-top: 1px solid #d0c5b1;
   margin: 30px 0;
   padding: 30px 0;
 }
-
 .footer .footer-panel > .uk-container {
   padding-bottom: 50px;
 }
-
 .footer .footer-sub-panel {
   background-color: #d0c5b1;
   height: 10px;
@@ -2710,27 +2304,23 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
   }
-
   .footer .footer-panel > .uk-container .panel-one {
     grid-row: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10em;
   }
-
   .footer .footer-panel > .uk-container .panel-one .contact {
     grid-column: 1;
     border-right: 1px solid #d0c5b1;
     margin-right: -40px;
   }
-
   .footer .footer-panel > .uk-container .panel-one .assortment {
     grid-column: 2;
     border: none;
     margin: 0;
     padding: 0;
   }
-
   .footer .footer-panel > .uk-container .panel-two {
     grid-row: 2;
     display: grid;
@@ -2740,11 +2330,9 @@
     border-top: 1px solid #d0c5b1;
     margin: 30px 0;
   }
-
   .footer .footer-panel > .uk-container .panel-two .info {
     grid-column: 1;
   }
-
   .footer .footer-panel > .uk-container .panel-two .policy {
     grid-column: 2;
     border: none;
@@ -2752,22 +2340,18 @@
     padding: 0;
   }
 }
-
 @media (min-width: 1024px) {
   .footer .footer-panel > .uk-container {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
   }
-
   .footer .footer-panel > .uk-container .panel-one {
     grid-column: 1;
     grid-column-gap: 10em;
   }
-
   .footer .footer-panel > .uk-container .panel-one .contact {
     margin-right: -50px;
   }
-
   .footer .footer-panel > .uk-container .panel-two {
     grid-row: 1;
     grid-column: 2;
@@ -2780,31 +2364,25 @@
     -webkit-box-align: center;
             align-items: center;
   }
-
   .footer .footer-panel > .uk-container .panel-two .info {
     grid-row: 1;
   }
-
   .footer .footer-panel > .uk-container .panel-two .policy {
     grid-column: 1;
     grid-row: 2;
   }
 }
-
 @media (min-width: 1440px) {
   .footer .footer-panel > .uk-container {
     grid-template-columns: 4fr 1fr;
   }
-
   .footer .footer-panel > .uk-container .panel-one {
     grid-column-gap: 30em;
   }
-
   .footer .footer-panel > .uk-container .panel-one .contact {
     margin-right: -30px;
   }
 }
-
 .club-info {
   margin-bottom: 30px;
 }
@@ -2819,7 +2397,6 @@
   border-top: 1px dashed #d0c5b1;
   padding-top: 10px;
 }
-
 .crud-form .right-form-panel .address-map-container {
   height: 250px;
 }
@@ -2841,25 +2418,19 @@
   background-color: transparent;
   border: 6px solid #83c17a38;
 }
-
 .create-card:hover {
   border-color: #83c17a70;
 }
-
-.create-card h3.uk-card-title,
-.create-card p {
+.create-card h3.uk-card-title, .create-card p {
   margin: 0;
   color: #83c17a;
 }
-
 .create-card .icon-media {
   color: #83c17a;
 }
-
 .create-card .icon-media .uk-icon {
   position: relative;
 }
-
 .create-card .icon-media .uk-icon:before {
   content: "";
   position: absolute;
@@ -2869,31 +2440,24 @@
   border-radius: 50px;
   padding: 30px;
 }
-
 .create-card .body-info {
   padding: 30px 0 0 0;
 }
-
 .create-card--disabled {
   pointer-events: none;
   border: 6px solid #3B3B3D1A;
 }
-
-.create-card--disabled h3.uk-card-title,
-.create-card--disabled p {
+.create-card--disabled h3.uk-card-title, .create-card--disabled p {
   color: #3B3B3D8C;
 }
-
 .create-card--disabled .icon-media {
   color: #3B3B3D8C;
 }
-
 .create-card--disabled .icon-media .uk-icon:before {
   border: 3px dotted #3B3B3D8C;
 }
 
-.list-card,
-.profile-card {
+.list-card, .profile-card {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -2907,82 +2471,54 @@
   border-radius: 30px;
   text-align: center;
 }
-
-.list-card h3,
-.list-card p,
-.profile-card h3,
-.profile-card p {
+.list-card .uk-card-title, .list-card p, .profile-card .uk-card-title, .profile-card p {
   margin: 0;
 }
-
-.list-card .icon-media img,
-.profile-card .icon-media img {
+.list-card .icon-media img, .profile-card .icon-media img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   border: 3px solid #d0c5b1;
 }
-
-.list-card .body-info,
-.profile-card .body-info {
+.list-card .body-info, .profile-card .body-info {
   padding: 15px 0 0 0;
+  /*&--expand {
+      width: 100%;
+  }*/
   /* ONLY applies for wine list: extra feature */
 }
-
-.list-card .body-info--expand,
-.profile-card .body-info--expand {
-  width: 100%;
-}
-
-.list-card .body-info ul.uk-navbar-nav a,
-.profile-card .body-info ul.uk-navbar-nav a {
+.list-card .body-info ul.uk-navbar-nav a, .profile-card .body-info ul.uk-navbar-nav a {
   min-height: auto;
   padding: 0;
   cursor: pointer;
 }
-
-.list-card .body-info ul.uk-navbar-nav .uk-icon-button,
-.profile-card .body-info ul.uk-navbar-nav .uk-icon-button {
+.list-card .body-info ul.uk-navbar-nav .uk-icon-button, .profile-card .body-info ul.uk-navbar-nav .uk-icon-button {
   background-color: transparent;
 }
-
-.list-card .body-info ul.uk-navbar-nav .uk-icon-button:hover,
-.profile-card .body-info ul.uk-navbar-nav .uk-icon-button:hover {
+.list-card .body-info ul.uk-navbar-nav .uk-icon-button:hover, .profile-card .body-info ul.uk-navbar-nav .uk-icon-button:hover {
   background-color: #f8f8f8;
 }
-
-.list-card .body-info .uk-navbar-dropdown,
-.profile-card .body-info .uk-navbar-dropdown {
+.list-card .body-info .uk-navbar-dropdown, .profile-card .body-info .uk-navbar-dropdown {
   padding: 20px 30px 10px 30px;
   text-align: left;
   width: 225px;
 }
-
-.list-card .body-info .uk-navbar-dropdown li,
-.profile-card .body-info .uk-navbar-dropdown li {
+.list-card .body-info .uk-navbar-dropdown li, .profile-card .body-info .uk-navbar-dropdown li {
   margin-bottom: 10px;
 }
-
-.list-card .body-info .uk-navbar-dropdown a,
-.profile-card .body-info .uk-navbar-dropdown a {
+.list-card .body-info .uk-navbar-dropdown a, .profile-card .body-info .uk-navbar-dropdown a {
   color: #3B3B3D;
   font-size: 0.6rem;
 }
-
-.list-card .body-info .uk-navbar-dropdown a:hover,
-.profile-card .body-info .uk-navbar-dropdown a:hover {
+.list-card .body-info .uk-navbar-dropdown a:hover, .profile-card .body-info .uk-navbar-dropdown a:hover {
   text-decoration: underline;
 }
-
-.list-card .body-info .uk-navbar-dropdown a .uk-icon > svg,
-.profile-card .body-info .uk-navbar-dropdown a .uk-icon > svg {
+.list-card .body-info .uk-navbar-dropdown a .uk-icon > svg, .profile-card .body-info .uk-navbar-dropdown a .uk-icon > svg {
   color: #83c17a;
   stroke-width: 2px;
   margin-right: 10px;
 }
-
-.list-card .body-info .uk-navbar-dropdown button,
-.profile-card .body-info .uk-navbar-dropdown button {
+.list-card .body-info .uk-navbar-dropdown button, .profile-card .body-info .uk-navbar-dropdown button {
   background-color: transparent;
   border: none;
   color: #3B3B3D;
@@ -2990,26 +2526,18 @@
   letter-spacing: 0.1em;
   padding: 0;
 }
-
-.list-card .body-info .uk-navbar-dropdown button:hover,
-.profile-card .body-info .uk-navbar-dropdown button:hover {
+.list-card .body-info .uk-navbar-dropdown button:hover, .profile-card .body-info .uk-navbar-dropdown button:hover {
   text-decoration: underline;
 }
-
-.list-card .body-info .uk-navbar-dropdown button .uk-icon > svg,
-.profile-card .body-info .uk-navbar-dropdown button .uk-icon > svg {
+.list-card .body-info .uk-navbar-dropdown button .uk-icon > svg, .profile-card .body-info .uk-navbar-dropdown button .uk-icon > svg {
   color: #ea4949;
   stroke-width: 2px;
   margin-right: 10px;
 }
-
-.list-card .body-info .primary-btn,
-.profile-card .body-info .primary-btn {
+.list-card .body-info .primary-btn, .profile-card .body-info .primary-btn {
   margin-top: 20px;
 }
-
-.list-card .body-info .body-info-columns,
-.profile-card .body-info .body-info-columns {
+.list-card .body-info .body-info-columns, .profile-card .body-info .body-info-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1em;
@@ -3018,11 +2546,7 @@
   padding-top: 10px;
   border-top: 1px dashed #3B3B3D;
 }
-
-.list-card .body-info .body-info-columns .left-body-panel,
-.list-card .body-info .body-info-columns .right-body-panel,
-.profile-card .body-info .body-info-columns .left-body-panel,
-.profile-card .body-info .body-info-columns .right-body-panel {
+.list-card .body-info .body-info-columns .left-body-panel, .list-card .body-info .body-info-columns .right-body-panel, .profile-card .body-info .body-info-columns .left-body-panel, .profile-card .body-info .body-info-columns .right-body-panel {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -3031,21 +2555,15 @@
   -webkit-box-pack: center;
           justify-content: center;
 }
-
-.list-card .body-info .body-info-columns .left-body-panel,
-.profile-card .body-info .body-info-columns .left-body-panel {
+.list-card .body-info .body-info-columns .left-body-panel, .profile-card .body-info .body-info-columns .left-body-panel {
   grid-column: 1;
   text-align: left;
 }
-
-.list-card .body-info .body-info-columns .right-body-panel,
-.profile-card .body-info .body-info-columns .right-body-panel {
+.list-card .body-info .body-info-columns .right-body-panel, .profile-card .body-info .body-info-columns .right-body-panel {
   grid-column: 2;
   text-align: right;
 }
-
-.list-card .body-info .body-info-columns span.bold,
-.profile-card .body-info .body-info-columns span.bold {
+.list-card .body-info .body-info-columns span.bold, .profile-card .body-info .body-info-columns span.bold {
   font-weight: 700;
   font-size: 0.8rem;
 }
@@ -3057,45 +2575,194 @@
           align-items: start;
   text-align: left;
 }
-
 .club-profile .profile-card .body-info {
   padding: 0;
 }
-
-.club-profile .profile-card .body-info h4 {
+.club-profile .profile-card .body-info h2.uk-card-title {
+  margin: 0 0 20px 0;
+}
+.club-profile .profile-card .body-info h3.uk-card-title {
   font-size: 1rem;
 }
-
+.club-profile .profile-card .body-info h3.uk-card-title:not(:first-child) {
+  margin: revert;
+}
 .club-profile .profile-card--main {
   -webkit-box-align: center;
           align-items: center;
   text-align: center;
 }
-
+.club-profile .profile-card--main h1.uk-card-title {
+  font-size: 2.5rem;
+  margin: 0;
+}
 .club-profile .profile-card--main .icon-media {
   position: absolute;
   top: -30px;
 }
-
 .club-profile .profile-card--main .icon-media img {
   width: 100px;
   height: 100px;
 }
-
 .club-profile .profile-card--main .body-info {
   padding: 80px 0 0 0;
 }
+.club-profile .profile-card--columns {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr;
+  -webkit-box-align: stretch;
+          align-items: stretch;
+}
+.club-profile .profile-card--columns > .profile-card {
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+.club-profile .profile-card--columns > .profile-card .body-info {
+  width: 100%;
+}
+.club-profile .profile-card--columns .wine-rating {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle {
+  position: relative;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle:before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 7px solid #FFFFFF;
+  border-radius: 50%;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value p {
+  position: absolute;
+  top: -75px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value p .uk-icon {
+  vertical-align: text-bottom;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-value p .uk-icon svg > polygon {
+  fill: #FFFFFF;
+  vertical-align: top;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-star {
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+.club-profile .profile-card--columns .wine-rating .rating-circle .rating-star .rated svg polygon {
+  fill: #FFFFFF;
+}
+.club-profile .profile-card--columns .wine-rating .primary-btn a {
+  background-color: #fcfaf9;
+  color: #3B3B3D;
+}
+.club-profile .profile-card--columns .wine-rating .primary-btn a:hover {
+  background-color: #3B3B3D;
+  color: #FFFFFF;
+}
+.club-profile .profile-card--columns .wine-awards {
+  margin-top: 20px;
+}
+.club-profile .profile-card--highlight {
+  background-color: #d0c5b1;
+}
+.club-profile .profile-card--highlight .uk-card-title, .club-profile .profile-card--highlight p {
+  color: #FFFFFF;
+}
+
+.club-profile-members {
+  margin-bottom: 20px;
+  /*.body-info {
+      display: grid;
+      grid-template-columns: 50px repeat(3, 1fr);
+      grid-column-gap: 2em;
+  }*/
+}
+.club-profile-members h2 {
+  display: inline-block;
+}
+.club-profile-members span a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #83c17a;
+  float: right;
+  margin-top: 5px;
+}
+.club-profile-members .profile-card {
+  margin-bottom: 20px;
+  -webkit-box-align: start;
+          align-items: flex-start;
+}
+.club-profile-members .profile-card .body-info {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-column-gap: 2em;
+  text-align: left;
+  padding: 0;
+}
+.club-profile-members .profile-card .body-info h3 {
+  font-size: 1rem;
+}
+.club-profile-members .profile-card .body-info p {
+  font-size: 0.8rem;
+}
+.club-profile-members .profile-card .body-info .member-image {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #d0c5b1;
+  border-radius: 50%;
+}
+.club-profile-members .profile-card .body-info .member-email {
+  display: none;
+}
+.club-profile-members .profile-card .body-info .member-role {
+  display: none;
+}
+
+.club-profile-collection {
+  margin-bottom: 20px;
+}
+.club-profile-collection .club-wine .list-card {
+  margin-bottom: 20px;
+}
+.club-profile-collection .club-wine .list-card .body-info h3 {
+  font-size: 1rem;
+}
+.club-profile-collection .club-wine .list-card .body-info p, .club-profile-collection .club-wine .list-card .body-info span {
+  font-size: 0.8rem;
+}
+.club-profile-collection .club-wine .list-card .body-info .primary-btn {
+  font-size: 0.6rem;
+}
 
 @media (max-width: 320px) {
-  .list-card,
-  .profile-card {
+  .list-card, .profile-card {
     padding: 30px 20px;
   }
 }
-
 @media (min-width: 768px) {
-  .club-info,
-  .club-crud-panel {
+  .club-info, .club-crud-panel {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
@@ -3114,12 +2781,38 @@
     display: grid;
     grid-template-columns: auto 80% auto;
   }
-
   .club-profile .profile-card {
     grid-column: 2;
   }
-}
+  .club-profile .profile-card--columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+  .club-profile .profile-card--columns > .profile-card:first-child {
+    grid-column: 1;
+  }
+  .club-profile .club-profile-members, .club-profile .club-profile-collection {
+    grid-column: 2;
+  }
 
+  .club-profile-members .profile-card .body-info {
+    display: grid;
+    grid-template-columns: 50px repeat(2, 1fr);
+  }
+  .club-profile-members .profile-card .body-info .member-email {
+    display: inline-block;
+  }
+
+  .club-profile-collection .club-wine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2em;
+  }
+  .club-profile-collection .club-wine .list-card:nth-child(2n) {
+    grid-column: 2;
+  }
+}
 @media (min-width: 1024px) {
   .club-list-panel {
     grid-template-columns: 1fr 1fr 1fr;
@@ -3130,12 +2823,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
   .crud-form--two-columns .left-form-panel {
     grid-column: 1;
     margin-right: 30px;
   }
-
   .crud-form--two-columns .right-form-panel {
     grid-column: 2;
     border-top: 0;
@@ -3152,7 +2843,6 @@
         border: 1px dashed $primary-color;
     }*/
   }
-
   .crud-form--two-columns .right-form-panel .uk-textarea {
     height: 350px;
   }
@@ -3160,11 +2850,9 @@
   .list-card:nth-child(2n) {
     grid-column: unset;
   }
-
   .list-card:nth-child(3n-1) {
     grid-column: 2;
   }
-
   .list-card:nth-child(3n) {
     grid-column: 3;
   }
@@ -3172,21 +2860,37 @@
   .club-profile .profile-card--main .icon-media {
     top: -70px;
   }
-
   .club-profile .profile-card--main .icon-media img {
     width: 150px;
     height: 150px;
   }
-}
 
+  .club-profile-members .profile-card .body-info {
+    grid-template-columns: 50px repeat(3, 1fr);
+  }
+  .club-profile-members .profile-card .body-info .member-role {
+    display: inline-block;
+  }
+
+  .club-profile-collection .club-wine {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .club-profile-collection .club-wine .list-card:nth-child(2n) {
+    grid-column: unset;
+  }
+  .club-profile-collection .club-wine .list-card:nth-child(3n-1) {
+    grid-column: 2;
+  }
+  .club-profile-collection .club-wine .list-card:nth-child(3n) {
+    grid-column: 3;
+  }
+}
 @media (min-width: 1440px) {
   .club-info {
     margin-bottom: 80px;
   }
 }
-
 /* Change autocomplete styles in WebKit */
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -3242,12 +2946,7 @@ body {
   background-color: #fcfaf9;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
@@ -3257,10 +2956,7 @@ h6 {
   margin-top: 0;
 }
 
-h3,
-h4,
-h5,
-h6 {
+h3, h4, h5, h6 {
   font-size: 1.4rem;
 }
 
@@ -3278,7 +2974,6 @@ div.primary-btn {
   margin-top: 20px;
   cursor: pointer;
 }
-
 div.primary-btn a {
   text-transform: uppercase;
   font-weight: 700;
@@ -3287,12 +2982,10 @@ div.primary-btn a {
   border-radius: 50px;
   padding: 10px 50px;
 }
-
 div.primary-btn a:hover {
   background-color: #EEEEEE;
   text-decoration: none;
 }
-
 div.primary-btn--center {
   -webkit-box-align: center;
           align-items: center;
@@ -3309,7 +3002,6 @@ button.primary-btn {
   text-align: center;
   border: none;
 }
-
 button.primary-btn:hover {
   background-color: #EEEEEE;
   text-decoration: none;
@@ -3318,11 +3010,9 @@ button.primary-btn:hover {
 .uk-container {
   max-width: 1400px;
 }
-
 .uk-container--expand {
   padding: 50px 30px 70px 30px;
 }
-
 .uk-container--padding {
   padding: 50px 30px 50px 30px;
 }
@@ -3332,10 +3022,8 @@ button.primary-btn:hover {
     padding: 10px 30px;
   }
 }
-
 @media (min-width: 768px) {
-  h1,
-  h2 {
+  h1, h2 {
     font-size: 3rem;
   }
 
@@ -3343,7 +3031,6 @@ button.primary-btn:hover {
     width: 70%;
   }
 }
-
 @media (min-width: 1024px) {
   body {
     font-size: 1rem;
@@ -3352,18 +3039,15 @@ button.primary-btn:hover {
   .uk-container--expand {
     padding: 100px 50px 63px 50px;
   }
-
   .uk-container--padding {
     padding: 100px 50px 100px 50px;
   }
 }
-
 @media (min-width: 1600px) {
   .uk-container--expand {
     padding: 100px 0 63px 132.5px;
   }
 }
-
 .login-register-section > .uk-container {
   display: -webkit-box;
   display: flex;
@@ -3373,18 +3057,15 @@ button.primary-btn:hover {
   -webkit-box-align: center;
           align-items: center;
 }
-
 .login-register-section .club-info {
   text-align: center;
   display: block;
   border-bottom: 1px dashed #d0c5b1;
   margin-bottom: 30px !important;
 }
-
 .login-register-section .signin-form .signin-btn {
   text-align: center;
 }
-
 .login-register-section .signin-form .bottom-form-group {
   text-align: center;
   border-top: 1px dashed #d0c5b1;
@@ -3392,7 +3073,6 @@ button.primary-btn:hover {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-
 .login-register-section .signin-form .link-text {
   text-transform: none;
   color: #3B3B3D;
@@ -3401,11 +3081,9 @@ button.primary-btn:hover {
   letter-spacing: 0.1em;
   background-color: transparent;
 }
-
 .login-register-section .signin-form .link-text:hover {
   text-decoration: underline;
 }
-
 .login-register-section .signin-form .link-text--bold {
   font-weight: 700;
 }
@@ -3415,7 +3093,6 @@ button.primary-btn:hover {
     min-width: 480px;
   }
 }
-
 .choosewine {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -3424,14 +3101,12 @@ button.primary-btn:hover {
   -webkit-box-align: center;
           align-items: center;
 }
-
 .choosewine img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   border: 3px solid #d0c5b1;
 }
-
 .choosewine .primary-btn-choose {
   text-transform: uppercase;
   font-weight: 700;
@@ -3448,4 +3123,3 @@ button.primary-btn:hover {
 .uk-modal-body {
   border-radius: 10px;
 }
-

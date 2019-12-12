@@ -87,11 +87,23 @@
 
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
+                    <div class="uk-navbar-container" uk-navbar>
+                        <div class="uk-navbar-left">
+                            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+                        </div>
+                    </div>
+
+
+
+
                     <h2 class="uk-card-title">Club members</h2>
-                    <span><a href="#">(Edit club list)</a></span>
-                    <!--<div class="club-nav">-->
-                        {{--<div class="uk-card-badge">
-                            <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
+                    <!--<span><a href="#">(Edit club list)</a></span>-->
+                    <div class="club-nav">
+
+
+
+                        {{--<nav class="uk-navbar-container uk-margin" uk-navbar="mode: click; boundary-align: true; align: center;">
+                            <ul class="uk-navbar-nav uk-iconnav">
                                 <li>
                                     <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
                                     <div class="uk-navbar-dropdown">
@@ -110,8 +122,8 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>--}}
-                    <!--</div>-->
+                        </nav>--}}
+                    </div>
 
                     <div class="profile-card uk-card uk-card-default">
                         <div class="body-info">
