@@ -21,7 +21,7 @@
         <div class="contact-panel uk-container uk-container--padding">
             <div class="info">
                 <h2>Contact us</h2>
-                <p>Nunc sed sem finibus, finibus metus non, egestas sapien. Nunc ut molestie elit. Praesent elementum blandit finibus.</p>
+                <p>Use the contact formula to contact us if you have further questions or have questions related to bugs.</p>
             </div>
 
             <form class="contact-form">

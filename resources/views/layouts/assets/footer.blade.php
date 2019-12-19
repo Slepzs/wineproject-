@@ -6,29 +6,28 @@
         <div class="uk-container uk-container--padding">
             <div class="panel-one">
                 <div class="contact">
-                    <h4>Kontakt</h4>
+                    <h4>Contact</h4>
                     <p>Wine Club</p>
-                    <p>Adresse / vejnavn</p>
+                    <p>Address / Streetname</p>
                     <p>2300 København S</p>
                     <p><span>Email:</span> <a href="#">wineclub@business.com</a></p>
-                    <p><span>Telefon:</span> <a href="#">+45 00 00 02 00</a></p>
+                    <p><span>Phone:</span> <a href="#">+45 00 00 02 00</a></p>
 
                     <div class="primary-btn">
-                        <a href="#kontakt">Kontakt os</a>
+                        <a href="#kontakt">Contact us</a>
                     </div>
                 </div>
                 <div class="assortment">
-                    <h4>Sortiment</h4>
+                    <h4>Wine & Liquor</h4>
                     <ul class="uk-nav uk-nav-default">
-                        <li><a href="#">Rødvin</a></li>
-                        <li><a href="#">Hvidvin</a></li>
-                        <li><a href="#">Rosévin</a></li>
-                        <li><a href="#">Økologisk vin</a></li>
-                        <li><a href="#">Mousserende vin</a></li>
-                        <li><a href="#">Dessertvin</a></li>
-                        <li><a href="#">Portvin</a></li>
+                        <li><a href="#">Red wine</a></li>
+                        <li><a href="#">White wine</a></li>
+                        <li><a href="#">Rosé wine</a></li>
+                        <li><a href="#">Organic wine</a></li>
+                        <li><a href="#">Sparkling wine</a></li>
+                        <li><a href="#">Dessert wine</a></li>
+                        <li><a href="#">Port wine</a></li>
                         <li><a href="#">Champagne</a></li>
-                        <li><a href="#">Spiritus</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,16 +35,16 @@
                 <div class="info">
                     <h4>Information</h4>
                     <ul class="uk-nav uk-nav-default">
-                        <li><a href="#">Om os</a></li>
+                        <li><a href="#">About us</a></li>
                         <li><a href="#">Events</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="policy">
                     <h4>Service</h4>
                     <ul class="uk-nav uk-nav-default">
                         <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Cookie politik</a></li>
+                        <li><a href="#">Cookie policy</a></li>
                     </ul>
                 </div>
             </div>

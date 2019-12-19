@@ -7,9 +7,10 @@
     <div class="wine-info-section">
         <div class="uk-container uk-container--padding">
             <div class="info-panel">
-                <h3>Udforsk klubbens</h3>
-                <h1>Samling af<br/> Vin & Spiritus</h1>
-                <p>Nunc sed sem finibus, finibus metus non, egestas sapien. Nunc ut molestie elit. Praesent elementum blandit finibus. Nunc sed sem finibus, finibus metus non, egestas sapien. Nunc ut molestie elit. Praesent elementum blandit finibus.</p>
+                <h3>Explorer our large</h3>
+                <h1>Selection of<br/> Wines</h1>
+                <p>This is a overview over our different wines and their ratings.
+                    <br/>The overview lets you get inspired to find your next wine you wan to enjoy and share with your club. Start a new rating session together with your community.</p>
             </div>
         </div>
     </div>
@@ -30,15 +31,14 @@
 
                 <!-- DESKTOP CATEGORY SELECTION NAV -->
                 <ul class="uk-subnav dt-nav">
-                    <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Rødvin</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: happy"></span> Hvidvin</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Rosévin</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Økologisk vin</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Mousserende vin</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Dessertvin</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Portvin</a></li>
+                    <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Red wine</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: happy"></span> White wine</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Rosé wine</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Organic wine</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Sparkling wine</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Dessert wine</a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Port wine</a></li>
                     <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Champagne</a></li>
-                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: star"></span> Spiritus</a></li>
                 </ul>
 
             </div>
