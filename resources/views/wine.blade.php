@@ -14,41 +14,19 @@
                     <h2>Andre vine</h2>
 
                     <div class="wine-thumb-panel">
+                        @foreach($randomwines as $wines)
                         <div class="wine-thumb">
                             <a href="{{ url('/vin-spiritus-post') }}">
                                 <div class="wine-thumb-image">
-                                    <img src="/images/wineclub-hero.jpg" alt="Event image">
+                                    <img src="{{ $wines->photo->file  ?? '/images/wineclub-hero.jpg' }}" alt="Event image">
                                 </div>
                                 <div class="wine-thumb-body">
-                                    <p class="wine-meta">Rødvin</p>
-                                    <h3 class="wine-title">Navn på vin</h3>
+                                    <p class="wine-meta">{{ $wines->winecategory->name }}</p>
+                                    <h3 class="wine-title"> {{$wines->wine_name}}</h3>
                                 </div>
                             </a>
                         </div>
-
-                        <div class="wine-thumb">
-                            <a href="{{ url('/vin-spiritus-post') }}">
-                                <div class="wine-thumb-image">
-                                    <img src="/images/wineclub-hero.jpg" alt="Event image">
-                                </div>
-                                <div class="wine-thumb-body">
-                                    <p class="wine-meta">Rødvin</p>
-                                    <h3 class="wine-title">Navn på vin</h3>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="wine-thumb">
-                            <a href="{{ url('/vin-spiritus-post') }}">
-                                <div class="wine-thumb-image">
-                                    <img src="/images/wineclub-hero.jpg" alt="Event image">
-                                </div>
-                                <div class="wine-thumb-body">
-                                    <p class="wine-meta">Rødvin</p>
-                                    <h3 class="wine-title">Navn på vin</h3>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -60,34 +38,34 @@
 
                 <div class="wine-body">
                     <div class="wine-body-info">
-                        <p class="wine-meta">Rødvin</p>
-                        <h1 class="wine-title">Navn på vin</h1>
+                        <p class="wine-meta">{{ $wine->winecategory->name }}</p>
+                        <h1 class="wine-title">{{$wine->wine_name}}</h1>
                         <div class="wine-body-desc">
                             <div class="region">
                                 <h4>Land / Region</h4>
-                                <p>South Africa</p>
+                                <p>{{ $wine->winelocations->address_address }}</p>
                             </div>
                             <div class="grapes">
                                 <h4>Grape(s)</h4>
-                                <p>Cabernet Sauvignon</p>
+                                <p>{{ $wine->grape }}</p>
                             </div>
                             <div class="year">
-                                <h4>Årgang</h4>
-                                <p>2018</p>
+                                <h4>Year</h4>
+                                <p>{{ $wine->vintage }}</p>
                             </div>
                         </div>
-                        <p class="description">Nunc sed sem finibus, finibus metus non, egestas sapien. Nunc ut molestie elit. Praesent elementum blandit finibus. Integer congue eleifend consectetur. Phasellus mollis posuere lacus ac maximus.</p>
+                        <p class="description">us mollis posuere lacus ac maximus.</p>
                     </div>
                     <div class="wine-body-utility">
                         <div class="volume-size">
                             <ul class="uk-iconnav uk-iconnav-vertical">
-                                <li><span>Volume %</span><br/> 13.5 %</li>
-                                <li><span>Size cl</span><br/> 0.75 cl</li>
+                                <li><span>Volume %</span><br/> {{ $wine->alcohol_content }} %</li>
+                                <li><span>Size</span><br/> {{ $wine->bottle_size }} </li>
                             </ul>
                         </div>
                         <div class="rating">
                             <span>Rating</span>
-                            <p class="rate">4.42</p>
+                            <p class="rate">{{$wine->getAverageRatingAttribute()}}</p>
                             <div class="rating-star">
                                 <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
                                 <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
@@ -100,8 +78,8 @@
                         </div>
                         <div class="pricetag">
                             <ul class="uk-iconnav uk-iconnav-vertical">
-                                <li><span>Pris</span><br/> 33 DKK</li>
-                                <li><span>Rigtig pris</span><br/> 80 DKK</li>
+                                <li><span>Pris</span><br/> {{ $wine->wine_price }}DKK</li>
+                                <li><span>Rigtig pris</span><br/> {{ $wine->wine_price }} DKK</li>
                             </ul>
                         </div>
                         <!--<div class="pricetag">

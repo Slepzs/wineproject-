@@ -11,6 +11,7 @@
 |
 */
 
+use App\Wine;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -38,16 +39,23 @@ Route::get('/om-os', function() {
 // Vin page
 Route::get('/vin-spiritus', function() {
 
-    return view('vin-spiritus');
+    $wines = Wine::with('winecategory', 'winelocations')->get();
+    // return $wines;
+    return view('vin-spiritus', compact('wines'));
 
 });
 
 // Single vin-post page
-Route::get('/vin-spiritus-post', function() {
+Route::get('wine/{slug}', function($slug) {
 
-    return view('vin-spiritus-post');
+    $wine = Wine::with('winecategory', 'winelocations')->where('slug', $slug)->first();
 
-});
+    $randomwines = Wine::inRandomOrder()->with('winecategory', 'winelocations')->limit('3')->get();
+
+    // return $wine;
+    return view('wine', compact('randomwines', 'wine'));
+
+})->name('wine');
 
 // Events page
 Route::get('/events', function() {
@@ -137,7 +145,7 @@ Route::group(['middleware'=>'auth'], function() {
         'show' => 'profile.show'
     ]]);
 
-
+    Route::patch('clubs/lock/{lock}', 'ClubsController@lock')->name('clubs/lock');
     Route::get('clubs/overview', 'ClubsController@myclubs')->name('clubs.myclubs');
     Route::delete('clubs/{withdraw}', 'ClubsController@withdraw')->name('clubs.withdraw');
     Route::put('clubs/apply/{apply}', 'ClubsController@apply')->name('clubs.apply');

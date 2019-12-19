@@ -69,7 +69,7 @@
                             <div class="wine-rating">
                                 <div class="rating-circle">
                                     <div class="rating-value">
-                                        <p>3.4{{ $wine->wine_ratings }}</p>
+                                        <p>{{ $wine->getAverageRatingAttribute() ?? '0' }}</p>
                                     </div>
                                     <div class="rating-star">
                                         <span class="rated" uk-icon="icon: star"></span>

@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+ 
 
     <!-- CLUB PROFILE OVERVIEW -->
     <div class="club-profile-section">
@@ -93,7 +93,7 @@
                 <div class="club-profile-members">
                     @if($club->GetMember($club->id))
                         <h2 class="uk-card-title">Club members</h2>
-                    @if($club->EditUsers($club->id))
+                    @if($club->ClubAdmin($club->id))
                         <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club members list)</a></span>
                     @endif
                         @include('clubs.ekstra.members')
@@ -138,3 +138,21 @@
 
 
 @endsection
+
+@section('scripts')
+    <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+            for(i = 0; i < $(".myrating").length + 1; i++) {
+                $('#input-'+i).rating({displayOnly: true, showClear: false, disabled: true, showCaption: false});
+            }
+            $(".empty-stars").remove();
+            $(".filled-stars").css({
+                position: "sticky",
+                display: "block"
+            });
+
+        });
+    </script>
+@endsection
+

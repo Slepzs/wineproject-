@@ -105,6 +105,26 @@ class User extends Authenticatable
         return ! is_null($this->user());
     }
 
+    public function GetRole($user_id, $club_id) {
+
+        $role = ClubUser::where('user_id', $user_id)->where('club_id', $club_id)->first()->role_id;
+
+        switch ($role) {
+            case 1:
+                return "Administrator";
+                break;
+            case 2:
+                return "Creator";
+                break;
+            case 3:
+                return "Taster";
+                break;
+            default:
+                return "Null";
+                break;
+        }
+    }
+
 
 
 

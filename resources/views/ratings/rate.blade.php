@@ -2,7 +2,6 @@
 
 
 @section('content')
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 
     <!-- WINE PROFILE OVERVIEW -->
     <div class="club-profile-section">
@@ -33,7 +32,9 @@
                         <h3 class="uk-card-title">{{ $wine->wine_name }}</h3>
                         <p>{{ $wine->winecategory->name }}</p>
                         <p><span uk-icon="icon: user; ratio: 0.5"></span> {{ $wine->producer }}</p>
-                        <input id="input-21f" value="{{ $rating ?? 0 }}" type="text" data-min=0 data-max=10 data-step=0.5 data-size="md" data-club="{{ $club }}" data-wine="{{ $wine->id }}" data-user="{{ Auth::user()->id }}" title="">
+                        @if(!$locked->isLocked($wine->id, $club))
+                        <input id="input-21f" value="{{ $rating ?? 0 }}" type="text" data-min=0 data-max=10 data-step=1 data-size="md" data-club="{{ $club }}" data-wine="{{ $wine->id }}" data-user="{{ Auth::user()->id }}" title="">
+                        @endif
                     </div>
                 </div>
 

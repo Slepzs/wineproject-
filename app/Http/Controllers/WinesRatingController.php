@@ -57,9 +57,11 @@ class WinesRatingController extends Controller
         $club_id = $club;
         $user_id = Auth::user()->id;
 
+        $locked = club::findOrFail($club_id);
         $rating = DB::table('wine_ratings')->where('wine_id', $wine_id)->where('club_id', $club_id)->where('user_id', $user_id)->value('rating');
 
-        return view('ratings.rate', compact('wine', 'club', 'rating'));
+
+        return view('ratings.rate', compact('wine', 'club', 'rating', 'locked'));
     }
 
     public function rated(Request $request, $wine) {

@@ -17,6 +17,7 @@ class CreateClubWinesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('club_id');
             $table->unsignedBigInteger('wine_id');
+            $table->integer('locked')->default('0');
             $table->timestamps();
 
             $table->foreign('club_id')

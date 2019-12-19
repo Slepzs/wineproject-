@@ -78,7 +78,7 @@ class club extends Model
 
     }
 
-    public function EditUsers($club_id) {
+    public function ClubAdmin($club_id) {
 
         $userid = Auth::user()->id;
 
@@ -96,6 +96,19 @@ class club extends Model
 
         return $admin;
     }
+
+    public function isLocked($wine_id, $club_id) {
+
+        $locked = ClubWine::where('wine_id', $wine_id)->where('club_id', $club_id)->first();
+
+        if($locked->locked == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 
 
 

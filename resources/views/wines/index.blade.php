@@ -53,8 +53,8 @@
                                         <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
                                         <div class="uk-navbar-dropdown">
                                             <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                @if(Auth::user()->name === $wine->user->name)
-                                                <li><a href="{{route('admin.wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
+                                                @if(Auth::user()->id === $wine->user_id)
+                                                <li><a href="{{route('wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
                                                 @endif
                                             </ul>
                                         </div>

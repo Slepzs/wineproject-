@@ -6,75 +6,109 @@
 @section('content')
 
 
+    <div class="wine-crud-section">
+        <div class="uk-container uk-container--padding">
 
+            <!-- CLUB INTRO TEXT -->
+            <div class="club-info">
+                <div class="info-body">
+                    <h1>Create a new wine</h1>
+                    <p>Create and upload a new wine. Be sure to search for it before you upload a new one</p>
+                </div>
+            </div>
 
+            <!-- WINE CRUD -->
+            <div class="club-crud-panel">
 
-
-    <div class="admin-forms" style="display: grid; grid-template-columns: 1fr 1fr">
-
-        <form method="post" action="{{route('wines.store')}}" enctype="multipart/form-data">
-            <fieldset class="uk-fieldset">
-                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                <legend class="uk-legend">Create a Wine</legend>
-                @csrf
-                <div class="uk-margin">
-                    <select name="category_id" class="uk-select">
-                        <option value="1">Red Wine</option>
-                        <option value="2">White Wine</option>
-                        <option value="3">Rosé Wine</option>
-                        <option value="4">Port Wine</option>
-                    </select>
-                </div>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Wine Name eg. Cabernet Sauvignon" name="wine_name" >
-                </div>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Producer eg. Spier" name="producer">
-                </div>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Vintage eg. 2016" name="vintage">
-                </div>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Grape/Blend" name="grape">
-                </div>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Alcohol Content 13.5%" name="alcohol_content">
-                </div>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Wine Price" name="wine_price">
-                </div>
-
-                <div class="uk-margin">
-                <select name="bottle_size" class="uk-select">
-                    <option value="All Sizes">All Sizes</option>
-                    <option value="Bottles">Bottles</option>
-                    <option value="Cases">Cases</option>
-                    <option value="Half bottles">Half bottles</option>
-                    <option value="Magnums">Magnums</option>
-                    <option value="Double Magnums">Double Magnums</option>
-                    <option value="Other sizes">Other sizes</option>
-                    <option value="Half bottles">Half bottles</option>
-                </select>
-                </div>
-
-                <label for="address_address">Address</label>
-                <input type="text" id="address-input" name="address_address" class="form-control map-input">
-                <input type="hidden" name="address_latitude" id="address-latitude" value="0" />
-                <input type="hidden" name="address_longitude" id="address-longitude" value="0" />
-
-                <div class="uk-margin" uk-margin>
-                    <div uk-form-custom="target: true">
-                        <input type="file" name="photo_id">
-                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                <form class="crud-form crud-form--two-columns" method="POST" action="{{route('wines.store')}}" enctype="multipart/form-data">
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                    <h3 class="">Create Wine</h3>
+                    @csrf
+                    <div class="left-form-panel">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">What type?</label>
+                            <select class="uk-select uk-inline uk-width-expand" name="category_id">
+                                <option value="1">Red Wine</option>
+                                <option value="2">White Wine</option>
+                                <option value="3">Rosé Wine</option>
+                                <option value="4">Port Wine</option>
+                            </select>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Wine name</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text"  name="wine_name">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Producer</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text"  name="producer">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Vintage (Year)</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" placeholder="Nickname"  name="vintage">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Grape / Blend</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text" name="grape">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Alcohol content (%)</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text"  name="alcohol_content">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Wine price</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input" type="text"  name="wine_price">
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <button class="uk-button uk-button-default">Submit</button>
-            </fieldset>
-        </form>
-        <div class="maps">
-            <div id="address-map-container" style="width:100%;height:400px; ">
-                <div style="width: 100%; height: 100%" id="address-map"></div>
+                    <div class="right-form-panel">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Size of the bottle</label>
+                            <select class="uk-select uk-inline uk-width-expand" name="bottle_size">
+                                <option value="All Sizes">All Sizes</option>
+                                <option value="Bottles">Bottles</option>
+                                <option value="Half bottles">Half bottles</option>
+                                <option value="Cases">Cases</option>
+                                <option value="Magnums">Magnums</option>
+                                <option value="Double Magnums">Double Magnums</option>
+                                <option value="Other sizes">Other sizes</option>
+                            </select>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Wine image</label>
+                            <div class="uk-inline uk-width-expand js-upload" uk-form-custom="target: true">
+                                <input type="file" name="photo_id" multiple type="button" tabindex="-1">
+                                <input class="uk-input" type="text" placeholder="Select file" disabled>
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Country / Region</label>
+                            <div class="uk-inline uk-width-expand">
+                                <input class="uk-input map-input" id="address-input" type="text" name="address_address">
+                                <input class="uk-input" id="address-latitude" type="hidden" name="address_latitude">
+                                <input class="uk-input" id="address-longitude" type="hidden" name="address_longitude">
+                            </div>
+                        </div>
+                        <div class="uk-margin maps">
+                            <div id="address-map-container" style="height: 290px">
+                                <div style="width: 100%; height: 100%" id="address-map"></div>
+                            </div>
+                        </div>
+                        <div class="uk-margin" uk-margin>
+                            <button class="uk-button uk-button-default primary-btn" type="submit">Update wine</button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
         </div>

@@ -35,9 +35,16 @@
         <div uk-sticky="sel-target: .uk-nav; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
             <ul class="uk-nav uk-nav-default uk-margin-xlarge-top">
 
-                <li class="uk-nav-header"><span uk-icon="cog"></span> Admin panel</li>
+                <li class="uk-nav-header"><span uk-icon="grid"></span> Admin Super panel</li>
                 <li class="uk-nav-divider"></li>
-                {{--<li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>--}}
+                <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ route('admin.users.index') }}">Users</a></li>
+                <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('admin.wines.index') }}">Wines</a></li>
+                <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('admin.roles.index') }}">Roles</a></li>
+                <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('admin.media.index') }}">Media</a></li>
+                <li class="uk-nav-header"><span uk-icon="user"></span> User Dashboard</li>
+                <li class="uk-nav-divider"></li>
+                <li class="{{ Request::path() == 'profile' ? 'uk-active' : '' }}"><a href="{{ route('profile.show', Auth::user()->slug) }}">Profile</a></li>
+                <li class="{{ Request::path() == 'clubManagement' ? 'uk-active' : '' }}"><a href="{{ url('/clubManagement') }}">My Clubs</a></li>
 
             </ul>
         </div>

@@ -130,7 +130,7 @@ class WinesController extends Controller
 
             $photo = Photo::create(['file'=>$name]);
 
-            $data['photo_id'] = $photo->id;
+            $input['photo_id'] = $photo->id;
         }
         $wine->winelocations()->update($geodata);
         $wine->update($input);

@@ -13,7 +13,7 @@
             </div>
             <div class="member-role">
                 <h3 class="uk-card-title">Role</h3>
-                <p>Administrator</p>
+                <p>{{ $users->GetRole($users->id, $users->pivot->club_id) }}</p>
             </div>
         </div>
     </div>

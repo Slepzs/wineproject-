@@ -24,4 +24,6 @@ class WineRating extends Model
     }
 
 
+
+
 }

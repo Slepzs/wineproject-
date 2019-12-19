@@ -51,39 +51,44 @@
         <div class="uk-container uk-container--padding">
             <div class="wine-panel">
 
-                <div class="wine-card uk-card uk-card-default uk-card-hover">
-                    <a href="{{ url('/vin-spiritus-post') }}">
-                        <div class="uk-card-media-top">
-                            <img src="/images/wineclub-hero.jpg" alt="Event image">
-                        </div>
-                        <div class="wine-card-info uk-card-header">
-                            <div class="uk-card-badge uk-label"><span uk-icon="icon: paint-bucket; ratio: 0.5"></span></div>
-                            <p class="uk-text-meta">Rødvin</p>
-                            <h2 class="uk-card-title">Navn på vin</h2>
-                        </div>
-                        <div class="wine-card-utility uk-card-body">
-                            <div class="region-grape">
-                                <ul class="uk-iconnav uk-iconnav-vertical">
-                                    <li><span uk-icon="icon: world; ratio: 0.5"></span> Spanien</li>
-                                    <li><span uk-icon="icon: paint-bucket; ratio: 0.5"></span> 50% garnacha & 50% cariñana</li>
-                                </ul>
+                @foreach($wines as $wine)
+                    <div class="wine-card uk-card uk-card-default uk-card-hover">
+                        <a href="{{ route('wines.show', $wine->slug) }}">
+                            <div class="uk-card-media-top">
+                                <img src="{{ $wine->photo->file ?? '/images/wineclub-hero.jpg' }}" alt="Event image">
                             </div>
-                            <div class="rating">
-                                <p class="rate">3.24</p>
-                                <p>
-                                    <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                                    <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                                    <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                                    <span uk-icon="icon: star; ratio: 0.5"></span>
-                                    <span uk-icon="icon: star; ratio: 0.5"></span>
-                                </p>
+                            <div class="wine-card-info uk-card-header">
+                                <div class="uk-card-badge uk-label"><span uk-icon="icon: paint-bucket; ratio: 0.5"></span></div>
+                                <p class="uk-text-meta">{{ $wine->winecategory->name }}</p>
+                                <h2 class="uk-card-title"> {{ $wine->wine_name  }} </h2>
                             </div>
-                        </div>
-                        <div class="wine-card-btn uk-card-footer">
-                            <a href="{{ url('/vin-spiritus-post') }}" class="uk-button">Læs mere</a>
-                        </div>
-                    </a>
-                </div>
+                            <div class="wine-card-utility uk-card-body">
+                                <div class="region-grape">
+                                    <ul class="uk-iconnav uk-iconnav-vertical">
+                                        <li><span uk-icon="icon: world; ratio: 0.5"></span> {{ $wine->winelocations->address_address }}</li>
+                                        <li><span uk-icon="icon: paint-bucket; ratio: 0.5"></span>{{ $wine->grape }}</li>
+                                    </ul>
+                                </div>
+                                <div class="rating">
+                                    <p class="rate">{{ $wine->getAverageRatingAttribute() }}</p>
+                                    <p>
+                                        <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
+                                        <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
+                                        <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
+                                        <span uk-icon="icon: star; ratio: 0.5"></span>
+                                        <span uk-icon="icon: star; ratio: 0.5"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wine-card-btn uk-card-footer">
+                                <a href="{{ route('wine', $wine->slug) }}" class="uk-button">Read More</a>
+                            </div>
+                        </a>
+                    </div>
+
+                @endforeach
+
+
 
                 <div class="wine-card uk-card uk-card-default uk-card-hover">
                     <a href="#wine-post">

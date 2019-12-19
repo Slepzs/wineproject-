@@ -86,7 +86,7 @@ class ClubsController extends Controller
         $user = Auth::user()->id;
         $userapplied = ClubUser::where('user_id', $user)->where('club_id', $clubid)->get();
 
-        $wines = Club::with('wine.winelocations', 'wine.winerating')->where('id', $clubid)->get();
+        $wines = Club::with('wine.winelocations', 'wine.winerating')->where('id', $clubid)->paginate(5);
 
         $allusers = $club->user()
             ->wherePivot('role_id', '<=', '3')
@@ -163,6 +163,28 @@ class ClubsController extends Controller
         $input->user()->where('user_id', $user)->wherePivot('club_id', $id)->detach($user);
         return back();
     }
+
+    public function lock(Request $request, $lock) {
+
+        $input = $request->all();
+
+        $wine = Wine::findOrFail($lock)->id;
+
+        $locked = ClubWine::where('wine_id', $wine)->where('club_id', $input['club_id'])->first();
+
+        if($locked->locked == 1) {
+            $unlock = ClubWine::where('wine_id', $wine)->where('club_id', $input['club_id']);
+            $unlock->update(['locked' => 0]);
+        } else {
+            $locked = ClubWine::where('wine_id', $wine)->where('club_id', $input['club_id']);
+            $locked->update(['locked' => 1]);
+        }
+
+        return back();
+
+    }
+
+
 
 
 
