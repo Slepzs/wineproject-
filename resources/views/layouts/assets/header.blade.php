@@ -20,19 +20,24 @@
 
                             <ul class="uk-nav uk-nav-default uk-margin-auto-vertical">
 
-                                <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">Om os</a></li>
+                                <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">About us</a></li>
                                 <!--<li class="uk-nav-divider"></li>-->
                                 <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }} uk-parent">
-                                    <a href="{{ url('/vin-spiritus') }}">Vin &amp; Spiritus</a>
+                                    <a href="{{ url('/vin-spiritus') }}">Wine &amp; Liquor</a>
                                     <ul class="uk-nav-sub">
-                                        <li><a href="#">Rødvin</a></li>
-                                        <li><a href="#">Hvidvin</a></li>
-                                        <li><a href="#">Rosévin</a></li>
+                                        <li><a href="#">Red wine</a></li>
+                                        <li><a href="#">White wine</a></li>
+                                        <li><a href="#">Rosé wine</a></li>
+                                        <li><a href="#">Organic wine</a></li>
+                                        <li><a href="#">Sparkling wine</a></li>
+                                        <li><a href="#">Dessert wine</a></li>
+                                        <li><a href="#">Port wine</a></li>
+                                        <li><a href="#">Champagne</a></li>
                                     </ul>
                                 </li>
                                 <li class="uk-nav-divider"></li>
                                 <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
-                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ route('kontakt') }}">Kontakt</a></li>
+                                <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ route('kontakt') }}">Contact</a></li>
 
                             </ul>
                         </div>
@@ -58,19 +63,24 @@
 
                     <!-- DESKTOP NAV ASSETS (DESKTOP NAVIGATION) -->
                     <ul class="uk-navbar-nav dt-nav">
-                        <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">Om os</a></li>
+                        <li class="{{ Request::path() == 'om-os' ? 'uk-active' : '' }}"><a href="{{ url('/om-os') }}">About us</a></li>
                         <li>
-                            <a class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}" href="{{ url('/vin-spiritus') }}">Vin &amp; Spiritus</a>
+                            <a class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}" href="{{ url('/vin-spiritus') }}">Wine &amp; Liquor</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Rødvin</a></li>
-                                    <li><a href="#">Hvidvin</a></li>
-                                    <li><a href="#">Rosévin</a></li>
+                                    <li><a href="#">Red wine</a></li>
+                                    <li><a href="#">White wine</a></li>
+                                    <li><a href="#">Rosé wine</a></li>
+                                    <li><a href="#">Organic wine</a></li>
+                                    <li><a href="#">Sparkling wine</a></li>
+                                    <li><a href="#">Dessert wine</a></li>
+                                    <li><a href="#">Port wine</a></li>
+                                    <li><a href="#">Champagne</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
-                        <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Kontakt</a></li>
+                        <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ url('/kontakt') }}">Contact</a></li>
                     </ul>
 
                     <!-- UTILITY NAV -->
@@ -84,13 +94,13 @@
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         <li class="uk-nav-header">Join us now!</li>
-                                        <p>Tilmeld dig gratis & start din egen Vin Klub, mød andre vinelskere og meget mere! <span uk-icon="icon: heart; ratio: 0.5"></span></p>
+                                        <p>Sign up for free & start your own wine club, meet other wine lovers & much more! <span uk-icon="icon: heart; ratio: 0.5"></span></p>
                                         <li>
-                                            <a href="{{ route('login') }}"><span class="uk-icon" uk-icon="icon: lock"></span> {{ __('Log ind') }}</a>
+                                            <a href="{{ route('login') }}"><span class="uk-icon" uk-icon="icon: lock"></span> {{ __('Login') }}</a>
                                         </li>
                                         @if (Route::has('register'))
                                             <li>
-                                                <a href="{{ route('register') }}"><span class="uk-icon" uk-icon="icon: users"></span> {{ __('Tilmeld') }}</a>
+                                                <a href="{{ route('register') }}"><span class="uk-icon" uk-icon="icon: users"></span> {{ __('Sign up') }}</a>
                                             </li>
                                         @endif
                                     </ul>
