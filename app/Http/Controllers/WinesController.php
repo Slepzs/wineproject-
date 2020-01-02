@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use App\Wine;
+use App\WineCategory;
 use App\WineLocations;
 use Illuminate\Http\Request;
 use Spatie\Searchable\Search;
@@ -31,6 +32,12 @@ class WinesController extends Controller
 
         // return $wines;
         return view('wines/index', compact('wines'));
+    }
+
+    public function categories($slug) {
+
+
+
     }
 
     /**

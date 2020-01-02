@@ -116,7 +116,6 @@
             let user_id = $("#input-21f").attr("data-user");
             let wine_id = $("#input-21f").attr("data-wine");
 
-            console.log(club_id + " " + user_id);
             $('#input-21f').on('rating:change', function(event, value, caption) {
                 console.log(value);
                 let rating = value;
@@ -139,7 +138,6 @@
                     }
                 });
             });
-
         });
     </script>
 @endsection

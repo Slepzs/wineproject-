@@ -27,6 +27,8 @@
 <body>
 <div class="admin-panel-wrapper">
 
+
+
     <!-- Admin sidebar nav (DESKTOP ONLY) -->
     <div class="admin-sidebar-nav dt-nav">
         <a href="{{ url('/') }}" class="uk-logo">
@@ -38,7 +40,7 @@
 
             <li class="uk-nav-header"><span uk-icon="grid"></span> Main panel</li>
             <li class="uk-nav-divider"></li>
-            <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>
+            <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">All Clubs</a></li>
             <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('wines.index') }}">Wine selection</a></li>
 
             <li class="uk-nav-header"><span uk-icon="user"></span> User Dashboard</li>

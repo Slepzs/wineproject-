@@ -12,6 +12,7 @@
 */
 
 use App\Wine;
+use App\WineCategory;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -56,6 +57,18 @@ Route::get('wine/{slug}', function($slug) {
     return view('wine', compact('randomwines', 'wine'));
 
 })->name('wine');
+
+Route::get('categories/{slug}', function($slug) {
+
+    $category = WineCategory::findBySlugOrFail($slug)->id;
+
+    $wines = Wine::with('winecategory')->where('category_id', $category)->get();
+
+    $categoryname = $slug;
+
+    return view('categories', compact('wines', 'categoryname'));
+
+})->name('categories');
 
 // Events page
 Route::get('/events', function() {

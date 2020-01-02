@@ -46,7 +46,7 @@
 
                 <div class="wine-rating">
                         <p>{{ $club->getAverageClubRating($wine->id) }}</p>
-                        <input class="myrating" data-size="xs" data-min=0 data-max=10 data-step=1 id="input-{{$wine->id}}" value="{{ $club->getAverageClubRating($wine->id) ?? "0" }}" >
+                        <input class="myrating" data-size="xs" data-min=0 data-max=10 data-step=1 data-id="input-{{$wine->id}}" value="{{ $club->getAverageClubRating($wine->id) ?? "0" }}" >
                     </p>
                 </div>
                 @if($club->isLocked($wine->id, $club->id))

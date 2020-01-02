@@ -16,6 +16,7 @@ class CreateWineCategoriesTable extends Migration
         Schema::create('wine_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('slug')->nullable();
         });
     }
 

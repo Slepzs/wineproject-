@@ -68,14 +68,11 @@
                             <a class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }}" href="{{ url('/vin-spiritus') }}">Wine &amp; Liquor</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Red wine</a></li>
-                                    <li><a href="#">White wine</a></li>
-                                    <li><a href="#">Rosé wine</a></li>
-                                    <li><a href="#">Organic wine</a></li>
-                                    <li><a href="#">Sparkling wine</a></li>
-                                    <li><a href="#">Dessert wine</a></li>
-                                    <li><a href="#">Port wine</a></li>
-                                    <li><a href="#">Champagne</a></li>
+                                    @if($categories)
+                                        @foreach($categories as $category)
+                                            <li><a href="{{ route('categories', $category->slug) }}">{{$category->name}}</a></li>
+                                        @endforeach
+                                    @endif
                                 </ul>
                             </div>
                         </li>
@@ -119,12 +116,11 @@
                                             <img class="user-profile" src="{{Auth::user()->photo->file ?? '/images/wineclub-hero.jpg'}}" alt="">
                                             <div class="user-info">
                                                 <p>{{ Auth::user()->name }} {{ Auth::user()->last_name }}</p>
-                                                <p>#{{ Auth::user()->nickname ?: 'Nothing set' }}</p>
-                                                <p>{{ Auth::user()->role->name }}</p>
+                                                <p>#{{ Auth::user()->nickname ?: 'Nickname' }}</p>
                                             </div>
                                         </div>
-                                        <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
-                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Main panel</a></li>
+                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
+                                        <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Front page</a></li>
                                         <!-- Authentication Links -->
                                         @if(Auth::check())
 
@@ -146,23 +142,6 @@
                                         </form>
                                     </ul>
                                 </div>
-{{--                                <div class="uk-navbar-dropdown">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                                        <li><a href="{{route('clubs.index')}}">Clubs</a></li>
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                        </li>
-
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </ul>
-                                </div>--}}
                             </li>
                     @endguest
                     </ul>

@@ -60,7 +60,11 @@
        <div class="cta-bg uk-container uk-container--padding">
            <h2>Sign up and<br/>create your own wine club</h2>
            <div class="primary-btn primary-btn--center">
-               <a href="#">Your wine club</a>
+               @if( Auth::user() )
+               <a href="{{ route('clubs.create') }}">Your wine club</a>
+                   @else
+                   <a href="{{ route('login') }}">Your wine club</a>
+               @endif
            </div>
        </div>
    </div>

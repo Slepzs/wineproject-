@@ -29,18 +29,6 @@
                     </div>
                 </a>
 
-                <!-- CREATE WINE CARD: NO AVAILABLE SLOTS -->
-            {{--                <a href="{{route('clubs.create')}}" class="create-card create-card--disabled uk-card uk-card-default uk-link-toggle">
-                                <div class="icon-media">
-                                    <span uk-icon="icon: plus-circle; ratio: 2.5"></span>
-                                </div>
-                                <div class="body-info">
-                                    <h3 class="uk-card-title">Create a Club</h3>
-                                    <p>(0 slots available)</p>
-                                </div>
-                            </a>--}}
-
-                <!-- WINE LIST -->
                 @foreach($wines as $wine)
                     <div class="list-card uk-card uk-card-default">
                         <div class="icon-media">
@@ -54,8 +42,10 @@
                                         <div class="uk-navbar-dropdown">
                                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                                 @if(Auth::user()->id === $wine->user_id)
-                                                <li><a href="{{route('wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
+                                                    <li><a href="{{route('wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
+
                                                 @endif
+                                                <li> <a href="{{ route('ratings.confirm-rating', $wine->slug) }}" ><span uk-icon="icon: plus-circle"></span>Rate wine</a></li>
                                             </ul>
                                         </div>
                                     </li>

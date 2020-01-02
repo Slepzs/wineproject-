@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Wine;
+use App\WineCategory;
 use App\WineRating;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
@@ -34,9 +35,11 @@ class HomeController extends Controller
             ->orderByRaw('COUNT(*) DESC')
             ->limit(1)->get();
 
+        $categories = WineCategory::all();
+
         // https://stackoverflow.com/questions/20563166/eloquent-collection-counting-and-detect-empty
         if ($most_rated_wine->isEmpty()) {
-            return view('/index', compact('user'));
+            return view('/index', compact('user', 'categories'));
         }
 
 
@@ -44,15 +47,10 @@ class HomeController extends Controller
            $id =  $wine->wine_id;
         }
 
-
-
-
-
-
         $wines = Wine::with('winecategory', 'winelocations')->where('id', $id)->get();
 
-        //return $wines;
-        return view('/index', compact('user', 'wines'));
+
+        return view('/index', compact('user', 'wines', 'categories'));
     }
 
     public function admin() {

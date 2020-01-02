@@ -23,6 +23,14 @@ class WineCategorySeeder extends Seeder
                 'name' => 'Rosé Wine'
             ], [
                 'name' => 'Port Wine'
+            ], [
+                'name' => 'Organic wine'
+            ], [
+                'name' => 'Sparkling wine'
+            ], [
+                'name' => 'Dessert wine'
+            ], [
+                'name' => 'Champagne'
             ]
 
 

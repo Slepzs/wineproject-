@@ -49,25 +49,25 @@
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-stacked-text">Vintage (Year)</label>
                             <div class="uk-inline uk-width-expand">
-                                <input class="uk-input" type="text" placeholder="Nickname"  name="vintage">
+                                <input class="uk-input" type="text" placeholder="Year"  name="vintage">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-stacked-text">Grape / Blend</label>
                             <div class="uk-inline uk-width-expand">
-                                <input class="uk-input" type="text" name="grape">
+                                <input class="uk-input" type="text" name="grape" placeholder="Cabernet Sauvignon eg.">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-stacked-text">Alcohol content (%)</label>
                             <div class="uk-inline uk-width-expand">
-                                <input class="uk-input" type="text"  name="alcohol_content">
+                                <input class="uk-input" type="text"  name="alcohol_content" placeholder="13.5%">
                             </div>
                         </div>
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-stacked-text">Wine price</label>
                             <div class="uk-inline uk-width-expand">
-                                <input class="uk-input" type="text"  name="wine_price">
+                                <input class="uk-input" type="text"  name="wine_price" placeholder="60">
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="uk-margin" uk-margin>
-                            <button class="uk-button uk-button-default primary-btn" type="submit">Update wine</button>
+                            <button class="uk-button uk-button-default primary-btn" type="submit">Create Wine</button>
                         </div>
                     </div>
                 </form>

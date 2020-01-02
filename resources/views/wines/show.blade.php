@@ -25,6 +25,7 @@
                                             @if(Auth::user()->name === $wine->user->name)
                                                 <li><a href="{{route('admin.wines.edit', $wine->id)}}"><span uk-icon="icon: plus-circle"></span>Edit wine</a></li>
                                             @endif
+                                            <li> <a href="{{ route('ratings.confirm-rating', $wine->slug) }}" ><span uk-icon="icon: plus-circle"></span>Rate wine</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -54,14 +55,7 @@
                             <div class="uk-card-badge">
                                 <ul class="uk-navbar-nav uk-iconnav" uk-navbar="mode: click; boundary-align: true; align: center;">
                                     <li>
-                                        <a href="#" class="uk-icon-button" uk-icon="icon: more-vertical"></a>
-                                        <div class="uk-navbar-dropdown">
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                @if(Auth::user()->name === $wine->user->name)
-                                                    <li><a href="{{--route('admin.wines.edit', $wine->id)--}}"><span uk-icon="icon: plus-circle"></span>Edit wine rating</a></li>
-                                                @endif
-                                            </ul>
-                                        </div>
+                                        <a href="{{ route('ratings.confirm-rating', $wine->slug) }}" class="uk-icon-button" uk-icon="icon: plus-circle"></a>
                                     </li>
                                 </ul>
                             </div>

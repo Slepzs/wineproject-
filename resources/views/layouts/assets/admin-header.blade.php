@@ -24,7 +24,7 @@
 
                                 <li class="uk-nav-header"><span uk-icon="grid"></span> Main panel</li>
                                 <li class="uk-nav-divider"></li>
-                                <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">Club list</a></li>
+                                <li class="{{ Request::path() == 'clubs' ? 'uk-active' : '' }}"><a href="{{ url('/clubs') }}">All Clubs</a></li>
                                 <li class="{{ Request::path() == 'wines' ? 'uk-active' : '' }}"><a href="{{ route('wines.index') }}">Wine selection</a></li>
                                 <li class="uk-nav-header"><span uk-icon="user"></span> User Dashboard</li>
                                 <li class="uk-nav-divider"></li>
@@ -86,11 +86,10 @@
                                             <div class="user-info">
                                                 <p>{{ Auth::user()->name }} {{ Auth::user()->last_name }}</p>
                                                 <p>#{{ Auth::user()->nickname ?: 'Nothing set' }}</p>
-                                                <p>{{ Auth::user()->role->name }}</p>
                                             </div>
                                         </div>
-                                        <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
-                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Main panel</a></li>
+                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
+                                        <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Front page</a></li>
                                         <!-- Authentication Links -->
                                         @if(Auth::check())
 

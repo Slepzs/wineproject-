@@ -40,12 +40,11 @@ class WinesRatingController extends Controller
 
         $input = $request->all();
 
+
+
         ClubWine::create($input);
-
         $getslug = club::findOrFail($input['club_id'])->slug;
-
         $url = 'clubs/' . $getslug;
-
         return redirect($url);
 
     }

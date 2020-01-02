@@ -2,7 +2,7 @@
 
 
 @section('content')
- 
+
 
     <!-- CLUB PROFILE OVERVIEW -->
     <div class="club-profile-section">
@@ -81,7 +81,7 @@
                                     </div>
                                     <p>Start a collective wine rating <br/>with your club members!</p>
                                     @if($club->StartWineRating($club->id))
-                                    <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.choose') }}">Rate wine</a></div>
+                                    <div class="primary-btn primary-btn--center"><a href="{{ route('ratings.choose', $club->id) }}">Rate wine</a></div>
                                     @endif
                                 </div>
                             </div>
@@ -143,9 +143,11 @@
     <script type="text/javascript">
 
         jQuery(document).ready(function () {
-            for(i = 0; i < $(".myrating").length + 1; i++) {
-                $('#input-'+i).rating({displayOnly: true, showClear: false, disabled: true, showCaption: false});
-            }
+
+            $(".myrating").each(function( index, value ) {
+                console.log($(this).attr('data-id'));
+                $(this).rating({displayOnly: true, showClear: false, disabled: true, showCaption: false});
+            });
             $(".empty-stars").remove();
             $(".filled-stars").css({
                 position: "sticky",

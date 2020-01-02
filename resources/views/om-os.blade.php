@@ -18,7 +18,11 @@
                     Today we would like to share our passion for wines, and have therefore made a website for everyone to use.
                     So they can take part of our community.  </p>
                 <div class="primary-btn">
-                    <a href="#">Sign up & create your own club</a>
+                    @if( Auth::user() )
+                        <a href="{{ route('clubs.create') }}">Create Your own club</a>
+                    @else
+                        <a href="{{ route('register') }}">Sign up & create your own club</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -99,7 +103,7 @@
                 <p>We will gladly answer All of your questions. Send them to us and we will return as soon as possible within the next 24 hours with a response (except on weekends). <span uk-icon="icon: happy; ratio: 0.5"></span>
                 </p>
                 <div class="primary-btn">
-                    <a href="#">Got a question?</a>
+                    <a href="{{route('kontakt')}}">Got a question?</a>
                 </div>
             </div>
         </div>
