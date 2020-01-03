@@ -29,7 +29,7 @@
                                             </button>
                                         @else
                                             <button class="" type="submit">
-                                                <span uk-icon="lock"></span> Lock Wine
+                                                <span uk-icon="lock" uk-tooltip="Wines can't be rated anymore"></span> Lock Wine
                                             </button>
 
                                         @endif
@@ -46,7 +46,7 @@
 
                 <div class="wine-rating">
                         <p>{{ $club->getAverageClubRating($wine->id) }}</p>
-                        <input class="myrating" data-size="xs" data-min=0 data-max=10 data-step=1 data-id="input-{{$wine->id}}" value="{{ $club->getAverageClubRating($wine->id) ?? "0" }}" >
+                        <input class="myrating" data-size="xs" data-min=0 data-max=10 data-step=1 data-id="input-{{$wine->id}}" value="{{ $club->StarsShown($wine->id) ?? "0" }}" >
                     </p>
                 </div>
                 @if($club->isLocked($wine->id, $club->id))

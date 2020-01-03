@@ -34,7 +34,9 @@
                                     </div>
                                     <div class="member-role">
                                         <h3 class="uk-card-title">Role</h3>
+                                        @if($user->id == $club->ownerid($club->id))
                                         <p>@include('clubManagement.exstra.rolesform')</p>
+                                        @endif
                                     </div>
                                     <div class="member-actions">
                                         <h3 class="uk-card-title">Action</h3>
@@ -46,11 +48,18 @@
                                                 <button type="submit" class="crud-btn crud-btn--green"><span uk-icon="icon: plus-circle"></span> Accept?</button>
                                             </form>
                                         @else
-                                            <form method="post" action="{{route('clubManagement.remove', $user->pivot->id)}}">
-                                                @method('patch')
-                                                @csrf
-                                                <button type="submit" class="crud-btn crud-btn--red"><span uk-icon="icon: minus-circle"></span> Remove</button>
-                                            </form>
+
+                                                <form method="post" action="{{route('clubManagement.remove', $user->pivot->id)}}">
+                                                    @method('patch')
+                                                    @csrf
+
+                                                    @if($user->id == $club->ownerid($club->id))
+                                                    <button type="submit" class="crud-btn crud-btn--red"><span uk-icon="icon: minus-circle"></span> Remove</button>
+                                                    @else
+                                                    <p>You can't remove yourself</p>
+                                                    @endif
+                                                </form>
+
                                             @endif
                                             </p>
                                     </div>

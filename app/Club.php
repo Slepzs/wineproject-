@@ -55,6 +55,12 @@ class club extends Model
 
     public function getAverageClubRating($wine_id) {
         $average = $this->winerating->where('wine_id', $wine_id)->avg('rating');
+        $average = $average / 2;
+        return $average;
+    }
+
+    public function StarsShown($wine_id) {
+        $average = $this->winerating->where('wine_id', $wine_id)->avg('rating');
         return $average;
     }
 
@@ -93,6 +99,15 @@ class club extends Model
         $userid = Auth::user()->id;
 
         $admin = Club::where('id', $club_id)->where('owner_id', $userid)->first();
+
+        return $admin;
+    }
+
+    public function ownerid($club_id) {
+
+        $userid = Auth::user()->id;
+
+        $admin = Club::where('id', $club_id)->where('owner_id', $userid)->first()->id;
 
         return $admin;
     }

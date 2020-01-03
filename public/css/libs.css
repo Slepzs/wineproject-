@@ -12404,6 +12404,18 @@ iframe.uk-cover {
   }
 }
 
+
+.cls-2 {
+   fill: #d0c5b1;
+}
+
+.rating-stars svg {
+    fill: #d0c5b1;
+    width: 25px;
+}
+
+
+
 /*
  * The MIT License
  * Copyright (c) 2012 Matias Meno <m@tias.me>

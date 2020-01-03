@@ -35,12 +35,9 @@
                     <div class="rating">
                         <span>Rating</span>
                         <p class="rate">{{ $wine->AverageRating }}</p>
+                        <p> {{ $wine->SecretValue  }}</p>
                         <div class="rating-star">
-                            <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                            <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                            <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                            <span class="rated" uk-icon="icon: star; ratio: 0.5"></span>
-                            <span uk-icon="icon: star; ratio: 0.5"></span>
+                            @include('partials.stars')
                         </div>
                         <span>Value</span>
                         <p class="value">59.2</p>
@@ -55,8 +52,7 @@
             </div>
 
         </div>
-        <div class="wine-image-panel">
-            <img src="{{ $wine->photo->file ?? '/images/wineclub-hero.jpg' }}" alt="Top wine">
+        <div class="wine-image-panel" style="background-image: url({{ $wine->photo->file ?? '/images/wineclub-hero.jpg' }}">
         </div>
     </div>
     @endforeach

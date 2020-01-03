@@ -2,8 +2,6 @@
 
 
 @section('content')
-
-
     <!-- WINE LIST OVERVIEW -->
     <div class="wine-overview-section">
         <div class="uk-container uk-container--padding">
@@ -15,6 +13,12 @@
                     <p>Bla bla bla... <span uk-icon="icon: happy; ratio: 0.8"></span></p>
                 </div>
             </div>
+
+            <form method="GET"  class="uk-search uk-search-large" action="{{ route('ratings.search') }}">
+
+                <input type="text" name="search"  class="uk-search-input" placeholder="Search">
+            </form>
+            <hr>
 
             <div class="club-list-panel">
 
@@ -61,9 +65,9 @@
                                     <p><span uk-icon="icon: clock; ratio: 0.5"></span> {{ $wine->vintage }}</p>
                                 </div>
                                 <div class="right-body-panel">
-                                    <span class="bold">3.4</span>
+                                    <span class="bold">{{ $wine->getAverageRatingAttribute() }}</span>
                                     <p>{{ $wine->wine_ratings }}
-                                        <span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span>
+                                    @include('partials.stars')
                                     </p>
                                     {{-- $wine->wine_ratings ?: 'Not rated yet' --}}
                                 </div>

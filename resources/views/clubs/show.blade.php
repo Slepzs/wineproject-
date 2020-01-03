@@ -92,13 +92,15 @@
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
                     @if($club->GetMember($club->id))
-                        <h2 class="uk-card-title">Club members</h2>
+                        <h2 class="uk-card-title">
+                            Club members
+                        </h2>
                     @if($club->ClubAdmin($club->id))
-                        <span><a href="{{ route('clubManagement.users', $club->id) }}">(Edit club members list)</a></span>
+                        <span><a href="{{ route('clubManagement.users', $club->id) }}">(Add or Remove members)</a></span>
                     @endif
                         @include('clubs.ekstra.members')
-                        <div class="primary-btn primary-btn--center">
-                            <a href="#">View more</a>
+                        <div class="primary-btn primary-btn--center showmore" style="color: white">
+                            <a >View more</a>
                         </div>
                 </div>
 
@@ -153,6 +155,23 @@
                 position: "sticky",
                 display: "block"
             });
+
+            let profiles = $(".club-profile-members .profile-card");
+            console.log(profiles);
+            $.each(profiles, function(i, elem) {
+                if (i === 0) return;
+                $(this).addClass('closed');
+            });
+
+            $(".showmore").click(function() {
+                    if ($(".closed").hasClass('closed')) {
+                        $(".closed").removeClass('closed').addClass('open');
+                    } else {
+                        $(".open").removeClass('open').addClass('closed');
+                    }
+                }
+            );
+
 
         });
     </script>

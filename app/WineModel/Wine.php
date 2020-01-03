@@ -96,8 +96,12 @@ class Wine extends Model
     public function getAverageRatingAttribute()
     {
         $average = $this->winerating->avg('rating');
+        $average = $average / 2;
         return round($average, 1);
     }
+
+
+
 
 
 

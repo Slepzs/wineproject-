@@ -43,7 +43,7 @@
 
                 <!-- CLUB LIST -->
                 @foreach($clubs as $club)
-                    <div class="list-card uk-card uk-card-default">
+                    <div id="{{$club->id}}" class="list-card uk-card uk-card-default">
                         <div class="icon-media">
                             <img src="../images/wineclub-hero.jpg" alt="Club image">
                         </div>
@@ -68,8 +68,8 @@
                                 </ul>
                             </div>
                             <h3 class="uk-card-title">{{ $club->name }}</h3>
-                            <p>Located at: {{$club->clubinformation->location }}</p>
-                            <p>Type: {{ $club->clubinformation->type }}</p>
+                            <p>{{$club->clubinformation->location }}</p>
+                            <p>{{ $club->clubinformation->type }}</p>
                             <div class="primary-btn primary-btn--center"><a href="{{route('clubs.show', $club->slug)}}">View Club</a></div>
                         </div>
                     </div>

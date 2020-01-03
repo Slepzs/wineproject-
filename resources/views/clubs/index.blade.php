@@ -34,8 +34,8 @@
                         </div>
                         <div class="body-info">
                             <h3 class="uk-card-title">{{ $club->name }}</h3>
-                            <p>Located at: {{$club->clubinformation->location }}</p>
-                            <p>Type: {{ $club->clubinformation->type }}</p>
+                            <p> {{$club->clubinformation->location }}</p>
+                            <p> {{ $club->clubinformation->type }}</p>
                             <div class="primary-btn primary-btn--center"><a href="{{route('clubs.show', $club->slug)}}">View Club</a></div>
                         </div>
                     </div>

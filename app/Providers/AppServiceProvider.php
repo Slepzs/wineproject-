@@ -24,7 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $categories = WineCategory::all();
         view()->share('categories', $categories);
+
     }
 }

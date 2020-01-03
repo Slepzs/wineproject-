@@ -12403,3 +12403,15 @@ iframe.uk-cover {
     page-break-after: avoid;
   }
 }
+
+
+.cls-2 {
+   fill: #d0c5b1;
+}
+
+.rating-stars svg {
+    fill: #d0c5b1;
+    width: 25px;
+}
+
+

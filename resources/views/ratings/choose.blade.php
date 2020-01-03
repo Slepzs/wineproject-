@@ -10,7 +10,7 @@
     <div class="wine-list-section">
 
 
-        <a href="{{route('wines.create')}}">Upload Wine</a>
+
         <div class="uk-container uk-container--padding">
             <form method="GET"  class="uk-search uk-search-large" action="{{ route('ratings.search') }}">
 
@@ -51,7 +51,7 @@
                                 <div class="right-body-panel">
                                     <span class="bold">3.4</span>
                                     <p>{{ $wine->wine_ratings }}
-                                        <span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span><span uk-icon="icon: star; ratio: 0.5"></span>
+                                        @include('partials.stars')
                                     </p>
                                     {{-- $wine->wine_ratings ?: 'Not rated yet' --}}
                                 </div>

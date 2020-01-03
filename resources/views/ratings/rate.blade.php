@@ -35,6 +35,9 @@
                         @if(!$locked->isLocked($wine->id, $club))
                         <input id="input-21f" value="{{ $rating ?? 0 }}" type="text" data-min=0 data-max=10 data-step=1 data-size="md" data-club="{{ $club }}" data-wine="{{ $wine->id }}" data-user="{{ Auth::user()->id }}" title="">
                         @endif
+
+                        <a class="primary-btn primary-btn--center" href="{{ URL::previous() }}">Go back</a>
+
                     </div>
                 </div>
 
@@ -108,7 +111,8 @@
                     }
                 },
                 hoverOnClear: false,
-                showClear: false
+                showClear: false,
+                showCaption: false
             });
             console.log($(this).val());
 
@@ -117,7 +121,8 @@
             let wine_id = $("#input-21f").attr("data-wine");
 
             $('#input-21f').on('rating:change', function(event, value, caption) {
-                console.log(value);
+
+
                 let rating = value;
                 $.ajaxSetup({
                     headers: {

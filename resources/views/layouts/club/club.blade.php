@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Wine Club - Admin Area</title>
+    <script src="https://kit.fontawesome.com/54033e194b.js" crossorigin="anonymous"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
 
     <!-- Scripts -->

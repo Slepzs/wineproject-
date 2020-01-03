@@ -211,6 +211,9 @@
     }
 
 }
+
+
+
 // USER PROFILE + CLUB PROFILE + WINE PROFILE
 .club-profile {
 
@@ -346,6 +349,16 @@
     }
 
 }
+
+
+.closed {
+    display: none;
+}
+
+.open {
+    display: block;
+}
+
 // CLUB PROFILE; MEMBER SECTION + CRUD MEMBERS
 .club-profile-members, .club-crud-members {
     margin-bottom: 20px;

@@ -42,9 +42,13 @@
                         <label class="uk-form-label" for="form-stacked-text">What type?</label>
                         <select class="uk-select uk-inline uk-width-expand" name="type">
                             <option value="All">All</option>
-                            <option value="Redwine">Red wine</option>
-                            <option value="Whitewine">White wine</option>
-                            <option value="Rose">Rosé</option>
+                            <option value="Red wine">Red wine</option>
+                            <option value="White wine">White wine</option>
+                            <option value="Port Wine">Port Wine</option>
+                            <option value="Organic wine">Organic wine</option>
+                            <option value="Sparkling wine">Sparkling wine</option>
+                            <option value="Dessert wine">Dessert wine</option>
+                            <option value="Champagne">Champagne</option>
                         </select>
                     </div>
 

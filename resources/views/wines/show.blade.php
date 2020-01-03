@@ -66,11 +66,7 @@
                                         <p>{{ $wine->getAverageRatingAttribute() ?? '0' }}</p>
                                     </div>
                                     <div class="rating-star">
-                                        <span class="rated" uk-icon="icon: star"></span>
-                                        <span class="rated" uk-icon="icon: star"></span>
-                                        <span class="rated" uk-icon="icon: star"></span>
-                                        <span uk-icon="icon: star"></span>
-                                        <span uk-icon="icon: star"></span>
+                                       @include('partials.stars')
                                     </div>
                                 </div>
                             </div>

@@ -32,6 +32,10 @@
                                 <option value="2">White Wine</option>
                                 <option value="3">Rosé Wine</option>
                                 <option value="4">Port Wine</option>
+                                <option value="5">Organic wine</option>
+                                <option value="6">Sparkling wine</option>
+                                <option value="7">Dessert wine</option>
+                                <option value="8">Champagne</option>
                             </select>
                         </div>
                         <div class="uk-margin">
