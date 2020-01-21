@@ -30,7 +30,6 @@ class Wine extends Model
     {
         $data = $this->toArray();
         $data['winecategory'] = $this->winecategory;
-        // ... any other data
         return $data;
     }
 
@@ -42,22 +41,22 @@ class Wine extends Model
 
 
     protected $fillable = [
-        'photo_id',
-        'category_id',
-        'user_id',
-        'wine_location',
-        'wine_name',
-        'vintage',
-        'producer',
-        'grape',
-        'alcohol_content',
-        'wine_price',
-        'location',
-        'bottle_size',
-        'lat',
-        'lng',
-        'slug'
-    ];
+    'photo_id',
+    'category_id',
+    'user_id',
+    'wine_location',
+    'wine_name',
+    'vintage',
+    'producer',
+    'grape',
+    'alcohol_content',
+    'wine_price',
+    'location',
+    'bottle_size',
+    'lat',
+    'lng',
+    'slug'
+];
 
     public function wineadditional()
     {

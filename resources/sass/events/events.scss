@@ -89,6 +89,36 @@
 
 
 
+.reg {
+
+
+    .reg-container {
+        padding: 20px;
+        margin: 20px;
+        h4 {
+
+        }
+        .reg-person {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 20px;
+            margin: 10px;
+
+            .reg-details {
+                margin: 15px;
+                padding: 20px;
+                border-radius: 5px;
+                background: #fff;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                h5 {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
 // MEDIA QUERIES
 // XS-SMALL - MOBILE (EXTRA): This applies from 0 to 320px
 @media (max-width: 320px) {

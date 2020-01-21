@@ -5,8 +5,15 @@
 
     <!-- EVENT POST -->
     <div class="event-post-section">
-        <div class="event-post-image">
+        <div class="event-post-image" style="background-image: url({{ $event->photo->file ?? '/images/wineclub-hero.jpg' }})">
             <div class="uk-badge uk-label event-post-badge">Ny</div>
+            <div class="uk-badge uk-label event-post-badge">
+                @if($event->public == '0')
+                    Public Event
+                @else
+                    Private Event
+                @endif
+            </div>
 
             <!-- EVENT THUMB: DESKTOP VIEW -->
             <div class="event-thumb-section dt-hide">
@@ -60,19 +67,19 @@
 
                 <div class="event-body">
                     <div class="event-body-info">
-                        <p class="event-meta">Region</p>
-                        <h1 class="event-title">Titel på event</h1>
-                        <p>Nunc sed sem finibus, finibus metus non, egestas sapien. Nunc ut molestie elit. Praesent elementum blandit finibus. Integer congue eleifend consectetur. Phasellus mollis posuere lacus ac maximus. Curabitur eget vestibulum metus. Curabitur efficitur nunc metus, nec gravida dui efficitur cursus. Morbi eget tristique leo. Fusce vitae nisi nisi.</p>
+                        <p class="event-meta">{{ $event->location }}</p>
+                        <h1 class="event-title">{{ $event->title }}</h1>
+                        <p>{{ $event->description }}</p>
                     </div>
                     <div class="event-body-utility">
                         <div class="date">
                             <ul class="uk-iconnav uk-iconnav-vertical">
-                                <li><span uk-icon="icon: clock; ratio: 0.5"></span> 01 April, 2016</li>
-                                <li><span uk-icon="icon: location; ratio: 0.5"></span> Gammel kongevej 105</li>
+                                <li><span uk-icon="icon: clock; ratio: 0.5"></span> {{$event->date}}</li>
+                                <li><span uk-icon="icon: location; ratio: 0.5"></span> {{ $event->location }}</li>
                             </ul>
                         </div>
                         <div class="pricetag">
-                            <p class="price">199 DKK</p>
+                            <p class="price">{{$event->price}} DKK</p>
                             <p>pr. person</p>
                         </div>
                     </div>
@@ -80,46 +87,7 @@
 
 
                 <!-- EVENT FORM: JOIN EVENT -->
-                <div class="event-joinevent">
-                    <form class="event-form">
-                        <h3 class="">Join our event</h3>
-                        <div class="left-contact-panel">
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="form-stacked-text">Name</label>
-                                <div class="uk-inline uk-width-expand">
-                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                    <input class="uk-input" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="form-stacked-text">Email</label>
-                                <div class="uk-inline uk-width-expand">
-                                    <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                    <input class="uk-input" type="email" placeholder="">
-                                </div>
-                            </div>
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="form-stacked-text">Guests</label>
-                                <div class="uk-inline uk-width-expand">
-                                    <span class="uk-form-icon" uk-icon="icon: users"></span>
-                                    <input class="uk-input" type="number" min="1" max="10" placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-contact-panel">
-                            <div class="uk-margin">
-                                <label class="uk-form-label" for="form-stacked-text">Message</label>
-                                <div class="uk-inline uk-width-expand">
-                                    <!--<span class="uk-form-icon" uk-icon="icon: comment"></span>-->
-                                    <textarea class="uk-textarea" rows="5" placeholder=""></textarea>
-                                </div>
-                            </div>
-                            <div class="uk-margin" uk-margin>
-                                <button class="uk-button uk-button-default primary-btn">Join event</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                @include('partials.event-signup-form')
 
             </div>
         </div>

@@ -70,19 +70,7 @@ Route::get('categories/{slug}', function($slug) {
 
 })->name('categories');
 
-// Events page
-Route::get('/events', function() {
 
-    return view('events');
-
-});
-
-// Single event-post page
-Route::get('/event-post', function() {
-
-    return view('event-post');
-
-});
 
 // Kontakt page
 Route::get('/kontakt', function() {
@@ -149,6 +137,11 @@ Route::group(['middleware'=>'IsAdmin'], function() {
 
 });
 /* User Routes */
+
+Route::get('events/{id}', 'EventsController@show')->name('events.show');
+
+
+
 Route::group(['middleware'=>'auth'], function() {
     Route::get('profile/password_update', 'UserProfileController@passwordupdate')->name('profile.passwordupdate');
     Route::put('profile/password/{password}', 'UserProfileController@password')->name('profile.password');
@@ -210,6 +203,27 @@ Route::group(['middleware'=>'auth'], function() {
 
     });
 
+
+    Route::resource('events', 'EventsController',['names'=> [
+        'store'=>'events.store',
+        'edit'=>'events.edit',
+        'update' => 'events.update',
+    ]]);
+
 });
 
 Route::get('/', 'HomeController@index')->name('index');
+
+// Events page
+Route::get('events/registration/{slug}', 'EventsController@registration')->name('events.registration');
+Route::get('events/create/{slug}', 'EventsController@create')->name('events.create');
+Route::post('events/join', 'EventsController@join')->name('events.join');
+Route::get('events/', 'EventsController@events')->name('events.events');
+Route::delete('events/remove/{id}', 'EventsController@remove')->name('events.remove');
+
+// Single event-post page
+Route::get('/event-post', function() {
+
+    return view('event-post');
+
+});

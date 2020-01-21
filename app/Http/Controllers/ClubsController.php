@@ -6,6 +6,7 @@ use App\club;
 use App\ClubInformation;
 use App\ClubUser;
 use App\ClubWine;
+use App\Event;
 use App\User;
 use App\Wine;
 use Illuminate\Http\Request;
@@ -92,7 +93,10 @@ class ClubsController extends Controller
             ->wherePivot('role_id', '<=', '3')
             ->get();
 
-        return view('clubs/show', compact('club', 'userapplied', 'wines', 'allusers') );
+        $events = Event::where('club_id', $club->id)->get();
+
+
+        return view('clubs/show', compact('club', 'userapplied', 'wines', 'allusers', 'events') );
 
     }
 

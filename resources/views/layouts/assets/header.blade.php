@@ -25,18 +25,15 @@
                                 <li class="{{ Request::path() == 'vin-spiritus' ? 'uk-active' : '' }} uk-parent">
                                     <a href="{{ url('/vin-spiritus') }}">Wine &amp; Liquor</a>
                                     <ul class="uk-nav-sub">
-                                        <li><a href="#">Red wine</a></li>
-                                        <li><a href="#">White wine</a></li>
-                                        <li><a href="#">Rosé wine</a></li>
-                                        <li><a href="#">Organic wine</a></li>
-                                        <li><a href="#">Sparkling wine</a></li>
-                                        <li><a href="#">Dessert wine</a></li>
-                                        <li><a href="#">Port wine</a></li>
-                                        <li><a href="#">Champagne</a></li>
+                                        @if($categories)
+                                            @foreach($categories as $category)
+                                                <li><a href="{{ route('categories', $category->slug) }}">{{$category->name}}</a></li>
+                                            @endforeach
+                                        @endif
                                     </ul>
                                 </li>
                                 <li class="uk-nav-divider"></li>
-                                <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ url('/events') }}">Events</a></li>
+                                <li class="{{ Request::path() == 'events' ? 'uk-active' : '' }}"><a href="{{ route('events.events') }}">Events</a></li>
                                 <li class="{{ Request::path() == 'kontakt' ? 'uk-active' : '' }}"><a href="{{ route('kontakt') }}">Contact</a></li>
 
                             </ul>
@@ -119,8 +116,8 @@
                                                 <p>#{{ Auth::user()->nickname ?: 'Nickname' }}</p>
                                             </div>
                                         </div>
-                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Home</a></li>
-                                        <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Front page</a></li>
+                                        <li><a href="{{route('clubs.index')}}"><span class="uk-icon" uk-icon="icon: grid"></span> Your Panel</a></li>
+                                        <li><a href="{{route('index')}}"><span class="uk-icon" uk-icon="icon: home"></span> Front page</a></li>
                                         <!-- Authentication Links -->
                                         @if(Auth::check())
 

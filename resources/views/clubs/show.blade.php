@@ -89,6 +89,20 @@
                     </div>
                 </div>
 
+                <div class="club-events-wrapper">
+                    <div class="club-events">
+                        <h2 class="uk-card-title">Events <a href="{{ route('events.create', ['slug' => $club->slug]) }}" uk-tooltip="Create new event"><span uk-icon="icon: plus-circle" class="uk-icon"></span></a></h2>
+                        @if($club->ClubAdmin($club->id))
+                        <span><a href="{{ route('events.registration', $club->slug) }}">(View sign ups)</a></span>
+                        @endif
+                        @include('clubs.ekstra.events')
+                    </div>
+
+
+
+
+                </div>
+
                 <!-- CLUB MEMBERS -->
                 <div class="club-profile-members">
                     @if($club->GetMember($club->id))
