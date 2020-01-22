@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="member-role">
                                         <h3 class="uk-card-title">Role</h3>
-                                        @if($user->id == $club->ownerid($club->id))
+                                        @if($user->id !== $club->ownerid($club->id))
                                         <p>@include('clubManagement.exstra.rolesform')</p>
                                         @endif
                                     </div>
@@ -53,7 +53,7 @@
                                                     @method('patch')
                                                     @csrf
 
-                                                    @if($user->id == $club->ownerid($club->id))
+                                                    @if($user->id !== $club->ownerid($club->id))
                                                     <button type="submit" class="crud-btn crud-btn--red"><span uk-icon="icon: minus-circle"></span> Remove</button>
                                                     @else
                                                     <p>You can't remove yourself</p>
