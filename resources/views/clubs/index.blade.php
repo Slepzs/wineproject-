@@ -12,7 +12,7 @@
             <div class="club-info">
                 <div class="info-body">
                     <h1>Club list</h1>
-                    <p>Bla bla bla... <span uk-icon="icon: happy; ratio: 0.8"></span></p>
+                    <p>Browse all clubs here..<span uk-icon="icon: happy; ratio: 0.8"></span></p>
 
                 </div>
             </div>
