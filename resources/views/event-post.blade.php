@@ -16,46 +16,28 @@
             </div>
 
             <!-- EVENT THUMB: DESKTOP VIEW -->
+            @foreach($randomevents as $randEvent)
+
+
             <div class="event-thumb-section dt-hide">
                 <div class="uk-container uk-container--padding">
                     <h2>Andre events</h2>
 
                     <div class="event-thumb-panel">
                         <div class="event-thumb">
-                            <a href="{{ url('/event-post') }}">
+                            <a href="{{ url('/event-post', $event->slug) }}">
                                 <div class="event-thumb-image">
-                                    <img src="/images/wineclub-hero.jpg" alt="Event image">
+                                    <img src="{{ $randEvent->photo->file ?? '/images/wineclub-hero.jpg' }}" alt="Event image">
                                 </div>
                                 <div class="event-thumb-body">
-                                    <p class="event-meta">Region</p>
-                                    <h3 class="event-title">Titel på event</h3>
+                                    <p class="event-meta">{{ $randEvent->location }}</p>
+                                    <h3 class="event-title"> {{ $randEvent->title }}</h3>
                                 </div>
                             </a>
                         </div>
+                        @endforeach
 
-                        <div class="event-thumb">
-                            <a href="{{ url('/event-post') }}">
-                                <div class="event-thumb-image">
-                                    <img src="/images/wineclub-hero.jpg" alt="Event image">
-                                </div>
-                                <div class="event-thumb-body">
-                                    <p class="event-meta">Region</p>
-                                    <h3 class="event-title">Titel på event</h3>
-                                </div>
-                            </a>
-                        </div>
 
-                        <div class="event-thumb">
-                            <a href="{{ url('/event-post') }}">
-                                <div class="event-thumb-image">
-                                    <img src="/images/wineclub-hero.jpg" alt="Event image">
-                                </div>
-                                <div class="event-thumb-body">
-                                    <p class="event-meta">Region</p>
-                                    <h3 class="event-title">Titel på event</h3>
-                                </div>
-                            </a>
-                        </div>
                     </div>
 
                 </div>

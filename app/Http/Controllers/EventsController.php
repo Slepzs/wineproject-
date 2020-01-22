@@ -47,9 +47,9 @@ class EventsController extends Controller
                 $events->push($userEvents);
 
             }
+            $publicEvents = Event::where('public', '0')->get();
+            $events->push($publicEvents);
             return view('events', compact('events'));
-
-
 
         }
 
@@ -120,11 +120,13 @@ class EventsController extends Controller
     {
         $event = Event::findBySlugOrFail($slug);
 
+        $randomevents = Event::inRandomOrder()->where('public', '0')->limit('3')->get();
+
         if(Auth::user()) {
             $signedUp = EventSignUp::where('user_id', Auth::user()->id)->first();
-            return view('event-post', compact('event', 'signedUp'));
+            return view('event-post', compact('event', 'signedUp', 'randomevents'));
         } else {
-            return view('event-post', compact('event'));
+            return view('event-post', compact('event', 'randomevents'));
         }
 
 
@@ -149,9 +151,14 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $event = Event::findBySlugOrFail($slug);
+
+
+
+        return view('events/edit', compact('event'));
+
     }
 
     /**
@@ -161,9 +168,29 @@ class EventsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $event = Event::findBySlugOrFail($slug);
+        $input = $request->all();
+
+        if($file = $request->file('photo_id')) {
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+
+        }
+
+        $event->update($input);
+
+        $club = Club::findOrFail($event->club_id);
+
+        return redirect('clubs/'. $club->slug);
+
     }
 
     /**
@@ -174,7 +201,18 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        $signups = EventSignUp::where('event_id', $event->id);
+
+        $signups->delete();
+
+        $event->delete();
+
+        return back();
+
+
+
     }
 
     public function join(Request $request) {
